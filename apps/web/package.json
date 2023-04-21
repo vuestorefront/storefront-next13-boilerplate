@@ -8,7 +8,7 @@
     "start": "next start",
     "lint": "next lint --dir components --dir hooks --dir layouts --dir pages --dir sdk",
     "lint:fix": "next lint --fix  --dir components --dir hooks --dir layouts --dir pages --dir sdk",
-    "test": "jest --passWithNoTests",
+    "test": "jest",
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage --passWithNoTests"
   },
@@ -19,10 +19,14 @@
     "react-dom": "18.2.0"
   },
   "devDependencies": {
+    "@testing-library/dom": "^8.19.0",
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^14.4.3",
     "@types/node": "18.15.11",
     "@types/react": "18.0.37",
     "@types/react-dom": "18.0.11",
     "eslint-config-next": "^13.3.0",
-    "typescript": "5.0.4"
+    "jest-environment-jsdom": "^29.2.2"
   }
 }
