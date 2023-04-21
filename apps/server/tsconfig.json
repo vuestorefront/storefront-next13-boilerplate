@@ -1,0 +1,27 @@
+{
+  "display": "Default",
+  "compilerOptions": {
+    "lib": ["DOM", "DOM.Iterable", "ES2019"],
+    "composite": false,
+    "declaration": false,
+    "declarationMap": false,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "strictPropertyInitialization": false,
+    "inlineSources": false,
+    "isolatedModules": true,
+    "moduleResolution": "node",
+    "noUnusedLocals": false,
+    "noUnusedParameters": false,
+    "preserveWatchOutput": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "target": "ES2019",
+    "types": ["@types/body-parser", "@types/cookie-parser", "@types/express", "@types/cors", "@types/morgan"],
+    "rootDir": ".",
+    "outDir": "lib",
+    "baseUrl": "."
+  },
+  "include": ["src"],
+  "exclude": ["dist", "lib", "node_modules", ".turbo"]
+}
