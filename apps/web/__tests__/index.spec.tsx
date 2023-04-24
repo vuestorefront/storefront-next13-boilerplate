@@ -7,7 +7,7 @@ describe('Home', () => {
     render(<Home />);
 
     const heading = screen.getByRole('heading', {
-      name: /Vue Storefront for React Boilerplate/i,
+      name: /Hello from the Vue Storefront React Boilerplate!/i,
     });
 
     expect(heading).toBeInTheDocument();
