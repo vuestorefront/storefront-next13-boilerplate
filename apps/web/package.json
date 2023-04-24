@@ -14,6 +14,7 @@
   },
   "dependencies": {
     "@storefront-ui/react": "^2.1.0",
+    "@storefront-ui/shared": "^2.1.0",
     "@vsf-enterprise/sdk": "^1.0.0",
     "classnames": "^2.3.2",
     "next": "13.3.0",
