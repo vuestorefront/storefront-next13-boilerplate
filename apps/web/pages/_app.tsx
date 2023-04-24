@@ -10,7 +10,7 @@ export default function App({ Component, pageProps }: AppProps) {
       <Head>
         <meta name="viewport" content="minimum-scale=1, initial-scale=1, width=device-width" />
         <meta name="description" content="VSF x Next.js (Boilerplate)" />
-        <title>Vue Storefront Demo</title>
+        <title>Vue Storefront React Boilerplate</title>
       </Head>
       <div className={classnames(fontHeadings.variable, fontBody.variable, 'font-body')}>
         <Component {...pageProps} />
