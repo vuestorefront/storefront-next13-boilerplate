@@ -1,9 +1,9 @@
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
-import { appWithTranslation } from 'next-i18next';
-import classnames from 'classnames';
 import { fontBody, fontHeadings } from '@/styles/fonts';
 import '@/styles/globals.scss';
+import classnames from 'classnames';
+import { appWithTranslation } from 'next-i18next';
 
 function App({ Component, pageProps }: AppProps) {
   return (
