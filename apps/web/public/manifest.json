@@ -3,9 +3,9 @@
   "background_color": "#fff",
   "display": "standalone",
   "start_url": "/",
-  "name": "Vue Storefront Bolierplate for React",
+  "name": "Vue Storefront Boilerplate for React",
   "short_name": "VSFxReact",
-  "description": "Vue Storefront Bolierplate for React",
+  "description": "Vue Storefront Boilerplate for React",
   "icons": [
     {
       "src": "/icons/apple-touch-icon-180x180.png",
