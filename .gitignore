@@ -47,3 +47,6 @@ lib/
 
 yarn.lock
 .npmrc
+
+.vscode
+*.code-workspace

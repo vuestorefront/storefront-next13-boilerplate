@@ -1,5 +1,5 @@
 {
-  "display": "Default",
+  "display": "Server",
   "compilerOptions": {
     "lib": ["DOM", "DOM.Iterable", "ES2019"],
     "composite": false,
@@ -17,11 +17,10 @@
     "skipLibCheck": true,
     "strict": true,
     "target": "ES2019",
-    "types": ["@types/body-parser", "@types/cookie-parser", "@types/express", "@types/cors", "@types/morgan"],
+    "types": ["@types/body-parser", "@types/cookie-parser", "@types/express", "@types/morgan", "jest"],
     "rootDir": ".",
-    "outDir": "lib",
-    "baseUrl": "."
+    "outDir": "lib"
   },
-  "include": ["src"],
+  "include": ["**/*.ts"],
   "exclude": ["dist", "lib", "node_modules", ".turbo"]
 }
