@@ -1,0 +1,25 @@
+{
+  "productDetails": "Produktdetails",
+  "customerReviews": "Kundenbewertungen",
+  "loadingReviews": "Rezensionen werden geladen...",
+  "recommendedProducts": "Empfohlen mit diesem Produkt",
+  "numberInStock": "<0>{{count}}</0> auf Lager",
+  "outOfStock": "Nicht auf Lager",
+  "additionalInfo": {
+    "shipping": "Kostenloser Versand, Ankunft am Donnerstag, 7. April. Schneller? <1>Fügen Sie eine Adresse</1>, um Optionen anzuzeigen",
+    "pickup": "Abholung im Super Center nicht möglich. <1>Überprüfen Sie die Verfügbarkeit in der Nähe</1>",
+    "returns": "Kostenlose 30-Tage-Rückgabe. <1>Einzelheiten</1>"
+  },
+  "sale": "Verkauf",
+  "readMore": "Weiterlesen",
+  "readLess": "Lese weniger",
+  "noReviews": "Keine Bewertungen",
+  "loading": "Laden",
+  "gallery": {
+    "count": "{{current}} von {{total}}",
+    "thumb": "Gehen Sie zu Folie {{index}}",
+    "prev": "Vorherige",
+    "next": "Nächste",
+    "image": "Folie {{index}}"
+  }
+}

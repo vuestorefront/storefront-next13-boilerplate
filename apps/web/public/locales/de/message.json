@@ -1,0 +1,19 @@
+{
+  "error": {
+    "default": "Etwas ist schief gelaufen.",
+    "cart": {
+      "applyCartCoupon": "Der Rabattcode wurde nicht gefunden.",
+      "removeCartCoupon": "Der Rabattcode kann nicht entfernt werden.",
+      "updateCart": "Warenkorb kann nicht aktualisiert werden.",
+      "addToCart": "Produkt kann nicht in den Warenkorb gelegt werden."
+    }
+  },
+  "success": {
+    "cart": {
+      "updateCart": "Warenkorb aktualisiert.",
+      "applyCartCoupon": "Rabattcode angewendet.",
+      "removeCartCoupon": "Rabattcode entfernt.",
+      "addToCart": "Produkt wurde dem Warenkorb hinzugefügt."
+    }
+  }
+}

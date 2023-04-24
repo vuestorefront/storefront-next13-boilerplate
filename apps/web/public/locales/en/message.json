@@ -1,0 +1,20 @@
+{
+  "error": {
+    "default": "Something went wrong.",
+    "cart": {
+      "applyCartCoupon": "The discount code was not found or can not be applied.",
+      "removeCartCoupon": "The discount code can not be removed.",
+      "updateCart": "Cart can not be updated.",
+      "addToCart": "Product can not be added to the cart."
+    }
+  },
+  "success": {
+    "default": "Operation succeeded.",
+    "cart": {
+      "updateCart": "Cart updated.",
+      "applyCartCoupon": "Discount code applied.",
+      "removeCartCoupon": "Discount code removed.",
+      "addToCart": "Product has been added to the cart."
+    }
+  }
+}
