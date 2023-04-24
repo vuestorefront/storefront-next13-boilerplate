@@ -49,3 +49,6 @@ lib/
 .lighthouseci
 yarn.lock
 .npmrc
+
+.vscode
+*.code-workspace
