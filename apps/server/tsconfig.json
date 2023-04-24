@@ -9,7 +9,7 @@
     "forceConsistentCasingInFileNames": true,
     "strictPropertyInitialization": false,
     "inlineSources": false,
-    "isolatedModules": false,
+    "isolatedModules": true,
     "moduleResolution": "node",
     "noUnusedLocals": false,
     "noUnusedParameters": false,
