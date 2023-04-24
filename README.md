@@ -1,15 +1,23 @@
-<div align="center">
-<img src="https://user-images.githubusercontent.com/1626923/137092657-fb398d20-b592-4661-a1f9-4135db0b61d5.png" height="80px"/>
-</div>
+<p align="center">
+  <a href="https://https://vuestorefront.io/">
+  <picture>
+    <img src="https://user-images.githubusercontent.com/1626923/137092657-fb398d20-b592-4661-a1f9-4135db0b61d5.png" width="400px" height="auto"/>
+  </picture>
+  </a>
+  <h1 align="center">Vue Storefront for React Boilerplate</h1>
+</p>
 
-# Vue Storefront React Boilerplate
+[![GitHub Repo stars](https://img.shields.io/github/stars/vuestorefront/vue-storefront?style=social)](https://github.com/vuestorefront/vue-storefront)
+[![Twitter Follow](https://img.shields.io/twitter/follow/vuestorefront?style=social)](https://twitter.com/vuestorefront)
+[![YouTube Channel Subscribers](https://img.shields.io/youtube/channel/subscribers/UCkm1F3Cglty3CE1QwKQUhhg?style=social)](https://www.youtube.com/c/VueStorefront)
+[![Discord](https://img.shields.io/discord/770285988244750366?label=join%20discord&logo=Discord&logoColor=white)](https://discord.vuestorefront.io)
 
-### Requirements:
+## Prerequisites:
 
-- NodeJS >=16
-- Yarn
+- `NodeJS` >=16
+- `Yarn` 1
 
-### Where to start?
+## Getting Started
 
 To get started, see the following guides:
 
@@ -17,23 +25,31 @@ To get started, see the following guides:
 
 ### Local dev setup
 
-1. To specify all environment variables required by `server` app, copy a file with example environment variables
+1. Clone the repo
 
 ```bash
-$ cp apps/server/.env.example apps/server/.env
+$ git clone https://github.com/vuestorefront/storefront-next13-boilerplate
 ```
 
-2. Then install all dependencies
+2. Install all dependencies
 
 ```bash
 $ yarn install
 ```
 
-3. And finally serve app locally with hot reload at [localhost:3000](http://localhost:3000/)
+3. Run development server. App will be served with hot reload at [localhost:3000](http://localhost:3000/)
 
 ```bash
 $ yarn dev
 ```
+
+## License
+
+Distributed under the MIT License. See [LICENSE](LICENSE.md) for more information.
+
+## Contributing
+
+Please see our [contributing.md](contributing.md) for more information.
 
 ## Resources
 
