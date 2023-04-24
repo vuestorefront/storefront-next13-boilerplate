@@ -45,7 +45,8 @@ yarn-error.log*
 # build
 lib/
 
-# Local lighthouse Ci test results
-.lighthouseci
 yarn.lock
 .npmrc
+
+.vscode
+*.code-workspace
