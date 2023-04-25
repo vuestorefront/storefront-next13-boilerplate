@@ -1,4 +1,5 @@
 import { GetServerSidePropsContext } from 'next';
+import { DefaultLayout } from '@/layouts';
 import { SfButton } from '@storefront-ui/react';
 import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
@@ -15,7 +16,7 @@ export default function Home() {
   const { t } = useTranslation();
 
   return (
-    <>
+    <DefaultLayout>
       <h1 className="typography-headline-2 md:typography-headline-1 md:leading-[67.5px] font-bold mt-2 mb-4">
         Hello from the Vue Storefront React Boilerplate!
       </h1>
@@ -23,6 +24,6 @@ export default function Home() {
         Hello from the Vue Storefront React Boilerplate!
       </SfButton>
       <p>{t('vsfHomepage')}</p>
-    </>
+    </DefaultLayout>
   );
 }
