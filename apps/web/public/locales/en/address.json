@@ -1,0 +1,27 @@
+{
+  "billing": {
+    "heading": "Billing Address",
+    "description": "Add a billing address. You will receive the invoice to the email address provided above.",
+    "addButton": "Add billing address"
+  },
+  "shipping": {
+    "heading": "Shipping Address",
+    "description": "Add a shipping address to view shipping details.",
+    "addButton": "Add shipping address"
+  },
+  "form": {
+    "firstNameLabel": "First Name",
+    "lastNameLabel": "Last Name",
+    "phoneLabel": "Phone",
+    "countryLabel": "Country",
+    "streetNameLabel": "Street",
+    "streetNameHelp": "Street address or P.O. Box",
+    "streetNumberLabel": "Apt#, Suite, etc",
+    "streetNumberHelp": "Optional",
+    "cityLabel": "City",
+    "stateLabel": "State",
+    "postalCodeLabel": "ZIP Code",
+    "useAsShippingLabel": "Use as shipping address",
+    "selectPlaceholder": "-- Select --"
+  }
+}

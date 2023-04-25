@@ -1,0 +1,40 @@
+{
+  "checkout": "Kasse",
+  "backToCart": "Zurück zu Mein Warenkorb",
+  "back": "Zurück",
+  "placeOrder": "Bestellung aufgeben und bezahlen",
+  "termsInfo": "Indem Sie meine Bestellung aufgeben, stimmen Sie unseren <1>Allgemeinen Geschäftsbedingungen </1> und unserer <3>Datenschutzerklärung</3> zu",
+  "tomorrow": "Morgen",
+  "contactInfo": {
+    "heading": "Kontaktinformationen",
+    "description": "Fügen Sie Ihre E-Mail-Adresse und Telefonnummer hinzu, um mit dem Geschäft zu kommunizieren.",
+    "add": "Kontaktdaten hinzufügen",
+    "email": "Email",
+    "phone": "Telefonnummer",
+    "phonePlaceholder": "z.B. 123 456 7890",
+    "clearAll": "Alles löschen",
+    "save": "Speichern",
+    "edit": "Bearbeiten"
+  },
+  "checkoutPayment": {
+    "heading": "Bezahlverfahren",
+    "comingSoon": "Demnächst",
+    "cash": "Barzahlung bei Lieferung",
+    "creditCard": "Kreditkarte",
+    "paypalIconAlt": "Paypal Icon",
+    "applePayIconAlt": "Apple Pay Icon",
+    "googlePayIconAlt": "Google Pay icon"
+  },
+  "shippingMethod": {
+    "heading": "Einzelheiten zum Versand",
+    "description": "Nicht verfügbar, solange keine Lieferadresse angegeben wird."
+  },
+  "validation": {
+    "heading": "Bestellung abschließen:",
+    "missingBillingAddress": "rechnungsadresse hinzufügen",
+    "missingShippingAddress": "versandadresse hinzufügen",
+    "missingEmail": "kundenemail hinzufügen",
+    "missingShippingDetails": "fügen Sie Versanddetails hinzu",
+    "missingPaymentMethod": "zahlungsart auswählen"
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "categories": {
+    "howToBuy": {
+      "label": "How to buy",
+      "subcategories": {
+        "paymentMethods": "Payment methods",
+        "orderPickup": "Order pickup",
+        "purchaseStatus": "Purchase status",
+        "trackOrders": "Track orders",
+        "returns": "Returns"
+      }
+    },
+    "help": {
+      "label": "Help",
+      "subcategories": {
+        "helpCenter": "Help center",
+        "securityFraud": "Security & fraud",
+        "feedback": "Feedback",
+        "contact": "Contact"
+      }
+    },
+    "services": {
+      "label": "Services",
+      "subcategories": {
+        "giftCards": "Gift cards",
+        "storeLocator": "Store Locator",
+        "clickCollect": "Click & Collect",
+        "sameDayDelivery": "Same Day Delivery",
+        "shippingDelivery": "Shipping & Delivery",
+        "couponsDiscounts": "Coupons & Discounts",
+        "newsletter": "Newsletter"
+      }
+    },
+    "about": {
+      "label": "About",
+      "subcategories": {
+        "aboutUs": "About us",
+        "jobs": "Jobs",
+        "pressCenter": "Press Center",
+        "affiliateProgram": "Affiliate program",
+        "suppliers": "Suppliers"
+      }
+    }
+  },
+  "contactOptions": {
+    "helpCenter": {
+      "label": "Help center",
+      "details": {
+        "description": "Find answers online anytime"
+      }
+    },
+    "liveChat": {
+      "label": "Live chat",
+      "details": {
+        "openingHours-1": "Mon–Fri, 5am–10pm PT",
+        "openingHours-2": "Sat–Sun, 6am–9pm PT"
+      }
+    },
+    "phone": {
+      "label": "1 234 567 8901",
+      "details": {
+        "openingHours-1": "Mon–Fri, 5am–10pm PT",
+        "openingHours-2": "Sat–Sun, 6am–9pm PT"
+      }
+    }
+  },
+  "bottomLinks": {
+    "terms": "Terms",
+    "privacyPolicy": "Privacy policy"
+  },
+  "socialLabel": "Go to {{label}} page"
+}
