@@ -4,7 +4,7 @@ import { bottomLinks, categories, companyName, contactOptions, socialMedia } fro
 import classNames from 'classnames';
 import { useTranslation } from 'next-i18next';
 
-export function Footer({ className }: { className?: string }): JSX.Element {
+export function Footer({ className = '' }: { className?: string }): JSX.Element {
   const { t } = useTranslation('footer');
 
   return (
@@ -33,7 +33,10 @@ export function Footer({ className }: { className?: string }): JSX.Element {
         {contactOptions.map(({ icon, link, details, key }) => (
           <div key={key} className="mx-auto my-4 text-center flex flex-col items-center">
             {icon}
-            <Link href={link} className="font-medium leading-7 text-neutral-900 text-lg py-1 my-2">
+            <Link
+              href={link}
+              className="py-1 my-2 font-medium typography-text-lg font-body no-underline text-neutral-600 hover:underline hover:!text-neutral-900 active:underline active:!text-neutral-900"
+            >
               {t(`contactOptions.${key}.label`)}
             </Link>
             {details?.map((option) => (
@@ -60,18 +63,20 @@ export function Footer({ className }: { className?: string }): JSX.Element {
           </div>
           <div className="flex justify-center gap-6 my-6 lg:ml-auto lg:my-0">
             {bottomLinks.map(({ link, key }) => (
-              <Link key={key} href={link}>
+              <Link
+                key={key}
+                href={link}
+                className="text-white no-underline typography-text-sm active:text-white active:underline hover:text-white hover:underline"
+              >
                 {t(`bottomLinks.${key}`)}
               </Link>
             ))}
           </div>
-          <p className="text-center text-white/50 lg:ml-6">{companyName}</p>
+          <p className="flex items-center justify-center leading-5 text-center typography-text-sm text-white/50 font-body md:ml-6">
+            {companyName}
+          </p>
         </div>
       </div>
     </footer>
   );
 }
-
-Footer.defaultProps = {
-  className: '',
-};
