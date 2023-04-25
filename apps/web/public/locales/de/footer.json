@@ -1,0 +1,72 @@
+{
+  "categories": {
+    "howToBuy": {
+      "label": "Wie kauft man",
+      "subcategories": {
+        "paymentMethods": "Zahlungsmethoden",
+        "orderPickup": "Abholung bestellen",
+        "purchaseStatus": "Kaufstatus",
+        "trackOrders": "Bestellungen verfolgen",
+        "returns": "Retouren"
+      }
+    },
+    "help": {
+      "label": "Hilfe",
+      "subcategories": {
+        "helpCenter": "Hilfezentrum",
+        "securityFraud": "Sicherheit & Betrug",
+        "feedback": "Feedback",
+        "contact": "Kontaktiere"
+      }
+    },
+    "services": {
+      "label": "Dienstleistungen",
+      "subcategories": {
+        "giftCards": "Geschenkkarten",
+        "storeLocator": "Händlersuche",
+        "clickCollect": "Klicken & Sammeln",
+        "sameDayDelivery": "Lieferung am selben Tag",
+        "shippingDelivery": "Versand & Lieferung",
+        "couponsDiscounts": "Gutscheine & Rabatte",
+        "newsletter": "Newsletter"
+      }
+    },
+    "about": {
+      "label": "Um",
+      "subcategories": {
+        "aboutUs": "Über uns",
+        "jobs": "Arbeitsplätze",
+        "pressCenter": "Pressezentrum",
+        "affiliateProgram": "Partnerprogramm",
+        "suppliers": "Lieferanten"
+      }
+    }
+  },
+  "contactOptions": {
+    "helpCenter": {
+      "label": "Hilfezentrum",
+      "details": {
+        "description": "Antworten jederzeit online finden"
+      }
+    },
+    "liveChat": {
+      "label": "Live-Chat",
+      "details": {
+        "openingHours-1": "Mo–Fr, 5–22 Uhr PT",
+        "openingHours-2": "Sa–So, 6:00–21:00 Uhr PT"
+      }
+    },
+    "phone": {
+      "label": "1 234 567 8901",
+      "details": {
+        "openingHours-1": "Mo–Fr, 5–22 Uhr PT",
+        "openingHours-2": "Sa–So, 6:00–21:00 Uhr PT"
+      }
+    }
+  },
+  "bottomLinks": {
+    "terms": "Bedingungen",
+    "privacyPolicy": "Datenschutzrichtlinie"
+  },
+  "socialLabel": "Gehe zu {{label}} Seite"
+}

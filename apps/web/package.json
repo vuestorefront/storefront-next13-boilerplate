@@ -17,10 +17,13 @@
     "@storefront-ui/shared": "^2.1.0",
     "@vsf-enterprise/sdk": "^1.0.0",
     "classnames": "^2.3.2",
+    "i18next": "^22.4.15",
     "next": "13.3.0",
+    "next-i18next": "^13.2.2",
     "next-pwa": "^5.6.0",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "react-i18next": "^12.2.2"
   },
   "devDependencies": {
     "@storefront-ui/typography": "^2.1.0",

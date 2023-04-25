@@ -1,0 +1,21 @@
+{
+  "myCart": "Mein Warenkorb",
+  "orderSummary": "Bestellübersicht",
+  "itemsInCart": "(Artikel: {{count}})",
+  "itemsSubtotal": "Artikel-Zwischensumme",
+  "originalPrice": "Original Preis",
+  "savings": "Ersparnisse",
+  "estimatedTax": "Geschätzte Umsatzsteuer",
+  "apply": "Anwenden",
+  "total": "Gesamt",
+  "goToCheckout": "Zum Checkout gehen",
+  "savingsTag": "Du sparst {{amount}} bei deiner heutigen Bestellung!",
+  "promoCodePlaceholder": "Aktionscode eingeben",
+  "delivery": "Lieferung",
+  "promoCode": "Promo-Code",
+  "remove": "Entfernen",
+  "emptyCart": "Ihr Warenkorb ist leer",
+  "emptyCartImgAlt": "leeres Einkaufswagenbild",
+  "backToShopping": "Zurück zum Einkaufen",
+  "back": "Zurück"
+}

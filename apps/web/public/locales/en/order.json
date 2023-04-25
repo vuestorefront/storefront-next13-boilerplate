@@ -1,0 +1,11 @@
+{
+  "failedInfo": "<0>We are really sorry.</0> <1>Your order has not been completed.</1>",
+  "successInfo": "<0>Thank you!</0> <1>Your order was completed successfully.</1>",
+  "etaDelivery": "Estimated delivery time",
+  "shippingAddress": "Shipping address",
+  "somethingWentWrongImageAlt": "something went wrong image",
+  "orderSuccessfulImageAlt": "order successful image",
+  "backToCheckout": "Back to Checkout",
+  "continueShopping": "Continue shopping",
+  "orderErrorMessage": "Something went wrong. Try again later."
+}

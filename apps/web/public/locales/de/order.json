@@ -1,0 +1,11 @@
+{
+  "failedInfo": "<0>Es tut uns wirklich leid.</0> <1>Ihre Bestellung wurde nicht abgeschlossen.</1>",
+  "successInfo": "<0>Danke!</0> <1>Ihre Bestellung wurde erfolgreich abgeschlossen.</1>",
+  "etaDelivery": "Voraussichtliche Lieferzeit",
+  "shippingAddress": "Lieferanschrift",
+  "somethingWentWrongImageAlt": "Etwas ging schief im Bild",
+  "orderSuccessfulImageAlt": "Etwas ging schief im Bild",
+  "backToCheckout": "Zurück zur Kasse",
+  "continueShopping": "Mit dem Einkaufen fortfahren",
+  "orderErrorMessage": "Etwas ist schief gelaufen. Versuchen Sie es später noch einmal."
+}

@@ -13,3 +13,8 @@ Object.defineProperty(window, 'matchMedia', {
     dispatchEvent: jest.fn(),
   })),
 });
+
+jest.mock('next-i18next', () => ({
+  useTranslation: () => ({ t: (key: string) => key, i18n: { language: 'en' } }),
+  Trans: ({ children }: any) => children,
+}));

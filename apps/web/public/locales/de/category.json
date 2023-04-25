@@ -1,0 +1,32 @@
+{
+  "allFromCategory": "Alle {{name}}",
+  "category": "Kategorie",
+  "listSettings": "Listeneinstellungen",
+  "closeListSettings": "Listeneinstellungen schließen",
+  "clearFilters": "Alle Filter löschen",
+  "showProducts": "Produkte zeigen",
+  "showMore": "Zeig mehr",
+  "showLess": "Zeige weniger",
+  "filters": "Filter",
+  "allProducts": "Alle produkte",
+  "sortBy": "Sortieren nach",
+  "sortType": {
+    "latest": "Eueste",
+    "priceUp": "Preis Niedrig bis Hoch",
+    "priceDown": "Preis Hoch bis Niedrig",
+    "relevance": "Relevanz"
+  },
+  "numberOfProducts_one": "{{count}} Produkt",
+  "numberOfProducts_other": "{{count}} Produkte",
+  "prev": "Vorherige",
+  "next": "Nächste",
+  "emptyStateText": "Wir haben keine Produkte mehr in dieser Kategorie.",
+  "emptyStateText2": "Haben Sie nicht gefunden, wonach Sie suchen?",
+  "emptyStateAltText": "Bild für keine Produkte gefunden",
+  "resultsFor": "Ergebnisse für \"{{phrase}}\"",
+  "prevAriaLabel": "Zurück zur letzten Seite",
+  "nextAriaLabel": "Gehen Sie zur nächsten Seite",
+  "secondPageAriaLabel": "Zweite Seite",
+  "lastPageAriaLabel": "Letzte Seite",
+  "currentPage": "Seite {{page}} von {{totalPages}}"
+}

@@ -3,8 +3,9 @@ import Head from 'next/head';
 import { fontBody, fontHeadings } from '@/styles/fonts';
 import '@/styles/globals.scss';
 import classnames from 'classnames';
+import { appWithTranslation } from 'next-i18next';
 
-export default function App({ Component, pageProps }: AppProps) {
+function App({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head>
@@ -18,3 +19,5 @@ export default function App({ Component, pageProps }: AppProps) {
     </>
   );
 }
+
+export default appWithTranslation(App);
