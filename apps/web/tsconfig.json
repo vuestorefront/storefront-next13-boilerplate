@@ -15,7 +15,8 @@
     "jsx": "preserve",
     "incremental": true,
     "paths": {
-      "@/*": ["./*"]
+      "@/*": ["./*"],
+      "~/*": ["./*"],
     },
     "types": ["jest", "@testing-library/jest-dom", "@vsf-enterprise/sdk"]
   },

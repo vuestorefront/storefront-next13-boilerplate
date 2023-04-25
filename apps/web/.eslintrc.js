@@ -6,5 +6,8 @@ module.exports = {
   },
   rules: {
     'max-len': ['warn', { code: 120, ignoreStrings: true, ignoreUrls: true, ignoreTemplateLiterals: true }],
+    'max-lines-per-function': ['error', { max: 120, skipBlankLines: true }],
+    'unicorn/no-keyword-prefix': ['error', { disallowedPrefixes: ['new', 'for'] }],
+    'react/display-name': 'off',
   },
 };
