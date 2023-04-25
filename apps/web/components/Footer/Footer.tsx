@@ -1,4 +1,5 @@
-import { Divider, Link } from '@/components/';
+import Link from 'next/link';
+import { Divider } from '@/components/';
 import { bottomLinks, categories, companyName, contactOptions, socialMedia } from '@/mocks/footerData';
 import classNames from 'classnames';
 import { useTranslation } from 'next-i18next';
