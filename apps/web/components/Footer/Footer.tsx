@@ -1,5 +1,5 @@
 import { Divider, Link } from '@/components/';
-import { bottomLinks, categories, companyName, contactOptions, socialMedia } from '@/public/static/footerData';
+import { bottomLinks, categories, companyName, contactOptions, socialMedia } from '@/mocks/footerData';
 import classNames from 'classnames';
 import { useTranslation } from 'next-i18next';
 
