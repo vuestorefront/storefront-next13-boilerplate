@@ -6,5 +6,6 @@ module.exports = {
   },
   rules: {
     'max-len': ['warn', { code: 120, ignoreStrings: true, ignoreUrls: true, ignoreTemplateLiterals: true }],
+    'unicorn/no-keyword-prefix': 0,
   },
 };
