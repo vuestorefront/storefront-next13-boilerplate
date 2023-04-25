@@ -1,6 +1,6 @@
 import { render, within } from '@testing-library/react';
 import { Footer } from '@/components';
-import { bottomLinks, categories, companyName, contactOptions, socialMedia } from '@/static/footerData';
+import { bottomLinks, categories, companyName, contactOptions, socialMedia } from '@/public/static/footerData';
 
 describe('<Footer />', () => {
   it('should render component', () => {
