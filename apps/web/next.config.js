@@ -1,4 +1,11 @@
 const { i18n } = require('./next-i18next.config');
+const withPwa = require('next-pwa')({
+  dest: 'public',
+  disable: process.env.NODE_ENV === 'development',
+  publicExcludes: ['!**/*', '*.ico', 'manifest.json'],
+  buildExcludes: [() => true],
+  mode: process.env.DEBUG_WORKBOX === 'true' ? 'development' : 'production',
+});
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -11,4 +18,4 @@ const nextConfig = {
   i18n,
 };
 
-module.exports = nextConfig;
+module.exports = withPwa(nextConfig);
