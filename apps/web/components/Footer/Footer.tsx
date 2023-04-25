@@ -1,5 +1,4 @@
-import Link from 'next/link';
-import { Divider } from '@/components/';
+import { Divider, Link } from '@/components/';
 import { bottomLinks, categories, companyName, contactOptions, socialMedia } from '@/static/footerData';
 import classNames from 'classnames';
 import { useTranslation } from 'next-i18next';
@@ -51,7 +50,7 @@ export function Footer({ className }: { className?: string }): JSX.Element {
               <Link
                 key={label}
                 href={link}
-                className="hover:bg-neutral-500 hover:shadow-[0_0_0_8px] hover:shadow-neutral-500 rounded-full"
+                className="hover:bg-neutral-500 hover:shadow-[0_0_0_8px] hover:shadow-neutral-500 rounded-sm"
                 data-testid={label}
               >
                 {icon}
