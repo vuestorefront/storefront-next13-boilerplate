@@ -15,6 +15,7 @@
   "dependencies": {
     "@storefront-ui/react": "^2.1.0",
     "@storefront-ui/shared": "^2.1.0",
+    "@vsf-enterprise/integration-boilerplate-sdk": "link:../../../sdk-module-mock",
     "@vsf-enterprise/sdk": "^1.0.0",
     "classnames": "^2.3.2",
     "i18next": "^22.4.15",
