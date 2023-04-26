@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { SfChip } from '@storefront-ui/react';
+import { SfChip, SfThumbnail } from '@storefront-ui/react';
 import { useTranslation } from 'next-i18next';
 
 const colors = [
@@ -43,16 +43,7 @@ export function ShoppingDetails(): JSX.Element {
           {colors.map(({ value, label }) => (
             <div key={label} className="mr-2 mb-2 inline-block">
               <SfChip
-                slotPrefix={
-                  <svg
-                    className="w-5 h-5 fill-neutral-500"
-                    viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg"
-                    style={{ fill: value }}
-                  >
-                    <path d="M22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12Z" />
-                  </svg>
-                }
+                slotPrefix={<SfThumbnail size="sm" style={{ background: value }} />}
                 size="sm"
                 inputProps={{
                   checked: value === attributes.color,
