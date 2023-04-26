@@ -1,4 +1,5 @@
 import { useRouter } from 'next/router';
+import { Search } from '@/components';
 import { useLockBodyScroll } from '@/hooks';
 import {
   SfIconClose,
@@ -11,8 +12,6 @@ import {
 } from '@storefront-ui/react';
 import classNames from 'classnames';
 import { useTranslation } from 'next-i18next';
-
-// @TODO: add Search when SFUI block will be ready https://github.com/vuestorefront/storefront-ui/pull/2630
 
 const items = [
   {
@@ -40,7 +39,7 @@ const items = [
   },
 ];
 
-export function NavbarBottom() {
+export function BottomNav() {
   const { t } = useTranslation();
   const router = useRouter();
   const { isOpen, open, close } = useLockBodyScroll();
@@ -83,15 +82,15 @@ export function NavbarBottom() {
           role="dialog"
           aria-labelledby="search-modal-title"
         >
-          <header>
-            <SfButton square variant="tertiary" className="absolute right-2 top-2" onClick={close}>
+          <header className="mb-4">
+            <SfButton square variant="tertiary" className="absolute right-4 top-2" onClick={close}>
               <SfIconClose className="text-neutral-500" />
             </SfButton>
-            <h3 id="search-modal-title" className="absolute left-4 top-4 font-bold typography-headline-4 mb-4">
+            <h3 id="search-modal-title" className="absolute left-6 top-4 font-bold typography-headline-4 mb-4">
               {t('search')}
             </h3>
           </header>
-          {/*<SearchBox onAfterSearch={close} />*/}
+          <Search />
         </SfModal>
       )}
     </>

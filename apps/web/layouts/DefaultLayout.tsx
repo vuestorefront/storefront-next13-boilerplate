@@ -1,13 +1,13 @@
 import type { PropsWithChildren } from 'react';
-import { Footer, NavbarBottom, ScrollToTopButton } from '@/components';
+import { Footer, BottomNav, ScrollToTopButton, NavbarTop } from '@/components';
 
 export function DefaultLayout({ children }: PropsWithChildren): JSX.Element {
   return (
     <>
-      {/*<NavbarTop />*/}
+      <NavbarTop />
       {/*<Breadcrumbs />*/}
       <main>{children}</main>
-      <NavbarBottom />
+      <BottomNav />
       <ScrollToTopButton />
       <Footer className="mb-[58px] md:mb-0" />
       {/*<Notifications />*/}

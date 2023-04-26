@@ -1,5 +1,5 @@
 import type { PropsWithChildren } from 'react';
-import { Footer } from '@/components';
+import { Footer, NavbarTop } from '@/components';
 
 interface CheckoutLayoutProps extends PropsWithChildren {
   heading: string;
@@ -10,7 +10,7 @@ interface CheckoutLayoutProps extends PropsWithChildren {
 export function CheckoutLayout({ backLabel, backHref, children, heading }: CheckoutLayoutProps): JSX.Element {
   return (
     <>
-      {/*<NavbarTop />*/}
+      <NavbarTop />
       <main data-testid="checkout-layout">
         {/*<NarrowContainer>*/}
         <div data-testid="cart-page" className="px-4 md:px-0 mb-20">
