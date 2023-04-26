@@ -1,5 +1,4 @@
 import { useRouter } from 'next/router';
-import { Badge } from '@/components';
 import { useLockBodyScroll } from '@/hooks';
 import {
   SfIconClose,
@@ -15,7 +14,7 @@ import { useTranslation } from 'next-i18next';
 
 // @TODO: add Search when SFUI block will be ready https://github.com/vuestorefront/storefront-ui/pull/2630
 
-const getItems = (cartLineItemsCount?: number) => [
+const items = [
   {
     key: 'home',
     icon: <SfIconHome />,
@@ -35,17 +34,7 @@ const getItems = (cartLineItemsCount?: number) => [
   },
   {
     key: 'cart',
-    icon: (
-      <Badge
-        bordered
-        value={cartLineItemsCount}
-        invisible={cartLineItemsCount === 0}
-        className="text-neutral-900 bg-white"
-        data-testid="cart-badge"
-      >
-        <SfIconShoppingCart />
-      </Badge>
-    ),
+    icon: <SfIconShoppingCart />,
     path: '/cart',
     pathname: '/cart',
   },
@@ -55,7 +44,6 @@ export function NavbarBottom() {
   const { t } = useTranslation();
   const router = useRouter();
   const { isOpen, open, close } = useLockBodyScroll();
-  const cartLineItemsCount = 0;
 
   return (
     <>
@@ -63,7 +51,7 @@ export function NavbarBottom() {
         className="z-50 w-full fixed bottom-0 left-0 flex flex-row items-stretch md:hidden"
         data-testid="navbar-bottom"
       >
-        {getItems(cartLineItemsCount).map(({ path, key, icon, pathname }) => (
+        {items.map(({ path, key, icon, pathname }) => (
           <SfButton
             key={key}
             variant="tertiary"
