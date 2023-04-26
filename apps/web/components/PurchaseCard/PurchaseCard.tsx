@@ -1,5 +1,6 @@
 import { useId, ChangeEvent } from 'react';
 import { useCounter } from 'react-use';
+import { getProductMock } from '@/mocks/product';
 import {
   SfRating,
   SfButton,
@@ -18,6 +19,8 @@ import {
 } from '@storefront-ui/react';
 import { clamp } from '@storefront-ui/shared';
 
+const product = getProductMock(1)[0];
+
 export function PurchaseCard() {
   const inputId = useId();
   const min = 1;
@@ -34,26 +37,18 @@ export function PurchaseCard() {
         <SfIconSell size="sm" className="mr-1.5" />
         Sale
       </div>
-      <h1 className="mb-1 font-bold typography-headline-4">
-        Athletic Mens Walking Sneakers Athletic Shoes Breathable Knit
-      </h1>
-      <strong className="block font-bold typography-headline-3">$2,345.99</strong>
+      <h1 className="mb-1 font-bold typography-headline-4">{product.name}</h1>
+      <strong className="block font-bold typography-headline-3">${product.price}</strong>
       <div className="inline-flex items-center mt-4 mb-2">
-        <SfRating size="xs" value={3} max={5} />
+        <SfRating size="xs" value={product.rating} max={5} />
         <SfCounter className="ml-1" size="xs">
-          123
+          {product.reviews}
         </SfCounter>
         <SfLink href="#" variant="secondary" className="ml-2 text-xs text-neutral-500">
-          123 reviews
+          {product.reviews} reviews
         </SfLink>
       </div>
-      <ul className="mb-4 font-normal typography-text-sm">
-        <li>Stretch mesh upper for breathability</li>
-        <li>Lightweight</li>
-        <li>Non slip</li>
-        <li>Flexiable outsole</li>
-        <li>Easy to wear on and off</li>
-      </ul>
+      <p className="mb-4 font-normal typography-text-sm">{product.description}</p>
       <div className="py-4 mb-4 border-gray-200 border-y">
         <div className="bg-primary-100 text-primary-700 flex justify-center gap-1.5 py-1.5 typography-text-sm items-center mb-4 rounded-md">
           <SfIconShoppingCartCheckout />1 in cart

@@ -1,7 +1,10 @@
 import { useState } from 'react';
+import { getReviewMock } from '@/mocks/product';
 import { SfAccordionItem, SfIconExpandLess } from '@storefront-ui/react';
 import { useTranslation } from 'next-i18next';
 import { Divider, Review } from '~/components/ui';
+
+const reviews = getReviewMock(5);
 
 export function ProductAccordion() {
   const { t } = useTranslation('product');
@@ -52,8 +55,8 @@ export function ProductAccordion() {
       >
         <div className="py-2">
           <div className="text-neutral-900 px-4" data-testid="customerReviews">
-            {Array.from({ length: 5 }).map((_, index) => (
-              <Review key={index} />
+            {reviews.map((review) => (
+              <Review {...review} key={review.id} />
             ))}
           </div>
         </div>

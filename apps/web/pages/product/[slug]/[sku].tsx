@@ -1,6 +1,7 @@
 import { GetServerSidePropsContext } from 'next';
 import Head from 'next/head';
 import { ProductAccordion } from '@/components/ProductAccordion';
+import { getProductMock } from '@/mocks/product';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { Divider, NarrowContainer, PurchaseCard, Gallery, ShoppingDetails, ProductSlider } from '~/components';
 import { DefaultLayout } from '~/layouts';
@@ -12,6 +13,8 @@ export async function getServerSideProps({ locale }: GetServerSidePropsContext) 
     },
   };
 }
+
+const products = getProductMock(8);
 
 export function ProductPage() {
   const images = [
@@ -41,7 +44,7 @@ export function ProductPage() {
           <Divider className="mt-4 mb-2" />
         </div>
         <section className="mx-4 mt-28 mb-20" id="recommended-products">
-          <ProductSlider />
+          <ProductSlider products={products} />
         </section>
       </NarrowContainer>
     </DefaultLayout>
