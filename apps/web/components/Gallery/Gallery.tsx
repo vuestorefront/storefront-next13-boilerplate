@@ -1,8 +1,7 @@
 import { useState } from 'react';
-import { useTimeoutFn } from 'react-use';
 import Image from 'next/legacy/image';
 import { SfButton, SfIconChevronLeft, SfIconChevronRight, SfScrollable } from '@storefront-ui/react';
-import { SfScrollableOnScrollData, clamp } from '@storefront-ui/shared';
+import { clamp } from '@storefront-ui/shared';
 import classNames from 'classnames';
 import { useTranslation } from 'next-i18next';
 import { GalleryProps } from './types';
@@ -10,20 +9,11 @@ import { GalleryProps } from './types';
 export function Gallery({ images, className, ...attributes }: GalleryProps) {
   const { t } = useTranslation('product');
   const [activeIndex, setActiveIndex] = useState(0);
-  const [isReady, cancel, reset] = useTimeoutFn(() => {}, 50);
 
   const imagesCount = images.length;
 
   const onChangeIndex = (index: number) => {
-    cancel();
     setActiveIndex(() => clamp(index, 0, imagesCount - 1));
-    reset();
-  };
-
-  const onScroll = ({ left, scrollWidth }: SfScrollableOnScrollData) => {
-    if (isReady()) {
-      onChangeIndex(Math.round(left / (scrollWidth / imagesCount)));
-    }
   };
 
   return (
@@ -39,23 +29,22 @@ export function Gallery({ images, className, ...attributes }: GalleryProps) {
           {t('gallery.count', { current: activeIndex + 1, total: imagesCount })}
         </div>
         <SfScrollable
-          className="items-center flex snap-x snap-mandatory scrollbar-hidden w-full h-full"
+          className="items-center flex snap-x snap-mandatory [&::-webkit-scrollbar]:hidden [-ms-overflow-style:'none'] [scrollbar-width:'none'] w-full h-full"
           wrapperClassNames="!absolute top-0 left-0 w-full h-full"
           buttonsPlacement="none"
           activeIndex={activeIndex.toString() as any}
-          onScroll={onScroll}
         >
           {images.map((image, index) => (
-            <div className="w-full h-full relative snap-center snap-always basis-full shrink-0 grow" key={image}>
+            <div className="w-full h-full relative snap-center snap-always basis-full shrink-0 grow" key={image.alt}>
               <Image
-                alt={t('gallery.image', { index: index + 1 })}
+                alt={image.alt}
                 aria-hidden={activeIndex !== index}
                 layout="fill"
                 className="object-contain"
                 priority={index === 0}
                 quality={80}
                 draggable={false}
-                src={image}
+                src={image.src}
                 sizes="(max-width: 1023px) 100vw, 700px"
                 crossOrigin="anonymous"
               />
@@ -68,7 +57,7 @@ export function Gallery({ images, className, ...attributes }: GalleryProps) {
           wrapperClassNames="hidden md:inline-flex"
           buttonsPlacement="floating"
           direction="vertical"
-          className="flex-row w-full items-center md:flex-col md:h-full md:px-0 md:scroll-pl-4 snap-y snap-mandatory flex gap-0.5 md:gap-2 overflow-auto scrollbar-hidden"
+          className="flex-row w-full items-center md:flex-col md:h-full md:px-0 md:scroll-pl-4 snap-y snap-mandatory flex gap-0.5 md:gap-2 overflow-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:'none'] [scrollbar-width:'none']"
           activeIndex={activeIndex}
           previousDisabled={activeIndex === 0}
           nextDisabled={activeIndex === imagesCount - 1}
@@ -95,7 +84,7 @@ export function Gallery({ images, className, ...attributes }: GalleryProps) {
         >
           {images.map((image, index) => (
             <button
-              key={image}
+              key={image.alt}
               type="button"
               aria-current={activeIndex === index}
               aria-label={t('gallery.thumb', { index: index + 1 })}
@@ -112,7 +101,7 @@ export function Gallery({ images, className, ...attributes }: GalleryProps) {
                 layout="fixed"
                 width="80"
                 height="80"
-                src={image}
+                src={image.src}
                 quality={80}
                 crossOrigin="anonymous"
               />
@@ -122,7 +111,7 @@ export function Gallery({ images, className, ...attributes }: GalleryProps) {
         <div className="flex md:hidden gap-0.5" role="group">
           {images.map((image, index) => (
             <button
-              key={image}
+              key={image.alt}
               type="button"
               aria-current={activeIndex === index}
               aria-label={t('gallery.thumb', { index: index + 1 })}

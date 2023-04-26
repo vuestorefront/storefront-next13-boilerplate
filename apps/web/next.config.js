@@ -14,6 +14,11 @@ const nextConfig = {
     ignoreDuringBuilds: true,
     dirs: ['components', 'hooks', 'layouts', 'pages', 'sdk', 'utils'],
   },
+  images: {
+    imageSizes: [64, 96, 128, 160, 256, 384],
+    deviceSizes: [640, 750],
+  },
+
   transpilePackages: ['@storefront-ui/react'],
   i18n,
 };

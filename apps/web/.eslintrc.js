@@ -11,5 +11,6 @@ module.exports = {
     'react/display-name': 'off',
     'unicorn/filename-case': 'off',
     '@typescript-eslint/no-empty-function': ['error', { allow: ['arrowFunctions'] }],
+    complexity: 0,
   },
 };
