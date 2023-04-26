@@ -1,5 +1,5 @@
 import { SfScrollable } from '@storefront-ui/react';
-import ProductCard from '../ProductCard/ProductCard';
+import { ProductCard } from '~/components';
 
 export function ProductSlider() {
   return (

@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import { SfButton, SfRating, SfCounter, SfLink, SfIconShoppingCart } from '@storefront-ui/react';
 
-export default function ProductCard() {
+export function ProductCard() {
   return (
     <div className="border border-neutral-200 rounded-md hover:shadow-lg flex-auto flex-shrink-0 max-w-[192px]">
       <div className="relative">
