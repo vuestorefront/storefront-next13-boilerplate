@@ -1,10 +1,4 @@
-import { createContext } from 'react';
 import '@testing-library/jest-dom/extend-expect';
-
-// https://github.com/vercel/next.js/issues/43769
-jest.mock('next/dist/shared/lib/router-context.js', () => ({
-  RouterContext: createContext(true),
-}));
 
 Object.defineProperty(window, 'matchMedia', {
   writable: true,
