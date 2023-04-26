@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { Search, VsfLogo } from '@/components';
-import { SfIconShoppingCart, SfIconExpandMore, SfButton } from '@storefront-ui/react';
+import { SfIconShoppingCart, SfIconFavorite, SfIconPerson, SfIconExpandMore, SfButton } from '@storefront-ui/react';
 
 export function NavbarTop() {
   const actionItems = [
@@ -9,6 +9,18 @@ export function NavbarTop() {
       label: '',
       ariaLabel: 'Cart',
       role: 'button',
+    },
+    {
+      icon: <SfIconFavorite />,
+      label: '',
+      ariaLabel: 'Wishlist',
+      role: 'button',
+    },
+    {
+      label: 'Log in',
+      icon: <SfIconPerson />,
+      ariaLabel: 'Log in',
+      role: 'login',
     },
   ];
 
