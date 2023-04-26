@@ -55,13 +55,9 @@ const getItems = (cartLineItemsCount?: number) => [
 export function NavbarBottom() {
   const { t } = useTranslation();
   const router = useRouter();
-  // @TODO: uncomment when cart is ready
-  // const { data: cart } = useCart();
   const isTabletScreen = useMedia('(min-width: 768px)', false);
   const { isOpen, open, close } = useLockBodyScroll();
-
-  // @TODO: uncomment when cart is ready
-  // const cartLineItemsCount = cart?.lineItems.reduce((acc, { quantity }) => acc + quantity, 0) ?? 0;
+  const cartLineItemsCount = 0;
 
   if (isTabletScreen && isOpen) {
     close();
@@ -73,7 +69,7 @@ export function NavbarBottom() {
         className="z-50 w-full fixed bottom-0 left-0 flex flex-row items-stretch md:hidden"
         data-testid="navbar-bottom"
       >
-        {getItems(0).map(({ path, key, icon, pathname }) => (
+        {getItems(cartLineItemsCount).map(({ path, key, icon, pathname }) => (
           <SfButton
             key={key}
             variant="tertiary"
