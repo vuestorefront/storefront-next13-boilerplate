@@ -1,26 +1,16 @@
 import Link from 'next/link';
 import { Search, VsfLogo } from '@/components';
-import { SfIconShoppingCart, SfIconFavorite, SfIconPerson, SfIconExpandMore, SfButton } from '@storefront-ui/react';
+import { SfIconShoppingCart, SfIconExpandMore, SfButton } from '@storefront-ui/react';
+import { useTranslation } from 'next-i18next';
 
 export function NavbarTop() {
+  const { t } = useTranslation();
   const actionItems = [
     {
       icon: <SfIconShoppingCart />,
       label: '',
       ariaLabel: 'Cart',
       role: 'button',
-    },
-    {
-      icon: <SfIconFavorite />,
-      label: '',
-      ariaLabel: 'Wishlist',
-      role: 'button',
-    },
-    {
-      label: 'Log in',
-      icon: <SfIconPerson />,
-      ariaLabel: 'Log in',
-      role: 'login',
     },
   ];
 
@@ -37,7 +27,7 @@ export function NavbarTop() {
             slotSuffix={<SfIconExpandMore />}
             variant="tertiary"
           >
-            <span>Browse products</span>
+            <span>{t('allProductsLinkText')}</span>
           </SfButton>
           <Search className="hidden md:block flex-1" />
           <nav className="hidden md:flex md:flex-row md:flex-nowrap">
@@ -50,7 +40,7 @@ export function NavbarTop() {
                 slotPrefix={actionItem.icon}
                 square
               >
-                {actionItem.role === 'login' && <p className="hidden md:inline-flex">{actionItem.label}</p>}
+                {actionItem.role === 'login' && <p className="hidden md:inline-flex">{t(actionItem.label)}</p>}
               </SfButton>
             ))}
           </nav>
