@@ -1,4 +1,5 @@
 import type { PropsWithChildren } from 'react';
+import { Footer } from '@/components';
 
 interface CheckoutLayoutProps extends PropsWithChildren {
   heading: string;
@@ -49,7 +50,7 @@ export function CheckoutLayout({ backLabel, backHref, children, heading }: Check
         </div>
         {/*</NarrowContainer>*/}
       </main>
-      {/*<Footer />*/}
+      <Footer />
       {/*<Notifications />*/}
     </>
   );
