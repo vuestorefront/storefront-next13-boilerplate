@@ -1,4 +1,3 @@
-import { useMedia } from 'react-use';
 import { useRouter } from 'next/router';
 import { Badge } from '@/components';
 import { useLockBodyScroll } from '@/hooks';
@@ -55,13 +54,8 @@ const getItems = (cartLineItemsCount?: number) => [
 export function NavbarBottom() {
   const { t } = useTranslation();
   const router = useRouter();
-  const isTabletScreen = useMedia('(min-width: 768px)', false);
   const { isOpen, open, close } = useLockBodyScroll();
   const cartLineItemsCount = 0;
-
-  if (isTabletScreen && isOpen) {
-    close();
-  }
 
   return (
     <>
