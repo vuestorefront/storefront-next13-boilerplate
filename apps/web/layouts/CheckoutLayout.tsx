@@ -1,6 +1,6 @@
 import type { PropsWithChildren } from 'react';
 import NextLink from 'next/link';
-import { NarrowContainer, Footer } from '@/components';
+import { NarrowContainer, Footer, NavbarTop } from '@/components';
 import { useCart } from '@/hooks';
 import { SfButton, SfIconArrowBack, SfLoaderCircular } from '@storefront-ui/react';
 
@@ -15,7 +15,7 @@ export function CheckoutLayout({ backLabel, backHref, children, heading }: Check
 
   return (
     <>
-      {/*<NavbarTop />*/}
+      <NavbarTop />
       <main data-testid="checkout-layout">
         <NarrowContainer>
           <div data-testid="cart-page" className="px-4 md:px-0 mb-20">

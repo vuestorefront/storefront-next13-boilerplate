@@ -1,5 +1,5 @@
 import { act, renderHook } from '@testing-library/react';
-import { useLockBodyScroll } from '~/hooks';
+import { useLockBodyScroll } from '@/hooks';
 
 describe('useLockBodyScroll', () => {
   it('should change isOpen', () => {

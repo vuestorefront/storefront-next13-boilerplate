@@ -9,5 +9,6 @@ module.exports = {
     'max-lines-per-function': 'off',
     'unicorn/no-keyword-prefix': ['error', { disallowedPrefixes: ['new', 'for'] }],
     'react/display-name': 'off',
+    'no-secrets/no-secrets': 'off',
   },
 };
