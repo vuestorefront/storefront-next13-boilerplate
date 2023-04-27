@@ -18,3 +18,11 @@ jest.mock('next-i18next', () => ({
   useTranslation: () => ({ t: (key: string) => key, i18n: { language: 'en' } }),
   Trans: ({ children }: any) => children,
 }));
+
+/* eslint-disable @typescript-eslint/no-empty-function */
+window.ResizeObserver = class ResizeObserver {
+  observe() {}
+  unobserve() {}
+  disconnect() {}
+};
+/* eslint-enable */
