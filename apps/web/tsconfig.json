@@ -16,10 +16,11 @@
     "incremental": true,
     "paths": {
       "@/*": ["./*"],
-      "~/*": ["./*"],
+      "~/*": ["./*"]
     },
     "types": ["jest", "@testing-library/jest-dom", "@vsf-enterprise/sdk"]
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
-  "exclude": ["node_modules", "mocks"]
+  "exclude": ["node_modules", "mocks"],
+  "files": ["globals.d.ts"]
 }

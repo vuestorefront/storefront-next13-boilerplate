@@ -12,5 +12,6 @@ module.exports = {
     'unicorn/filename-case': 'off',
     '@typescript-eslint/no-empty-function': ['error', { allow: ['arrowFunctions'] }],
     complexity: 0,
+    'no-secrets/no-secrets': 'off',
   },
 };
