@@ -1,7 +1,6 @@
-import type { PropsWithChildren } from 'react';
 import { Footer, NavbarTop } from '@/components';
 
-export function OrderLayout({ children }: PropsWithChildren): JSX.Element {
+export function OrderLayout(): JSX.Element {
   return (
     <>
       <NavbarTop />
