@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
+import { CartProvider } from '@/hooks';
 import { fontBody, fontHeadings } from '@/styles/fonts';
 import '@/styles/globals.scss';
 import { Hydrate, QueryClient, QueryClientProvider } from '@tanstack/react-query';
@@ -28,9 +29,11 @@ function App({ Component, pageProps }: AppProps) {
         <title>Vue Storefront React Boilerplate</title>
       </Head>
       <Hydrate state={pageProps.dehydratedState}>
-        <div className={classNames(fontHeadings.variable, fontBody.variable, 'font-body')}>
-          <Component {...pageProps} />
-        </div>
+        <CartProvider>
+          <div className={classNames(fontHeadings.variable, fontBody.variable, 'font-body')}>
+            <Component {...pageProps} />
+          </div>
+        </CartProvider>
       </Hydrate>
       <ReactQueryDevtools />
     </QueryClientProvider>
