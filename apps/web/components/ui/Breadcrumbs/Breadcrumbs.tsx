@@ -11,7 +11,6 @@ export function Breadcrumbs({ breadcrumbs }: BreadcrumbsProps) {
   const close = () => {
     setDropdownOpened(false);
   };
-
   const toggle = () => {
     setDropdownOpened(!dropdownOpened);
   };
