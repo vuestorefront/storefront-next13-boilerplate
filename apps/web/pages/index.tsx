@@ -1,10 +1,10 @@
 import { GetServerSidePropsContext } from 'next';
-import { DefaultLayout } from '@/layouts';
-import { sdk } from '@/sdk';
 import { SfButton } from '@storefront-ui/react';
 import { useQuery } from '@tanstack/react-query';
 import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { DefaultLayout } from '~/layouts';
+import { sdk } from '~/sdk';
 
 export async function getServerSideProps({ locale }: GetServerSidePropsContext) {
   return {
@@ -16,6 +16,7 @@ export async function getServerSideProps({ locale }: GetServerSidePropsContext) 
 
 export default function Home() {
   const { t } = useTranslation();
+
   const { data } = useQuery(['products'], () => sdk.ecomm.getFakeData());
 
   return (

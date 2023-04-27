@@ -1,6 +1,4 @@
 import { useRouter } from 'next/router';
-import { Search } from '@/components';
-import { useLockBodyScroll } from '@/hooks';
 import {
   SfIconClose,
   SfButton,
@@ -12,6 +10,8 @@ import {
 } from '@storefront-ui/react';
 import classNames from 'classnames';
 import { useTranslation } from 'next-i18next';
+import { Search } from '~/components';
+import { useLockBodyScroll } from '~/hooks';
 
 const items = [
   {

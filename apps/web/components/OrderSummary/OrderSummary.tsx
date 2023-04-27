@@ -1,7 +1,7 @@
 import { PropsWithChildren } from 'react';
-import { Divider, Tag } from '@/components/ui';
-import { assertIsCartAvailable, useCart, useCartTotals, useFormatPrice } from '@/hooks';
 import { useTranslation } from 'next-i18next';
+import { Divider, Tag } from '~/components/ui';
+import { assertIsCartAvailable, useCart, useCartTotals, useFormatPrice } from '~/hooks';
 import { OrderSummaryPromoCode } from './OrderSummaryPromoCode';
 
 export function OrderSummary({ children }: PropsWithChildren): JSX.Element {

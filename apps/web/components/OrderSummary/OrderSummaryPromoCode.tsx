@@ -1,7 +1,7 @@
 import { FormEventHandler, useState } from 'react';
-import { assertIsCartAvailable, useCart, useCartTotals } from '@/hooks';
 import { SfButton, SfInput } from '@storefront-ui/react';
 import { useTranslation } from 'next-i18next';
+import { assertIsCartAvailable, useCart, useCartTotals } from '~/hooks';
 
 const handleAddPromoCode: FormEventHandler<HTMLFormElement> = (event): void => {
   event.preventDefault();

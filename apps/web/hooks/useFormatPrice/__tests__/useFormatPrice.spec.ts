@@ -1,4 +1,4 @@
-import { useFormatPrice } from '@/hooks';
+import { useFormatPrice } from '~/hooks';
 import { renderHook } from '@testing-library/react';
 import { useTranslation } from 'next-i18next';
 

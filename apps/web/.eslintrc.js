@@ -9,6 +9,9 @@ module.exports = {
     'max-lines-per-function': 'off',
     'unicorn/no-keyword-prefix': ['error', { disallowedPrefixes: ['new', 'for'] }],
     'react/display-name': 'off',
+    'unicorn/filename-case': 'off',
+    '@typescript-eslint/no-empty-function': ['error', { allow: ['arrowFunctions'] }],
+    complexity: 0,
     'no-secrets/no-secrets': 'off',
   },
 };
