@@ -1,0 +1,39 @@
+name: LHCI Test
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, ready_for_review]
+    paths:
+      - 'apps/web/**'
+
+jobs:
+  lighthouse:
+    name: Lighthouse CI
+    runs-on: ubuntu-latest
+    if: github.event.pull_request.draft == false
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - name: Setup node
+        uses: actions/setup-node@v2
+        with:
+          node-version: '16'
+          cache: 'yarn'
+          registry-url: https://registrynpm.storefrontcloud.io
+      - name: Install dependencies
+        run: yarn
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
+      - name: Build application
+        run: yarn turbo run build --scope="web"
+      - name: lighthouse mobile audit
+        run: yarn lhci:mobile
+        env:
+          LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
+          CTP_PROJECT_KEY: ${{ secrets.EU_CTP_PROJECT_KEY }}
+          CTP_CLIENT_ID: ${{ secrets.EU_CTP_CLIENT_ID }}
+          CTP_CLIENT_SECRET: ${{ secrets.EU_CTP_CLIENT_SECRET }}
+          CTP_CLIENT_ID_SERVER: ${{ secrets.EU_CTP_CLIENT_ID_SERVER }}
+          CTP_CLIENT_SECRET_SERVER: ${{ secrets.EU_CTP_CLIENT_SECRET_SERVER }}
+          CTP_REGION: ${{ secrets.EU_CTP_REGION }}
