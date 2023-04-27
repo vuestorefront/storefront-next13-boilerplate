@@ -31,6 +31,7 @@
     "react-i18next": "^12.2.2"
   },
   "devDependencies": {
+    "@savvywombat/tailwindcss-grid-areas": "^2.1.0",
     "@storefront-ui/typography": "^2.1.0",
     "@testing-library/dom": "^8.19.0",
     "@testing-library/jest-dom": "^5.16.5",

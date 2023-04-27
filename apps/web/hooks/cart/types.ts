@@ -1,4 +1,4 @@
-import { Price } from '@/helpers/getProductPrice/types';
+import { Price } from '~/helpers/getProductPrice/types';
 
 export type CartTotals = {
   regular: Price;

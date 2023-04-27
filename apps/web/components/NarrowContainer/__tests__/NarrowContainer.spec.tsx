@@ -1,4 +1,4 @@
-import { NarrowContainer } from '@/components';
+import { NarrowContainer } from '~/components';
 import { render } from '@testing-library/react';
 
 describe('<NarrowContainer />', () => {

@@ -1,8 +1,8 @@
 import { GetServerSidePropsContext } from 'next';
-import { CartPageContent, NarrowContainer } from '@/components';
-import { CheckoutLayout } from '@/layouts';
 import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { CartPageContent, NarrowContainer } from '~/components';
+import { CheckoutLayout } from '~/layouts';
 
 export async function getServerSideProps({ locale }: GetServerSidePropsContext) {
   return {

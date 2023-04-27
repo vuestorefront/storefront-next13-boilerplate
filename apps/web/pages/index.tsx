@@ -1,9 +1,9 @@
 import { Fragment } from 'react';
 import { GetServerSidePropsContext } from 'next';
-import { RenderContent } from '@/components';
-import { DefaultLayout } from '@/layouts';
-import { cmsData } from '@/mocks/cmsData';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { RenderContent } from '~/components';
+import { DefaultLayout } from '~/layouts';
+import { cmsData } from '~/mocks/cmsData';
 
 export async function getServerSideProps({ locale }: GetServerSidePropsContext) {
   return {

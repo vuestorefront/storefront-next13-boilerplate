@@ -1,7 +1,7 @@
 import { useMemo } from 'react';
-import { calculateCartTotals, roundTotals } from '@/helpers';
-import { CartTotals } from '@/hooks/cart/types';
 import { SfLineItem } from '@vsf-enterprise/unified-data-model';
+import { calculateCartTotals, roundTotals } from '~/helpers';
+import { CartTotals } from '~/hooks/cart/types';
 import { useCart } from './CartProvider';
 
 export function useCartTotals() {

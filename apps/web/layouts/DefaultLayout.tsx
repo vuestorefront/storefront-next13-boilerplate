@@ -1,7 +1,7 @@
 import type { PropsWithChildren } from 'react';
-import { Footer, BottomNav, ScrollToTopButton, NavbarTop, Search } from '@/components';
 import { SfButton, SfIconExpandMore, SfIconShoppingCart } from '@storefront-ui/react';
 import { useTranslation } from 'next-i18next';
+import { Footer, BottomNav, ScrollToTopButton, NavbarTop, Search } from '~/components';
 
 export function DefaultLayout({ children }: PropsWithChildren): JSX.Element {
   const { t } = useTranslation();

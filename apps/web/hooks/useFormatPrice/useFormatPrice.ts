@@ -1,6 +1,6 @@
 import { useMemo } from 'react';
-import type { Price } from '@/helpers';
 import { useTranslation } from 'next-i18next';
+import type { Price } from '~/helpers';
 import { UseFormatPrice } from './types';
 
 const createFormatter = (locale: string, currency: string) =>

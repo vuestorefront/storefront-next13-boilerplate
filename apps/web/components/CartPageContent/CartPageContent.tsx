@@ -1,10 +1,10 @@
 import Image from 'next/image';
 import NextLink from 'next/link';
-import { OrderSummary } from '@/components/OrderSummary';
-import { useCart } from '@/hooks';
-import emptyCartImage from '@/public/images/empty-cart.svg';
 import { SfButton } from '@storefront-ui/react';
 import { useTranslation } from 'next-i18next';
+import { OrderSummary } from '~/components/OrderSummary';
+import { useCart } from '~/hooks';
+import emptyCartImage from '~/public/images/empty-cart.svg';
 
 export function CartPageContent() {
   const { t } = useTranslation('cart');
