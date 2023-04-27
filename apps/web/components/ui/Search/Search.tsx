@@ -17,7 +17,6 @@ export function Search({ className }: SearchProps) {
     close();
     alert(`Search for phrase: ${searchValue}`);
   };
-
   const handleReset = () => {
     setSearchValue('');
     close();
