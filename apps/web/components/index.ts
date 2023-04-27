@@ -6,7 +6,5 @@ export * from './Gallery';
 export * from './ShoppingDetails';
 export * from './ProductSlider';
 export * from './OrderSummary';
-export * from './RenderContent';
 export * from './ScrollToTopButton';
-export * from './Page';
 export * from './ui';

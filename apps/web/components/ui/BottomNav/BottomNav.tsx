@@ -1,4 +1,4 @@
-import { useRouter } from 'next/router';
+import { useState } from 'react';
 import {
   SfIconClose,
   SfButton,
@@ -15,34 +15,33 @@ import { useLockBodyScroll } from '~/hooks';
 
 const items = [
   {
-    key: 'home',
+    label: 'home',
     icon: <SfIconHome />,
-    path: '/',
-    pathname: '/',
   },
   {
-    key: 'products',
+    label: 'products',
     icon: <SfIconMenu />,
-    path: '/category',
-    pathname: '/category/[[...slug]]',
   },
   {
-    key: 'search',
+    label: 'search',
     icon: <SfIconSearch />,
-    pathname: '/search',
   },
   {
-    key: 'cart',
+    label: 'cart',
     icon: <SfIconShoppingCart />,
-    path: '/cart',
-    pathname: '/cart',
   },
 ];
 
 export function BottomNav() {
+  const [selectedItem, setselectedItem] = useState('');
   const { t } = useTranslation();
-  const router = useRouter();
   const { isOpen, open, close } = useLockBodyScroll();
+  function onClickHandler(itemLabel: string) {
+    setselectedItem(itemLabel);
+    if (itemLabel === 'search') {
+      open();
+    }
+  }
 
   return (
     <>
@@ -50,26 +49,19 @@ export function BottomNav() {
         className="z-50 w-full fixed bottom-0 left-0 flex flex-row items-stretch md:hidden"
         data-testid="navbar-bottom"
       >
-        {items.map(({ path, key, icon, pathname }) => (
+        {items.map(({ label, icon }) => (
           <SfButton
-            key={key}
+            key={label}
             variant="tertiary"
             size="sm"
             slotPrefix={icon}
             className={classNames(
               'py-1 flex flex-col h-full w-full rounded-none bg-primary-700 text-white hover:text-white hover:bg-primary-800 active:text-white active:bg-primary-900',
-              { 'text-white bg-primary-900': pathname === router.pathname },
+              { 'text-white bg-primary-900': selectedItem === label },
             )}
-            onClick={() => {
-              if (typeof path === 'string') {
-                router.push(path);
-              }
-              if (key === 'search') {
-                open();
-              }
-            }}
+            onClick={() => onClickHandler(label)}
           >
-            {t(key)}
+            {t(label)}
           </SfButton>
         ))}
       </nav>
