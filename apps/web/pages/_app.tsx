@@ -1,13 +1,13 @@
 import { useState } from 'react';
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
-import { CartProvider } from '@/hooks';
-import { fontBody, fontHeadings } from '@/styles/fonts';
-import '@/styles/globals.scss';
 import { Hydrate, QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import classNames from 'classnames';
 import { appWithTranslation } from 'next-i18next';
+import { CartProvider } from '~/hooks';
+import { fontBody, fontHeadings } from '~/styles/fonts';
+import '~/styles/globals.scss';
 
 function App({ Component, pageProps }: AppProps) {
   const [queryClient] = useState(

@@ -1,8 +1,8 @@
 import { useState } from 'react';
-import { getReviewMock } from '@/mocks/product';
 import { SfAccordionItem, SfIconExpandLess } from '@storefront-ui/react';
 import { useTranslation } from 'next-i18next';
 import { Divider, Review } from '~/components/ui';
+import { getReviewMock } from '~/mocks/product';
 
 const reviews = getReviewMock(5);
 

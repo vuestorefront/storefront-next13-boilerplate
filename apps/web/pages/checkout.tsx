@@ -1,9 +1,9 @@
 import { GetServerSidePropsContext } from 'next';
-import { Divider } from '@/components';
-import ContactInformation from '@/components/ContactInformation';
-import { CheckoutLayout } from '@/layouts';
 import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { Divider } from '~/components';
+import ContactInformation from '~/components/ContactInformation';
+import { CheckoutLayout } from '~/layouts';
 
 export async function getServerSideProps({ locale }: GetServerSidePropsContext) {
   return {

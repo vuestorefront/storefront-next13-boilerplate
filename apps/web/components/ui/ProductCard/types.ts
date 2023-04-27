@@ -1,3 +1,3 @@
-import { Product } from '@/mocks/product';
+import { Product } from '~/mocks/product';
 
 export type ProductCardProps = Product;

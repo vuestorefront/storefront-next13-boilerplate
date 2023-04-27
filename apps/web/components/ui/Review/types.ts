@@ -1,3 +1,3 @@
-import { Review } from '@/mocks/product';
+import { Review } from '~/mocks/product';
 
 export type ReviewProps = Review;

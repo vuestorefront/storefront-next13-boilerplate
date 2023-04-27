@@ -1,10 +1,10 @@
 import { GetServerSidePropsContext } from 'next';
 import Head from 'next/head';
-import { ProductAccordion } from '@/components/ProductAccordion';
-import { getProductMock } from '@/mocks/product';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { Divider, NarrowContainer, PurchaseCard, Gallery, ShoppingDetails, ProductSlider } from '~/components';
+import { ProductAccordion } from '~/components/ProductAccordion';
 import { DefaultLayout } from '~/layouts';
+import { getProductMock } from '~/mocks/product';
 
 export async function getServerSideProps({ locale }: GetServerSidePropsContext) {
   return {

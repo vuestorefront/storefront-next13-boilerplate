@@ -1,4 +1,4 @@
-import { Footer, NavbarTop } from '@/components';
+import { Footer, NavbarTop } from '~/components';
 
 export function OrderLayout(): JSX.Element {
   return (

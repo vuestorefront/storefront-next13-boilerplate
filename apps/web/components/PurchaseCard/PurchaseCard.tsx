@@ -1,6 +1,5 @@
 import { useId, ChangeEvent } from 'react';
 import { useCounter } from 'react-use';
-import { getProductMock } from '@/mocks/product';
 import {
   SfRating,
   SfButton,
@@ -18,6 +17,7 @@ import {
   SfIconShoppingCartCheckout,
 } from '@storefront-ui/react';
 import { clamp } from '@storefront-ui/shared';
+import { getProductMock } from '~/mocks/product';
 
 const product = getProductMock(1)[0];
 

@@ -1,6 +1,6 @@
 import { useIntersection } from 'react-use';
 import { fireEvent, render } from '@testing-library/react';
-import { ScrollToTopButton } from '@/components';
+import { ScrollToTopButton } from '~/components';
 
 global.scrollTo = jest.fn();
 

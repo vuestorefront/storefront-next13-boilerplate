@@ -1,6 +1,6 @@
-import { Price } from '@/helpers/getProductPrice/types';
-import { CartTotals } from '@/hooks/cart/types';
 import { SfCartLineItem } from '@vsf-enterprise/unified-data-model';
+import { Price } from '~/helpers/getProductPrice/types';
+import { CartTotals } from '~/hooks/cart/types';
 
 function getRegularPrice(item: SfCartLineItem): Price {
   return item.totalPrice.amount / 100;
