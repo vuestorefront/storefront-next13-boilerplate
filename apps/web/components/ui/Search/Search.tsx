@@ -22,7 +22,6 @@ export function Search({ className }: SearchProps) {
     close();
     inputReference.current?.focus();
   };
-
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     const phrase = event.target.value;
     if (phrase) {
