@@ -19,10 +19,8 @@ jest.mock('next-i18next', () => ({
   Trans: ({ children }: any) => children,
 }));
 
-/* eslint-disable @typescript-eslint/no-empty-function */
 window.ResizeObserver = class ResizeObserver {
   observe() {}
   unobserve() {}
   disconnect() {}
 };
-/* eslint-enable */

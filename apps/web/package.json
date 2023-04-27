@@ -17,7 +17,7 @@
     "@storefront-ui/shared": "^2.1.0",
     "@tanstack/react-query": "^4.29.5",
     "@tanstack/react-query-devtools": "^4.29.5",
-    "@vsf-enterprise/integration-boilerplate-sdk": "file:../../../sdk-module-mock",
+    "@vsf-enterprise/integration-boilerplate-sdk": "link:../../../sdk-module-mock",
     "@vsf-enterprise/sdk": "^1.0.0",
     "@vsf-enterprise/unified-data-model": "0.0.1-rc.1",
     "classnames": "^2.3.2",
