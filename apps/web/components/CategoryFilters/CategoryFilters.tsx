@@ -4,7 +4,6 @@ import { useSearchParams } from '@/hooks';
 import { getProducts } from '@/mocks/products';
 import { useTranslation } from 'next-i18next';
 import { FilterColor, FilterSize } from './Filters';
-import { TermFacetResultValue } from './types';
 
 export function CategoryFilters() {
   const { t } = useTranslation();
@@ -15,8 +14,8 @@ export function CategoryFilters() {
 
   const setValue = (name: string) => (values: string[]) => setSearchParams({ [name]: values });
 
-  const colorFacets = getFacetByAlias<TermFacetResultValue>('color', facets);
-  const sizeFacets = getFacetByAlias<TermFacetResultValue>('size', facets);
+  const colorFacets = getFacetByAlias('color', facets);
+  const sizeFacets = getFacetByAlias('size', facets);
 
   return (
     <FilterContainer title={t('category:filters')}>

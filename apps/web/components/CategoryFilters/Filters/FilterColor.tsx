@@ -11,12 +11,12 @@ export function FilterColor({ facet, selected, onChange, max }: FilterProps) {
       {({ itemsToRender, onItemClick }) =>
         itemsToRender.map((item) => (
           <FilterColorItem
-            key={item.term}
-            name={item.term}
-            count={item.productCount || item.count}
-            selected={selected.includes(item.term)}
-            onClick={() => onItemClick(item.term)}
-            color={item.term}
+            key={item.value}
+            name={item.value}
+            count={item.productCount || 0}
+            selected={selected.includes(item.value)}
+            onClick={() => onItemClick(item.value)}
+            color={item.value}
             data-testid="filter-color-item"
           />
         ))

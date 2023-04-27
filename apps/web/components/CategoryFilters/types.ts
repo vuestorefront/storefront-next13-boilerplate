@@ -1,5 +1,12 @@
 import { ChangeEventHandler, PropsWithChildren, ReactNode } from 'react';
-import type { FacetResultValue, TermsFacetResult, FacetResultTerm } from '@vsf-enterprise/commercetools-types';
+import { SfFacet } from '@vsf-enterprise/unified-data-model';
+import { Maybe } from '@vsf-enterprise/unified-data-model/src/shared';
+
+interface SfFacetItem {
+  label: string;
+  value: string;
+  productCount: Maybe<number>;
+}
 
 export type FilterColorItemProps = PropsWithChildren & {
   count?: number;
@@ -12,26 +19,22 @@ export type FilterColorItemProps = PropsWithChildren & {
 };
 
 export type FilterProps = {
-  facet: TermFacetResultValue;
+  facet: SfFacet;
   selected: string[];
   onChange: Function;
   max?: number;
 };
 
 type RenderFilterItemsProps = {
-  itemsToRender: FacetResultTerm[];
+  itemsToRender: SfFacetItem[];
   onItemClick: (value: string) => void;
 };
 
 export type FilterBaseProps = {
-  facet: TermFacetResultValue;
+  facet: SfFacet;
   selected: string[];
   onChange: Function;
   label: string;
   max?: number;
   children: (props: RenderFilterItemsProps) => ReactNode;
 };
-
-export interface TermFacetResultValue extends FacetResultValue {
-  value: TermsFacetResult;
-}
