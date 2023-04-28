@@ -6,6 +6,7 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { Divider, OrderSummary } from '~/components';
 import CheckoutAddress from '~/components/CheckoutAddress';
 import ContactInformation from '~/components/ContactInformation';
+import ShippingMethod from '~/components/ShippingMethod';
 import { CheckoutLayout } from '~/layouts';
 
 export async function getServerSideProps({ locale }: GetServerSidePropsContext) {
@@ -48,6 +49,8 @@ export default function Checkout() {
             buttonText={t('address:shipping.addButton')}
             type="shippingAddress"
           />
+          <Divider className="w-screen md:w-auto -mx-4 md:mx-0" />
+          <ShippingMethod />
           <Divider className="w-screen md:w-auto -mx-4 md:mx-0" />
         </div>
         <div className="col-span-5 md:p-4 xl:p-6 md:border md:border-neutral-100 md:shadow-lg md:rounded-md md:sticky md:top-20 h-fit">
