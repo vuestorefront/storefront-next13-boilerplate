@@ -1,5 +1,6 @@
 import { GetServerSidePropsContext } from 'next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { Hero, Display } from '~/components';
 import { DefaultLayout } from '~/layouts';
 
 export async function getServerSideProps({ locale }: GetServerSidePropsContext) {
@@ -13,7 +14,8 @@ export async function getServerSideProps({ locale }: GetServerSidePropsContext) 
 export default function Home() {
   return (
     <DefaultLayout>
-      <div>test</div>
+      <Hero />
+      <Display />
     </DefaultLayout>
   );
 }
