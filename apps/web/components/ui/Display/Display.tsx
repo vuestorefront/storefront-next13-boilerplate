@@ -9,9 +9,9 @@ import backpack from '~/public/images/display-3.png';
 const displayDetails = [
   {
     image: hat,
-    title: 'Sunny Days Ahead',
-    subtitle: 'Be inspired',
-    description: 'Step out in style with our sunglasses collection',
+    title: 'Fresh and Bold',
+    subtitle: 'New collection',
+    description: 'Add a pop up color to your outfit',
     buttonText: 'Discover now.',
     reverse: true,
     backgroundColor: 'bg-secondary-200',

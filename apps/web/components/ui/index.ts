@@ -8,3 +8,6 @@ export * from './QuantitySelector';
 export * from './Tag';
 export * from './NavbarTop';
 export * from './Search';
+export * from './Hero';
+export * from './Display';
+export * from './CategoryCard';

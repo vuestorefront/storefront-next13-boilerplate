@@ -1,6 +1,6 @@
 import { GetServerSidePropsContext } from 'next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-import { Heading, Hero, Display } from '~/components';
+import { CategoryCard, Heading, Hero, Display } from '~/components';
 import { DefaultLayout } from '~/layouts';
 
 export async function getServerSideProps({ locale }: GetServerSidePropsContext) {
@@ -20,6 +20,7 @@ export default function Home() {
         tag="h2"
         className="text-center mb-6 font-bold typography-headline-3 md:typography-headline-2"
       />
+      <CategoryCard />
       <Display />
       <Heading
         title="Inspired by your picks"
