@@ -37,14 +37,14 @@ export function Gallery({ images, className, ...attributes }: GalleryProps) {
           {images.map((image, index) => (
             <div className="w-full h-full relative snap-center snap-always basis-full shrink-0 grow" key={image.alt}>
               <Image
-                alt={image.alt}
+                alt={image.alt ?? undefined}
                 aria-hidden={activeIndex !== index}
                 layout="fill"
                 className="object-contain"
                 priority={index === 0}
                 quality={80}
                 draggable={false}
-                src={image.src}
+                src={image.url}
                 sizes="(max-width: 1023px) 100vw, 700px"
                 crossOrigin="anonymous"
               />
@@ -101,7 +101,7 @@ export function Gallery({ images, className, ...attributes }: GalleryProps) {
                 layout="fixed"
                 width="80"
                 height="80"
-                src={image.src}
+                src={image.url}
                 quality={80}
                 crossOrigin="anonymous"
               />

@@ -2,6 +2,7 @@
   "productDetails": "Product Details",
   "customerReviews": "Customer Reviews",
   "loadingReviews": "Loading Reviews...",
+  "reviewsCount": "{{count}} reviews",
   "recommendedProducts": "Recommended with this product",
   "numberInStock": "<0>{{count}}</0> in stock",
   "outOfStock": "Out of stock",
@@ -21,5 +22,9 @@
     "prev": "Previous",
     "next": "Next",
     "image": "Slide {{index}}"
+  },
+  "review": {
+    "reportAbuse": "Report Abuse",
+    "verifiedPurchase": "Verified purchase"
   }
 }

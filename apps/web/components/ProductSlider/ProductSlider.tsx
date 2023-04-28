@@ -6,7 +6,7 @@ export function ProductSlider({ products }: ProductSliderProps) {
   return (
     <SfScrollable buttonsPlacement="floating" className="items-center pb-4">
       {products.map((product) => (
-        <ProductCard {...product} key={product.id} />
+        <ProductCard product={product} key={product.id} />
       ))}
     </SfScrollable>
   );
