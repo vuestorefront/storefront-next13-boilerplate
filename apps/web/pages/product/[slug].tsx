@@ -62,7 +62,7 @@ export function ProductPage() {
   return (
     <DefaultLayout breadcrumbs={[]}>
       <Head>
-        <title>{` | Vue Storefront Demo`}</title>
+        <title>{`${product.name} | Vue Storefront Demo`}</title>
       </Head>
       <NarrowContainer>
         <div className="md:grid gap-x-6 grid-areas-product-page grid-cols-product-page">

@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import { SfAccordionItem, SfIconExpandLess } from '@storefront-ui/react';
+import { SfAccordionItem, SfIconExpandMore } from '@storefront-ui/react';
+import classNames from 'classnames';
 import { xor } from 'lodash-es';
 import { useTranslation } from 'next-i18next';
 import { Divider, Review } from '~/components/ui';
@@ -23,7 +24,11 @@ export function ProductAccordion({ product, ...attributes }: ProductAccordionPro
         summary={
           <>
             <h2 className="font-bold font-headings text-lg leading-6 md:text-2xl">{t('productDetails')}</h2>
-            <SfIconExpandLess className={'text-neutral-500 transition-transform'} />
+            <SfIconExpandMore
+              className={classNames('text-neutral-500', {
+                'rotate-180': isOpen('description'),
+              })}
+            />
           </>
         }
         summaryClassName="md:rounded-md w-full hover:bg-neutral-100 py-2 pl-4 pr-3 flex justify-between items-center"
@@ -41,7 +46,11 @@ export function ProductAccordion({ product, ...attributes }: ProductAccordionPro
         summary={
           <>
             <h2 className="font-bold font-headings text-lg leading-6 md:text-2xl">{t('customerReviews')}</h2>
-            <SfIconExpandLess className={'text-neutral-500 transition-transform'} />
+            <SfIconExpandMore
+              className={classNames('text-neutral-500', {
+                'rotate-180': isOpen('reviews'),
+              })}
+            />
           </>
         }
         summaryClassName="md:rounded-md w-full hover:bg-neutral-100 py-2 pl-4 pr-3 flex justify-between items-center"
