@@ -6,8 +6,8 @@ const sdkConfig: SDKConfig = {
   commerce: buildModule<MyModuleType>(
     myModule,
     {
-      apiUrl: 'http://localhost:4000/ecomm',
-      ssrApiUrl: 'http://localhost:4000/ecomm',
+      apiUrl: 'http://localhost:4000/commerce',
+      ssrApiUrl: 'http://localhost:4000/commerce',
     },
     {
       extend: {
