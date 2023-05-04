@@ -4,7 +4,12 @@ import { ProductCard } from '~/components';
 
 describe('<ProductCard />', () => {
   it('should render component', () => {
-    const { getByTestId } = render(<ProductCard product={{} as SfProduct} data-testid="product-card" />);
+    const { getByTestId } = render(
+      <ProductCard
+        product={{ primaryImage: { url: '/images/product.webp' } } as SfProduct}
+        data-testid="product-card"
+      />,
+    );
 
     getByTestId('product-card');
   });
