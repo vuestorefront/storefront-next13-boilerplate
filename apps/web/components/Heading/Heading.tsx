@@ -1,11 +1,11 @@
 import classNames from 'classnames';
 import type { HeadingProps } from './types';
 
-export function Heading({ title, tag = 'h1', className = '' }: HeadingProps): JSX.Element {
+export function Heading({ title, tag = 'h1', className = '', ...attributes }: HeadingProps): JSX.Element {
   const Tag = tag;
 
   return (
-    <Tag className={classNames(className)} data-testid="heading">
+    <Tag className={classNames(className)} {...attributes}>
       {title}
     </Tag>
   );

@@ -2,9 +2,9 @@ import { render } from '@testing-library/react';
 import { CategoryCard } from '~/components';
 
 describe('<CategoryCard />', () => {
-  it('should render CategoryCard', () => {
-    const { getByTestId } = render(<CategoryCard />);
+  it('should render component', () => {
+    const { getByTestId } = render(<CategoryCard data-testid="category-card" />);
 
-    expect(getByTestId('category-card')).toBeInTheDocument();
+    getByTestId('category-card');
   });
 });

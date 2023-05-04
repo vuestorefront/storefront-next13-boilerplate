@@ -39,11 +39,11 @@ const displayDetails = [
   },
 ];
 
-export function Display() {
+export function Display({ ...attributes }) {
   return (
     <div
       className="flex flex-col md:flex-row flex-wrap gap-6 max-w-screen-3xl mx-auto px-4 md:px-10 mb-10"
-      data-testid="display"
+      {...attributes}
     >
       {displayDetails.map(
         ({ image, title, subtitle, description, buttonText, backgroundColor, reverse, titleClass, subtitleClass }) => (

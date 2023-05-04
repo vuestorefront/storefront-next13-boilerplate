@@ -2,11 +2,11 @@ import { render } from '@testing-library/react';
 import { Hero } from '~/components';
 
 describe('<Hero />', () => {
-  it('should display Hero component', () => {
+  it('should render component', () => {
     const { getByTestId } = render(
-      <Hero />,
+      <Hero data-testid="hero" />,
     );
 
-    expect(getByTestId('hero')).toBeInTheDocument();
+    getByTestId('hero');
   });
 });

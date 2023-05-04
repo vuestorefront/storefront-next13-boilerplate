@@ -32,7 +32,7 @@ const items = [
   },
 ];
 
-export function BottomNav() {
+export function BottomNav({ ...attributes }) {
   const [selectedItem, setselectedItem] = useState('');
   const { t } = useTranslation();
   const { isOpen, open, close } = useLockBodyScroll();
@@ -48,6 +48,7 @@ export function BottomNav() {
       <nav
         className="z-50 w-full fixed bottom-0 left-0 flex flex-row items-stretch md:hidden"
         data-testid="navbar-bottom"
+        {...attributes}
       >
         {items.map(({ label, icon }) => (
           <SfButton

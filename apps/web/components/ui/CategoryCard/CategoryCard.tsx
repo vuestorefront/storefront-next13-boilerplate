@@ -18,11 +18,11 @@ const categories = [
     image: card3.src,
   },
 ];
-export function CategoryCard() {
+export function CategoryCard({ ...attributes }) {
   return (
     <div
       className="max-w-screen-3xl mx-auto md:px-10 px-4 mb-10 flex flex-nowrap md:flex-wrap md:justify-center overflow-x-scroll scrollbar-hidden"
-      data-testid="category-card"
+      {...attributes}
     >
       {categories.map(({ title, image }) => (
         <div className="relative min-w-[180px] flex-col max-w-[240px] mr-2 md:mr-6 group" key={title}>
