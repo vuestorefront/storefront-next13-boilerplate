@@ -1,9 +1,12 @@
+# For now this workflow is manually disabled in GH Actions, 
+# enable it again when sdk mock package will be released and build will be working on GH
 name: LHCI Test
 on:
   pull_request:
     types: [opened, synchronize, reopened, ready_for_review]
     paths:
       - 'apps/web/**'
+      - 'lighthouserc.json'
 
 jobs:
   lighthouse:
