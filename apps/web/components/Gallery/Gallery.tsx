@@ -37,7 +37,7 @@ export function Gallery({ images, className, ...attributes }: GalleryProps) {
           {images.map((image, index) => (
             <div className="w-full h-full relative snap-center snap-always basis-full shrink-0 grow" key={image.alt}>
               <Image
-                alt={image.alt ?? undefined}
+                alt={image.alt ?? ''}
                 aria-hidden={activeIndex !== index}
                 layout="fill"
                 className="object-contain"
