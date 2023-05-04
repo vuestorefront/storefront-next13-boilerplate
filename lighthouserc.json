@@ -58,9 +58,7 @@
       }
     },
     "upload": {
-      "target": "lhci",
-      "serverBaseUrl": "http://localhost:9001",
-      "token": "94d6abe5-7d28-47ac-a2dd-06eca6a1a385"
+      "target": "temporary-public-storage"
     }
   }
 }
