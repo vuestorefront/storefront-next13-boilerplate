@@ -8,7 +8,7 @@ import {
   Divider,
   NarrowContainer,
   Gallery,
-  ShoppingDetails,
+  ProductProperties,
   ProductSlider,
   ProductAccordion,
   PurchaseCard,
@@ -75,7 +75,7 @@ export function ProductPage() {
           </section>
           <section className="grid-in-left-bottom md:mt-8">
             <Divider className="mb-6" />
-            <ShoppingDetails product={product} />
+            <ProductProperties product={product} />
             <Divider className="mt-4 mb-2 md:mt-8" />
             <ProductAccordion product={product} />
           </section>

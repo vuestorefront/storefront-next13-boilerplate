@@ -3,17 +3,17 @@ import { SfRating, SfIconCheck, SfIconThumbUp, SfIconThumbDown, SfCounter } from
 import { useTranslation } from 'next-i18next';
 import { ReviewProps } from './types';
 
-export function Review({ review }: ReviewProps) {
+export function Review({ review, ...attributes }: ReviewProps) {
   const { t } = useTranslation('product');
   const { createdAt, rating, reviewer, text, title } = review;
 
   const [isCollapsed, setIsCollapsed] = useState(true);
   const charLimit = 400;
-  const isButtonVisible = text.length > charLimit;
+  const isButtonVisible = text?.length > charLimit;
   const truncatedContent = isButtonVisible && isCollapsed ? `${text.slice(0, charLimit)}...` : text;
 
   return (
-    <article className="w-full p-4 border rounded-md mb-4">
+    <article className="w-full p-4 border rounded-md mb-4" {...attributes}>
       <p className="pb-2 font-medium">{title}</p>
       <header className="flex flex-col pb-2 md:flex-row md:justify-between">
         <div className="flex flex-col items-start">

@@ -7,7 +7,7 @@ const fetchProductRecommended = async (slug: string): Promise<SfProduct[]> => {
 };
 
 /**
- * Hook for getting product reviews
+ * Hook for getting recommended products data
  * @param {string} slug Product slug
  */
 export function useProductRecommended(slug: string) {

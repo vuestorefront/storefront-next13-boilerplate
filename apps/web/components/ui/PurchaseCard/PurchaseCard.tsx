@@ -14,12 +14,12 @@ import {
   SfIconShoppingCartCheckout,
 } from '@storefront-ui/react';
 import { clamp } from '@storefront-ui/shared';
-import { SfProduct } from '@vsf-enterprise/unified-data-model';
 import { Trans, useTranslation } from 'next-i18next';
 import { QuantitySelector } from '../QuantitySelector';
 import { Tag } from '../Tag';
+import { PurchaseCardProps } from './types';
 
-export function PurchaseCard({ product }: { product: SfProduct }) {
+export function PurchaseCard({ product, ...attributes }: PurchaseCardProps) {
   const { t } = useTranslation(['product', 'common']);
   const minProductQuantity = 1;
   const maxProductQuantity = 999;
@@ -29,7 +29,10 @@ export function PurchaseCard({ product }: { product: SfProduct }) {
     set(clamp(nextValue, minProductQuantity, maxProductQuantity));
   }
   return (
-    <div className="p-4 xl:p-6 md:border md:border-neutral-100 md:shadow-lg md:rounded-md md:sticky md:top-20">
+    <div
+      className="p-4 xl:p-6 md:border md:border-neutral-100 md:shadow-lg md:rounded-md md:sticky md:top-20"
+      {...attributes}
+    >
       <Tag variant="secondary" strong className="mb-4" data-testid="special-tag">
         <SfIconSell size="sm" className="ml-1" />
         <span className="mr-1">{t('sale')}</span>

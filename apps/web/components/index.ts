@@ -3,7 +3,7 @@ export * from './CartPageContent';
 export * from './Footer';
 export * from './NarrowContainer';
 export * from './Gallery';
-export * from './ShoppingDetails';
+export * from './ProductProperties';
 export * from './ProductSlider';
 export * from './OrderSummary';
 export * from './ScrollToTopButton';

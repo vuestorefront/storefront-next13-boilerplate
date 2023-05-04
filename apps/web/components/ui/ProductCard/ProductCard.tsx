@@ -3,13 +3,16 @@ import { SfButton, SfRating, SfCounter, SfLink, SfIconShoppingCart } from '@stor
 import { useTranslation } from 'next-i18next';
 import { ProductCardProps } from './types';
 
-export function ProductCard({ product }: ProductCardProps) {
+export function ProductCard({ product, ...attributes }: ProductCardProps) {
   const { t } = useTranslation();
 
   const { name, primaryImage, rating, description, price } = product;
 
   return (
-    <div className="border border-neutral-200 rounded-md hover:shadow-lg flex-auto flex-shrink-0 max-w-[192px]">
+    <div
+      className="border border-neutral-200 rounded-md hover:shadow-lg flex-auto flex-shrink-0 max-w-[192px]"
+      {...attributes}
+    >
       <div className="relative">
         <SfLink href="#" className="relative block w-full pb-[100%]">
           <Image

@@ -1,12 +1,12 @@
 import { useState } from 'react';
 import { SfAccordionItem, SfIconExpandLess } from '@storefront-ui/react';
-import { SfProduct } from '@vsf-enterprise/unified-data-model';
 import { xor } from 'lodash-es';
 import { useTranslation } from 'next-i18next';
 import { Divider, Review } from '~/components/ui';
 import { useProductReviews } from '~/hooks';
+import { ProductAccordionProps } from './types';
 
-export function ProductAccordion({ product }: { product: SfProduct }): JSX.Element {
+export function ProductAccordion({ product, ...attributes }: ProductAccordionProps): JSX.Element {
   const { description, slug } = product;
   const { t } = useTranslation('product');
   const { data: reviews = [] } = useProductReviews(slug);
@@ -18,7 +18,7 @@ export function ProductAccordion({ product }: { product: SfProduct }): JSX.Eleme
   };
 
   return (
-    <>
+    <div {...attributes}>
       <SfAccordionItem
         summary={
           <>
@@ -56,6 +56,6 @@ export function ProductAccordion({ product }: { product: SfProduct }): JSX.Eleme
           </div>
         </div>
       </SfAccordionItem>
-    </>
+    </div>
   );
 }
