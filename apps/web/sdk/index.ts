@@ -11,13 +11,13 @@ const sdkConfig: SDKConfig = {
     },
     {
       extend: {
-        async getProduct(slug: string): Promise<SfProduct> {
+        async getProduct({ slug }: { slug: string }): Promise<SfProduct> {
           return import('~/mocks/product.json').then((response) => response.default);
         },
-        async getProductReviews(slug: string): Promise<SfProductReview[]> {
+        async getProductReviews({ slug }: { slug: string }): Promise<SfProductReview[]> {
           return import('~/mocks/reviews.json').then((response) => response.default);
         },
-        async getProductRecommended(slug: string): Promise<SfProduct[]> {
+        async getProductRecommended({ slug }: { slug: string }): Promise<SfProduct[]> {
           const product = await import('~/mocks/product.json').then((response) => response.default);
           return Array.from({ length: 8 }, (_, index) => ({ ...product, id: index.toString() }));
         },

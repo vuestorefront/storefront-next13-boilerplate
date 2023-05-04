@@ -3,7 +3,7 @@ import { SfProduct } from '@vsf-enterprise/unified-data-model';
 import { sdk } from '~/sdk';
 
 const fetchProductRecommended = async (slug: string): Promise<SfProduct[]> => {
-  return sdk.commerce.getProductRecommended(slug);
+  return sdk.commerce.getProductRecommended({ slug });
 };
 
 /**
