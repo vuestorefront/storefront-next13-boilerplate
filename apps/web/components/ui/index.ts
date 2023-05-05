@@ -9,3 +9,4 @@ export * from './Tag';
 export * from './NavbarTop';
 export * from './Search';
 export * from './PurchaseCard';
+export * from './Breadcrumbs';

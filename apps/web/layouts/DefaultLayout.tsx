@@ -1,9 +1,22 @@
 import type { PropsWithChildren } from 'react';
 import { SfButton, SfIconExpandMore, SfIconShoppingCart } from '@storefront-ui/react';
 import { useTranslation } from 'next-i18next';
-import { Footer, BottomNav, ScrollToTopButton, NavbarTop, Search } from '~/components';
+import {
+  Footer,
+  BottomNav,
+  ScrollToTopButton,
+  NavbarTop,
+  Search,
+  Breadcrumb,
+  NarrowContainer,
+  Breadcrumbs,
+} from '~/components';
 
-export function DefaultLayout({ children }: PropsWithChildren): JSX.Element {
+type LayoutPropsType = PropsWithChildren & {
+  breadcrumbs?: Breadcrumb[];
+};
+
+export function DefaultLayout({ children, breadcrumbs = [] }: LayoutPropsType): JSX.Element {
   const { t } = useTranslation();
   const actionItems = [
     {
@@ -17,7 +30,7 @@ export function DefaultLayout({ children }: PropsWithChildren): JSX.Element {
     <>
       <NavbarTop filled>
         <SfButton
-          className="block !px-2 mr-auto text-white bg-transparent hover:bg-primary-800 hover:text-white active:bg-primary-900 active:text-white font-body hidden md:inline-flex"
+          className="!px-2 mr-auto text-white bg-transparent hover:bg-primary-800 hover:text-white active:bg-primary-900 active:text-white font-body hidden md:inline-flex"
           type="button"
           slotSuffix={<SfIconExpandMore />}
           variant="tertiary"
@@ -40,7 +53,13 @@ export function DefaultLayout({ children }: PropsWithChildren): JSX.Element {
           ))}
         </nav>
       </NavbarTop>
-      {/*<Breadcrumbs />*/}
+      {breadcrumbs?.length > 0 && (
+        <NarrowContainer>
+          <div className="p-4 md:px-0">
+            <Breadcrumbs breadcrumbs={breadcrumbs} />
+          </div>
+        </NarrowContainer>
+      )}
       <main>{children}</main>
       <BottomNav />
       <ScrollToTopButton />
