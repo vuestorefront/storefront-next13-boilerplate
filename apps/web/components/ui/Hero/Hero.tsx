@@ -1,15 +1,15 @@
 import Image from 'next/legacy/image';
 import Link from 'next/link';
 import { SfButton } from '@storefront-ui/react';
-import hero from '~/public/images/hero.png';
+import type { HeroProps } from './types';
 
-export function Hero({ ...attributes }) {
+export function Hero({ fields, ...attributes }: HeroProps) {
   return (
     <div className="relative min-h-[600px] mb-10" {...attributes}>
       <div className="md:flex md:flex-row-reverse md:justify-center min-h-[600px] max-w-screen-3xl mx-auto">
         <div className="flex flex-col md:basis-2/4 md:items-stretch md:overflow-hidden">
           <Image
-            src={hero.src}
+            src={fields.image}
             alt="Hero"
             className="h-full object-cover object-left"
             height={600}

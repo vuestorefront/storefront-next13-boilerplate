@@ -9,4 +9,5 @@ export * from './OrderSummary';
 export * from './ScrollToTopButton';
 export * from './Heading';
 export * from './Page';
+export * from './RenderContent';
 export * from './ui';
