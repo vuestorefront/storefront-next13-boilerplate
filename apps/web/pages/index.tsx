@@ -17,7 +17,7 @@ export async function getServerSideProps({ locale }: GetServerSidePropsContext) 
 export default function Home() {
   const { t } = useTranslation();
 
-  const { data } = useQuery(['products'], () => sdk.ecomm.getFakeData());
+  const { data } = useQuery(['products'], () => sdk.commerce.getFakeData());
 
   return (
     <DefaultLayout>

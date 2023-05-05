@@ -1,3 +1,5 @@
-import { Product } from '~/mocks/product';
+import { SfProduct } from '@vsf-enterprise/unified-data-model';
 
-export type ProductCardProps = Product;
+export type ProductCardProps = {
+  product: SfProduct;
+};

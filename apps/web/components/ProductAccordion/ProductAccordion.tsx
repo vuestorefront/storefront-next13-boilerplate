@@ -1,32 +1,34 @@
 import { useState } from 'react';
-import { SfAccordionItem, SfIconExpandLess } from '@storefront-ui/react';
+import { SfAccordionItem, SfIconExpandMore } from '@storefront-ui/react';
+import classNames from 'classnames';
+import { xor } from 'lodash-es';
 import { useTranslation } from 'next-i18next';
 import { Divider, Review } from '~/components/ui';
-import { getReviewMock } from '~/mocks/product';
+import { useProductReviews } from '~/hooks';
+import { ProductAccordionProps } from './types';
 
-const reviews = getReviewMock(5);
-
-export function ProductAccordion() {
+export function ProductAccordion({ product, ...attributes }: ProductAccordionProps): JSX.Element {
+  const { description, slug } = product;
   const { t } = useTranslation('product');
+  const { data: reviews = [] } = useProductReviews(slug);
+
   const [opened, setOpened] = useState<string[]>(['description']);
-
   const isOpen = (id: string) => opened.includes(id);
-
-  const handleToggle = (id: string) => (open: boolean) => {
-    if (open) {
-      setOpened((current) => [...current, id]);
-    } else {
-      setOpened((current) => current.filter((item) => item !== id));
-    }
+  const handleToggle = (id: string) => () => {
+    setOpened((current) => xor(current, [id]));
   };
 
   return (
-    <>
+    <div {...attributes}>
       <SfAccordionItem
         summary={
           <>
             <h2 className="font-bold font-headings text-lg leading-6 md:text-2xl">{t('productDetails')}</h2>
-            <SfIconExpandLess className={'text-neutral-500 transition-transform'} />
+            <SfIconExpandMore
+              className={classNames('text-neutral-500', {
+                'rotate-180': isOpen('description'),
+              })}
+            />
           </>
         }
         summaryClassName="md:rounded-md w-full hover:bg-neutral-100 py-2 pl-4 pr-3 flex justify-between items-center"
@@ -35,9 +37,7 @@ export function ProductAccordion() {
       >
         <div className="py-2">
           <p className="text-neutral-900 px-4" data-testid="productDescription">
-            Introducing our newest product - a versatile and durable solution for all your needs. With its innovative
-            design and high-quality materials, this product is perfect for both personal and professional use. Get ready
-            to experience unparalleled functionality and convenience with our top-of-the-line offering.
+            {description}
           </p>
         </div>
       </SfAccordionItem>
@@ -46,7 +46,11 @@ export function ProductAccordion() {
         summary={
           <>
             <h2 className="font-bold font-headings text-lg leading-6 md:text-2xl">{t('customerReviews')}</h2>
-            <SfIconExpandLess className={'text-neutral-500 transition-transform'} />
+            <SfIconExpandMore
+              className={classNames('text-neutral-500', {
+                'rotate-180': isOpen('reviews'),
+              })}
+            />
           </>
         }
         summaryClassName="md:rounded-md w-full hover:bg-neutral-100 py-2 pl-4 pr-3 flex justify-between items-center"
@@ -56,11 +60,11 @@ export function ProductAccordion() {
         <div className="py-2">
           <div className="text-neutral-900 px-4" data-testid="customerReviews">
             {reviews.map((review) => (
-              <Review {...review} key={review.id} />
+              <Review review={review} key={review.id} />
             ))}
           </div>
         </div>
       </SfAccordionItem>
-    </>
+    </div>
   );
 }
