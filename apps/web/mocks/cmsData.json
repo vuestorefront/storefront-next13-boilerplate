@@ -62,46 +62,45 @@
             "component": "Display",
             "items": [
               {
-                "fields": {
-                  "backgroundColor": "#DDD6FE",
-                  "buttonGreyscale": true,
-                  "buttonLink": "/category",
-                  "buttonRounded": false,
-                  "buttonText": "Discover Now",
-                  "description": "Make your palette pop with our all-new Designer pieces",
-                  "direction": "horizontal-reverse",
-                  "image": "/images/display-1.png",
-                  "subtitle": "NEW COLLECTION",
-                  "title": "Fresg and bold"
-                }
+                "image": "/images/display-1.png",
+                "title": "Fresh and Bold",
+                "subtitle": "New collection",
+                "description": "Add a pop up color to your outfit",
+                "buttonText": "Discover now",
+                "reverse": true,
+                "backgroundColor": "bg-secondary-200",
+                "buttonGreyscale": true,
+                "buttonLink": "/category",
+                "buttonRounded": false,
+                "direction": "horizontal-reverse",
+                "titleClass": "md:typography-headline-2",
+                "subtitleClass": "md:typography-headline-6"
               },
               {
-                "fields": {
-                  "backgroundColor": "#FECDD3",
-                  "buttonGreyscale": true,
-                  "buttonLink": "/category",
-                  "buttonRounded": false,
-                  "buttonText": "Discover now",
-                  "description": "Explore our collection of designer shades.",
-                  "direction": "vertical",
-                  "image": "/images/display-2.png",
-                  "subtitle": "BE INSPIRED",
-                  "title": "Designer sunglasses"
-                }
+                "image": "/images/display-2.png",
+                "title": "Sunny Days Ahead",
+                "subtitle": "Be inspired",
+                "description": "Step out in style with our sunglasses collection",
+                "buttonText": "Discover now",
+                "reverse": true,
+                "backgroundColor": "bg-negative-200",
+                "buttonGreyscale": true,
+                "buttonLink": "/category",
+                "buttonRounded": false,
+                "direction": "vertical"
               },
               {
-                "fields": {
-                  "backgroundColor": "#FEF08A",
-                  "buttonGreyscale": true,
-                  "buttonLink": "/category",
-                  "buttonRounded": false,
-                  "buttonText": "Discover now",
-                  "description": "Backpacks for everyday and long trips.",
-                  "direction": "vertical",
-                  "image": "/images/display-3.png",
-                  "subtitle": "BE ACTIVE",
-                  "title": "Gear up and get ready"
-                }
+                "image": "/images/display-3.png",
+                "title": "Gear up and get ready",
+                "subtitle": "Be active",
+                "description": "Explore the great outdoors with our backpacks",
+                "buttonText": "Discover now",
+                "reverse": true,
+                "backgroundColor": "bg-warning-200",
+                "buttonGreyscale": true,
+                "buttonLink": "/category",
+                "buttonRounded": false,
+                "direction": "vertical"
               }
             ]
           }

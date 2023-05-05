@@ -25,7 +25,6 @@ export default function Home() {
           ))}
         </div>
       )}
-      {/*<Display />*/}
       {/*<section className="max-w-screen-3xl mx-auto px-4 md:px-10 mb-20" id="recommended-products">*/}
       {/*  <ProductSlider products={products} />*/}
       {/*</section>*/}

@@ -30,7 +30,7 @@ export function RenderContent({ content, ...attributes }: RenderContentProps): J
                 return <CategoryCard items={fields.items} />;
               }
               case 'Display': {
-                return <Display />;
+                return <Display items={fields.items} />;
               }
               // case 'ProductSlider': {
               //   return <ProductSlider />;
