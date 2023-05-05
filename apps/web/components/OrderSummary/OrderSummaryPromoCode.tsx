@@ -19,11 +19,7 @@ export function OrderSummaryPromoCode(): JSX.Element {
 
   const handleRemovePromoCode = (): void => {
     setPromoCode('');
-    const discountCodeId = cart.discountCodes[0].discountCode?.id;
-
-    if (typeof discountCodeId === 'string') {
-      // @todo handle remove promo code
-    }
+    // @todo handle remove promo code
   };
 
   return cart?.appliedCoupons.length ? (

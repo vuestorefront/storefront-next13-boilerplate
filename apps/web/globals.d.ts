@@ -3,3 +3,5 @@ declare module 'i18next' {
     returnNull: false;
   }
 }
+
+export {};
