@@ -8,16 +8,14 @@
         {
           "fields": {
             "component": "Hero",
-            "buttonLink": "/category",
-            "buttonRounded": false,
-            "buttonSize": "base",
-            "buttonText": "Browse deals",
-            "buttonVariant": "primary",
-            "description": "This fashionable sneaker collection features various colors, comfort and style.",
-            "direction": "horizontal",
             "image": "/images/hero.png",
-            "subtitle": "SPECIAL OFFER",
-            "title": "Sneaker hot drops"
+            "subtitle": "Feel the music",
+            "title": "New Wireless Pro",
+            "description": "Spatial audio. Adjustable ear cups. On-device controls. All-day battery.",
+            "primaryButtonLink": "/product/1",
+            "primaryButtonText": "Order now",
+            "secondaryButtonLink": "/category",
+            "secondaryButtonText": "Show more"
           }
         },
         {

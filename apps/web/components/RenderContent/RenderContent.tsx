@@ -1,20 +1,27 @@
 import { Fragment } from 'react';
-import { Page, Hero, Display, Heading, ProductSlider, CategoryCard } from '~/components';
-import { getProductMock } from '~/mocks/product';
+import { Page, Hero, Display, Heading, CategoryCard } from '~/components';
 import type { RenderContentProps } from './types';
-
-const products = getProductMock(8);
 
 export function RenderContent({ content, ...attributes }: RenderContentProps): JSX.Element {
   return (
     <div {...attributes}>
       {content.map(({ fields }, index) => (
-        // eslint-disable-next-line react/no-array-index-key
         <Fragment key={`${fields.component}-${index}`}>
           {(() => {
             switch (fields.component) {
               case 'Hero': {
-                return <Hero fields={fields} />;
+                return (
+                  <Hero
+                    image={fields.image}
+                    subtitle={fields.subtitle}
+                    title={fields.title}
+                    description={fields.description}
+                    primaryButtonLink={fields.primaryButtonLink}
+                    primaryButtonText={fields.primaryButtonText}
+                    secondaryButtonLink={fields.secondaryButtonLink}
+                    secondaryButtonText={fields.secondaryButtonText}
+                  />
+                );
               }
               case 'Display': {
                 return <Display />;
@@ -22,9 +29,9 @@ export function RenderContent({ content, ...attributes }: RenderContentProps): J
               case 'Heading': {
                 return <Heading />;
               }
-              case 'ProductSlider': {
-                return <ProductSlider products={products} />;
-              }
+              // case 'ProductSlider': {
+              //   return <ProductSlider />;
+              // }
               case 'Card': {
                 return <CategoryCard />;
               }
