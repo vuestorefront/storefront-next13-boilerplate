@@ -1,7 +1,6 @@
 import classNames from 'classnames';
 import { TagProps, TagSize } from './types';
 
-// eslint-disable-next-line complexity
 function getVariantClasses(variant: TagProps['variant'], strong: boolean): classNames.ArgumentArray {
   switch (variant) {
     case 'primary': {

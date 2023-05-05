@@ -1,5 +1,3 @@
-import { PropsWithChildren } from 'react';
-
 export enum TagVariant {
   primary = 'primary',
   secondary = 'secondary',
@@ -11,7 +9,7 @@ export enum TagSize {
   base = 'base',
 }
 
-export interface TagProps extends PropsWithChildren, React.HTMLAttributes<HTMLDivElement> {
+export interface TagProps extends React.HTMLAttributes<HTMLDivElement> {
   size?: `${TagSize}`;
   strong?: boolean;
   variant?: `${TagVariant}`;

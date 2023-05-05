@@ -1,5 +1,5 @@
 import { useMemo } from 'react';
-import { SfLineItem } from '@vsf-enterprise/unified-data-model';
+import { SfCartLineItem } from '@vsf-enterprise/unified-data-model';
 import { calculateCartTotals, roundTotals } from '~/helpers';
 import { CartTotals } from '~/hooks/cart/types';
 import { useCart } from './CartProvider';
@@ -24,15 +24,15 @@ export function useCartTotals() {
 
     const totalsRounded = roundTotals(
       cart.lineItems.reduce(
-        (accumulator: CartTotals, item: SfLineItem) => calculateCartTotals(accumulator, item),
+        (accumulator: CartTotals, item: SfCartLineItem) => calculateCartTotals(accumulator, item),
         totalsDefault,
       ),
     );
 
     return {
       ...totalsRounded,
-      deliveryCost: cart?.shippingInfo ? cart.shippingInfo.price.centAmount / 100 : 0,
-      priceWithDelivery: cart?.shippingInfo ? cart.totalPrice.centAmount / 100 : totalsRounded.promoCodeSpecial,
+      deliveryCost: 0, // @todo calculate delivery cost
+      priceWithDelivery: cart?.totalPrice.amount, // @todo calculate price with delivery
     };
   }, [cart]);
 }
