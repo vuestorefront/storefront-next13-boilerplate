@@ -23,18 +23,18 @@ export function RenderContent({ content, ...attributes }: RenderContentProps): J
                   />
                 );
               }
+              case 'Heading': {
+                return <Heading title={fields.title} tag={fields.tag} className={fields.className} />;
+              }
+              case 'Card': {
+                return <CategoryCard items={fields.items} />;
+              }
               case 'Display': {
                 return <Display />;
-              }
-              case 'Heading': {
-                return <Heading />;
               }
               // case 'ProductSlider': {
               //   return <ProductSlider />;
               // }
-              case 'Card': {
-                return <CategoryCard />;
-              }
               case 'Page': {
                 return <Page />;
               }
