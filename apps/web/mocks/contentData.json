@@ -69,10 +69,7 @@
                 "buttonText": "Discover now",
                 "reverse": true,
                 "backgroundColor": "bg-secondary-200",
-                "buttonGreyscale": true,
                 "buttonLink": "/category",
-                "buttonRounded": false,
-                "direction": "horizontal-reverse",
                 "titleClass": "md:typography-headline-2",
                 "subtitleClass": "md:typography-headline-6"
               },
@@ -84,10 +81,7 @@
                 "buttonText": "Discover now",
                 "reverse": true,
                 "backgroundColor": "bg-negative-200",
-                "buttonGreyscale": true,
-                "buttonLink": "/category",
-                "buttonRounded": false,
-                "direction": "vertical"
+                "buttonLink": "/category"
               },
               {
                 "image": "/images/display-3.png",
@@ -97,10 +91,7 @@
                 "buttonText": "Discover now",
                 "reverse": true,
                 "backgroundColor": "bg-warning-200",
-                "buttonGreyscale": true,
-                "buttonLink": "/category",
-                "buttonRounded": false,
-                "direction": "vertical"
+                "buttonLink": "/category"
               }
             ]
           }
