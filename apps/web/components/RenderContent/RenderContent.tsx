@@ -1,5 +1,5 @@
 import { Fragment } from 'react';
-import { Page, Hero, Display, Heading, CategoryCard } from '~/components';
+import { Page, Hero, Display, Heading, CategoryCard, ProductSlider } from '~/components';
 import type { RenderContentProps } from './types';
 
 export function RenderContent({ content, ...attributes }: RenderContentProps): JSX.Element {
@@ -32,9 +32,11 @@ export function RenderContent({ content, ...attributes }: RenderContentProps): J
               case 'Display': {
                 return <Display items={fields.items} />;
               }
-              // case 'ProductSlider': {
-              //   return <ProductSlider />;
-              // }
+              case 'ProductSlider': {
+                return (
+                  <ProductSlider products={fields.items} className="max-w-screen-3xl mx-auto px-4 md:px-10 mb-20" />
+                );
+              }
               case 'Page': {
                 return <Page />;
               }
