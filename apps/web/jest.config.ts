@@ -11,6 +11,7 @@ const customJestConfig: Config = {
   testEnvironment: 'jsdom',
   moduleNameMapper: {
     '~/(.*)$': ['<rootDir>/$1'],
+    'lodash-es': 'lodash',
   },
   transform: {
     '^.+\\.[jt]s?(x)$': 'ts-jest',

@@ -2,50 +2,15 @@ import Image from 'next/legacy/image';
 import Link from 'next/link';
 import { SfButton } from '@storefront-ui/react';
 import classNames from 'classnames';
-import hat from '~/public/images/display-1.png';
-import sunglasses from '~/public/images/display-2.png';
-import backpack from '~/public/images/display-3.png';
+import type { DisplayProps } from './types';
 
-const displayDetails = [
-  {
-    image: hat,
-    title: 'Fresh and Bold',
-    subtitle: 'New collection',
-    description: 'Add a pop up color to your outfit',
-    buttonText: 'Discover now.',
-    reverse: true,
-    backgroundColor: 'bg-secondary-200',
-    titleClass: 'md:typography-headline-2',
-    subtitleClass: 'md:typography-headline-6',
-    descriptionClass: 'md:typography-text-lg',
-  },
-  {
-    title: 'Pack it Up',
-    subtitle: 'Be active',
-    description: 'Explore the great outdoors with our backpacks',
-    buttonText: 'Discover now',
-    image: backpack,
-    backgroundColor: 'bg-warning-200',
-    reverse: true,
-  },
-  {
-    title: 'Sunny Days Ahead',
-    subtitle: 'Be inspired',
-    description: 'Step out in style with our sunglasses collection',
-    buttonText: 'Discover now',
-    image: sunglasses,
-    backgroundColor: 'bg-negative-200',
-    reverse: true,
-  },
-];
-
-export function Display({ ...attributes }) {
+export function Display({ items, ...attributes }: DisplayProps) {
   return (
     <div
       className="flex flex-col md:flex-row flex-wrap gap-6 max-w-screen-3xl mx-auto px-4 md:px-10 mb-10"
       {...attributes}
     >
-      {displayDetails.map(
+      {items.map(
         ({ image, title, subtitle, description, buttonText, backgroundColor, reverse, titleClass, subtitleClass }) => (
           <div
             key={title}
@@ -73,7 +38,7 @@ export function Display({ ...attributes }) {
                 </SfButton>
               </div>
               <Image
-                src={image.src}
+                src={image}
                 alt={title}
                 className="w-full md:w-1/2 self-end object-contain"
                 layout="intrinsic"

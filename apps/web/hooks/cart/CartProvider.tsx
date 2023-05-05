@@ -32,12 +32,20 @@ async function createCart(): Promise<SfCart> {
         totalPrice: {
           currency: 'USD',
           amount: 120,
-          precisionAmount: 120,
+          precisionAmount: '120',
         },
         unitPrice: {
-          currency: 'USD',
-          amount: 12,
-          precisionAmount: 1,
+          isDiscounted: false,
+          regularPrice: {
+            currency: 'USD',
+            amount: 12,
+            precisionAmount: '12',
+          },
+          value: {
+            currency: 'USD',
+            amount: 12,
+            precisionAmount: '12',
+          },
         },
       },
     ],
@@ -46,29 +54,29 @@ async function createCart(): Promise<SfCart> {
     subtotalDiscountedPrice: {
       currency: 'USD',
       amount: 0,
-      precisionAmount: 0,
+      precisionAmount: '2',
     },
     subtotalRegularPrice: {
       currency: 'USD',
       amount: 0,
-      precisionAmount: 0,
+      precisionAmount: '2',
     },
     totalCouponDiscounts: {
       currency: 'USD',
       amount: 0,
-      precisionAmount: 0,
+      precisionAmount: '2',
     },
     totalItems: 0,
     totalPrice: {
       currency: 'USD',
       amount: 0,
-      precisionAmount: 0,
+      precisionAmount: '2',
     },
     totalShippingPrice: null,
     totalTax: {
       currency: 'USD',
       amount: 0,
-      precisionAmount: 0,
+      precisionAmount: '2',
     },
   };
 }

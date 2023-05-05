@@ -22,5 +22,7 @@
   "allProductsLinkText": "Browse products",
   "breadcrumbsDropdownText": "Show more breadcrumbs",
   "youAreOfflineText": "It seems you are currently offline, check your internet connection",
-  "viewCart": "View Cart"
+  "viewCart": "View Cart",
+  "compare": "Compare",
+  "addToList": "Add to list"
 }

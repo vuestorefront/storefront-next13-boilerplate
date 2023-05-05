@@ -23,7 +23,7 @@ function getPromoCodeSpecialPrice(item: SfCartLineItem, fallback?: true): Price;
 function getPromoCodeSpecialPrice(item: SfCartLineItem, fallback?: boolean) {
   // @todo calc real value base on unified data model
 
-  return null;
+  return null as any;
 }
 
 function calculateCartTotals(accumulator: CartTotals, item: SfCartLineItem): CartTotals {

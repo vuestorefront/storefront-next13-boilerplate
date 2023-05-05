@@ -1,15 +1,25 @@
 import Image from 'next/legacy/image';
 import Link from 'next/link';
 import { SfButton } from '@storefront-ui/react';
-import hero from '~/public/images/hero.png';
+import type { HeroProps } from './types';
 
-export function Hero({ ...attributes }) {
+export function Hero({
+  image,
+  subtitle,
+  title,
+  description,
+  primaryButtonLink,
+  primaryButtonText,
+  secondaryButtonLink,
+  secondaryButtonText,
+  ...attributes
+}: HeroProps) {
   return (
     <div className="relative min-h-[600px] mb-10" {...attributes}>
       <div className="md:flex md:flex-row-reverse md:justify-center min-h-[600px] max-w-screen-3xl mx-auto">
         <div className="flex flex-col md:basis-2/4 md:items-stretch md:overflow-hidden">
           <Image
-            src={hero.src}
+            src={image}
             alt="Hero"
             className="h-full object-cover object-left"
             height={600}
@@ -21,20 +31,18 @@ export function Hero({ ...attributes }) {
         </div>
         <div className="p-4 md:p-10 md:flex md:flex-col md:justify-center md:items-start md:basis-2/4">
           <p className="typography-text-xs md:typography-text-sm font-bold tracking-widest text-neutral-500 uppercase">
-            Feel the music
+            {subtitle}
           </p>
           <h1 className="typography-headline-2 md:typography-headline-1 md:leading-[67.5px] font-bold mt-2 mb-4">
-            New Wireless Pro
+            {title}
           </h1>
-          <p className="typography-text-base md:typography-text-lg">
-            Spatial audio. Adjustable ear cups. On-device controls. All-day battery.
-          </p>
+          <p className="typography-text-base md:typography-text-lg">{description}</p>
           <div className="flex flex-col md:flex-row gap-4 mt-6">
-            <SfButton size="lg" as={Link} href="/product/page/1">
-              {'Order now'}
+            <SfButton size="lg" as={Link} href={primaryButtonLink}>
+              {primaryButtonText}
             </SfButton>
-            <SfButton size="lg" as={Link} href="/category" className="bg-white" variant="secondary">
-              {'Show more'}
+            <SfButton size="lg" as={Link} href={secondaryButtonLink} className="bg-white" variant="secondary">
+              {secondaryButtonText}
             </SfButton>
           </div>
         </div>

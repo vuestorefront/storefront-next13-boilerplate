@@ -1,3 +1,5 @@
-import { Review } from '~/mocks/product';
+import { SfProductReview } from '@vsf-enterprise/unified-data-model';
 
-export type ReviewProps = Review;
+export type ReviewProps = {
+  review: SfProductReview;
+};

@@ -1,5 +1,6 @@
-import { Product } from '~/mocks/product';
+import { SfProduct } from '@vsf-enterprise/unified-data-model';
 
 export type ProductSliderProps = {
-  products: Product[];
+  products: SfProduct[];
+  className?: string;
 };
