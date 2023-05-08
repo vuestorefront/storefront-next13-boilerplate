@@ -9,6 +9,7 @@ module.exports = {
     './layouts/**/*.{js,ts,jsx,tsx}',
     './pages/**/*.{js,ts,jsx,tsx}',
     '../../node_modules/@storefront-ui/react/**/*.js',
+    '../../node_modules/@vsf-enterprise/integration-boilerplate-sdk/src/data/content.json',
   ],
   theme: {
     extend: {
