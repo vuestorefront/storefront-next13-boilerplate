@@ -8,3 +8,6 @@ export * from './ProductSlider';
 export * from './OrderSummary';
 export * from './ScrollToTopButton';
 export * from './ProductAccordion';
+export * from './Heading';
+export * from './Page';
+export * from './RenderContent';
