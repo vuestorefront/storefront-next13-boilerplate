@@ -1,0 +1,336 @@
+[
+  {
+    "fields": {
+      "component": "Page",
+      "name": "Home Page",
+      "url": "home-page",
+      "content": [
+        {
+          "fields": {
+            "component": "Hero",
+            "image": "/images/hero.png",
+            "subtitle": "Feel the music",
+            "title": "New Wireless Pro",
+            "description": "Spatial audio. Adjustable ear cups. On-device controls. All-day battery.",
+            "primaryButtonLink": "/product/1",
+            "primaryButtonText": "Order now",
+            "secondaryButtonLink": "/category",
+            "secondaryButtonText": "Show more"
+          }
+        },
+        {
+          "fields": {
+            "component": "Heading",
+            "className": "text-center mb-6 font-bold typography-headline-3 md:typography-headline-2",
+            "tag": "h2",
+            "title": "Shop by category"
+          }
+        },
+        {
+          "fields": {
+            "component": "Card",
+            "items": [
+              {
+                "id": "fbcd250e-b53a-40a7-9087-e4303de6ea90",
+                "name": "New",
+                "slug": "category",
+                "subcategories": [],
+                "productCount": 120,
+                "image": "/images/new-card.png"
+              },
+              {
+                "id": "03bf5dad-1b4b-44db-adf0-6ee858cdc358",
+                "name": "Men",
+                "slug": "category",
+                "subcategories": [],
+                "productCount": 428,
+                "image": "/images/men-card.png"
+              },
+              {
+                "id": "af4ce472-45e9-4dd4-9988-275d229ce287",
+                "name": "Women",
+                "slug": "category",
+                "subcategories": [],
+                "productCount": 513,
+                "image": "/images/women-card.png"
+              }
+            ]
+          }
+        },
+        {
+          "fields": {
+            "component": "Display",
+            "items": [
+              {
+                "image": "/images/display-1.png",
+                "title": "Fresh and Bold",
+                "subtitle": "New collection",
+                "description": "Add a pop up color to your outfit",
+                "buttonText": "Discover now",
+                "reverse": true,
+                "backgroundColor": "bg-secondary-200",
+                "buttonLink": "/category",
+                "titleClass": "md:typography-headline-2",
+                "subtitleClass": "md:typography-headline-6"
+              },
+              {
+                "image": "/images/display-2.png",
+                "title": "Sunny Days Ahead",
+                "subtitle": "Be inspired",
+                "description": "Step out in style with our sunglasses collection",
+                "buttonText": "Discover now",
+                "reverse": true,
+                "backgroundColor": "bg-negative-200",
+                "buttonLink": "/category"
+              },
+              {
+                "image": "/images/display-3.png",
+                "title": "Gear up and get ready",
+                "subtitle": "Be active",
+                "description": "Explore the great outdoors with our backpacks",
+                "buttonText": "Discover now",
+                "reverse": true,
+                "backgroundColor": "bg-warning-200",
+                "buttonLink": "/category"
+              }
+            ]
+          }
+        },
+        {
+          "fields": {
+            "component": "Heading",
+            "className": "text-center mb-6 font-bold typography-headline-3 md:typography-headline-2",
+            "tag": "h2",
+            "title": "Inspired by your picks"
+          }
+        },
+        {
+          "fields": {
+            "component": "ProductSlider",
+            "navigation": "floating",
+            "scrollSnap": true,
+            "scrollbar": "auto",
+            "items": [
+              {
+                "id": "1",
+                "sku": "athletic-mens-walking-sneakers",
+                "name": "Athletic mens walking sneakers",
+                "slug": "product-1",
+                "rating": {
+                  "average": 4.5,
+                  "count": 133
+                },
+                "price": {
+                  "isDiscounted": true,
+                  "regularPrice": {
+                    "currency": "USD",
+                    "amount": 100.99,
+                    "precisionAmount": "2"
+                  },
+                  "value": {
+                    "currency": "USD",
+                    "amount": 89.95,
+                    "precisionAmount": "2"
+                  }
+                },
+                "primaryImage": {
+                  "alt": "Athletic mens walking sneakers",
+                  "url": "/images/product.webp"
+                }
+              },
+              {
+                "id": "2",
+                "sku": "athletic-mens-walking-sneakers",
+                "name": "Athletic mens walking sneakers",
+                "slug": "product-2",
+                "rating": {
+                  "average": 4.5,
+                  "count": 133
+                },
+                "price": {
+                  "isDiscounted": true,
+                  "regularPrice": {
+                    "currency": "USD",
+                    "amount": 100.99,
+                    "precisionAmount": "2"
+                  },
+                  "value": {
+                    "currency": "USD",
+                    "amount": 89.95,
+                    "precisionAmount": "2"
+                  }
+                },
+                "primaryImage": {
+                  "alt": "Athletic mens walking sneakers",
+                  "url": "/images/product.webp"
+                }
+              },
+              {
+                "id": "3",
+                "sku": "athletic-mens-walking-sneakers",
+                "name": "Athletic mens walking sneakers",
+                "slug": "product-3",
+                "rating": {
+                  "average": 4.5,
+                  "count": 133
+                },
+                "price": {
+                  "isDiscounted": true,
+                  "regularPrice": {
+                    "currency": "USD",
+                    "amount": 100.99,
+                    "precisionAmount": "2"
+                  },
+                  "value": {
+                    "currency": "USD",
+                    "amount": 89.95,
+                    "precisionAmount": "2"
+                  }
+                },
+                "primaryImage": {
+                  "alt": "Athletic mens walking sneakers",
+                  "url": "/images/product.webp"
+                }
+              },
+              {
+                "id": "4",
+                "sku": "athletic-mens-walking-sneakers",
+                "name": "Athletic mens walking sneakers",
+                "slug": "product-4",
+                "rating": {
+                  "average": 4.5,
+                  "count": 133
+                },
+                "price": {
+                  "isDiscounted": true,
+                  "regularPrice": {
+                    "currency": "USD",
+                    "amount": 100.99,
+                    "precisionAmount": "2"
+                  },
+                  "value": {
+                    "currency": "USD",
+                    "amount": 89.95,
+                    "precisionAmount": "2"
+                  }
+                },
+                "primaryImage": {
+                  "alt": "Athletic mens walking sneakers",
+                  "url": "/images/product.webp"
+                }
+              },
+              {
+                "id": "5",
+                "sku": "athletic-mens-walking-sneakers",
+                "name": "Athletic mens walking sneakers",
+                "slug": "product-5",
+                "rating": {
+                  "average": 4.5,
+                  "count": 133
+                },
+                "price": {
+                  "isDiscounted": true,
+                  "regularPrice": {
+                    "currency": "USD",
+                    "amount": 100.99,
+                    "precisionAmount": "2"
+                  },
+                  "value": {
+                    "currency": "USD",
+                    "amount": 89.95,
+                    "precisionAmount": "2"
+                  }
+                },
+                "primaryImage": {
+                  "alt": "Athletic mens walking sneakers",
+                  "url": "/images/product.webp"
+                }
+              },
+              {
+                "id": "6",
+                "sku": "athletic-mens-walking-sneakers",
+                "name": "Athletic mens walking sneakers",
+                "slug": "product-6",
+                "rating": {
+                  "average": 4.5,
+                  "count": 133
+                },
+                "price": {
+                  "isDiscounted": true,
+                  "regularPrice": {
+                    "currency": "USD",
+                    "amount": 100.99,
+                    "precisionAmount": "2"
+                  },
+                  "value": {
+                    "currency": "USD",
+                    "amount": 89.95,
+                    "precisionAmount": "2"
+                  }
+                },
+                "primaryImage": {
+                  "alt": "Athletic mens walking sneakers",
+                  "url": "/images/product.webp"
+                }
+              },
+              {
+                "id": "7",
+                "sku": "athletic-mens-walking-sneakers",
+                "name": "Athletic mens walking sneakers",
+                "slug": "product-7",
+                "rating": {
+                  "average": 4.5,
+                  "count": 133
+                },
+                "price": {
+                  "isDiscounted": true,
+                  "regularPrice": {
+                    "currency": "USD",
+                    "amount": 100.99,
+                    "precisionAmount": "2"
+                  },
+                  "value": {
+                    "currency": "USD",
+                    "amount": 89.95,
+                    "precisionAmount": "2"
+                  }
+                },
+                "primaryImage": {
+                  "alt": "Athletic mens walking sneakers",
+                  "url": "/images/product.webp"
+                }
+              },
+              {
+                "id": "8",
+                "sku": "athletic-mens-walking-sneakers",
+                "name": "Athletic mens walking sneakers",
+                "slug": "product-8",
+                "rating": {
+                  "average": 4.5,
+                  "count": 133
+                },
+                "price": {
+                  "isDiscounted": true,
+                  "regularPrice": {
+                    "currency": "USD",
+                    "amount": 100.99,
+                    "precisionAmount": "2"
+                  },
+                  "value": {
+                    "currency": "USD",
+                    "amount": 89.95,
+                    "precisionAmount": "2"
+                  }
+                },
+                "primaryImage": {
+                  "alt": "Athletic mens walking sneakers",
+                  "url": "/images/product.webp"
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+]

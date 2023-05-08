@@ -14,6 +14,9 @@ const extension = {
       const product = await import('~/mocks/product.json').then((response) => response.default);
       return Array.from({ length: 8 }, (_, index) => ({ ...product, id: index.toString() }));
     },
+    async getContent({ url }: { url: string }): Promise<any[]> {
+      return import('~/mocks/contentData.json').then((response) => response.default);
+    },
   },
 };
 
