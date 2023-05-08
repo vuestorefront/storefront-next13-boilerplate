@@ -14,6 +14,7 @@ import {
   PurchaseCard,
 } from '~/components';
 import { useProductRecommended, useProduct, prefetchProduct } from '~/hooks';
+import { useProductBreadcrumbs } from '~/hooks/useProductBreadcrumbs';
 import { DefaultLayout } from '~/layouts';
 
 interface ProductPageQuery extends ParsedUrlQuery {
@@ -52,6 +53,7 @@ export function ProductPage() {
 
   const { data: product } = useProduct(slug);
   const { data: recommendedProducts = [] } = useProductRecommended(slug);
+  const { breadcrumbs } = useProductBreadcrumbs(product);
 
   if (!product) {
     return null;
@@ -60,7 +62,7 @@ export function ProductPage() {
   const { gallery } = product;
 
   return (
-    <DefaultLayout breadcrumbs={[]}>
+    <DefaultLayout breadcrumbs={breadcrumbs}>
       <Head>
         <title>{`${product.name} | Vue Storefront Demo`}</title>
       </Head>
