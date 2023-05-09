@@ -1,5 +1,5 @@
 import Image from 'next/legacy/image';
-import Link from 'next/link';
+import NextLink from 'next/link';
 import { SfButton } from '@storefront-ui/react';
 import type { HeroProps } from './types';
 
@@ -38,10 +38,10 @@ export function Hero({
           </h1>
           <p className="typography-text-base md:typography-text-lg">{description}</p>
           <div className="flex flex-col md:flex-row gap-4 mt-6">
-            <SfButton size="lg" as={Link} href={primaryButtonLink}>
+            <SfButton size="lg" as={NextLink} href={primaryButtonLink}>
               {primaryButtonText}
             </SfButton>
-            <SfButton size="lg" as={Link} href={secondaryButtonLink} className="bg-white" variant="secondary">
+            <SfButton size="lg" as={NextLink} href={secondaryButtonLink} className="bg-white" variant="secondary">
               {secondaryButtonText}
             </SfButton>
           </div>

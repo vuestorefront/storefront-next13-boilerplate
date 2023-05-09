@@ -1,10 +1,10 @@
-import Link from 'next/link';
+import NextLink from 'next/link';
 import { SfCounter, SfListItem } from '@storefront-ui/react';
 import { CategoryTreeItemProps } from './types';
 
 export function CategoryTreeItem({ name, count, href }: CategoryTreeItemProps): JSX.Element {
   return (
-    <Link href={href}>
+    <NextLink href={href}>
       <SfListItem as="span" size="lg" className="md:sf-list-item-sm md:py-1.5 sf-list-item">
         <span className="flex gap-2 items-center">
           <span className="text-base md:text-sm capitalize flex items-center" data-testid="list-item-menu-label">
@@ -17,6 +17,6 @@ export function CategoryTreeItem({ name, count, href }: CategoryTreeItemProps): 
           )}
         </span>
       </SfListItem>
-    </Link>
+    </NextLink>
   );
 }
