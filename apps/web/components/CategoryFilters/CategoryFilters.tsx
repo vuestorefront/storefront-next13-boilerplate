@@ -1,30 +1,31 @@
 import { useTranslation } from 'next-i18next';
-import { FilterContainer } from '~/components/FilterContainer';
 import { getFacetByAlias } from '~/helpers';
 import { useSearchParams } from '~/hooks';
 import { getProducts } from '~/mocks/products';
-import { FilterColor, FilterSize } from './Filters';
+import { Filter } from './Filter';
 
 export function CategoryFilters() {
-  const { t } = useTranslation();
+  const { t } = useTranslation('category');
   const { setSearchParams, getAllSearchParams } = useSearchParams();
   const { facets } = getProducts();
-
   const facetFilters = getAllSearchParams(['color', 'size']);
-
-  const setValue = (name: string) => (values: string[]) => setSearchParams({ [name]: values });
-
   const colorFacets = getFacetByAlias('color', facets);
   const sizeFacets = getFacetByAlias('size', facets);
+  const setValue = (name: string) => (values: string[]) => setSearchParams({ [name]: values });
 
   return (
-    <FilterContainer title={t('category:filters')}>
+    <>
+      <h5 className="py-2 px-4 mt-6 mb-4 bg-neutral-100 typography-headline-6 font-bold text-neutral-900 uppercase tracking-widest md:rounded-md">
+        {t('filters')}
+      </h5>
       <div className="flex flex-col gap-2">
         {sizeFacets && (
-          <FilterSize facet={sizeFacets} selected={facetFilters.size} onChange={setValue('size')} max={15} />
+          <Filter facet={sizeFacets} selected={facetFilters.size} onChange={setValue('size')} type="size" />
         )}
-        {colorFacets && <FilterColor facet={colorFacets} selected={facetFilters.color} onChange={setValue('color')} />}
+        {colorFacets && (
+          <Filter facet={colorFacets} selected={facetFilters.color} onChange={setValue('color')} type="color" />
+        )}
       </div>
-    </FilterContainer>
+    </>
   );
 }

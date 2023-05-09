@@ -10,9 +10,9 @@ const queryFilters = ['color', 'size'];
 export function CategorySidebar({ isOpen, closeSidebar, children }: CategorySidebarProps): JSX.Element {
   const { t } = useTranslation('category');
   const { clearSearchParams, getSearchParams } = useSearchParams();
-  const nodeRef = useRef(null);
+  const nodeReference = useRef(null);
 
-  useTrapFocus(nodeRef, { activeState: isOpen });
+  useTrapFocus(nodeReference, { activeState: isOpen });
 
   const filters = getSearchParams(queryFilters);
   const hasFilters = queryFilters.some((value) => Boolean(filters[value]));
@@ -23,9 +23,9 @@ export function CategorySidebar({ isOpen, closeSidebar, children }: CategorySide
   };
 
   return (
-    <CSSTransition nodeRef={nodeRef} in={isOpen} timeout={500} classNames="slide-left">
+    <CSSTransition nodeRef={nodeReference} in={isOpen} timeout={500} classNames="slide-left">
       <SfDrawer
-        ref={nodeRef}
+        ref={nodeReference}
         className="w-full shadow-none md:translate-x-0 z-[100] md:z-0 md:static -translate-x-full shrink-0 md:w-[303px] bg-white"
         data-testid="category-sidebar"
         placement="left"

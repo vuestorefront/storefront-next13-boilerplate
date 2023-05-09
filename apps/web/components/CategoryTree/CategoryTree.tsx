@@ -1,14 +1,16 @@
 import { SfIconArrowBack } from '@storefront-ui/react';
 import { useTranslation } from 'next-i18next';
 import { CategoryTreeProps } from '~/components/CategoryTree/types';
-import { FilterContainer } from '~/components/FilterContainer';
 import { CategoryTreeItem } from './CategoryTreeItem';
 
 export function CategoryTree({ parent, categories }: CategoryTreeProps) {
   const { t } = useTranslation('category');
 
   return (
-    <FilterContainer title={t('category')}>
+    <>
+      <h5 className="py-2 px-4 mb-4 bg-neutral-100 typography-headline-6 font-bold text-neutral-900 uppercase tracking-widest md:rounded-md">
+        {t('category')}
+      </h5>
       {parent && (
         <CategoryTreeItem
           name={
@@ -26,6 +28,6 @@ export function CategoryTree({ parent, categories }: CategoryTreeProps) {
           <CategoryTreeItem key={name} name={name} count={count} href="/category" />
         ))}
       </div>
-    </FilterContainer>
+    </>
   );
 }

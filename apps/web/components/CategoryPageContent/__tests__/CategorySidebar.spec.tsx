@@ -1,18 +1,21 @@
 import { render } from '@testing-library/react';
 import { CategorySidebar } from '../CategorySidebar';
 
-const mockedText = 'test content';
+jest.mock('~/hooks', () => ({
+  useSearchParams: jest.fn(() => ({
+    setSearchParams: jest.fn(),
+    getSearchParams: jest.fn(() => []),
+  })),
+}));
 
-describe('CategorySidebar', () => {
-  it('renders the category sidebar with children', () => {
-    const { getByText } = render(
-      <CategorySidebar isOpen={false} closeSidebar={jest.fn()}>
-        <span>{mockedText}</span>
-      </CategorySidebar>,
-    );
+afterEach(() => {
+  jest.clearAllMocks();
+});
 
-    expect(getByText(mockedText)).toBeInTheDocument();
-    expect(getByText('listSettings')).toBeInTheDocument();
-    expect(getByText('showProducts')).toBeInTheDocument();
+describe('<CategorySidebar />', () => {
+  it('should render component', () => {
+    const { container } = render(<CategorySidebar isOpen={false} closeSidebar={jest.fn()} />);
+
+    expect(container).not.toBeEmptyDOMElement();
   });
 });

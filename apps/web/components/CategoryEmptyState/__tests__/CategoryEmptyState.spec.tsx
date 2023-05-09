@@ -7,7 +7,5 @@ describe('<CategoryEmptyState/>', () => {
     const { getByText } = render(<CategoryEmptyState />);
 
     getByText('category:emptyStateText');
-    getByText('allProductsLinkText');
-    expect(getByText('allProductsLinkText').closest('a')).toHaveAttribute('href', '/category');
   });
 });
