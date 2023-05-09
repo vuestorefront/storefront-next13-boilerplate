@@ -8,5 +8,6 @@ export type ProductCardProps = {
   rating?: number;
   ratingCount?: number;
   price?: number;
+  slug?: string;
   className?: string;
 };
