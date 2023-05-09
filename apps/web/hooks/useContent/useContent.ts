@@ -14,18 +14,8 @@ export async function prefetchContent(url: string): Promise<QueryClient> {
  */
 
 export function useContent<TFields>(url: string) {
-  const {
-    data: content,
-    isLoading,
-    isError,
-  } = useQuery(['content', url], () => sdk.commerce.getContent<TFields>({ url }), {
+  return useQuery(['content', url], () => sdk.commerce.getContent<TFields>({ url }), {
     refetchOnMount: false,
     refetchOnWindowFocus: false,
   });
-
-  return {
-    content,
-    isLoading,
-    isError,
-  };
 }

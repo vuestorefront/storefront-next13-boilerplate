@@ -25,7 +25,7 @@ export async function getServerSideProps({ locale }: GetServerSidePropsContext) 
 }
 
 export default function Home() {
-  const { content } = useContent<ContentDynamicPage>(contentUrl);
+  const { data: content } = useContent<ContentDynamicPage>(contentUrl);
 
   return (
     <DefaultLayout>
