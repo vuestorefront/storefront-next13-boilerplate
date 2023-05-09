@@ -26,9 +26,9 @@ describe('useContent', () => {
     const wrapper = createWrapper();
     const { result } = renderHook(() => useContent('mock-url'), { wrapper });
     
-    await waitFor(() => expect(result.current.data).not.toBeUndefined());
+    await waitFor(() => expect(result.current.content).not.toBeUndefined());
     
-    expect(result.current.data).toMatchInlineSnapshot(`
+    expect(result.current.content).toMatchInlineSnapshot(`
       [
         {
           "fields": {
