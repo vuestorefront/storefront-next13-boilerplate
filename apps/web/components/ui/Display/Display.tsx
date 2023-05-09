@@ -4,11 +4,6 @@ import { SfButton } from '@storefront-ui/react';
 import classNames from 'classnames';
 import type { DisplayProps } from './types';
 
-// fake comments to make tailwind include those classes in the generated tailwind.css
-// bg-secondary-200 md:typography-headline-2 md:typography-headline-6
-// bg-negative-200
-// bg-warning-200
-
 export function Display({ items, ...attributes }: DisplayProps) {
   return (
     <div

@@ -38,5 +38,6 @@ module.exports = {
       },
     },
   },
+  safelist: ['bg-secondary-200', 'bg-negative-200', 'bg-warning-200', 'md:typography-headline-6'],
   plugins: [sfTypography, require('@savvywombat/tailwindcss-grid-areas')],
 };
