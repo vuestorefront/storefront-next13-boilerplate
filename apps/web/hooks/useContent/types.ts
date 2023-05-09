@@ -9,17 +9,21 @@ type EntryFields<TFields> = Array<{
   fields: TFields;
 }>;
 
+type WithComponentField<TProps, TComponent> = TProps & {
+  component: TComponent;
+};
+
 export interface PageProps {
   component: 'Page';
   content: ReactNode;
 }
 
 export type DynamicContentFields =
-  | HeroProps
-  | HeadingProps
-  | CategoryCardProps
-  | DisplayProps
-  | ProductSliderProps
+  | WithComponentField<HeroProps, 'Hero'>
+  | WithComponentField<HeadingProps, 'Heading'>
+  | WithComponentField<CategoryCardProps, 'Card'>
+  | WithComponentField<DisplayProps, 'Display'>
+  | WithComponentField<ProductSliderProps, 'ProductSlider'>
   | PageProps;
 
 export interface ContentDynamicPage {
