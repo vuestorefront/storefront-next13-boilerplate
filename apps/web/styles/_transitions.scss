@@ -1,20 +1,3 @@
-.fade-in {
-  &-enter {
-    opacity: 0;
-  }
-  &-enter-active {
-    opacity: 1;
-    transition: opacity 200ms ease-in-out;
-  }
-  &-exit {
-    opacity: 1;
-  }
-  &-exit-active {
-    opacity: 0;
-    transition: opacity 200ms ease-in-out;
-  }
-}
-
 .slide-left {
   &-exit,
   &-leave-to {

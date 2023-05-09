@@ -4,7 +4,6 @@ export * from './CategoryFilters';
 export * from './CategoryPageContent';
 export * from './CategoryTree';
 export * from './CategorySorting';
-export * from './Footer';
 export * from './CartPageContent';
 export * from './Footer';
 export * from './NarrowContainer';

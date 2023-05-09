@@ -1,10 +1,9 @@
 import { ReactNode } from 'react';
 import { UrlObject } from 'node:url';
-import { Nullable } from '~/types';
 
 type CategoryTreeItem = {
   name: string;
-  count?: Nullable<number>;
+  count?: number;
   href: string | UrlObject;
 };
 
