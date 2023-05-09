@@ -1,13 +1,12 @@
 import { Fragment } from 'react';
-import { useUpdateEffect } from 'react-use';
 import { SfButton, SfIconChevronLeft, SfIconChevronRight } from '@storefront-ui/react';
 import classNames from 'classnames';
 import { useTranslation } from 'next-i18next';
 import { usePagination } from '~/hooks';
 import { PaginationProps } from './types';
 
-export function Pagination({ currentPage, pageSize, totalItems, maxVisiblePages, onPageUpdate }: PaginationProps) {
-  const { t } = useTranslation(['category']);
+export function Pagination({ currentPage, pageSize, totalItems, maxVisiblePages }: PaginationProps) {
+  const { t } = useTranslation('category');
   const { totalPages, pages, selectedPage, startPage, endPage, next, prev, setPage } = usePagination({
     totalItems,
     currentPage,
@@ -15,24 +14,16 @@ export function Pagination({ currentPage, pageSize, totalItems, maxVisiblePages,
     maxPages: maxVisiblePages,
   });
 
-  useUpdateEffect(() => {
-    if (typeof onPageUpdate === 'function') {
-      onPageUpdate(selectedPage);
-    }
-  }, [selectedPage]);
-
   return (
     <nav
       className="flex justify-between items-center border-t border-neutral-200"
       role="navigation"
       aria-label="pagination"
-      data-testid="pagination"
     >
       <SfButton
-        data-testid="prev-page"
         type="button"
         size="lg"
-        className="gap-3"
+        className="gap-3 mt-2"
         aria-label={t('prevAriaLabel')}
         disabled={selectedPage <= 1}
         variant="tertiary"
@@ -50,7 +41,6 @@ export function Pagination({ currentPage, pageSize, totalItems, maxVisiblePages,
               })}
             >
               <button
-                data-testid="first-page"
                 type="button"
                 className="px-4 py-3 rounded-md text-neutral-500 hover:bg-primary-100 hover:text-primary-800 active:bg-primary-200 active:text-primary-900"
                 aria-current={selectedPage === 1}
@@ -81,7 +71,6 @@ export function Pagination({ currentPage, pageSize, totalItems, maxVisiblePages,
               <li>
                 <div className="flex pt-1 border-t-4 border-transparent">
                   <button
-                    data-testid="before-last-page"
                     type="button"
                     className="px-4 py-3 rounded-md text-neutral-500 hover:bg-primary-100 hover:text-primary-800 active:bg-primary-200 active:text-primary-900 "
                     aria-current={endPage - 1 === selectedPage}
@@ -99,7 +88,6 @@ export function Pagination({ currentPage, pageSize, totalItems, maxVisiblePages,
                 })}
               >
                 <button
-                  data-testid={`page-${page}`}
                   type="button"
                   className={classNames(
                     'px-4 py-3 text-neutral-500 rounded-md hover:bg-primary-100 hover:text-primary-800 active:bg-primary-200 active:text-primary-900',
@@ -117,7 +105,6 @@ export function Pagination({ currentPage, pageSize, totalItems, maxVisiblePages,
               <li>
                 <div className="flex pt-1 border-t-4 border-transparent">
                   <button
-                    data-testid="second-page"
                     type="button"
                     aria-label={t('secondPageAriaLabel')}
                     className="px-4 py-3 rounded-md text-neutral-500 hover:bg-primary-100 hover:text-primary-800 active:bg-primary-200 active:text-primary-900 "
@@ -148,7 +135,6 @@ export function Pagination({ currentPage, pageSize, totalItems, maxVisiblePages,
               })}
             >
               <button
-                data-testid="last-page"
                 type="button"
                 className="px-4 py-3 rounded-md text-neutral-500 hover:bg-primary-100 hover:text-primary-800 active:bg-primary-200 active:text-primary-900 "
                 aria-label={t('lastPageAriaLabel')}
@@ -162,7 +148,6 @@ export function Pagination({ currentPage, pageSize, totalItems, maxVisiblePages,
         )}
       </ul>
       <SfButton
-        data-testid="next-page"
         type="button"
         size="lg"
         aria-label={t('nextAriaLabel')}

@@ -8,15 +8,12 @@ import {
   useDisclosure,
 } from '@storefront-ui/react';
 import classNames from 'classnames';
-import { xor } from 'lodash-es';
 import { useTranslation } from 'next-i18next';
 import { FilterProps } from './types';
 
-export function Filter({ facet: { label, values }, selected, onChange, type }: FilterProps) {
+export function Filter({ facet: { label, values }, selected, type, onChange }: FilterProps) {
   const { t } = useTranslation();
   const { isOpen, toggle: toggleOpen } = useDisclosure({ initialValue: true });
-
-  const onItemClick = (value: string) => onChange(xor(selected, [value]));
 
   return (
     <SfAccordionItem
@@ -36,7 +33,7 @@ export function Filter({ facet: { label, values }, selected, onChange, type }: F
               <SfChip
                 key={value}
                 size="sm"
-                inputProps={{ checked: selected.includes(value), onChange: () => onItemClick(value) }}
+                inputProps={{ checked: selected.includes(value), onChange: () => onChange(value) }}
               >
                 <span className="leading-4">{value}</span>
               </SfChip>
@@ -61,7 +58,7 @@ export function Filter({ facet: { label, values }, selected, onChange, type }: F
                   checked={selected.includes(value)}
                   className="appearance-none peer"
                   type="checkbox"
-                  onChange={() => onItemClick(value)}
+                  onChange={() => onChange(value)}
                 />
                 <span className="inline-flex items-center justify-center p-1 transition duration-300 rounded-full cursor-pointer ring-1 ring-neutral-200 ring-inset outline-offset-2 outline-secondary-600 peer-checked:ring-2 peer-checked:ring-primary-700 peer-hover:bg-primary-100 peer-hover:ring-primary-200 peer-active:bg-primary-200 peer-active:ring-primary-300 peer-disabled:cursor-not-allowed peer-disabled:bg-disabled-100 peer-disabled:opacity-50 peer-disabled:ring-1 peer-disabled:ring-disabled-200 peer-disabled:hover:ring-disabled-200 peer-checked:hover:ring-primary-700 peer-checked:active:ring-primary-700 peer-focus:outline">
                   <SfThumbnail size="sm" style={{ backgroundColor: value }} />

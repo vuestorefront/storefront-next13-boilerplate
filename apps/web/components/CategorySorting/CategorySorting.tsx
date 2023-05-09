@@ -1,39 +1,27 @@
 import { SfSelect } from '@storefront-ui/react';
 import { useTranslation } from 'next-i18next';
-import { useSearchParams } from '~/hooks';
 
-const sortingOptions = [
+const sortOptions = [
   {
-    id: 'latest',
-    name: 'latest',
-    facet: 'createdAt',
-    direction: 'desc',
+    label: 'latest',
+    value: 'createdAt',
   },
   {
-    id: 'price-up',
-    name: 'priceUp',
-    facet: 'price',
-    direction: 'asc',
+    label: 'priceUp',
+    value: 'price-up',
   },
   {
-    id: 'price-down',
-    name: 'priceDown',
-    facet: 'price',
-    direction: 'desc',
+    label: 'priceDown',
+    value: 'price-down',
   },
   {
-    id: 'relevance',
-    name: 'relevance',
-    facet: 'score',
-    direction: 'desc',
+    label: 'relevance',
+    value: 'score',
   },
 ];
 
 export function CategorySorting() {
   const { t } = useTranslation('category');
-  const { setSearchParams, getSearchParams } = useSearchParams();
-  const onChange = (sort: string) => setSearchParams({ sort });
-  const selected = getSearchParams('sort') || sortingOptions[0].id;
 
   return (
     <>
@@ -41,10 +29,10 @@ export function CategorySorting() {
         {t('sortBy')}
       </h5>
       <div className="px-2">
-        <SfSelect aria-label={t('sortBy')} value={selected} onChange={(e) => onChange(e.target.value)}>
-          {sortingOptions.map((value) => (
-            <option key={value.id} value={value.id} aria-selected={value.id === selected}>
-              {t(`sortType.${value.name}`)}
+        <SfSelect aria-label={t('sortBy')}>
+          {sortOptions.map((option) => (
+            <option key={option.value} value={option.value}>
+              {t(`sortType.${option.label}`)}
             </option>
           ))}
         </SfSelect>

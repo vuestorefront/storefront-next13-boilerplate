@@ -3,5 +3,4 @@ export interface PaginationProps {
   pageSize: number;
   totalItems: number;
   maxVisiblePages: number;
-  onPageUpdate?: (page: number) => any;
 }

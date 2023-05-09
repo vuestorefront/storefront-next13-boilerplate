@@ -4,8 +4,8 @@ import { CategoryEmptyState } from '~/components/CategoryEmptyState';
 
 describe('<CategoryEmptyState/>', () => {
   it('should render category empty state', () => {
-    const { getByText } = render(<CategoryEmptyState />);
+    const { container } = render(<CategoryEmptyState />);
 
-    getByText('category:emptyStateText');
+    expect(container).not.toBeEmptyDOMElement();
   });
 });

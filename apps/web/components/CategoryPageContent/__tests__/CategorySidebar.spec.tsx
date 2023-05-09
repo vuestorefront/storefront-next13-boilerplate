@@ -1,16 +1,5 @@
 import { render } from '@testing-library/react';
-import { CategorySidebar } from '../CategorySidebar';
-
-jest.mock('~/hooks', () => ({
-  useSearchParams: jest.fn(() => ({
-    setSearchParams: jest.fn(),
-    getSearchParams: jest.fn(() => []),
-  })),
-}));
-
-afterEach(() => {
-  jest.clearAllMocks();
-});
+import { CategorySidebar } from '~/components';
 
 describe('<CategorySidebar />', () => {
   it('should render component', () => {

@@ -29,7 +29,6 @@ export default function CategoryPage() {
         title={t('allProducts')}
         products={products}
         totalProducts={pagination.totalResults}
-        itemsPerPage={24}
         sidebar={
           <>
             <CategoryTree parent={{ name: t('allProducts'), href: '/category' }} categories={categories} />

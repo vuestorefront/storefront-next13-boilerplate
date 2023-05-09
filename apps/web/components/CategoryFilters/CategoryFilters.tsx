@@ -1,17 +1,22 @@
+import { useState } from 'react';
 import { useTranslation } from 'next-i18next';
-import { getFacetByAlias } from '~/helpers';
-import { useSearchParams } from '~/hooks';
 import { getProducts } from '~/mocks/products';
 import { Filter } from './Filter';
 
 export function CategoryFilters() {
   const { t } = useTranslation('category');
-  const { setSearchParams, getAllSearchParams } = useSearchParams();
+  const [selectedFilters, setSelectedFilters] = useState<string[]>([]);
   const { facets } = getProducts();
-  const facetFilters = getAllSearchParams(['color', 'size']);
-  const colorFacets = getFacetByAlias('color', facets);
-  const sizeFacets = getFacetByAlias('size', facets);
-  const setValue = (name: string) => (values: string[]) => setSearchParams({ [name]: values });
+  const colorFacets = facets.find(({ name }) => name === 'color');
+  const sizeFacets = facets.find(({ name }) => name === 'size');
+
+  const handleFilterSelection = (currentValue: string) => {
+    if (selectedFilters.includes(currentValue)) {
+      setSelectedFilters(selectedFilters.filter((value) => value !== currentValue));
+    } else {
+      setSelectedFilters([...selectedFilters, currentValue]);
+    }
+  };
 
   return (
     <>
@@ -20,10 +25,10 @@ export function CategoryFilters() {
       </h5>
       <div className="flex flex-col gap-2">
         {sizeFacets && (
-          <Filter facet={sizeFacets} selected={facetFilters.size} onChange={setValue('size')} type="size" />
+          <Filter facet={sizeFacets} onChange={handleFilterSelection} selected={selectedFilters} type="size" />
         )}
         {colorFacets && (
-          <Filter facet={colorFacets} selected={facetFilters.color} onChange={setValue('color')} type="color" />
+          <Filter facet={colorFacets} onChange={handleFilterSelection} selected={selectedFilters} type="color" />
         )}
       </div>
     </>

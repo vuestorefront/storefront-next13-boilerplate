@@ -4,7 +4,6 @@ import { SfButton, SfIconTune, useDisclosure } from '@storefront-ui/react';
 import { useTranslation } from 'next-i18next';
 import { NarrowContainer } from '~/components/NarrowContainer';
 import { Pagination, ProductCard } from '~/components/ui';
-import { useSearchParams } from '~/hooks';
 import { CategorySidebar } from './CategorySidebar';
 import type { CategoryPageContentProps } from './types';
 
@@ -20,15 +19,8 @@ export function CategoryPageContent({
   const { t } = useTranslation('category');
   const isWideScreen = useMedia('(min-width: 1024px)', false);
   const isTabletScreen = useMedia('(min-width: 768px)', false);
-
-  const { setSearchParams, getSearchParams } = useSearchParams();
   const { isOpen, open, close } = useDisclosure({ initialValue: false });
-
   const maxVisiblePages = isWideScreen ? 5 : 1;
-
-  const setPageSearchParameters = (page: number) => {
-    setSearchParams({ page });
-  };
 
   if (isTabletScreen && isOpen) {
     close();
@@ -79,11 +71,10 @@ export function CategoryPageContent({
             )}
             {totalProducts > itemsPerPage && (
               <Pagination
-                currentPage={Number(getSearchParams('page')) || 1}
+                currentPage={1}
                 totalItems={totalProducts}
                 pageSize={itemsPerPage}
                 maxVisiblePages={maxVisiblePages}
-                onPageUpdate={setPageSearchParameters}
               />
             )}
           </div>
