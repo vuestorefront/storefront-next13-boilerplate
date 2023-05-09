@@ -1,9 +1,10 @@
-import { AccordionItem } from '@/components/AccordionItem';
 import { SfButton, useDisclosure } from '@storefront-ui/react';
 import { xor } from 'lodash-es';
 import { useTranslation } from 'next-i18next';
+import { AccordionItem } from '~/components/AccordionItem';
 import { FilterBaseProps } from '../types';
 
+// @TODO this component probably needs refactoring
 export function FilterBase({ facet: { values }, selected, onChange, label, max = 5, children }: FilterBaseProps) {
   const { t } = useTranslation('category');
   const { isOpen: showMore, toggle: toggleShowMore } = useDisclosure({ initialValue: false });

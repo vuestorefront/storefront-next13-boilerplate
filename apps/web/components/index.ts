@@ -1,3 +1,4 @@
+export * from './AccordionItem';
 export * from './ui';
 export * from './CategoryEmptyState';
 export * from './CategoryFilters';

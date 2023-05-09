@@ -1,10 +1,10 @@
 import { GetServerSidePropsContext } from 'next';
-import { CategoryPageContent, CategoryTree, CategorySorting, CategoryFilters } from '@/components';
-import { BreadcrumbItem } from '@/components/ui/Breadcrumbs/types';
-import { DefaultLayout } from '@/layouts';
-import { getProducts } from '@/mocks/products';
 import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { CategoryPageContent, CategoryTree, CategorySorting, CategoryFilters } from '~/components';
+import { BreadcrumbItem } from '~/components/ui/Breadcrumbs/types';
+import { DefaultLayout } from '~/layouts';
+import { getProducts } from '~/mocks/products';
 
 export async function getServerSideProps({ locale }: GetServerSidePropsContext) {
   return {
@@ -20,7 +20,8 @@ export default function CategoryPage() {
     { name: t('common:home'), link: '/' },
     { name: t('allProducts'), link: '/category' },
   ];
-  const { products, pagination } = getProducts();
+  const { products, pagination, subCategories } = getProducts();
+  const categories = subCategories.map(({ name, productCount }) => ({ name, count: productCount, href: '/category' }));
 
   return (
     <DefaultLayout breadcrumbs={breadcrumbs}>
@@ -31,7 +32,7 @@ export default function CategoryPage() {
         itemsPerPage={24}
         sidebar={
           <>
-            <CategoryTree />
+            <CategoryTree parent={{ name: t('allProducts'), href: '/category' }} categories={categories} />
             <CategorySorting />
             <CategoryFilters />
           </>

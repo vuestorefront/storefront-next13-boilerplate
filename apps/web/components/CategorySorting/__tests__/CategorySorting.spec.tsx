@@ -1,6 +1,6 @@
 import { fireEvent, render, within } from '@testing-library/react';
 import { CategorySorting } from '~/components';
-import { sortingOptions } from '~/static/categoryData';
+import { sortingOptions } from '~/mocks/categoryData';
 
 afterEach(() => {
   jest.clearAllMocks();

@@ -31,13 +31,13 @@ export function useSearchParams(protectedParams: string[] = ['search', 'sort'], 
   const setSearchParams = async (params: ParsedUrlQueryInput, replaceQuery?: boolean): Promise<boolean> => {
     const [pathname, searchParams] = asPath.split('?');
     const searchQuery = parse(searchParams);
-    const newQuery = replaceQuery
+    const query = replaceQuery
       ? { ...pick(searchQuery, protectedParams), ...params }
       : { ...omit(searchQuery, disposableParams), ...params };
 
     return push({
       pathname,
-      query: newQuery,
+      query,
     });
   };
 
@@ -45,8 +45,8 @@ export function useSearchParams(protectedParams: string[] = ['search', 'sort'], 
     return setSearchParams({}, true);
   };
 
-  function getAllSearchParams<K extends string>(name: K): string[];
-  function getAllSearchParams<K extends string>(name: K[]): Record<K, string[]>;
+  function getAllSearchParams<KType extends string>(name: KType): string[];
+  function getAllSearchParams<KType extends string>(name: KType[]): Record<KType, string[]>;
   function getAllSearchParams(name: any): string[] | Record<string, string[]> {
     if (Array.isArray(name)) {
       const values = pick(query, name);
@@ -60,8 +60,8 @@ export function useSearchParams(protectedParams: string[] = ['search', 'sort'], 
     return asFilteredArray(query[name]);
   }
 
-  function getSearchParams<K extends string>(name: K): string | undefined;
-  function getSearchParams<K extends string>(name: K[]): Record<K, string | undefined>;
+  function getSearchParams<KType extends string>(name: KType): string | undefined;
+  function getSearchParams<KType extends string>(name: KType[]): Record<KType, string | undefined>;
   function getSearchParams(name: any): string | undefined | Record<string, string | undefined> {
     if (Array.isArray(name)) {
       return mapValues(getAllSearchParams(name), (arr) => arr[0]);

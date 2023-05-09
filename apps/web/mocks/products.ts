@@ -87,36 +87,34 @@ const subCategories: SfCategory[] = [
     productCount: 1459,
   },
 ];
-
-const products: SfProductCatalogItem[] = [
-  {
-    id: '1',
-    sku: 'M0E20000000DMVI',
-    name: 'Pumps ”Flex” Michael Kors black',
-    slug: '',
-    price: {
-      isDiscounted: false,
-      regularPrice: {
-        currency: 'EUR',
-        amount: 137.5,
-        precisionAmount: '100',
-      },
-      value: {
-        currency: 'EUR',
-        amount: 137.5,
-        precisionAmount: '100',
-      },
+const getProduct = (id: string): SfProductCatalogItem => ({
+  id,
+  sku: 'M0E20000000DMVI',
+  name: 'Pumps ”Flex” Michael Kors black',
+  slug: '',
+  price: {
+    isDiscounted: false,
+    regularPrice: {
+      currency: 'EUR',
+      amount: 137.5,
+      precisionAmount: '100',
     },
-    primaryImage: {
-      url: 'https://s3-eu-west-1.amazonaws.com/commercetools-maximilian/products/073018_1_large.jpg',
-      alt: '',
-    },
-    rating: {
-      average: 0,
-      count: 0,
+    value: {
+      currency: 'EUR',
+      amount: 137.5,
+      precisionAmount: '100',
     },
   },
-];
+  primaryImage: {
+    url: '/images/product.webp',
+    alt: '',
+  },
+  rating: {
+    average: 0,
+    count: 0,
+  },
+});
+const products = Array.from({ length: 24 }, (_, index) => getProduct(index.toString()));
 
 export const getProducts = (): GetProducts => ({
   products,

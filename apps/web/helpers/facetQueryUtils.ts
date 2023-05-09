@@ -1,7 +1,7 @@
-import { Nullable } from '@/types';
 import { SfFacet } from '@vsf-enterprise/unified-data-model';
 import { includes, isNil, pickBy } from 'lodash-es';
-import { ParsedUrlQuery } from 'node:querystring';
+import { ParsedUrlQuery } from 'querystring';
+import { Nullable } from '~/types';
 
 const nonFilters = ['page', 'sort', 'search', 'perPage', 'slug'] as const;
 
@@ -29,7 +29,7 @@ const reduceFilters =
     };
   };
 
-export const getFiltersDataFromQuery = <T extends ParsedUrlQuery>(query: T, onlyFilters: boolean) => {
+export const getFiltersDataFromQuery = <TType extends ParsedUrlQuery>(query: TType, onlyFilters: boolean) => {
   return Object.keys(query)
     .filter((filter) => (onlyFilters ? !includes(nonFilters, filter) : includes(nonFilters, filter)))
     .reduce<Record<string, string | string[]>>(reduceFilters(query), {});

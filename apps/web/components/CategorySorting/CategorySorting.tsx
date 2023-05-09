@@ -1,8 +1,8 @@
-import { FilterContainer } from '@/components/FilterContainer';
-import { useSearchParams } from '@/hooks';
-import { sortingOptions } from '@/mocks/categoryData';
 import { SfSelect } from '@storefront-ui/react';
 import { useTranslation } from 'next-i18next';
+import { FilterContainer } from '~/components/FilterContainer';
+import { useSearchParams } from '~/hooks';
+import { sortingOptions } from '~/mocks/categoryData';
 
 export function CategorySorting() {
   const { t } = useTranslation('category');

@@ -1,8 +1,8 @@
-import { FilterContainer } from '@/components/FilterContainer';
-import { getFacetByAlias } from '@/helpers';
-import { useSearchParams } from '@/hooks';
-import { getProducts } from '@/mocks/products';
 import { useTranslation } from 'next-i18next';
+import { FilterContainer } from '~/components/FilterContainer';
+import { getFacetByAlias } from '~/helpers';
+import { useSearchParams } from '~/hooks';
+import { getProducts } from '~/mocks/products';
 import { FilterColor, FilterSize } from './Filters';
 
 export function CategoryFilters() {

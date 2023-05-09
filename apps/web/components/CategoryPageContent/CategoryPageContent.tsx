@@ -1,16 +1,15 @@
 import { useMedia } from 'react-use';
 import dynamic from 'next/dynamic';
-import Image from 'next/legacy/image';
-import { NarrowContainer } from '@/components/NarrowContainer';
-import { Pagination, ProductCardVertical } from '@/components/ui';
-import { useLockBodyScroll, useSearchParams } from '@/hooks';
 import { SfButton, SfIconTune } from '@storefront-ui/react';
 import { useTranslation } from 'next-i18next';
-import placeholderImage from '~/public/images/card-placeholder.png';
+import { NarrowContainer } from '~/components/NarrowContainer';
+import { Pagination, ProductCard } from '~/components/ui';
+import { getFormattedPrice } from '~/helpers/getFormattedPrice';
+import { useLockBodyScroll, useSearchParams } from '~/hooks';
 import { CategorySidebar } from './CategorySidebar';
 import type { CategoryPageContentProps } from './types';
 
-const CategoryEmptyState = dynamic(() => import('@/components/CategoryEmptyState'));
+const CategoryEmptyState = dynamic(() => import('~/components/CategoryEmptyState'));
 
 export function CategoryPageContent({
   title,
@@ -64,33 +63,16 @@ export function CategoryPageContent({
                 className="grid grid-cols-1 2xs:grid-cols-2 gap-4 md:gap-6 md:grid-cols-2 lg:grid-cols-3 3xl:grid-cols-4 mb-10 md:mb-5"
                 data-testid="category-grid"
               >
-                {products.map(({ sku, name, slug, rating, price, primaryImage }, index) => (
-                  <ProductCardVertical
-                    key={sku}
-                    sku={sku}
-                    title={name}
-                    price={price?.value.amount}
-                    oldPrice={price?.regularPrice.amount}
-                    link={`/product/${slug}/${sku}`}
-                    rating={rating?.average}
-                    ratingCount={rating?.count}
-                    showAddToCartButton
-                    slotImage={
-                      <Image
-                        className="object-contain"
-                        priority={index <= 1}
-                        fetchpriority={index <= 1 ? 'high' : 'low'}
-                        data-testid="image-slot"
-                        src={primaryImage?.url || placeholderImage}
-                        alt={primaryImage?.alt || t('common:cardImagePlaceholder')}
-                        width="320"
-                        height="320"
-                        sizes="(max-width: 767px) 40vw, 320px"
-                        unoptimized={!primaryImage?.url}
-                        layout="responsive"
-                        crossOrigin="anonymous"
-                      />
-                    }
+                {products.map(({ id, name, rating, price, primaryImage }, index) => (
+                  <ProductCard
+                    key={id}
+                    name={name || ''}
+                    price={getFormattedPrice(price?.regularPrice)}
+                    rating={rating?.average || 0}
+                    image={primaryImage?.url || '/public/images/card-placeholder.png'}
+                    reviews={rating?.count || 0}
+                    description=""
+                    id="temp"
                   />
                 ))}
               </section>
