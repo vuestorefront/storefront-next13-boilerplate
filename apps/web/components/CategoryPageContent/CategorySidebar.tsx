@@ -31,9 +31,6 @@ export function CategorySidebar({ isOpen, closeSidebar, children }: CategorySide
           </div>
           <div className="overflow-y-auto md:overflow-y-visible py-4 md:p-0">{children}</div>
           <div className="p-4 md:mt-2 flex flex-wrap justify-between border-t border-t-neutral-200 md:border-0 gap-3">
-            <SfButton variant="secondary" onClick={() => {}} className="whitespace-nowrap flex flex-1">
-              {t('clearFilters')}
-            </SfButton>
             <SfButton className="md:hidden whitespace-nowrap flex flex-1" variant="primary" onClick={closeSidebar}>
               {t('showProducts')}
             </SfButton>

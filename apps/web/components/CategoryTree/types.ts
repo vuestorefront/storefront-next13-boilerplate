@@ -1,5 +1,5 @@
 import { ReactNode } from 'react';
-import { UrlObject } from 'url';
+import { UrlObject } from 'node:url';
 import { Nullable } from '~/types';
 
 type CategoryTreeItem = {

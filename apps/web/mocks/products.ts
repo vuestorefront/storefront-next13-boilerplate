@@ -91,7 +91,7 @@ const getProduct = (id: string): SfProductCatalogItem => ({
   id,
   sku: 'M0E20000000DMVI',
   name: 'Pumps ”Flex” Michael Kors black',
-  slug: '',
+  slug: 'product-1',
   price: {
     isDiscounted: false,
     regularPrice: {

@@ -25,10 +25,10 @@ export function CategorySorting() {
 
   return (
     <>
-      <h5 className="py-2 px-4 mt-6 mb-6 bg-neutral-100 typography-headline-6 font-bold text-neutral-900 uppercase tracking-widest md:rounded-md">
+      <h5 className="py-2 px-4 mb-6 bg-neutral-100 typography-headline-6 font-bold text-neutral-900 uppercase tracking-widest md:rounded-md">
         {t('sortBy')}
       </h5>
-      <div className="px-2">
+      <div className="px-2 mb-6">
         <SfSelect aria-label={t('sortBy')}>
           {sortOptions.map((option) => (
             <option key={option.value} value={option.value}>
