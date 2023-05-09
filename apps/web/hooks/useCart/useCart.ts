@@ -1,20 +1,9 @@
-import { createContext, PropsWithChildren, useContext } from 'react';
-import { UseQueryResult, useQuery } from '@tanstack/react-query';
-import { SfCart, Maybe } from '@vsf-enterprise/unified-data-model';
+import { useQuery } from '@tanstack/react-query';
+import { SfCart } from '@vsf-enterprise/unified-data-model';
 
-export const CartContext = createContext<
-  UseQueryResult<SfCart, unknown> | Pick<UseQueryResult<SfCart, unknown>, 'data' | 'isLoading' | 'isSuccess'>
->({
-  data: undefined,
-  isLoading: false,
-  isSuccess: true,
-});
+const fetchCart = async (): Promise<SfCart> => {
+  // @todo use mocked data from sdk
 
-async function fetchCart(): Promise<Maybe<SfCart>> {
-  return null;
-}
-
-async function createCart(): Promise<SfCart> {
   return {
     appliedCoupons: [],
     billingAddress: null,
@@ -23,10 +12,40 @@ async function createCart(): Promise<SfCart> {
     lineItems: [
       {
         attributes: [],
+        id: '1',
+        image: {
+          alt: '',
+          url: '', // @todo set real url
+        },
+        name: 'Smartwatch Fitness Tracker',
+        quantity: 1,
+        sku: null,
+        slug: 'smartwatch-fitness-tracker-1',
+        totalPrice: {
+          currency: 'USD',
+          amount: 2345.99,
+          precisionAmount: '2,345.99',
+        },
+        unitPrice: {
+          isDiscounted: false,
+          regularPrice: {
+            currency: 'USD',
+            amount: 2345.99,
+            precisionAmount: '2,345.99',
+          },
+          value: {
+            currency: 'USD',
+            amount: 2345.99,
+            precisionAmount: '2,345.99',
+          },
+        },
+      },
+      {
+        attributes: [],
         id: 'attr_1',
         image: null,
         name: null,
-        quantity: 10,
+        quantity: 1,
         sku: null,
         slug: 'product-1',
         totalPrice: {
@@ -79,23 +98,11 @@ async function createCart(): Promise<SfCart> {
       precisionAmount: '2',
     },
   };
-}
-
-async function fetchOrCreateCart(): Promise<SfCart> {
-  const cart = await fetchCart();
-  return cart || (await createCart());
-}
-
-export function CartProvider({ children }: PropsWithChildren) {
-  const result = useQuery(['cart'], fetchOrCreateCart, {
-    refetchOnWindowFocus: false,
-    staleTime: Number.POSITIVE_INFINITY,
-    initialDataUpdatedAt: 0,
-  });
-
-  return <CartContext.Provider value={result}>{children}</CartContext.Provider>;
-}
+};
 
 export function useCart() {
-  return useContext(CartContext);
+  return useQuery(['cart'], () => fetchCart(), {
+    refetchOnMount: false,
+    refetchOnWindowFocus: false,
+  });
 }

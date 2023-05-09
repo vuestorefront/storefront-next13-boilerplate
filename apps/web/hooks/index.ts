@@ -1,5 +1,6 @@
 export * from './useLockBodyScroll';
-export * from './cart';
+export * from './useCart';
+export * from './useCartShippingMethods';
 export * from './useFormatPrice';
 export * from './useLockBodyScroll';
 export * from './useProduct';
