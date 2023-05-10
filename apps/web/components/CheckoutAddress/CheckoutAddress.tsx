@@ -13,18 +13,7 @@ export function CheckoutAddress({ type, heading, description, buttonText }: Chec
   const { isOpen, open, close } = useLockBodyScroll();
   const { t } = useTranslation('checkout');
 
-  const handleSave = async (address: AddressFormFields, useAsShipping: boolean): Promise<void> => {
-    if (type === 'billingAddress') {
-      console.log('save billing address', address); // eslint-disable-line no-console
-    }
-    if (type === 'shippingAddress') {
-      console.log('save shipping address', useAsShipping); // eslint-disable-line no-console
-    }
-
-    close();
-  };
-
-  const savedAddress = cart[type];
+  const savedAddress = cart[type] as unknown as AddressFormFields;
 
   return (
     <div data-testid="checkout-address" className="md:px-4 py-6">
@@ -75,7 +64,7 @@ export function CheckoutAddress({ type, heading, description, buttonText }: Chec
                 {heading}
               </h3>
             </header>
-            <AddressForm savedAddress={savedAddress} type={type} onSave={handleSave} />
+            <AddressForm savedAddress={savedAddress} type={type} onSave={() => {}} />
           </SfModal>
         </Overlay>
       )}
