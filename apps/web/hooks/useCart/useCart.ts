@@ -11,59 +11,43 @@ const fetchCart = async (): Promise<SfCart> => {
     id: 'cart',
     lineItems: [
       {
-        attributes: [],
+        attributes: [
+          {
+            label: 'size',
+            name: 'size',
+            value: '40',
+          },
+          {
+            label: 'color',
+            name: 'color',
+            value: 'white',
+          },
+        ],
         id: '1',
         image: {
           alt: '',
           url: '', // @todo set real url
         },
-        name: 'Smartwatch Fitness Tracker',
+        name: 'Philippe Model - Sneaker “Lakers“',
         quantity: 1,
         sku: null,
-        slug: 'smartwatch-fitness-tracker-1',
+        slug: 'sneaker-1',
         totalPrice: {
           currency: 'USD',
-          amount: 2345.99,
-          precisionAmount: '2,345.99',
+          amount: 325,
+          precisionAmount: '325.00',
         },
         unitPrice: {
           isDiscounted: false,
           regularPrice: {
             currency: 'USD',
-            amount: 2345.99,
-            precisionAmount: '2,345.99',
+            amount: 325,
+            precisionAmount: '325.00',
           },
           value: {
             currency: 'USD',
-            amount: 2345.99,
-            precisionAmount: '2,345.99',
-          },
-        },
-      },
-      {
-        attributes: [],
-        id: 'attr_1',
-        image: null,
-        name: null,
-        quantity: 1,
-        sku: null,
-        slug: 'product-1',
-        totalPrice: {
-          currency: 'USD',
-          amount: 120,
-          precisionAmount: '120',
-        },
-        unitPrice: {
-          isDiscounted: false,
-          regularPrice: {
-            currency: 'USD',
-            amount: 12,
-            precisionAmount: '12',
-          },
-          value: {
-            currency: 'USD',
-            amount: 12,
-            precisionAmount: '12',
+            amount: 325,
+            precisionAmount: '325.00',
           },
         },
       },

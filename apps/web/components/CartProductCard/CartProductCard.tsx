@@ -1,22 +1,24 @@
-import { useId, ChangeEvent } from 'react';
 import { useCounter } from 'react-use';
 import Image from 'next/image';
-import { SfButton, SfIconRemove, SfLink, SfIconAdd, SfIconSell, SfIconDelete } from '@storefront-ui/react';
+import { SfLink, SfIconSell } from '@storefront-ui/react';
 import { clamp } from '@storefront-ui/shared';
+import { SfCartLineItem } from '@vsf-enterprise/unified-data-model';
 import { useTranslation } from 'next-i18next';
-import card from '~/public/images/smartwatch.png';
+import { QuantitySelector } from '~/components';
+import card from '~/public/images/sneakers.png';
 
-export function CartProductCard({ ...attributes }) {
+export type CartProductCardProps = {
+  item: SfCartLineItem;
+};
+
+export function CartProductCard({ item, ...attributes }: CartProductCardProps) {
   const { t } = useTranslation(['cart', 'product']);
 
-  const inputId = useId();
   const min = 1;
   const max = 10;
-  const [value, { inc, dec, set }] = useCounter(min);
+  const [value, { set }] = useCounter(min);
 
-  function handleOnChange(event: ChangeEvent<HTMLInputElement>) {
-    const { value: currentValue } = event.target;
-    const nextValue = Number.parseFloat(currentValue);
+  function handleOnChange(nextValue: number) {
     set(Number(clamp(nextValue, min, max)));
   }
 
@@ -42,68 +44,23 @@ export function CartProductCard({ ...attributes }) {
       </div>
       <div className="flex flex-col pl-4 min-w-[180px] flex-1">
         <SfLink href="#" variant="secondary" className="no-underline typography-text-sm sm:typography-text-lg">
-          Smartwatch Fitness Tracker
+          {item.name}
         </SfLink>
         <div className="my-2 sm:mb-0">
           <ul className="text-xs font-normal leading-5 sm:typography-text-sm text-neutral-700">
-            <li>
-              <span className="mr-1">Size:</span>
-              <span className="font-medium">6.5</span>
-            </li>
-            <li>
-              <span className="mr-1">Color:</span>
-              <span className="font-medium">Red</span>
-            </li>
+            {item.attributes.map((attribute) => (
+              <li key={attribute.name}>
+                <span className="mr-1">{attribute.label}:</span>
+                <span className="font-medium">{attribute.value}</span>
+              </li>
+            ))}
           </ul>
         </div>
         <div className="items-center sm:mt-auto sm:flex">
-          <span className="font-bold sm:ml-auto sm:order-1 typography-text-sm sm:typography-text-lg">$2,345.99</span>
-          <div className="flex items-center justify-between mt-4 sm:mt-0">
-            <div className="flex border border-neutral-300 rounded-md">
-              <SfButton
-                type="button"
-                variant="tertiary"
-                square
-                className="rounded-r-none"
-                disabled={value <= min}
-                aria-controls={inputId}
-                aria-label={t('quantitySelectorDecrease')}
-                onClick={() => dec()}
-              >
-                <SfIconRemove />
-              </SfButton>
-              <input
-                id={inputId}
-                type="number"
-                role="spinbutton"
-                className="appearance-none mx-2 w-8 text-center bg-transparent font-medium [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-inner-spin-button]:display-none [&::-webkit-inner-spin-button]:m-0 [&::-webkit-outer-spin-button]:display-none [&::-webkit-outer-spin-button]:m-0 [-moz-appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none disabled:placeholder-disabled-900 focus-visible:outline focus-visible:outline-offset focus-visible:rounded-sm"
-                min={min}
-                max={max}
-                value={value}
-                onChange={handleOnChange}
-              />
-              <SfButton
-                type="button"
-                variant="tertiary"
-                square
-                className="rounded-l-none"
-                disabled={value >= max}
-                aria-controls={inputId}
-                aria-label={t('quantitySelectorIncrease')}
-                onClick={() => inc()}
-              >
-                <SfIconAdd />
-              </SfButton>
-            </div>
-            <button
-              aria-label={t('remove')}
-              type="button"
-              className="text-neutral-500 text-xs font-light ml-auto flex items-center px-3 py-1.5"
-            >
-              <SfIconDelete />
-              <span className="hidden ml-1.5 sm:block"> {t('remove')} </span>
-            </button>
-          </div>
+          <span className="font-bold sm:ml-auto sm:order-1 typography-text-sm sm:typography-text-lg">
+            {item.totalPrice.amount} {item.totalPrice.currency}
+          </span>
+          <QuantitySelector value={value} minValue={min} maxValue={max} onChange={handleOnChange}></QuantitySelector>
         </div>
       </div>
     </div>
