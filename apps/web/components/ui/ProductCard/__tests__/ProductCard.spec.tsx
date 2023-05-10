@@ -1,16 +1,10 @@
 import { render } from '@testing-library/react';
-import { SfProduct } from '@vsf-enterprise/unified-data-model';
 import { ProductCard } from '~/components';
 
 describe('<ProductCard />', () => {
   it('should render component', () => {
-    const { getByTestId } = render(
-      <ProductCard
-        product={{ primaryImage: { url: '/images/product.webp' } } as SfProduct}
-        data-testid="product-card"
-      />,
-    );
+    const { container } = render(<ProductCard name="test" price={100} imageUrl="/images/product.webp" />);
 
-    getByTestId('product-card');
+    expect(container).not.toBeEmptyDOMElement();
   });
 });

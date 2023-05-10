@@ -1,6 +1,6 @@
 import { SfIconBlock, SfListItem, SfRadio } from '@storefront-ui/react';
 import { useTranslation } from 'next-i18next';
-import { useCartShippingMethods, useCart } from '~/hooks';
+import { useCart, useCartShippingMethods } from '~/hooks';
 
 export function ShippingMethod() {
   const { data: cart } = useCart();
@@ -27,7 +27,7 @@ export function ShippingMethod() {
                 <div className="flex gap-2">
                   <SfRadio
                     onChange={() => {}}
-                    checked={cart.shippingInfo?.shippingMethod?.id === method.id}
+                    checked={cart.shippingMethod?.id === method.id}
                     value={method.id}
                     name={method.name}
                   />

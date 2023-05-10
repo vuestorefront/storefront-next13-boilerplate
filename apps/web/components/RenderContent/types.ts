@@ -1,3 +1,5 @@
+import type { ContentDynamicPage } from '~/hooks';
+
 export type RenderContentProps = {
-  content: any[];
+  content: ContentDynamicPage['content'];
 };

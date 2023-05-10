@@ -10,8 +10,19 @@ export function ProductSlider({ products, className, ...attributes }: ProductSli
       {...attributes}
       wrapperClassNames={className}
     >
-      {products.map((product) => (
-        <ProductCard product={product} key={product.id} />
+      {products.map(({ id, name, description, rating, price, primaryImage, slug }) => (
+        <ProductCard
+          key={id}
+          className="max-w-[192px]"
+          name={name}
+          description={description}
+          ratingCount={rating?.count}
+          rating={rating?.average}
+          price={price?.value.amount}
+          imageUrl={primaryImage?.url}
+          imageAlt={primaryImage?.alt}
+          slug={slug}
+        />
       ))}
     </SfScrollable>
   );
