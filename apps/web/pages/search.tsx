@@ -18,7 +18,7 @@ export default function SearchPage() {
   const { t } = useTranslation('category');
   const { query } = useRouter();
   const { products, pagination } = getProducts();
-  const categoryTitle = t('resultsFor', { phrase: query?.search?.toString().replace('-', ' ') });
+  const categoryTitle = t('resultsFor', { phrase: query?.search });
 
   return (
     <DefaultLayout>
