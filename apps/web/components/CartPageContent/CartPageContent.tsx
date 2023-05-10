@@ -16,7 +16,7 @@ export function CartPageContent() {
   return isEmpty ? (
     <div className="flex items-center justify-center flex-col pt-24 pb-32">
       <Image src={emptyCartImage} alt={t('emptyCartImgAlt')} />
-      <h2 className="typography-headline-2 mt-8">{t('emptyCart')}</h2>
+      <h2 className="mt-8">{t('emptyCart')}</h2>
     </div>
   ) : (
     <div className="md:grid md:grid-cols-12 md:gap-x-6">
