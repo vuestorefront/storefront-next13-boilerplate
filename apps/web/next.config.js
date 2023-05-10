@@ -21,6 +21,23 @@ const nextConfig = {
 
   transpilePackages: ['@storefront-ui/react'],
   i18n,
+  webpack(config) {
+    config.module.rules.push({
+      test: /index\.(js|mjs|jsx|ts|tsx)$/,
+      include: (mPath) => ['components', 'hooks', 'layouts', 'helpers'].some((value) => mPath.includes(value)),
+      sideEffects: false,
+    });
+    // temporary SFUI fix
+    // https://github.com/vercel/next.js/issues/17806#issuecomment-913437792
+    config.module.rules.push({
+      test: /\.m?js$/,
+      type: 'javascript/auto',
+      resolve: {
+        fullySpecified: false,
+      },
+    });
+    return config;
+  },
 };
 
 module.exports = withPwa(nextConfig);

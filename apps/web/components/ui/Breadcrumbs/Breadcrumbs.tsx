@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import Link from 'next/link';
+import NextLink from 'next/link';
 import { SfDropdown, SfButton, SfIconMoreHoriz, SfLink } from '@storefront-ui/react';
 import { useTranslation } from 'next-i18next';
 import { BreadcrumbsProps } from './types';
@@ -46,7 +46,7 @@ export function Breadcrumbs({ breadcrumbs }: BreadcrumbsProps) {
               {breadcrumbs.map(({ name, link }) => (
                 <li className="py-2 last-of-type:hidden" key={name}>
                   <SfLink
-                    as={Link}
+                    as={NextLink}
                     href={link}
                     variant="secondary"
                     className="leading-5 no-underline text-inherit hover:underline active:underline whitespace-nowrap outline-secondary-600"
@@ -64,7 +64,7 @@ export function Breadcrumbs({ breadcrumbs }: BreadcrumbsProps) {
             key={item.name}
           >
             <SfLink
-              as={Link}
+              as={NextLink}
               href={item.link}
               variant="secondary"
               className="leading-5 no-underline hover:underline active:underline whitespace-nowrap outline-secondary-600 text-inherit"
