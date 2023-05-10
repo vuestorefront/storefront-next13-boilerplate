@@ -7,11 +7,11 @@ import {
   SfIconMenu,
   SfIconSearch,
   SfIconShoppingCart,
+  useDisclosure,
 } from '@storefront-ui/react';
 import classNames from 'classnames';
 import { useTranslation } from 'next-i18next';
 import { Search } from '~/components';
-import { useLockBodyScroll } from '~/hooks';
 
 const items = [
   {
@@ -35,7 +35,7 @@ const items = [
 export function BottomNav({ ...attributes }) {
   const [selectedItem, setselectedItem] = useState('');
   const { t } = useTranslation();
-  const { isOpen, open, close } = useLockBodyScroll();
+  const { isOpen, open, close } = useDisclosure({ initialValue: false });
   function onClickHandler(itemLabel: string) {
     setselectedItem(itemLabel);
     if (itemLabel === 'search') {

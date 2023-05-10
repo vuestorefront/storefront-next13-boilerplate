@@ -1,11 +1,10 @@
-import { SfButton, SfIconClose, SfModal } from '@storefront-ui/react';
+import { SfButton, SfIconClose, SfModal, useDisclosure } from '@storefront-ui/react';
 import { useTranslation } from 'next-i18next';
-import { useLockBodyScroll } from '../../hooks';
 import { Overlay } from '../ui';
 import { ContactInformationForm } from './ContactInformationForm';
 
 export function ContactInformation(): JSX.Element {
-  const { isOpen, open, close } = useLockBodyScroll();
+  const { isOpen, open, close } = useDisclosure({ initialValue: false });
   const { t } = useTranslation('checkout');
 
   const cart = {
