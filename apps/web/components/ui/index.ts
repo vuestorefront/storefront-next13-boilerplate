@@ -14,3 +14,4 @@ export * from './Display';
 export * from './CategoryCard';
 export * from './Breadcrumbs';
 export * from './Pagination';
+export * from './CartProductCard';

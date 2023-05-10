@@ -1,6 +1,5 @@
 export * from './useCart';
 export * from './useCartShippingMethods';
-export * from './useFormatPrice';
 export * from './useProduct';
 export * from './useProductAttribute';
 export * from './useProductReviews';

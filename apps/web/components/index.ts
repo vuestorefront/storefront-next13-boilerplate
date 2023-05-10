@@ -5,7 +5,6 @@ export * from './CategoryPageContent';
 export * from './CategoryTree';
 export * from './CategorySorting';
 export * from './CartPageContent';
-export * from './CartProductCard';
 export * from './Footer';
 export * from './NarrowContainer';
 export * from './Gallery';

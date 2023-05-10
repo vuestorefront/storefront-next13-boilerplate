@@ -13,41 +13,41 @@ const fetchCart = async (): Promise<SfCart> => {
       {
         attributes: [
           {
-            label: 'size',
+            label: '40',
             name: 'size',
             value: '40',
           },
           {
-            label: 'color',
+            label: 'White',
             name: 'color',
             value: 'white',
           },
         ],
         id: '1',
         image: {
-          alt: '',
-          url: '', // @todo set real url
+          alt: 'Athletic mens walking sneakers',
+          url: '/images/product.webp',
         },
-        name: 'Philippe Model - Sneaker “Lakers“',
+        name: 'Athletic mens walking sneakers',
         quantity: 1,
-        sku: null,
-        slug: 'sneaker-1',
+        sku: 'product-1',
+        slug: 'athletic-mens-walking-sneakers',
         totalPrice: {
           currency: 'USD',
           amount: 325,
-          precisionAmount: '325.00',
+          precisionAmount: '2',
         },
         unitPrice: {
           isDiscounted: false,
           regularPrice: {
             currency: 'USD',
             amount: 325,
-            precisionAmount: '325.00',
+            precisionAmount: '2',
           },
           value: {
             currency: 'USD',
             amount: 325,
-            precisionAmount: '325.00',
+            precisionAmount: '2',
           },
         },
       },
@@ -61,35 +61,35 @@ const fetchCart = async (): Promise<SfCart> => {
       price: {
         currency: 'USD',
         amount: 0,
-        precisionAmount: '0.00',
+        precisionAmount: '2',
       },
     },
     subtotalDiscountedPrice: {
       currency: 'USD',
       amount: 305,
-      precisionAmount: '305.00',
+      precisionAmount: '2',
     },
     subtotalRegularPrice: {
       currency: 'USD',
       amount: 325,
-      precisionAmount: '325.00',
+      precisionAmount: '2',
     },
     totalCouponDiscounts: {
       currency: 'USD',
       amount: 20,
-      precisionAmount: '20.00',
+      precisionAmount: '2',
     },
     totalItems: 1,
     totalPrice: {
       currency: 'USD',
       amount: 305,
-      precisionAmount: '305.00',
+      precisionAmount: '2',
     },
     totalShippingPrice: null,
     totalTax: {
       currency: 'USD',
       amount: 67,
-      precisionAmount: '67.00',
+      precisionAmount: '2',
     },
   };
 };
