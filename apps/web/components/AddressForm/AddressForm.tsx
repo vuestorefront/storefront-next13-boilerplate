@@ -37,7 +37,7 @@ export function AddressForm({ type, onSave, onClear, savedAddress }: AddressForm
   const handleClearAll = (): void => {
     setDefaultValues(emptyAddress);
     if (typeof onClear === 'function') {
-      onClear(emptyAddress);
+      onClear();
     }
   };
 
@@ -45,7 +45,7 @@ export function AddressForm({ type, onSave, onClear, savedAddress }: AddressForm
     event.preventDefault();
 
     if (typeof onSave === 'function') {
-      onSave(event.target, false);
+      onSave();
     }
   };
 
