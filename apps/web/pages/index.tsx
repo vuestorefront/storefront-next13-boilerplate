@@ -1,5 +1,6 @@
 import { Fragment } from 'react';
 import { GetServerSidePropsContext } from 'next';
+import { dehydrate } from '@tanstack/react-query';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { RenderContent } from '~/components';
 import { useContent, prefetchContent, ContentDynamicPage } from '~/hooks';
@@ -19,6 +20,7 @@ export async function getServerSideProps({ locale }: GetServerSidePropsContext) 
 
   return {
     props: {
+      dehydratedState: dehydrate(queryClient),
       ...(await serverSideTranslations(locale as string, ['common', 'footer', 'message'])),
     },
   };
