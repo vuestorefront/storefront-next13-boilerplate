@@ -58,7 +58,7 @@ export function CartProductCard({ item, ...attributes }: CartProductCardProps) {
         </div>
         <div className="items-center sm:mt-auto sm:flex">
           <span className="font-bold sm:ml-auto sm:order-1 typography-text-sm sm:typography-text-lg">
-            {item.totalPrice.precisionAmount} {item.totalPrice.currency}
+            ${item.totalPrice.precisionAmount}
           </span>
           <QuantitySelector value={value} minValue={min} maxValue={max} onChange={handleOnChange}></QuantitySelector>
         </div>

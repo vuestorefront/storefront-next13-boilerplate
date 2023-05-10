@@ -8,6 +8,7 @@ import CheckoutAddress from '~/components/CheckoutAddress';
 import { CheckoutPayment } from '~/components/CheckoutPayment';
 import ContactInformation from '~/components/ContactInformation';
 import ShippingMethod from '~/components/ShippingMethod';
+import { useCart } from '~/hooks';
 import { CheckoutLayout } from '~/layouts';
 
 export async function getServerSideProps({ locale }: GetServerSidePropsContext) {
@@ -28,6 +29,7 @@ export async function getServerSideProps({ locale }: GetServerSidePropsContext) 
 
 export default function Checkout() {
   const { t } = useTranslation('checkout');
+  const { data: cart } = useCart();
 
   return (
     <CheckoutLayout backHref="/cart" backLabel={t('back')} heading={t('checkout')}>
@@ -56,7 +58,7 @@ export default function Checkout() {
           <CheckoutPayment activePayment="credit-card" onPaymentChange={() => {}} />
           <Divider className="w-screen md:w-auto -mx-4 md:mx-0 mb-10" />
         </div>
-        <OrderSummary className="col-span-5 md:sticky md:top-20 h-fit">
+        <OrderSummary cart={cart} className="col-span-5 md:sticky md:top-20 h-fit">
           <>
             <SfButton as={NextLink} href="/" data-testid="placeOrder" size="lg" className="w-full mb-4 md:mb-0">
               {t('placeOrder')}
