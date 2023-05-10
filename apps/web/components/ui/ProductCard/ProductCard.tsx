@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import NextLink from 'next/link';
 import { SfButton, SfRating, SfCounter, SfLink, SfIconShoppingCart } from '@storefront-ui/react';
 import { useTranslation } from 'next-i18next';
 import { ProductCardProps } from './types';
@@ -6,7 +7,7 @@ import { ProductCardProps } from './types';
 export function ProductCard({ product, ...attributes }: ProductCardProps) {
   const { t } = useTranslation();
 
-  const { name, primaryImage, rating, description, price } = product;
+  const { name, primaryImage, rating, description, price, slug } = product;
 
   return (
     <div
@@ -14,7 +15,7 @@ export function ProductCard({ product, ...attributes }: ProductCardProps) {
       {...attributes}
     >
       <div className="relative">
-        <SfLink href="#" className="relative block w-full pb-[100%]">
+        <SfLink href={`/product/${slug}`} as={NextLink} className="relative block w-full pb-[100%]">
           <Image
             src={primaryImage?.url ?? ''}
             alt={primaryImage?.alt || 'primary image'}
@@ -24,13 +25,13 @@ export function ProductCard({ product, ...attributes }: ProductCardProps) {
         </SfLink>
       </div>
       <div className="p-2 border-t border-neutral-200 typography-text-sm">
-        <SfLink href="#" variant="secondary" className="no-underline">
+        <SfLink href={`/product/${slug}`} as={NextLink} variant="secondary" className="no-underline">
           {name}
         </SfLink>
         <div className="flex items-center pt-1">
           <SfRating size="xs" value={rating?.average} max={5} />
 
-          <SfLink href="#" variant="secondary" className="ml-1 no-underline">
+          <SfLink href="#" variant="secondary" as={NextLink} className="ml-1 no-underline">
             <SfCounter size="xs">{rating?.count}</SfCounter>
           </SfLink>
         </div>

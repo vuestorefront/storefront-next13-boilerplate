@@ -1,12 +1,14 @@
-import { Footer, NavbarTop } from '~/components';
+import { PropsWithChildren } from 'react';
+import { Footer, NarrowContainer, NavbarTop } from '~/components';
 
-export function OrderLayout(): JSX.Element {
+export function OrderLayout({ children }: PropsWithChildren): JSX.Element {
   return (
     <>
       <NavbarTop />
-      <main data-testid="order-layout">{/*<NarrowContainer>{children}</NarrowContainer>*/}</main>
+      <main>
+        <NarrowContainer>{children}</NarrowContainer>
+      </main>
       <Footer />
-      {/*<Notifications />*/}
     </>
   );
 }
