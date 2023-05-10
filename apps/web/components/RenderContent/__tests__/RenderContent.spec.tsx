@@ -8,7 +8,11 @@ describe('<RenderContent />', () => {
       {
         fields: {
           component: 'Page',
-          content: [{}]
+          content: [{
+            fields: {
+              component: 'Test',
+            },
+          }]
         }
       }
     ] as unknown as ContentDynamicPage['content'];
