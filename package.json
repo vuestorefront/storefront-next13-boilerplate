@@ -14,7 +14,6 @@
     "lint": "turbo run lint",
     "format": "prettier --write \"**/*.{ts,tsx,css,scss,md}\"",
     "clean": "npx rimraf ./**/node_modules && rm yarn.lock",
-    "clean:hard": "npx rimraf ./**/node_modules && npx rimraf ./**/lib && rm yarn.lock",
     "test": "turbo run test",
     "test:watch": "turbo run test:watch",
     "test:coverage": "npx turbo run test:coverage"

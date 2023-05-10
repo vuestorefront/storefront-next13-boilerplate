@@ -7,7 +7,7 @@ import classNames from 'classnames';
 import { appWithTranslation } from 'next-i18next';
 import { CartProvider } from '~/hooks';
 import { fontBody, fontHeadings } from '~/styles/fonts';
-import '~/styles/globals.scss';
+import '~/styles/main.scss';
 
 function App({ Component, pageProps }: AppProps) {
   const [queryClient] = useState(
