@@ -1,8 +1,7 @@
 import { GetServerSidePropsContext } from 'next';
 import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-import { CategoryPageContent, CategoryTree, CategorySorting, CategoryFilters } from '~/components';
-import { BreadcrumbItem } from '~/components/ui/Breadcrumbs/types';
+import { CategoryPageContent, CategoryTree, CategorySorting, CategoryFilters, Breadcrumb } from '~/components';
 import { DefaultLayout } from '~/layouts';
 import { getProducts } from '~/mocks/products';
 
@@ -16,7 +15,7 @@ export async function getServerSideProps({ locale }: GetServerSidePropsContext) 
 
 export default function CategoryPage() {
   const { t } = useTranslation('category');
-  const breadcrumbs: BreadcrumbItem[] = [
+  const breadcrumbs: Breadcrumb[] = [
     { name: t('common:home'), link: '/' },
     { name: t('allProducts'), link: '/category' },
   ];
