@@ -14,7 +14,7 @@ export function CartProductCard({
   price,
   value,
 }: CartProductCardProps) {
-  const { t } = useTranslation(['product']);
+  const { t } = useTranslation('product');
 
   return (
     <div className="relative flex first:border-t border-b-[1px] border-neutral-200 hover:shadow-lg min-w-[320px] p-4 last:mb-0">
