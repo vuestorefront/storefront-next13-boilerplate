@@ -53,7 +53,6 @@ export function CheckoutLayout({ backLabel, backHref, children, heading }: Check
         </NarrowContainer>
       </main>
       <Footer />
-      {/*<Notifications />*/}
     </>
   );
 }

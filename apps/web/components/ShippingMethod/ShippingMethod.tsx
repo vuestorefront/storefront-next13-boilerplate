@@ -1,12 +1,11 @@
 import { SfIconBlock, SfListItem, SfRadio } from '@storefront-ui/react';
 import { useTranslation } from 'next-i18next';
-import { useCart, assertIsCartAvailable } from '~/hooks';
-import { useCartShippingMethods } from '~/hooks/cart/useCartShippingMethods';
+import { useCart, useCartShippingMethods } from '~/hooks';
 
 export function ShippingMethod() {
   const { data: cart } = useCart();
   const { shippingMethods } = useCartShippingMethods();
-  assertIsCartAvailable(cart);
+
   const { t } = useTranslation('checkout');
   const filteredShippingMethods = shippingMethods.filter(({ key }) => key !== 'collect');
 

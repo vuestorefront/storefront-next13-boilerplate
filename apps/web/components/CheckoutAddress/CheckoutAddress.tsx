@@ -2,16 +2,19 @@ import { SfButton, SfIconClose, SfModal, useDisclosure } from '@storefront-ui/re
 import { useTranslation } from 'next-i18next';
 import { AddressForm } from '~/components/AddressForm';
 import { Overlay } from '~/components/ui';
-import { useCart, assertIsCartAvailable } from '~/hooks';
+import { useCart } from '~/hooks';
 import { AddressFormFields } from '../AddressForm/types';
 import { CheckoutAddressProps } from './types';
 
-export function CheckoutAddress({ type, heading, description, buttonText }: CheckoutAddressProps): JSX.Element {
+export function CheckoutAddress({ type, heading, description, buttonText }: CheckoutAddressProps): JSX.Element | null {
   const { data: cart } = useCart();
-  assertIsCartAvailable(cart);
 
   const { isOpen, open, close } = useDisclosure({ initialValue: false });
   const { t } = useTranslation('checkout');
+
+  if (!cart) {
+    return null;
+  }
 
   const savedAddress = cart[type] as unknown as AddressFormFields;
 
