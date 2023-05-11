@@ -6,11 +6,15 @@ import { useCart } from '~/hooks';
 import { AddressFormFields } from '../AddressForm/types';
 import { CheckoutAddressProps } from './types';
 
-export function CheckoutAddress({ type, heading, description, buttonText }: CheckoutAddressProps): JSX.Element {
+export function CheckoutAddress({ type, heading, description, buttonText }: CheckoutAddressProps): JSX.Element | null {
   const { data: cart } = useCart();
 
   const { isOpen, open, close } = useDisclosure({ initialValue: false });
   const { t } = useTranslation('checkout');
+
+  if (!cart) {
+    return null;
+  }
 
   const savedAddress = cart[type] as unknown as AddressFormFields;
 
