@@ -1,8 +1,9 @@
 import { Fragment } from 'react';
 import { GetServerSidePropsContext } from 'next';
+import { dehydrate } from '@tanstack/react-query';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { RenderContent } from '~/components';
-import { useContent, prefetchContent } from '~/hooks';
+import { useContent, prefetchContent, ContentDynamicPage } from '~/hooks';
 import { DefaultLayout } from '~/layouts';
 
 const contentUrl = 'home-page';
@@ -19,13 +20,14 @@ export async function getServerSideProps({ locale }: GetServerSidePropsContext) 
 
   return {
     props: {
+      dehydratedState: dehydrate(queryClient),
       ...(await serverSideTranslations(locale as string, ['common', 'footer', 'message'])),
     },
   };
 }
 
 export default function Home() {
-  const { data: content } = useContent(contentUrl);
+  const { data: content } = useContent<ContentDynamicPage>(contentUrl);
 
   return (
     <DefaultLayout>

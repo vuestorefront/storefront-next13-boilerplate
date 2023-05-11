@@ -1,29 +1,22 @@
-import { SfButton, SfIconClose, SfModal } from '@storefront-ui/react';
+import { SfButton, SfIconClose, SfModal, useDisclosure } from '@storefront-ui/react';
 import { useTranslation } from 'next-i18next';
 import { AddressForm } from '~/components/AddressForm';
 import { Overlay } from '~/components/ui';
-import { useCart, useLockBodyScroll } from '~/hooks';
+import { useCart } from '~/hooks';
 import { AddressFormFields } from '../AddressForm/types';
 import { CheckoutAddressProps } from './types';
 
-export function CheckoutAddress({ type, heading, description, buttonText }: CheckoutAddressProps): JSX.Element {
+export function CheckoutAddress({ type, heading, description, buttonText }: CheckoutAddressProps): JSX.Element | null {
   const { data: cart } = useCart();
 
-  const { isOpen, open, close } = useLockBodyScroll();
+  const { isOpen, open, close } = useDisclosure({ initialValue: false });
   const { t } = useTranslation('checkout');
 
-  const handleSave = async (address: AddressFormFields, useAsShipping: boolean): Promise<void> => {
-    if (type === 'billingAddress') {
-      console.log('save billing address', address); // eslint-disable-line no-console
-    }
-    if (type === 'shippingAddress') {
-      console.log('save shipping address', useAsShipping); // eslint-disable-line no-console
-    }
+  if (!cart) {
+    return null;
+  }
 
-    close();
-  };
-
-  const savedAddress = cart[type];
+  const savedAddress = cart[type] as unknown as AddressFormFields;
 
   return (
     <div data-testid="checkout-address" className="md:px-4 py-6">
@@ -74,7 +67,7 @@ export function CheckoutAddress({ type, heading, description, buttonText }: Chec
                 {heading}
               </h3>
             </header>
-            <AddressForm savedAddress={savedAddress} type={type} onSave={handleSave} />
+            <AddressForm savedAddress={savedAddress} type={type} onSave={() => {}} />
           </SfModal>
         </Overlay>
       )}

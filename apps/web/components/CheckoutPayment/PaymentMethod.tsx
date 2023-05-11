@@ -6,7 +6,7 @@ export function PaymentMethod({ active, disabled, children, onClick, value }: Pa
     <button
       type="button"
       data-testid="payment-method"
-      onClick={() => typeof onClick === 'function' && onClick(value)}
+      onClick={() => typeof onClick === 'function' && onClick()}
       disabled={disabled}
       className={classNames(
         'border border-1 border-neutral-200 rounded h-20 flex items-center justify-center disabled:bg-neutral-100 disabled:opacity-50 focus:outline focus:outline-offset-2 focus:outline-2 outline-secondary-600',

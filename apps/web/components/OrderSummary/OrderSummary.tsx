@@ -1,14 +1,8 @@
-import { PropsWithChildren } from 'react';
 import { SfButton, SfInput } from '@storefront-ui/react';
-import { SfCart } from '@vsf-enterprise/unified-data-model';
 import classNames from 'classnames';
 import { useTranslation } from 'next-i18next';
 import { Divider, Tag } from '~/components/ui';
-
-type OrderSummaryPropsType = PropsWithChildren & {
-  className?: string;
-  cart: SfCart;
-};
+import { OrderSummaryPropsType } from './types';
 
 export function OrderSummary({ cart, className = '', children }: OrderSummaryPropsType): JSX.Element {
   const { t } = useTranslation('cart');
@@ -29,20 +23,20 @@ export function OrderSummary({ cart, className = '', children }: OrderSummaryPro
             <p>{t('estimatedTax')}</p>
           </div>
           <div className="flex flex-col text-right">
-            <p>${cart.totalPrice.precisionAmount}</p>
-            <p className="typography-text-xs text-neutral-500">${cart.subtotalRegularPrice.precisionAmount}</p>
-            <p className="typography-text-xs text-secondary-700">${cart.totalCouponDiscounts.precisionAmount}</p>
-            {!!cart.shippingMethod && <p className="my-2">${cart.shippingMethod.price.precisionAmount}</p>}
-            <p>${cart.totalTax.precisionAmount}</p>
+            <p>${cart.totalPrice.amount}</p>
+            <p className="typography-text-xs text-neutral-500">${cart.subtotalRegularPrice.amount}</p>
+            <p className="typography-text-xs text-secondary-700">${cart.totalCouponDiscounts.amount}</p>
+            {!!cart.shippingMethod && <p className="my-2">${cart.shippingMethod.price.amount}</p>}
+            <p>${cart.totalTax.amount}</p>
           </div>
         </div>
-        {!!cart.totalCouponDiscounts.precisionAmount && (
+        {!!cart.totalCouponDiscounts.amount && (
           <div className="flex items-center py-4 border-t border-neutral-200">
             <p>{t('promoCode')}</p>
             <SfButton size="sm" variant="tertiary" className="ml-auto mr-2">
               {t('remove')}
             </SfButton>
-            <p>${cart.totalCouponDiscounts.precisionAmount}</p>
+            <p>${cart.totalCouponDiscounts.amount}</p>
           </div>
         )}
         <div className="flex gap-x-2 py-4 border-y border-neutral-200 mb-4">
@@ -50,13 +44,13 @@ export function OrderSummary({ cart, className = '', children }: OrderSummaryPro
           <SfButton variant="secondary">{t('apply')}</SfButton>
         </div>
         <div className="px-3 py-1.5 bg-secondary-100 text-secondary-700 typography-text-sm rounded-md text-center mb-4">
-          <Tag className="w-full mb-4" variant="secondary">
-            {t('savingsTag', { amount: cart.totalCouponDiscounts.precisionAmount })}
+          <Tag className="w-full" variant="secondary">
+            {t('savingsTag', { amount: `$${cart.totalCouponDiscounts.amount}` })}
           </Tag>
         </div>
         <div className="flex justify-between typography-headline-4 md:typography-headline-3 font-bold pb-4 mb-4">
           <p>{t('total')}</p>
-          <p>${cart.totalPrice.precisionAmount}</p>
+          <p>${cart.totalPrice.amount}</p>
         </div>
         <Divider className="my-4 max-md:-mx-4 max-md:w-auto" />
         {children}

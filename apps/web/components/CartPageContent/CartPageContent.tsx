@@ -2,8 +2,8 @@ import Image from 'next/image';
 import NextLink from 'next/link';
 import { SfButton } from '@storefront-ui/react';
 import { useTranslation } from 'next-i18next';
-import { CartProductCard } from '~/components/CartProductCard';
 import { OrderSummary } from '~/components/OrderSummary';
+import { CartProductCard } from '~/components/ui/CartProductCard';
 import { useCart } from '~/hooks';
 import emptyCartImage from '~/public/images/empty-cart.svg';
 
@@ -22,7 +22,17 @@ export function CartPageContent() {
     <div className="md:grid md:grid-cols-12 md:gap-x-6">
       <div className="col-span-7 mb-10 md:mb-0">
         {cart.lineItems.map((item) => (
-          <CartProductCard key={item.id} item={item} />
+          <CartProductCard
+            key={item.id}
+            attributes={item.attributes}
+            imageUrl={item.image?.url}
+            imageAlt={item.image?.alt}
+            name={item.name}
+            price={item.totalPrice.amount}
+            maxValue={10}
+            minValue={1}
+            value={item.quantity}
+          />
         ))}
       </div>
       <OrderSummary cart={cart} className="col-span-5 md:sticky md:top-20 h-fit">

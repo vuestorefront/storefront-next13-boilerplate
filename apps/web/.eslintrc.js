@@ -13,5 +13,7 @@ module.exports = {
     '@typescript-eslint/no-empty-function': ['error', { allow: ['arrowFunctions'] }],
     complexity: 0,
     'no-secrets/no-secrets': 'off',
+    'unicorn/prefer-array-some': 'off',
+    'sonarjs/no-duplicate-string': 'off',
   },
 };
