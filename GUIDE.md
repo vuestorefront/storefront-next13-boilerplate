@@ -1,187 +1,150 @@
-# Vue Storefront + Next.js Starter Guide
+# Development Guide
 
 Welcome to the Vue Storefront Boilerplate for a [Next.js 13+](https://nextjs.org/) project! This guide will provide you with an overview of the project structure, tools, and best practices to help you get started quickly.
 
-## Table of Contents
+### Project Structure
 
-1. [Introduction](#introduction)
-2. [Directory Structure](#directory-structure)
-3. [Building the Project](#building-the-project)
-4. [Web app](#web-app)
-5. [Server app](#server-app)
-6. [TypeScript and Tooling](#typescript-and-tooling)
-7. [Additional Resources](#additional-resources)
+Web application follows standard Next.js file/folder structure:
 
-## Introduction <a name="introduction"></a>
+```shell
 
-The Boilerplate Template is designed to provide a solid foundation for building Vue Storefront applications with a [Turborepo](https://turbo.build/repo) builder and [Next.js 13+](https://nextjs.org/) framework. It includes several tools and configurations to streamline development and enforce best practices.
+apps/
+ └── web/
+     ├── ...
+     ├── components/              # Project Components
+     │   ├── Footer/
+     │   ├── ...
+     │   └── ui                  # StorefrontUI block components
+     ├── helpers/                 # Helper utils
+     ├── hooks/                   # Custom hooks
+     ├── layouts/                 # Layouts
+     ├── mocks/                   # Static data
+     ├── pages/                   # Pages
+     │   ├── _app.tsx            # Custom App component
+     │   ├── _document.tsx       # Custom Document component
+     │   ├── index.tsx           # Home page
+     │   └── ...
+     ├── public/                  # Public assets
+     ├── sdk/                     # Vue Storefront SDK configuration
+     ├── styles/                  # Project CSS configuration
+     ├── .eslint.js              # ESLint configuration
+     ├── .lintstagedrc.js        # Lint-Staged configuration
+     ├── jest.config.ts          # Jest configuration
+     ├── next.config.js          # Next.Js configuration
+     ├── package.json            # Project dependencies
+     ├── tailwind.config.js      # TailwindCSS configuration
+     ├── tsconfig.json           # TypeScript configuration
+     └── ...
 
-This Turborepo includes the following apps:
-
-### Apps
-
-- `server`: [Vue Storefront Middleware](https://docs.vuestorefront.io/v2/architecture/server-middleware.html) server
-- `web`: [Next.js 13](<(https://nextjs.org/)>) + Vue Storefront app
-
-### Utilities
-
-This Turborepo has some additional tools already setup for you:
-
-- [ESLint](https://eslint.org/) & [Lint-Staged](https://github.com/okonet/lint-staged) for code linting
-- [Jest](https://jestjs.io) test runner
-- [Prettier](https://prettier.io) for code formatting
-- [TypeScript](https://www.typescriptlang.org/) for static type checking
-- [Husky](https://typicode.github.io/husky/) for working with Git hooks efficiently
-
-### Commands
-
-Commands avaiable from the project root
-
-| Command       | Description                                                            |
-| ------------- | ---------------------------------------------------------------------- |
-| prepare       | Setup Husky                                                            |
-| build         | Build all apps and packages                                            |
-| start         | Run your production apps                                               |
-| dev           | Run apps in development mode                                           |
-| lint          | Lint all your apps and packages                                        |
-| clean         | Perform cleanup up and reinstall dependencies in all apps and packages |
-| test          | Run tests in apps                                                      |
-| test:watch    | Run tests in apps in watch mode                                        |
-| test:coverage | Run tests in apps with coverage                                        |
-
-## Directory Structure <a name="directory-structure"></a>
-
-The project follows a recommended directory structure to organize code and resources efficiently. Here's an overview of the key directories:
-
-Project
-
-    .
-    ├── .husky                  # Husky configuration
-    ├── apps
-    │   ├── server              # VSF Middleware
-    │   └── web                 # NextJs app
-    ├── .lintstagedrc.js        # Global Lint-Staged configuration
-    ├── .prettierrc             # Global Preffier configuration
-    ├── package.json            # Global Project dependencies
-    ├── turbo.json              # Turborepo configuration
-    └── ...                     # Global config files
-
-Feel free to adapt the structure to your project's specific needs, but keeping the core directories intact will help maintain consistency.
-
-## Building the Project <a name="building-the-project"></a>
-
-To build the project, follow these steps:
-
-1. Clone the repository:
-
-```console
-$ git clone https://github.com/vuestorefront/storefront-next13-boilerplate.git
 ```
 
-2. Navigate to the project root:
+- `sdk` directory holds [Vue Storefront SDK]() initialization module
+- `components/ui` directory keeps Storefront UI blocks components, like `ProductCard` or `Review`
+- `helpers` is responsible for delivering utils / helpers functions
+- `hooks` folder is responsible for delivering reusable hooks functions, e.g. data fetching and UI hooks
+- `mocks` directory holds static data used across the application, e.g. application footer links
 
-```console
-$ cd storefront-next13-boilerplate
+### Functions
+
+Since React components are also functions, some general convention should be followed as much as possible:
+
+- Each function is located in a dedicated module and exported from the `index.ts` file.
+- Names should be short and descriptive.
+- Named function export is preferred.
+- TS types and tests ale located close to the function file.
+- Expected file/folder structure:
+
+```shell
+<module-directory>/
+ └── Function/
+     ├─ index.tsx
+     ├─ types.ts
+     ├─ Function.ts
+     └─ __tests__/
+         └─ Function.spec.ts
 ```
 
-3. Install dependencies:
+### Hooks
 
-```console
-$ yarn install
+React hooks are useful when some stateful logic have to be reused between components, e.g. product data or control component state.
+Project hooks are located in a `/apps/web/hooks/` directory and are follow a structure pattern:
+
+```shell
+hooks/
+ └── useProduct/
+     ├─ index.tsx
+     ├─ types.ts
+     ├─ useProduct.ts
+     └─ __tests__/
+         └─ useProduct.spec.ts
 ```
 
-4. Run the project in development mode:
+Naming:
 
-```console
-$ yarn dev
+- each hook should be prefixed with `use` keyword (`useProduct`)
+- hooks should follow `Camel case` pattern (`useProductReviews`)
+
+### React Components
+
+Project components are located in a `components` directory and are follow a structure pattern:
+
+- Project components
+  - Representational components that are designed to fulfill project requirements.
+  - TS types and tests ale located close to the component
+  - Expected file/folder structure:
+
+```shell
+components/
+ └── Footer/
+     ├─ index.tsx
+     ├─ types.ts
+     ├─ Footer.tsx
+     └─ __tests__/
+         └─ Footer.spec.tsx
 ```
 
-Project will be served at http://localhost:3000/
+- Storefront UI blocks
+  - Reusable/generic types of components used throughout whole monorepo.
+  - TS types and tests ale located close to the component
+  - Expected file/folder structure:
 
-## Web app <a name="web-app"></a>
+```shell
+components/
+ └── ui/
+     └── Display/
+         ├─ index.tsx
+         ├─ types.ts
+         ├─ Display.tsx
+         └─ __tests__/
+            └─ Display.spec.tsx
+```
 
-<!-- TODO links -->
+Naming:
 
-Web app is a core of your application. It's a [Next.Js 13]() app with [Vue Storefront SDK]() library that helps you easy integrate with an E-Commerce Platform.
+- React components should follow `Pascal case` pattern (`CategoryFilters`, `Heading`)
 
-Web app directory structure is based on [Next.Js]() conventions with some additional directories.
+#### Data fetching
 
-    .
-    ├── ...
-    ├── components              # Project Components
-    │   ├── Footer
-    │   ├── ...
-    │   └── ui                  # StorefrontUI block components
-    ├── helpers                 # Helper utils
-    ├── hooks                   # Custom hooks
-    ├── layouts                 # Layouts
-    ├── mocks                   # Static data
-    ├── pages                   # Pages
-    │   ├── _app.tsx            # Custom App component
-    │   ├── _document.tsx       # Custom Document component
-    │   ├── index.tsx           # Home page
-    │   └── ...
-    ├── public                  # Public assets
-    ├── sdk                     # Vue Storefront SDK configuration
-    ├── styles                  # Project CSS configuration
-    ├── .eslint.js              # ESLint configuration
-    ├── .lintstagedrc.js        # Lint-Staged configuration
-    ├── jest.config.ts          # Jest configuration
-    ├── next.config.js          # Next.Js configuration
-    ├── package.json            # Project dependencies
-    ├── tailwind.config.js      # TailwindCSS configuration
-    ├── tsconfig.json           # TypeScript configuration
-    └── ...
+Data fetching and state management is handled by [React-Query]() library.
 
-Next.Js pages are Server-Side-Rendered by default.
+### Localization
 
-### Features:
+Project ships with basic setup for i18n localization powered by the [Next-i18next]() library. Project locale translations are stored in `public/[locale]/[namespace].json` files. Translations are grouped by _features_, and imported only where required to minimize
+Refer to the [Next-i18n documentation](https://next.i18next.com/) for the translating content with SSR.
 
-#### Vue Storefront SDK
-<!-- TODO ARE there any docs for this? -->
+### Testing
 
-Vue Storefront SDK is a tool that help you integrating your application with a headless E-commcommerce backend using Vue Storefront easily.
+Project provide basic setup for testing JS code with `Jest` and [`testing-library`](https://testing-library.com/docs/react-testing-library/intro) for testing React components.
+Testing configuration files:
 
-#### StorefrontUI
+- `jest.config.ts` - `Jest` config file.
+- `jest.setup.ts` - mocks for third party (`next-i18next`) and global (`window`) objects.
+- `jest.utils.tsx` - testing wrapper for `React-Query`, refer to the [official documentation](https://tanstack.com/query/v4/docs/react/guides/testing) for more info.
 
-[`StorefrontUI`](https://docs.storefrontui.io/v2/) is a lightweight, accessible, and customizable component library built for e-commerce and powered with [TailwindCSS](https://tailwindcss.com/).
+### Conventions enforced by automated tooling
 
-Check out other [blocks components](https://docs.storefrontui.io/v2/react/blocks.html) and enhance full potential of StorefrontUI.
+List and reasoning of some conventions enforced by automated tooling:
 
-#### PWA
-
-[`Progressive Web App`](https://web.dev/learn/pwa/) features are powered by the [next-pwa](https://github.com/shadowwalker/next-pwa), a zero Config PWA Plugin for Next.js.
-
-#### i18n
-
-Project ships with basic setup for localised content powered by an awesome [Next-i18next](https://next.i18next.com/) library.
-Project translations are available in a `public/locales/[locale].json` files.
-
-#### Testing
-<!-- TODO -->
-
-## Server app <a name="server-app"></a>
-
-The Boilerplate Template is built using a JavaScript framework. Please refer to the framework's documentation for detailed usage instructions and available features.
-
-## TypeScript and Tooling <a name="typescript-and-tooling"></a>
-
-The project is built using TypeScript to provide static typing and improved developer productivity. Key tooling and configurations included in the template are as follows:
-
-- TypeScript: The project utilizes TypeScript for type checking and compilation.
-
-### Linting with ESLint
-
-ESLint is used for code linting to ensure code quality and maintain consistency. The project includes an ESLint configuration file with recommended rules. To lint the project, run `yarn lint`.
-
-### Pre-commit Rules
-
-To enforce code quality and reduce errors, pre-commit rules have been set up. These rules include running ESLint and TypeScript checks before committing code.
-
-## Additional Resources <a name="additional-resources"></a>
-
-- [Next.js](https://nextjs.org/): Refer to the official documentation.
-- [TypeScript Documentation]: Learn more about TypeScript and its features.
-- [ESLint Documentation]: Explore ESLint's documentation for configuring rules and extending functionality.
-
-Thank you for choosing the Boilerplate Template project! If you have any questions or need further assistance, please refer to the project's repository or reach out to the community for support.
+- All test descriptions follows naming convention `it('should ... ')`.
+- Commit message enforces [Conventional Commits]() specification and use [`commitizen`]() library.
+- Automatic code linting is managed by [`lint-staged`]() library and [Husky](https://typicode.github.io/husky/)
