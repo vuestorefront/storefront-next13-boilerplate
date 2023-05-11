@@ -8,15 +8,15 @@ const sortOptions = [
   },
   {
     label: 'priceUp',
-    value: 'price-up',
+    value: 'price-low-to-high',
   },
   {
     label: 'priceDown',
-    value: 'price-down',
+    value: 'price-high-to-low',
   },
   {
     label: 'relevance',
-    value: 'score',
+    value: 'relevant',
   },
 ];
 

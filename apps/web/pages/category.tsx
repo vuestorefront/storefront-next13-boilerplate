@@ -1,13 +1,24 @@
 import { GetServerSidePropsContext } from 'next';
+import { dehydrate } from '@tanstack/react-query';
 import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { CategoryPageContent, CategoryTree, CategorySorting, CategoryFilters, Breadcrumb } from '~/components';
+import { prefetchProducts, useProducts } from '~/hooks/useProducts/useProducts';
 import { DefaultLayout } from '~/layouts';
-import { getProducts } from '~/mocks/products';
 
 export async function getServerSideProps({ locale }: GetServerSidePropsContext) {
+  const queryClient = await prefetchProducts();
+  const data = queryClient.getQueryData(['products']);
+
+  if (!data) {
+    return {
+      notFound: true,
+    };
+  }
+
   return {
     props: {
+      dehydratedState: dehydrate(queryClient),
       ...(await serverSideTranslations(locale as string, ['common', 'footer', 'category', 'message'])),
     },
   };
@@ -19,7 +30,13 @@ export default function CategoryPage() {
     { name: t('common:home'), link: '/' },
     { name: t('allProducts'), link: '/category' },
   ];
-  const { products, pagination, subCategories } = getProducts();
+  const { data: productsCatalog } = useProducts();
+
+  if (!productsCatalog) {
+    return null;
+  }
+
+  const { products, pagination, subCategories, facets } = productsCatalog;
   const categories = subCategories.map(({ name, productCount }) => ({ name, count: productCount, href: '/category' }));
 
   return (
@@ -32,7 +49,7 @@ export default function CategoryPage() {
           <>
             <CategoryTree parent={{ name: t('allProducts'), href: '/category' }} categories={categories} />
             <CategorySorting />
-            <CategoryFilters />
+            <CategoryFilters facets={facets} />
           </>
         }
       />
