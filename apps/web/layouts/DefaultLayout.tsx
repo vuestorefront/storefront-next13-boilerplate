@@ -25,6 +25,7 @@ export function DefaultLayout({ children, breadcrumbs = [] }: LayoutPropsType): 
       label: '',
       ariaLabel: 'Cart',
       role: 'button',
+      href: '/cart',
     },
   ];
   return (
@@ -44,6 +45,8 @@ export function DefaultLayout({ children, breadcrumbs = [] }: LayoutPropsType): 
           {actionItems.map((actionItem) => (
             <SfButton
               className="mr-2 -ml-0.5 text-white bg-transparent hover:bg-primary-800 hover:text-white active:bg-primary-900 active:text-white"
+              as={NextLink}
+              href={actionItem.href}
               key={actionItem.ariaLabel}
               aria-label={actionItem.ariaLabel}
               variant="tertiary"

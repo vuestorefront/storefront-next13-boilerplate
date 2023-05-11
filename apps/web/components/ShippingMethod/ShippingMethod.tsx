@@ -27,7 +27,7 @@ export function ShippingMethod() {
                 <div className="flex gap-2">
                   <SfRadio
                     onChange={() => {}}
-                    checked={cart.shippingMethod?.id === method.id}
+                    checked={cart?.shippingMethod?.id === method.id}
                     value={method.id}
                     name={method.name}
                   />

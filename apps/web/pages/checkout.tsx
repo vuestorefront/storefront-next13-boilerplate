@@ -31,6 +31,10 @@ export default function Checkout() {
   const { t } = useTranslation('checkout');
   const { data: cart } = useCart();
 
+  if (!cart) {
+    return null;
+  }
+
   return (
     <CheckoutLayout backHref="/cart" backLabel={t('back')} heading={t('checkout')}>
       <div className="md:grid md:grid-cols-12 md:gap-x-6">
