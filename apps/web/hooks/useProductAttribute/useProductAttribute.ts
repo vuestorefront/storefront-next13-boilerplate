@@ -1,25 +1,24 @@
 import { useState } from 'react';
 import { SfAttribute, SfProduct } from '@vsf-enterprise/unified-data-model';
-import { chain, get, map, defaults as withDefaults, zipObject } from 'lodash-es';
+import { get, map, defaults as withDefaults, zipObject, groupBy, uniqBy, pick, mapValues } from 'lodash-es';
 
 /**
  * Hook for getting product attributes data
  * @param {SfProduct} product Product object
  */
 export function useProductAttribute<TAttribute extends string>(product: SfProduct, attributesNames: TAttribute[] = []) {
-  const attributes = chain(product?.variants || [])
-    .flatMap((variant) => variant.attributes)
-    .uniqBy('value')
-    .groupBy('name')
-    .pick(attributesNames)
-    .value();
-
+  const attributes = groupBy(
+    uniqBy(
+      (product?.variants || []).flatMap((variant) => variant?.attributes),
+      'value',
+    ),
+    'name',
+  );
   const mapAttribute = (attributes: SfAttribute[] = []) => {
-    const mappedAttributes = chain(attributes)
-      .groupBy('name')
-      .pick(attributesNames)
-      .mapValues((attribute) => attribute[0].value)
-      .value();
+    const mappedAttributes = mapValues(
+      pick(groupBy(attributes, 'name'), attributesNames),
+      (attribute) => attribute[0].value,
+    );
 
     const defaults = zipObject(
       attributesNames,
