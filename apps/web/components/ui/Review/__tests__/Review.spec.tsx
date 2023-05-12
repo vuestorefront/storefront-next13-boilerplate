@@ -6,6 +6,6 @@ describe('<Review />', () => {
   it('should render component', () => {
     const { getByTestId } = render(<Review review={{} as SfProductReview} data-testid="product-review" />);
 
-    getByTestId('product-review');
+    expect(getByTestId('product-review')).toBeInTheDocument();
   });
 });

@@ -2,7 +2,6 @@ import React from 'react';
 import { render } from '@testing-library/react';
 import { OrderSummary } from '~/components';
 import { SfCart } from '@vsf-enterprise/unified-data-model';
-import { Maybe, SfId } from '@vsf-enterprise/unified-data-model/src/shared';
 
 describe('<OrderSummary />', () => {
   it('should render component', () => {

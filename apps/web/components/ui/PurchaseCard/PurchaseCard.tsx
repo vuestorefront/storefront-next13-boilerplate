@@ -31,6 +31,7 @@ export function PurchaseCard({ product, ...attributes }: PurchaseCardProps) {
   return (
     <div
       className="p-4 xl:p-6 md:border md:border-neutral-100 md:shadow-lg md:rounded-md md:sticky md:top-20"
+      data-testid="purchase-card"
       {...attributes}
     >
       <Tag variant="secondary" strong className="mb-4" data-testid="special-tag">

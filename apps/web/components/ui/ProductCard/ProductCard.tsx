@@ -22,6 +22,7 @@ export function ProductCard({
   return (
     <div
       className={classNames('border border-neutral-200 rounded-md hover:shadow-lg flex-auto flex-shrink-0', className)}
+      data-testid="product-card"
       {...attributes}
     >
       <div className="relative">

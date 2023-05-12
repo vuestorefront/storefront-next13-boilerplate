@@ -1,6 +1,6 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import { CategoryEmptyState } from '~/components/CategoryEmptyState';
+import { CategoryEmptyState } from '~/components';
 
 describe('<CategoryEmptyState />', () => {
   it('should render component', () => {

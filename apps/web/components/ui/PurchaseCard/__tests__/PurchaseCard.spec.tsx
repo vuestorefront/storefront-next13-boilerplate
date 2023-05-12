@@ -4,8 +4,8 @@ import { PurchaseCard } from '~/components';
 
 describe('<PurchaseCard />', () => {
   it('should render component', () => {
-    const { getByTestId } = render(<PurchaseCard product={{} as SfProduct} data-testid="product-card" />);
+    const { getByTestId } = render(<PurchaseCard product={{} as SfProduct} />);
 
-    getByTestId('product-card');
+    expect(getByTestId('purchase-card')).toBeInTheDocument();
   });
 });

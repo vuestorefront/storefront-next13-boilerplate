@@ -3,8 +3,8 @@ import { BottomNav } from '~/components';
 
 describe('<BottomNav />', () => {
   it('should render component', () => {
-    const { getByTestId } = render(<BottomNav data-testid="navbar-bottom" />);
+    const { getByTestId } = render(<BottomNav />);
 
-    getByTestId('navbar-bottom');
+    expect(getByTestId('navbar-bottom')).toBeInTheDocument();
   });
 });

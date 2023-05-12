@@ -3,8 +3,8 @@ import { CategoryCard } from '~/components';
 
 describe('<CategoryCard />', () => {
   it('should render component', () => {
-    const { getByTestId } = render(<CategoryCard data-testid="category-card" items={[]} />);
+    const { getByTestId } = render(<CategoryCard items={[]} />);
 
-    getByTestId('category-card');
+    expect(getByTestId('category-card')).toBeInTheDocument();
   });
 });

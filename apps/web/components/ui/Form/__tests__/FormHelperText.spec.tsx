@@ -1,10 +1,10 @@
 import { render } from '@testing-library/react';
-import { FormHelperText } from '../FormHelperText';
+import { FormHelperText } from '~/components';
 
 describe('<FormHelperText />', () => {
   it('should pass className', () => {
-    const { container } = render(<FormHelperText className="passed-class" />);
+    const { getByTestId } = render(<FormHelperText className="passed-class" />);
 
-    expect(container.firstChild).toHaveClass('passed-class');
+    expect(getByTestId('form-helper-text')).toHaveClass('passed-class');
   });
 });

@@ -1,11 +1,11 @@
 import { render } from '@testing-library/react';
-import { Tag } from '../Tag';
+import { Tag } from '~/components';
 
 describe('<Tag />', () => {
   it('should pass className', () => {
-    const { container } = render(<Tag className="passed-class" />);
+    const { getByTestId } = render(<Tag className="passed-class" data-testid="tag" />);
 
-    expect(container.firstChild).toHaveClass('passed-class');
+    expect(getByTestId('tag')).toHaveClass('passed-class');
   });
 
   it('should render children', () => {

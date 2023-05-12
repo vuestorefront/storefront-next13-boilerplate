@@ -1,10 +1,10 @@
 import { render } from '@testing-library/react';
-import { Divider } from '../Divider';
+import { Divider } from '~/components';
 
 describe('<Divider />', () => {
   it('should pass className', () => {
-    const { container } = render(<Divider className="passed-class" />);
+    const { getByTestId } = render(<Divider className="passed-class" />);
 
-    expect(container.firstChild).toHaveClass('passed-class');
+    expect(getByTestId('divider')).toHaveClass('passed-class');
   });
 });
