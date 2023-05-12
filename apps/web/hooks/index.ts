@@ -1,6 +1,7 @@
 export * from './useCart';
 export * from './useCartShippingMethods';
 export * from './useProduct';
+export * from './useProducts';
 export * from './useProductAttribute';
 export * from './useProductReviews';
 export * from './useProductRecommended';
