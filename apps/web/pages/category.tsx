@@ -3,7 +3,7 @@ import { dehydrate } from '@tanstack/react-query';
 import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { CategoryPageContent, CategoryTree, CategorySorting, CategoryFilters, Breadcrumb } from '~/components';
-import { prefetchProducts, useProducts } from '~/hooks/useProducts/useProducts';
+import { prefetchProducts, useProducts } from '~/hooks';
 import { DefaultLayout } from '~/layouts';
 
 export async function getServerSideProps({ locale }: GetServerSidePropsContext) {
