@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import Image from 'next/legacy/image';
+import Image from 'next/image';
 import { SfButton, SfIconChevronLeft, SfIconChevronRight, SfScrollable } from '@storefront-ui/react';
 import { clamp } from '@storefront-ui/shared';
 import classNames from 'classnames';
@@ -39,13 +39,13 @@ export function Gallery({ images, className, ...attributes }: GalleryProps) {
               <Image
                 alt={image.alt ?? ''}
                 aria-hidden={activeIndex !== index}
-                layout="fill"
+                fill
                 className="object-contain"
                 priority={index === 0}
                 quality={80}
                 draggable={false}
                 src={image.url}
-                sizes="(max-width: 1023px) 100vw, 700px"
+                sizes="(max-width: 768px) 100vw, 700px"
                 crossOrigin="anonymous"
               />
             </div>
@@ -98,7 +98,6 @@ export function Gallery({ images, className, ...attributes }: GalleryProps) {
               <Image
                 alt=""
                 className="object-contain"
-                layout="fixed"
                 width="80"
                 height="80"
                 src={image.url}
