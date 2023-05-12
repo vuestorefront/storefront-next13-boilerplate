@@ -16,3 +16,8 @@ export * from './ProductAccordion';
 export * from './Heading';
 export * from './Page';
 export * from './RenderContent';
+export * from './AddressForm';
+export * from './CheckoutAddress';
+export * from './CheckoutPayment';
+export * from './ContactInformation';
+export * from './ShippingMethod';

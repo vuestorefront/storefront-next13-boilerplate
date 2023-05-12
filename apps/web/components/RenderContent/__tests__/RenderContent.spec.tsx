@@ -5,6 +5,6 @@ describe('<RenderContent />', () => {
   it('should render component', () => {
     const { getByTestId } = render(<RenderContent content={[]} data-testid="render-content" />);
 
-    getByTestId('render-content');
+    expect(getByTestId('render-content')).toBeInTheDocument();
   });
 });

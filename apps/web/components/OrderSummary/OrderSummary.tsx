@@ -8,7 +8,10 @@ export function OrderSummary({ cart, className = '', children }: OrderSummaryPro
   const { t } = useTranslation('cart');
 
   return (
-    <div className={classNames('md:shadow-lg md:rounded-md md:border md:border-neutral-100', className)}>
+    <div
+      className={classNames('md:shadow-lg md:rounded-md md:border md:border-neutral-100', className)}
+      data-testid="order-summary"
+    >
       <div className="flex justify-between items-end bg-neutral-100 md:bg-transparent py-2 px-4 md:px-6 md:pt-6 md:pb-4">
         <p className="typography-headline-4 font-bold md:typography-headline-3">{t('orderSummary')}</p>
         <p className="typography-text-base font-semibold">{t('itemsInCart', { count: cart.lineItems.length })}</p>

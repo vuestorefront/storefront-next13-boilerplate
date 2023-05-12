@@ -5,6 +5,6 @@ describe('<ProductSlider />', () => {
   it('should render component', () => {
     const { getByTestId } = render(<ProductSlider products={[]} data-testid="product-slider" />);
 
-    getByTestId('product-slider');
+    expect(getByTestId('product-slider')).toBeInTheDocument();
   });
 });
