@@ -54,6 +54,7 @@ export function Footer({ className = '' }: { className?: string }): JSX.Element 
               <NextLink
                 key={label}
                 href={link}
+                title={t('socialLabel', { label })}
                 className="hover:bg-neutral-500 hover:shadow-[0_0_0_8px] hover:shadow-neutral-500 rounded-sm"
                 data-testid={label}
               >
