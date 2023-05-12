@@ -12,16 +12,23 @@
 [![YouTube Channel Subscribers](https://img.shields.io/youtube/channel/subscribers/UCkm1F3Cglty3CE1QwKQUhhg?style=social)](https://www.youtube.com/c/VueStorefront)
 [![Discord](https://img.shields.io/discord/770285988244750366?label=join%20discord&logo=Discord&logoColor=white)](https://discord.vuestorefront.io)
 
-## Prerequisites:
+## Getting Started with Vue Storefront
 
-- `NodeJS` >=16
-- `Yarn` 1
+<!-- TODO -->
 
-## Getting Started
+- What is VSF
+- SDK
+- Middleware
+<!-- TODO -->
 
 To get started, see the following guides:
 
-- [Introduction](https://docs.vuestorefront.io/v2/getting-started/introduction.html) to learn what is Vue Storefront
+- [Introduction](https://docs.vuestorefront.io/v2/getting-started/introduction.html) to learn what is Vue Storefront.
+
+## Prerequisites:
+
+- `Node.js` 16+
+- `Yarn`
 
 ### Local dev setup
 
@@ -42,6 +49,33 @@ $ yarn install
 ```bash
 $ yarn dev
 ```
+
+## Features:
+
+- [Turborepo]() remote cache build system, with blazingly fast execution of commands (build, lint, test etc.) on your local machine
+- [TypeScript]() support
+- [NextJs v13]() & Server Side Rendering for great UX, loading and SEO scores.
+- Beautiful components built with [TailwindCSS]() and [Storefront UI]() - a lightweight, accessible, and customizable component library built for e-commerce.
+- Unit tests with [Jest]() and [React Testing Library]().
+- [ESLint]() for code linting.
+- [Prettier]() code formatter.
+- [Husky](https://typicode.github.io/husky/) for working with Git hooks efficiently.
+- [Conventional Commits]() standard for commit messages.
+- Staged code linting with [lint-staged]().
+- [Progressive Web App]() features with [next-PWA]().
+- `i18n` localisation powered by [Next-i18next]().
+- Powerful asynchronous state management with [React Query]().
+- [Vue Storefront SDK]() ready - integrate headless E-commerce platform with your project easily.
+- [Vue Storefront Middleware]().
+- Maximize lighthouse score.
+
+## Guide
+
+Refer to [Guide](GUIDE.md)
+
+## Design Theme
+
+<!-- TODO -->
 
 ## License
 
