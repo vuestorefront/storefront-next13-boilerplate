@@ -122,6 +122,7 @@ components/
 Naming:
 
 - React components should follow `Pascal case` pattern (`CategoryFilters`, `Heading`)
+- Component prop TypeScript types should have name with `Props` suffix [ComponentName]Props - `Pascal case` (`GalleryProps`, `HeadingProps`)
 
 #### Data fetching
 
