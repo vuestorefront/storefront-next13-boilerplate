@@ -123,16 +123,10 @@ export function AddressForm({ type, onSave, onClear, savedAddress }: AddressForm
       )}
 
       <div className="md:col-span-3 flex justify-end gap-4">
-        <SfButton
-          data-testid="clearAll"
-          type="reset"
-          onClick={handleClearAll}
-          className="max-md:w-1/2"
-          variant="secondary"
-        >
+        <SfButton type="reset" onClick={handleClearAll} className="max-md:w-1/2" variant="secondary">
           {t('checkout:contactInfo.clearAll')}
         </SfButton>
-        <SfButton data-testid="save" type="submit" className="w-1/2 md:w-1/6" disabled={isCartUpdateLoading}>
+        <SfButton type="submit" className="w-1/2 md:w-1/6" disabled={isCartUpdateLoading}>
           {isCartUpdateLoading ? (
             <SfLoaderCircular className="flex justify-center items-center" size="sm" />
           ) : (

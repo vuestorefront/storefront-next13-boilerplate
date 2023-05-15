@@ -32,7 +32,7 @@ export default function Home() {
   return (
     <DefaultLayout>
       {content && (
-        <div className="cms-content" data-testid="home-page">
+        <div className="cms-content">
           {content.map(({ fields }, index) => (
             <Fragment key={`${fields.component}-${index}`}>
               <RenderContent content={fields.content} />

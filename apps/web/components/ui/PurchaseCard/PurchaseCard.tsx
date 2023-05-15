@@ -34,7 +34,7 @@ export function PurchaseCard({ product, ...attributes }: PurchaseCardProps) {
       data-testid="purchase-card"
       {...attributes}
     >
-      <Tag variant="secondary" strong className="mb-4" data-testid="special-tag">
+      <Tag variant="secondary" strong className="mb-4">
         <SfIconSell size="sm" className="ml-1" />
         <span className="mr-1">{t('sale')}</span>
       </Tag>

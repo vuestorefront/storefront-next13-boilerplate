@@ -23,16 +23,10 @@ export function ContactInformationForm({ onSave }: { onSave: () => void }): JSX.
         <SfInput name="email" type="email" autoComplete="address-level1" defaultValue={defaultEmail} required />
       </label>
       <div className="mt-4 flex md:justify-end">
-        <SfButton
-          data-testid="clearAll"
-          type="reset"
-          className="max-md:w-1/2 mr-4"
-          variant="secondary"
-          onClick={() => setDefaultEmail('')}
-        >
+        <SfButton type="reset" className="max-md:w-1/2 mr-4" variant="secondary" onClick={() => setDefaultEmail('')}>
           {t('contactInfo.clearAll')}
         </SfButton>
-        <SfButton type="submit" data-testid="save" className="max-md:w-1/2">
+        <SfButton type="submit" className="max-md:w-1/2">
           {t('contactInfo.save')}
         </SfButton>
       </div>

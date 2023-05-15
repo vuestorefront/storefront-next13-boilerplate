@@ -36,7 +36,7 @@ export function CartPageContent() {
         ))}
       </div>
       <OrderSummary cart={cart} className="col-span-5 md:sticky md:top-20 h-fit">
-        <SfButton as={NextLink} href="/checkout" data-testid="goToCheckout" size="lg" className="w-full mb-4 md:mb-0">
+        <SfButton as={NextLink} href="/checkout" size="lg" className="w-full mb-4 md:mb-0">
           {t('goToCheckout')}
         </SfButton>
       </OrderSummary>
