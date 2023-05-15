@@ -61,7 +61,7 @@ export function CheckoutAddress({ type, heading, description, buttonText }: Chec
                 {heading}
               </h3>
             </header>
-            <AddressForm savedAddress={savedAddress} type={type} onSave={() => {}} />
+            <AddressForm savedAddress={savedAddress} type={type} onSave={close} />
           </SfModal>
         </Overlay>
       )}
