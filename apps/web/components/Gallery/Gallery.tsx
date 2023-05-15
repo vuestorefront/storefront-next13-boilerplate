@@ -32,7 +32,7 @@ export function Gallery({ images, className, ...attributes }: GalleryProps) {
           className="items-center flex snap-x snap-mandatory [&::-webkit-scrollbar]:hidden [-ms-overflow-style:'none'] [scrollbar-width:'none'] w-full h-full"
           wrapperClassName="!absolute top-0 left-0 w-full h-full"
           buttonsPlacement="none"
-          activeIndex={activeIndex.toString() as any}
+          activeIndex={activeIndex}
         >
           {images.map((image, index) => (
             <div className="w-full h-full relative snap-center snap-always basis-full shrink-0 grow" key={image.alt}>
