@@ -30,7 +30,8 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-i18next": "^12.2.2",
-    "react-transition-group": "^4.4.5"
+    "react-transition-group": "^4.4.5",
+    "sharp": "^0.32.1"
   },
   "devDependencies": {
     "@savvywombat/tailwindcss-grid-areas": "^2.1.0",
