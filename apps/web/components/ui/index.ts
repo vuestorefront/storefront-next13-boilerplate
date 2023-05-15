@@ -1,3 +1,4 @@
+export * from './Badge';
 export * from './BottomNav';
 export * from './Divider';
 export * from './Review';
