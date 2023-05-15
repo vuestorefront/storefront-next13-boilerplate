@@ -69,7 +69,6 @@ export function DefaultLayout({ children, breadcrumbs = [] }: LayoutPropsType): 
       <BottomNav />
       <ScrollToTopButton />
       <Footer className="mb-[58px] md:mb-0" />
-      {/*<Notifications />*/}
     </>
   );
 }
