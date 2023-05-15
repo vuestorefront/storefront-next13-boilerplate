@@ -13,8 +13,8 @@
     "test:coverage": "jest --coverage --passWithNoTests"
   },
   "dependencies": {
-    "@storefront-ui/react": "^2.1.0",
-    "@storefront-ui/shared": "^2.1.0",
+    "@storefront-ui/react": "~2.2.0",
+    "@storefront-ui/shared": "~2.2.0",
     "@tanstack/react-query": "^4.29.5",
     "@tanstack/react-query-devtools": "^4.29.5",
     "@vsf-enterprise/integration-boilerplate-sdk": "link:../../../sdk-module-mock",
