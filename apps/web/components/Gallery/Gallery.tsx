@@ -30,7 +30,7 @@ export function Gallery({ images, className, ...attributes }: GalleryProps) {
         </div>
         <SfScrollable
           className="items-center flex snap-x snap-mandatory [&::-webkit-scrollbar]:hidden [-ms-overflow-style:'none'] [scrollbar-width:'none'] w-full h-full"
-          wrapperClassNames="!absolute top-0 left-0 w-full h-full"
+          wrapperClassName="!absolute top-0 left-0 w-full h-full"
           buttonsPlacement="none"
           activeIndex={activeIndex.toString() as any}
         >
@@ -54,12 +54,12 @@ export function Gallery({ images, className, ...attributes }: GalleryProps) {
       </div>
       <div className="md:-order-1 overflow-hidden flex-shrink-0 basis-auto" data-testid="gallery-controls">
         <SfScrollable
-          wrapperClassNames="hidden md:inline-flex"
+          wrapperClassName="hidden md:inline-flex"
           buttonsPlacement="floating"
           direction="vertical"
           className="flex-row w-full items-center md:flex-col md:h-full md:px-0 md:scroll-pl-4 snap-y snap-mandatory flex gap-0.5 md:gap-2 overflow-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:'none'] [scrollbar-width:'none']"
           activeIndex={activeIndex}
-          previousDisabled={activeIndex === 0}
+          prevDisabled={activeIndex === 0}
           nextDisabled={activeIndex === imagesCount - 1}
           slotPreviousButton={
             <SfButton
