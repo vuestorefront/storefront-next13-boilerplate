@@ -18,14 +18,7 @@ export async function getServerSideProps({ locale }: GetServerSidePropsContext) 
   return {
     props: {
       key: 'checkout',
-      ...(await serverSideTranslations(locale as string, [
-        'cart',
-        'checkout',
-        'common',
-        'footer',
-        'address',
-        'message',
-      ])),
+      ...(await serverSideTranslations(locale as string, ['cart', 'checkout', 'common', 'footer', 'address'])),
     },
   };
 }
@@ -67,7 +60,7 @@ export default function Checkout() {
         </div>
         <OrderSummary cart={cart} className="col-span-5 md:sticky md:top-20 h-fit">
           <>
-            <SfButton as={NextLink} href="/" size="lg" className="w-full mb-4 md:mb-0">
+            <SfButton as={NextLink} href="/order/success" size="lg" className="w-full mb-4 md:mb-0">
               {t('placeOrder')}
             </SfButton>
             <p className="text-sm text-center mt-4 pb-4 md:pb-0">

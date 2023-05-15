@@ -16,4 +16,5 @@ export type CartProductCardProps = {
   name?: Maybe<string>;
   price: number;
   value: number;
+  slug: string;
 };

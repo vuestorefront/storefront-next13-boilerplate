@@ -8,7 +8,7 @@ export function ProductSlider({ products, className, ...attributes }: ProductSli
       buttonsPlacement="floating"
       className="items-center pb-4"
       {...attributes}
-      wrapperClassNames={className}
+      wrapperClassName={className}
     >
       {products.map(({ id, name, description, rating, price, primaryImage, slug }) => (
         <ProductCard

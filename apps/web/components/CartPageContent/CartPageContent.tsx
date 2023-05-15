@@ -31,6 +31,7 @@ export function CartPageContent() {
             maxValue={10}
             minValue={1}
             value={item.quantity}
+            slug={item.slug}
           />
         ))}
       </div>

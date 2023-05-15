@@ -41,7 +41,7 @@ export async function getServerSideProps({ locale, params }: GetServerSidePropsC
   return {
     props: {
       dehydratedState: dehydrate(queryClient),
-      ...(await serverSideTranslations(locale, ['common', 'product', 'footer', 'message'])),
+      ...(await serverSideTranslations(locale, ['common', 'product', 'footer'])),
     },
   };
 }

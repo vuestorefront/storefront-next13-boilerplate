@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import NextLink from 'next/link';
 import { SfLink, SfIconSell } from '@storefront-ui/react';
 import { useTranslation } from 'next-i18next';
 import { QuantitySelector } from '~/components';
@@ -13,6 +14,7 @@ export function CartProductCard({
   name,
   price,
   value,
+  slug,
 }: CartProductCardProps) {
   const { t } = useTranslation('product');
 
@@ -23,7 +25,7 @@ export function CartProductCard({
     >
       <div className="relative overflow-hidden rounded-md w-[100px] sm:w-[176px]">
         {!!imageUrl && (
-          <SfLink href="#">
+          <SfLink as={NextLink} href={`/product/${slug}`}>
             <Image
               className="w-full h-auto border rounded-md border-neutral-200"
               src={imageUrl}
@@ -39,7 +41,12 @@ export function CartProductCard({
         </div>
       </div>
       <div className="flex flex-col pl-4 min-w-[180px] flex-1">
-        <SfLink href="#" variant="secondary" className="no-underline typography-text-sm sm:typography-text-lg">
+        <SfLink
+          as={NextLink}
+          href={`/product/${slug}`}
+          variant="secondary"
+          className="no-underline typography-text-sm sm:typography-text-lg"
+        >
           {name}
         </SfLink>
         <div className="my-2 sm:mb-0">
