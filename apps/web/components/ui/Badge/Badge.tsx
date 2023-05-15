@@ -1,7 +1,7 @@
 import classNames from 'classnames';
 import type { BadgeProps } from './types';
 
-export function Badge({ children, className, dot, invisible, value, bordered, ...attributes }: BadgeProps) {
+export function Badge({ children, className, dot, value, bordered, ...attributes }: BadgeProps) {
   return (
     <div
       className={classNames('relative inline-flex bg-inherit rounded-full', {
@@ -10,7 +10,7 @@ export function Badge({ children, className, dot, invisible, value, bordered, ..
       {...attributes}
     >
       {children}
-      {!invisible && !!value && (
+      {!!value && (
         <div
           className={classNames(
             'rounded-[inherit] absolute top-0 right-0 translate-x-1/2 -translate-y-1/2 bg-inherit pointer-events-none',

@@ -33,13 +33,7 @@ const getItems = (cartLineItemsCount?: number) => [
   {
     label: 'cart',
     icon: (
-      <Badge
-        bordered
-        value={cartLineItemsCount}
-        invisible={cartLineItemsCount === 0}
-        className="text-neutral-900 bg-white"
-        data-testid="cart-badge"
-      >
+      <Badge bordered value={cartLineItemsCount} className="text-neutral-900 bg-white" data-testid="cart-badge">
         <SfIconShoppingCart />
       </Badge>
     ),

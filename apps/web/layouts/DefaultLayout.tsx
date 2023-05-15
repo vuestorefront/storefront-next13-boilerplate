@@ -46,12 +46,7 @@ export function DefaultLayout({ children, breadcrumbs = [] }: LayoutPropsType): 
             variant="tertiary"
             square
             slotPrefix={
-              <Badge
-                bordered
-                value={cartLineItemsCount}
-                invisible={cartLineItemsCount === 0}
-                className="text-neutral-900 bg-white"
-              >
+              <Badge bordered value={cartLineItemsCount} className="text-neutral-900 bg-white">
                 <SfIconShoppingCart />
               </Badge>
             }
