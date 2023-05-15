@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useTranslation } from 'next-i18next';
+import type { CategoryFiltersProps } from '~/components';
 import { Filter } from './Filter';
-import { CategoryFiltersProps } from './types';
 
 export function CategoryFilters({ facets }: CategoryFiltersProps) {
   const { t } = useTranslation('category');

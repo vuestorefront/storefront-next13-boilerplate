@@ -2,8 +2,8 @@ import { Fragment } from 'react';
 import { SfButton, SfIconChevronLeft, SfIconChevronRight } from '@storefront-ui/react';
 import classNames from 'classnames';
 import { useTranslation } from 'next-i18next';
+import type { PaginationProps } from '~/components';
 import { usePagination } from '~/hooks';
-import { PaginationProps } from './types';
 
 export function Pagination({ currentPage, pageSize, totalItems, maxVisiblePages }: PaginationProps) {
   const { t } = useTranslation('category');

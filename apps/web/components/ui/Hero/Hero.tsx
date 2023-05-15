@@ -1,7 +1,7 @@
 import Image from 'next/legacy/image';
 import NextLink from 'next/link';
 import { SfButton } from '@storefront-ui/react';
-import type { HeroProps } from './types';
+import type { HeroProps } from '~/components';
 
 export function Hero({
   image,

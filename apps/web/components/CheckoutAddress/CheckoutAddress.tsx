@@ -1,10 +1,8 @@
 import { SfButton, SfIconClose, SfModal, useDisclosure } from '@storefront-ui/react';
 import { useTranslation } from 'next-i18next';
-import { AddressForm } from '~/components/AddressForm';
-import { Overlay } from '~/components/ui';
+import { AddressForm, Overlay } from '~/components';
+import type { AddressFormFields, CheckoutAddressProps } from '~/components';
 import { useCart } from '~/hooks';
-import { AddressFormFields } from '../AddressForm/types';
-import { CheckoutAddressProps } from './types';
 
 export function CheckoutAddress({ type, heading, description, buttonText }: CheckoutAddressProps): JSX.Element | null {
   const { data: cart } = useCart();

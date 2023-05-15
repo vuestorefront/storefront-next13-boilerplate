@@ -1,1 +1,2 @@
-export { CheckoutAddress as default, CheckoutAddress } from './CheckoutAddress';
+export * from './CheckoutAddress';
+export * from './types';

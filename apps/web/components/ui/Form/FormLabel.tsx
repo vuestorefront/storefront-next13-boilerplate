@@ -1,5 +1,5 @@
 import classNames from 'classnames';
-import { FormLabelProps } from './types';
+import type { FormLabelProps } from '~/components';
 
 export function FormLabel({ children, className }: FormLabelProps) {
   return (

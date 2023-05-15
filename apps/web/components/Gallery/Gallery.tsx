@@ -4,7 +4,7 @@ import { SfButton, SfIconChevronLeft, SfIconChevronRight, SfScrollable } from '@
 import { clamp } from '@storefront-ui/shared';
 import classNames from 'classnames';
 import { useTranslation } from 'next-i18next';
-import { GalleryProps } from './types';
+import type { GalleryProps } from '~/components';
 
 export function Gallery({ images, className, ...attributes }: GalleryProps) {
   const { t } = useTranslation('product');

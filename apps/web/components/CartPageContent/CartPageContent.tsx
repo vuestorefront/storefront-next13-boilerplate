@@ -2,8 +2,7 @@ import Image from 'next/image';
 import NextLink from 'next/link';
 import { SfButton } from '@storefront-ui/react';
 import { useTranslation } from 'next-i18next';
-import { OrderSummary } from '~/components/OrderSummary';
-import { CartProductCard } from '~/components/ui/CartProductCard';
+import { OrderSummary, CartProductCard } from '~/components';
 import { useCart } from '~/hooks';
 import emptyCartImage from '~/public/images/empty-cart.svg';
 

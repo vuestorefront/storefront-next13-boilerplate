@@ -1,5 +1,5 @@
 import classNames from 'classnames';
-import { OverlayProps } from './types';
+import type { OverlayProps } from '~/components';
 
 export function Overlay({ onClick, visible, className, children, ...attributes }: OverlayProps) {
   return visible ? (

@@ -15,9 +15,8 @@ import {
 } from '@storefront-ui/react';
 import { clamp } from '@storefront-ui/shared';
 import { Trans, useTranslation } from 'next-i18next';
-import { QuantitySelector } from '../QuantitySelector';
-import { Tag } from '../Tag';
-import { PurchaseCardProps } from './types';
+import { QuantitySelector, Tag } from '~/components';
+import type { PurchaseCardProps } from '~/components';
 
 export function PurchaseCard({ product, ...attributes }: PurchaseCardProps) {
   const { t } = useTranslation(['product', 'common']);

@@ -9,7 +9,7 @@ import {
 } from '@storefront-ui/react';
 import classNames from 'classnames';
 import { useTranslation } from 'next-i18next';
-import { FilterProps } from './types';
+import type { FilterProps } from '~/components';
 
 export function Filter({ facet: { label, values }, selected, type, onChange }: FilterProps) {
   const { t } = useTranslation();

@@ -1,6 +1,6 @@
 import { SfScrollable } from '@storefront-ui/react';
 import { ProductCard } from '~/components';
-import { ProductSliderProps } from './types';
+import type { ProductSliderProps } from '~/components';
 
 export function ProductSlider({ products, className, ...attributes }: ProductSliderProps) {
   return (

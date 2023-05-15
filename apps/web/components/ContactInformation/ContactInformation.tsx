@@ -1,6 +1,6 @@
 import { SfButton, SfIconClose, SfModal, useDisclosure } from '@storefront-ui/react';
 import { useTranslation } from 'next-i18next';
-import { Overlay } from '../ui';
+import { Overlay } from '~/components';
 import { ContactInformationForm } from './ContactInformationForm';
 
 export function ContactInformation(): JSX.Element {

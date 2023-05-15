@@ -3,11 +3,14 @@ import NextLink from 'next/link';
 import { SfButton, SfLink } from '@storefront-ui/react';
 import { Trans, useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-import { Divider, OrderSummary } from '~/components';
-import CheckoutAddress from '~/components/CheckoutAddress';
-import { CheckoutPayment } from '~/components/CheckoutPayment';
-import ContactInformation from '~/components/ContactInformation';
-import ShippingMethod from '~/components/ShippingMethod';
+import {
+  Divider,
+  OrderSummary,
+  CheckoutAddress,
+  CheckoutPayment,
+  ContactInformation,
+  ShippingMethod,
+} from '~/components';
 import { useCart } from '~/hooks';
 import { CheckoutLayout } from '~/layouts';
 
