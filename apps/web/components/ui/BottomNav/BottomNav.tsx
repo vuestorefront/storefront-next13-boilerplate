@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useRouter } from 'next/router';
 import {
   SfIconClose,
   SfButton,
@@ -17,31 +17,37 @@ const items = [
   {
     label: 'home',
     icon: <SfIconHome />,
+    path: '/',
   },
   {
     label: 'products',
     icon: <SfIconMenu />,
+    path: '/category',
   },
   {
     label: 'search',
     icon: <SfIconSearch />,
+    path: '/search',
   },
   {
     label: 'cart',
     icon: <SfIconShoppingCart />,
+    path: '/cart',
   },
 ];
 
 export function BottomNav({ ...attributes }) {
-  const [selectedItem, setselectedItem] = useState('');
+  const router = useRouter();
   const { t } = useTranslation();
   const { isOpen, open, close } = useDisclosure({ initialValue: false });
-  function onClickHandler(itemLabel: string) {
-    setselectedItem(itemLabel);
-    if (itemLabel === 'search') {
+
+  const onClickHandler = (path: string) => {
+    if (path === '/search') {
       open();
+    } else {
+      router.push(path);
     }
-  }
+  };
 
   return (
     <>
@@ -50,7 +56,7 @@ export function BottomNav({ ...attributes }) {
         data-testid="navbar-bottom"
         {...attributes}
       >
-        {items.map(({ label, icon }) => (
+        {items.map(({ label, icon, path }) => (
           <SfButton
             key={label}
             variant="tertiary"
@@ -58,9 +64,9 @@ export function BottomNav({ ...attributes }) {
             slotPrefix={icon}
             className={classNames(
               'py-1 flex flex-col h-full w-full rounded-none bg-primary-700 text-white hover:text-white hover:bg-primary-800 active:text-white active:bg-primary-900',
-              { 'text-white bg-primary-900': selectedItem === label },
+              { 'text-white bg-primary-900': router.pathname === path },
             )}
-            onClick={() => onClickHandler(label)}
+            onClick={() => onClickHandler(path)}
           >
             {t(label)}
           </SfButton>
