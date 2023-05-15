@@ -9,6 +9,7 @@ describe('<CartProductCard />', () => {
         imageUrl="/product.webp"
         imageAlt="alternate text"
         name="Sneaker"
+        slug='sneaker'
         price={123}
         maxValue={10}
         minValue={1}
