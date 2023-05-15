@@ -3,7 +3,7 @@ import { CartProductCard } from '~/components';
 
 describe('<CartProductCard />', () => {
   it('should render component', () => {
-    const { container } = render(
+    const { getByTestId } = render(
       <CartProductCard
         attributes={[]}
         imageUrl="/product.webp"
@@ -16,6 +16,6 @@ describe('<CartProductCard />', () => {
       />
     );
 
-    expect(container).not.toBeEmptyDOMElement();
+    expect(getByTestId('cart-product-card')).toBeInTheDocument();
   });
 });

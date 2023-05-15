@@ -21,10 +21,7 @@ export function Gallery({ images, className, ...attributes }: GalleryProps) {
       {...attributes}
       className={classNames('flex-col md:flex-row h-full flex relative scroll-smooth md:gap-4', className)}
     >
-      <div
-        className="after:block after:pt-[100%] flex-1 relative overflow-hidden w-full max-h-[600px]"
-        data-testid="gallery-images"
-      >
+      <div className="after:block after:pt-[100%] flex-1 relative overflow-hidden w-full max-h-[600px]">
         <div className="absolute right-2 top-2 z-10 text-xs text-neutral-600 font-normal pointer-events-none rounded-md bg-neutral-100 px-2 py-1">
           {t('gallery.count', { current: activeIndex + 1, total: imagesCount })}
         </div>
@@ -52,7 +49,7 @@ export function Gallery({ images, className, ...attributes }: GalleryProps) {
           ))}
         </SfScrollable>
       </div>
-      <div className="md:-order-1 overflow-hidden flex-shrink-0 basis-auto" data-testid="gallery-controls">
+      <div className="md:-order-1 overflow-hidden flex-shrink-0 basis-auto">
         <SfScrollable
           wrapperClassNames="hidden md:inline-flex"
           buttonsPlacement="floating"
@@ -93,7 +90,6 @@ export function Gallery({ images, className, ...attributes }: GalleryProps) {
                 [activeIndex === index ? 'border-primary-700' : 'border-transparent'],
               )}
               onClick={() => onChangeIndex(index)}
-              data-testid="gallery-thumb"
             >
               <Image
                 alt=""
@@ -119,7 +115,6 @@ export function Gallery({ images, className, ...attributes }: GalleryProps) {
                 activeIndex === index ? 'border-primary-700' : 'border-neutral-200',
               ])}
               onClick={() => onChangeIndex(index)}
-              data-testid="gallery-bullet"
             />
           ))}
         </div>

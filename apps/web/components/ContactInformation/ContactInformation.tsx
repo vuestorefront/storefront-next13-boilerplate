@@ -16,7 +16,7 @@ export function ContactInformation(): JSX.Element {
       <div className="flex justify-between items-center">
         <h2 className="text-neutral-900 text-lg font-bold mb-4">{t('contactInfo.heading')}</h2>
         {cart?.customerEmail && (
-          <SfButton data-testid="editButton" onClick={open} size="sm" variant="tertiary">
+          <SfButton onClick={open} size="sm" variant="tertiary">
             {t('contactInfo.edit')}
           </SfButton>
         )}
@@ -24,12 +24,12 @@ export function ContactInformation(): JSX.Element {
 
       {cart?.customerEmail ? (
         <div className="mt-2 md:w-[520px]">
-          <p data-testid="customerEmail">{cart.customerEmail}</p>
+          <p>{cart.customerEmail}</p>
         </div>
       ) : (
         <div className="w-full md:max-w-[520px]">
           <p>{t('contactInfo.description')}</p>
-          <SfButton data-testid="addButton" className="mt-4 w-full md:w-auto" variant="secondary" onClick={open}>
+          <SfButton className="mt-4 w-full md:w-auto" variant="secondary" onClick={open}>
             {t('contactInfo.add')}
           </SfButton>
         </div>
@@ -46,13 +46,7 @@ export function ContactInformation(): JSX.Element {
             aria-labelledby="contact-modal-title"
           >
             <header>
-              <SfButton
-                square
-                variant="tertiary"
-                className="absolute right-2 top-2"
-                onClick={close}
-                data-testid="closeModal"
-              >
+              <SfButton square variant="tertiary" className="absolute right-2 top-2" onClick={close}>
                 <SfIconClose />
               </SfButton>
               <h3 id="contact-modal-title" className="text-neutral-900 text-lg md:text-2xl font-bold mb-4">

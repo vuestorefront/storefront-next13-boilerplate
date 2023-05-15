@@ -5,6 +5,6 @@ describe('<Gallery />', () => {
   it('should render component', () => {
     const { getByTestId } = render(<Gallery images={[]} data-testid="gallery" />);
 
-    getByTestId('gallery');
+    expect(getByTestId('gallery')).toBeInTheDocument();
   });
 });

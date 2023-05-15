@@ -1,6 +1,6 @@
 import * as ReactUse from 'react-use';
 import { fireEvent, render } from '@testing-library/react';
-import { QuantitySelector } from '../QuantitySelector';
+import { QuantitySelector } from '~/components';
 
 describe('<QuantitySelector />', () => {
   it('should render component', () => {

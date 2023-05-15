@@ -9,6 +9,6 @@ describe('<NarrowContainer />', () => {
       </NarrowContainer>,
     );
 
-    expect(getByTestId('narrowContainer')).toHaveTextContent('children');
+    expect(getByTestId('narrow-container')).toHaveTextContent('children');
   });
 });

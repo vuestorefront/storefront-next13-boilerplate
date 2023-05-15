@@ -1,5 +1,5 @@
 import { render } from '@testing-library/react';
-import { Overlay } from '../';
+import { Overlay } from '~/components';
 
 describe('<Overlay />', () => {
   it('should render component', () => {

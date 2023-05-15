@@ -1,10 +1,10 @@
 import { render } from '@testing-library/react';
-import { FormLabel } from '../FormLabel';
+import { FormLabel } from '~/components';
 
 describe('<FormLabel />', () => {
   it('should pass className', () => {
-    const { container } = render(<FormLabel className="passed-class" />);
+    const { getByTestId } = render(<FormLabel className="passed-class" />);
 
-    expect(container.firstChild).toHaveClass('passed-class');
+    expect(getByTestId('form-label')).toHaveClass('passed-class');
   });
 });

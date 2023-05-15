@@ -8,7 +8,10 @@ export function CategoryTree({ parent, categories }: CategoryTreeProps) {
 
   return (
     <>
-      <h5 className="py-2 px-4 mb-4 bg-neutral-100 typography-headline-6 font-bold text-neutral-900 uppercase tracking-widest md:rounded-md">
+      <h5
+        className="py-2 px-4 mb-4 bg-neutral-100 typography-headline-6 font-bold text-neutral-900 uppercase tracking-widest md:rounded-md"
+        data-testid="category-tree"
+      >
         {t('category')}
       </h5>
       {parent && (
@@ -23,7 +26,7 @@ export function CategoryTree({ parent, categories }: CategoryTreeProps) {
           href="/category"
         />
       )}
-      <div data-testid="categories" className="mt-4 mb-6 md:mt-2">
+      <div className="mt-4 mb-6 md:mt-2">
         {categories?.map(({ name, count }) => (
           <CategoryTreeItem key={name} name={name} count={count} href="/category" />
         ))}

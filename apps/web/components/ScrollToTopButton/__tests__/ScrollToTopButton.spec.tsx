@@ -15,7 +15,7 @@ describe('<ScrollToTopButton />', () => {
   it('should render component', () => {
     const { getByTestId } = render(<ScrollToTopButton />);
 
-    getByTestId('scroll-top');
+    expect(getByTestId('scroll-top')).toBeInTheDocument();
   });
 
   it('should smooth scroll top on button click', () => {

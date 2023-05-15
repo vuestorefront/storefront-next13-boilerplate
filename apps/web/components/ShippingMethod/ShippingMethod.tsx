@@ -18,12 +18,7 @@ export function ShippingMethod() {
         {filteredShippingMethods ? (
           <ul className="grid gap-y-4 md:grid-cols-2 md:gap-x-4" role="radiogroup">
             {filteredShippingMethods.map((method) => (
-              <SfListItem
-                as="label"
-                data-testid="shippingMethod"
-                key={method.id}
-                className="border rounded-md items-start"
-              >
+              <SfListItem as="label" key={method.id} className="border rounded-md items-start">
                 <div className="flex gap-2">
                   <SfRadio
                     onChange={() => {}}

@@ -23,7 +23,7 @@ export function OrderSuccessPage() {
 
   return (
     <OrderLayout>
-      <div data-testid="order-success-page" className="px-4 md:px-0">
+      <div className="px-4 md:px-0">
         <div className="border border-1 border-neutral-200 mt-10 mb-20 rounded p-4 md:p-6 flex flex-col items-center max-w-2xl mx-auto">
           <Image src={orderSuccessImage} alt={t('orderSuccessfulImageAlt')} />
           <Trans ns="order" i18nKey="successInfo">

@@ -5,6 +5,6 @@ describe('<Page />', () => {
   it('should render component', () => {
     const { getByTestId } = render(<Page content="test content" data-testid="page" />);
 
-    getByTestId('page');
+    expect(getByTestId('page')).toBeInTheDocument();
   });
 });
