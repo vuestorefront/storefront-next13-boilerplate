@@ -15,14 +15,7 @@ export async function getServerSideProps({ locale }: GetServerSidePropsContext) 
   return {
     props: {
       key: 'checkout',
-      ...(await serverSideTranslations(locale as string, [
-        'cart',
-        'checkout',
-        'common',
-        'footer',
-        'address',
-        'message',
-      ])),
+      ...(await serverSideTranslations(locale as string, ['cart', 'checkout', 'common', 'footer', 'address'])),
     },
   };
 }

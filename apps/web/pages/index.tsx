@@ -21,7 +21,7 @@ export async function getServerSideProps({ locale }: GetServerSidePropsContext) 
   return {
     props: {
       dehydratedState: dehydrate(queryClient),
-      ...(await serverSideTranslations(locale as string, ['common', 'footer', 'message'])),
+      ...(await serverSideTranslations(locale as string, ['common', 'footer'])),
     },
   };
 }

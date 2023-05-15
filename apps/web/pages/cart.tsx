@@ -8,7 +8,7 @@ export async function getServerSideProps({ locale }: GetServerSidePropsContext) 
   return {
     props: {
       key: 'cart',
-      ...(await serverSideTranslations(locale as string, ['cart', 'common', 'footer', 'product', 'message'])),
+      ...(await serverSideTranslations(locale as string, ['cart', 'common', 'footer', 'product'])),
     },
   };
 }
