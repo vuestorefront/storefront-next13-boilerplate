@@ -6,11 +6,6 @@
       "outputs": ["dist/**"],
       "cache": false
     },
-    "build:analyze": {
-      "dependsOn": ["^build"],
-      "outputs": ["dist/**"],
-      "cache": false
-    },
     "start": {
       "outputs": []
     },

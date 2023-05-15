@@ -9,7 +9,6 @@
   "scripts": {
     "prepare": "is-ci || husky install",
     "build": "turbo run build",
-    "build:analyze": "turbo run build:analyze",
     "dev": "turbo run dev",
     "start": "turbo run start",
     "lint": "turbo run lint",
