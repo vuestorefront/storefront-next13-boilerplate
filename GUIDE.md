@@ -46,7 +46,7 @@ apps/
 
 ### Functions
 
-Since React components are also functions, some general convention should be followed as much as possible:
+Since React components are also functions, this project follows a few conventions to help with organizing your code:
 
 - Each function is located in a dedicated module and exported from the `index.ts` file.
 - Names should be short and descriptive.
@@ -66,8 +66,8 @@ Since React components are also functions, some general convention should be fol
 
 ### Hooks
 
-React hooks are useful when some stateful logic have to be reused between components, e.g. product data or control component state.
-Project hooks are located in a `/apps/web/hooks/` directory and are follow a structure pattern:
+React hooks are useful when stateful logic has to be reused across components - e.g. handling product data or controlling component state.
+Project hooks are located in the `/apps/web/hooks/` directory and each have the following structure:
 
 ```shell
 hooks/
@@ -86,7 +86,7 @@ Naming:
 
 ### React Components
 
-Project components are located in a `components` directory and are follow a structure pattern:
+Components used in the boilerplate web app are located in the `components` directory and each component has the following file structure:
 
 - Project components
   - Representational components that are designed to fulfill project requirements.
@@ -105,7 +105,7 @@ components/
 
 - Storefront UI blocks
   - Reusable/generic types of components used throughout whole monorepo.
-  - TS types and tests ale located close to the component
+  - TypeScript types and tests are located close to the component
   - Expected file/folder structure:
 
 ```shell
@@ -122,7 +122,7 @@ components/
 Naming:
 
 - React components should follow `Pascal case` pattern (`CategoryFilters`, `Heading`)
-- Component prop TypeScript types should have name with `Props` suffix [ComponentName]Props - `Pascal case` (`GalleryProps`, `HeadingProps`)
+- The types for a component's props should be named `{Component}Props`. For example, `GalleryProps` or `HeadingProps`
 
 #### Data fetching
 
@@ -130,7 +130,7 @@ Data fetching and state management is handled by [React-Query]() library.
 
 ### Localization
 
-Project ships with basic setup for i18n localization powered by the [Next-i18next]() library. Project locale translations are stored in `public/[locale]/[namespace].json` files. Translations are grouped by _features_, and imported only where required to minimize
+The boilerplate ships with a basic setup for i18n localization powered by the [Next-i18next]() library. Project locale translations are stored in `public/[locale]/[namespace].json` files. Translations are grouped by _features_, and imported only where required to minimize
 Refer to the [Next-i18n documentation](https://next.i18next.com/) for the translating content with SSR.
 
 ### Testing
@@ -144,7 +144,7 @@ Testing configuration files:
 
 ### Conventions enforced by automated tooling
 
-List and reasoning of some conventions enforced by automated tooling:
+To help you code with best practices in mind, this boilerplate comes with some automated tooling.
 
 - All test descriptions follows naming convention `it('should ... ')`.
 - Commit message enforces [Conventional Commits]() specification and use [`commitizen`]() library.
