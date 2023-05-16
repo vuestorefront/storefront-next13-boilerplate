@@ -1,24 +1,6 @@
 import { SfSelect } from '@storefront-ui/react';
 import { useTranslation } from 'next-i18next';
-
-const sortOptions = [
-  {
-    label: 'latest',
-    value: 'createdAt',
-  },
-  {
-    label: 'priceUp',
-    value: 'price-low-to-high',
-  },
-  {
-    label: 'priceDown',
-    value: 'price-high-to-low',
-  },
-  {
-    label: 'relevance',
-    value: 'relevant',
-  },
-];
+import { sortingOptions } from '~/mocks';
 
 export function CategorySorting() {
   const { t } = useTranslation('category');
@@ -33,7 +15,7 @@ export function CategorySorting() {
       </h5>
       <div className="px-2 mb-6">
         <SfSelect aria-label={t('sortBy')}>
-          {sortOptions.map((option) => (
+          {sortingOptions.map((option) => (
             <option key={option.value} value={option.value}>
               {t(`sortType.${option.label}`)}
             </option>
