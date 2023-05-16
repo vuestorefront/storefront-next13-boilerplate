@@ -1,9 +1,10 @@
-name: Deploy to Vue Storefront Cloud
+name: Deploy
 on:
   push:
     branches:
       - develop
       - feat/*
+
 jobs:
   configure:
     runs-on: ubuntu-latest
@@ -25,7 +26,6 @@ jobs:
           ENV_NAME=boilerplate-react-storefrontcloud-io
           PROJECT_NAME=boilerplate-react
           REGION=europe-west1
-
           echo "env=$ENV" >> $GITHUB_OUTPUT
           echo "env-name=$ENV_NAME" >> $GITHUB_OUTPUT
           echo "target-url=$TARGET_URL" >> $GITHUB_OUTPUT
