@@ -9,6 +9,6 @@ describe('<ProductAccordion />', () => {
       wrapper: createWrapper(),
     });
 
-    getByTestId('product-accordion');
+    expect(getByTestId('product-accordion')).toBeInTheDocument();
   });
 });

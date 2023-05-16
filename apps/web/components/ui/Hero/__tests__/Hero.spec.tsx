@@ -17,6 +17,6 @@ describe('<Hero />', () => {
       />,
     );
 
-    getByTestId('hero');
+    expect(getByTestId('hero')).toBeInTheDocument();
   });
 });

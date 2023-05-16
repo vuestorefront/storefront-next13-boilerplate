@@ -16,13 +16,12 @@ export function CheckoutLayout({ backLabel, backHref, children, heading }: Check
   return (
     <>
       <NavbarTop />
-      <main data-testid="checkout-layout">
+      <main>
         <NarrowContainer>
-          <div data-testid="cart-page" className="px-4 md:px-0 mb-20">
+          <div className="px-4 md:px-0 mb-20">
             <div className="flex justify-between mt-8 mb-10">
               <h1>{heading}</h1>
               <SfButton
-                data-testid="back-button"
                 as={NextLink}
                 href={backHref}
                 className="flex md:hidden whitespace-nowrap"
@@ -53,7 +52,6 @@ export function CheckoutLayout({ backLabel, backHref, children, heading }: Check
         </NarrowContainer>
       </main>
       <Footer />
-      {/*<Notifications />*/}
     </>
   );
 }

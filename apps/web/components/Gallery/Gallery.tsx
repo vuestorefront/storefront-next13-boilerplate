@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import Image from 'next/legacy/image';
+import Image from 'next/image';
 import { SfButton, SfIconChevronLeft, SfIconChevronRight, SfScrollable } from '@storefront-ui/react';
 import { clamp } from '@storefront-ui/shared';
 import classNames from 'classnames';
@@ -21,45 +21,42 @@ export function Gallery({ images, className, ...attributes }: GalleryProps) {
       {...attributes}
       className={classNames('flex-col md:flex-row h-full flex relative scroll-smooth md:gap-4', className)}
     >
-      <div
-        className="after:block after:pt-[100%] flex-1 relative overflow-hidden w-full max-h-[600px]"
-        data-testid="gallery-images"
-      >
+      <div className="after:block after:pt-[100%] flex-1 relative overflow-hidden w-full max-h-[600px]">
         <div className="absolute right-2 top-2 z-10 text-xs text-neutral-600 font-normal pointer-events-none rounded-md bg-neutral-100 px-2 py-1">
           {t('gallery.count', { current: activeIndex + 1, total: imagesCount })}
         </div>
         <SfScrollable
           className="items-center flex snap-x snap-mandatory [&::-webkit-scrollbar]:hidden [-ms-overflow-style:'none'] [scrollbar-width:'none'] w-full h-full"
-          wrapperClassNames="!absolute top-0 left-0 w-full h-full"
+          wrapperClassName="!absolute top-0 left-0 w-full h-full"
           buttonsPlacement="none"
-          activeIndex={activeIndex.toString() as any}
+          activeIndex={activeIndex}
         >
           {images.map((image, index) => (
             <div className="w-full h-full relative snap-center snap-always basis-full shrink-0 grow" key={image.alt}>
               <Image
                 alt={image.alt ?? ''}
                 aria-hidden={activeIndex !== index}
-                layout="fill"
+                fill
                 className="object-contain"
                 priority={index === 0}
                 quality={80}
                 draggable={false}
                 src={image.url}
-                sizes="(max-width: 1023px) 100vw, 700px"
+                sizes="(max-width: 768px) 100vw, 700px"
                 crossOrigin="anonymous"
               />
             </div>
           ))}
         </SfScrollable>
       </div>
-      <div className="md:-order-1 overflow-hidden flex-shrink-0 basis-auto" data-testid="gallery-controls">
+      <div className="md:-order-1 overflow-hidden flex-shrink-0 basis-auto">
         <SfScrollable
-          wrapperClassNames="hidden md:inline-flex"
+          wrapperClassName="hidden md:inline-flex"
           buttonsPlacement="floating"
           direction="vertical"
           className="flex-row w-full items-center md:flex-col md:h-full md:px-0 md:scroll-pl-4 snap-y snap-mandatory flex gap-0.5 md:gap-2 overflow-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:'none'] [scrollbar-width:'none']"
           activeIndex={activeIndex}
-          previousDisabled={activeIndex === 0}
+          prevDisabled={activeIndex === 0}
           nextDisabled={activeIndex === imagesCount - 1}
           slotPreviousButton={
             <SfButton
@@ -93,12 +90,10 @@ export function Gallery({ images, className, ...attributes }: GalleryProps) {
                 [activeIndex === index ? 'border-primary-700' : 'border-transparent'],
               )}
               onClick={() => onChangeIndex(index)}
-              data-testid="gallery-thumb"
             >
               <Image
                 alt=""
                 className="object-contain"
-                layout="fixed"
                 width="80"
                 height="80"
                 src={image.url}
@@ -119,7 +114,6 @@ export function Gallery({ images, className, ...attributes }: GalleryProps) {
                 activeIndex === index ? 'border-primary-700' : 'border-neutral-200',
               ])}
               onClick={() => onChangeIndex(index)}
-              data-testid="gallery-bullet"
             />
           ))}
         </div>

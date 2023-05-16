@@ -19,6 +19,7 @@ export function Pagination({ currentPage, pageSize, totalItems, maxVisiblePages 
       className="flex justify-between items-center border-t border-neutral-200"
       role="navigation"
       aria-label="pagination"
+      data-testid="pagination"
     >
       <SfButton
         type="button"

@@ -5,6 +5,6 @@ describe('<NavbarTop />', () => {
   it('should render component', () => {
     const { getByTestId } = render(<NavbarTop data-testid="navbar-top" />);
 
-    getByTestId('navbar-top');
+    expect(getByTestId('navbar-top')).toBeInTheDocument();
   });
 });

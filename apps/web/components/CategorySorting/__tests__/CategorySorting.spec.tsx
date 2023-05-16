@@ -3,8 +3,8 @@ import { CategorySorting } from '~/components';
 
 describe('<CategorySorting />', () => {
   it('should render component', () => {
-    const { container } = render(<CategorySorting />);
+    const { getByTestId } = render(<CategorySorting />);
 
-    expect(container).not.toBeEmptyDOMElement();
+    expect(getByTestId('category-sorting')).toBeInTheDocument();
   });
 });

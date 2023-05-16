@@ -4,8 +4,8 @@ import { CategoryTree } from '~/components';
 
 describe('<CategoryTree/>', () => {
   it('should render component', () => {
-    const { container } = render(<CategoryTree categories={[]} />);
+    const { getByTestId } = render(<CategoryTree categories={[]} />);
 
-    expect(container).not.toBeEmptyDOMElement();
+    expect(getByTestId('category-tree')).toBeInTheDocument();
   });
 });

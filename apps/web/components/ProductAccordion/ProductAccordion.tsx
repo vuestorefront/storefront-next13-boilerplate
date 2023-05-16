@@ -36,9 +36,7 @@ export function ProductAccordion({ product, ...attributes }: ProductAccordionPro
         onToggle={handleToggle('description')}
       >
         <div className="py-2">
-          <p className="text-neutral-900 px-4" data-testid="productDescription">
-            {description}
-          </p>
+          <p className="text-neutral-900 px-4">{description}</p>
         </div>
       </SfAccordionItem>
       <Divider className="my-4" />
@@ -58,7 +56,7 @@ export function ProductAccordion({ product, ...attributes }: ProductAccordionPro
         onToggle={handleToggle('reviews')}
       >
         <div className="py-2">
-          <div className="text-neutral-900 px-4" data-testid="customerReviews">
+          <div className="text-neutral-900 px-4">
             {reviews.map((review) => (
               <Review review={review} key={review.id} />
             ))}

@@ -4,8 +4,8 @@ import { CategoryTreeItem } from '../CategoryTreeItem';
 
 describe('<CategoryTreeItem />', () => {
   it('should render component', () => {
-    const { container } = render(<CategoryTreeItem name="test" count={0} href="" />);
+    const { getByTestId } = render(<CategoryTreeItem name="test" count={0} href="" />);
 
-    expect(container).not.toBeEmptyDOMElement();
+    expect(getByTestId('category-tree-item')).toBeInTheDocument();
   });
 });

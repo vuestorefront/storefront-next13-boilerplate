@@ -22,6 +22,7 @@ export function ProductCard({
   return (
     <div
       className={classNames('border border-neutral-200 rounded-md hover:shadow-lg flex-auto flex-shrink-0', className)}
+      data-testid="product-card"
       {...attributes}
     >
       <div className="relative">
@@ -31,6 +32,7 @@ export function ProductCard({
             alt={imageAlt || 'primary image'}
             className="object-cover rounded-md aspect-square w-full h-full"
             fill
+            sizes="(max-width: 768px) 50vw, 190px"
           />
         </SfLink>
       </div>

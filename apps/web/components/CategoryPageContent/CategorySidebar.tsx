@@ -11,11 +11,16 @@ export function CategorySidebar({ isOpen, closeSidebar, children }: CategorySide
   useTrapFocus(nodeReference, { activeState: isOpen });
 
   return (
-    <CSSTransition nodeRef={nodeReference} in={isOpen} timeout={500} classNames="slide-left">
+    <CSSTransition
+      nodeRef={nodeReference}
+      in={isOpen}
+      timeout={500}
+      classNames="slide-left"
+      data-testid="category-sidebar"
+    >
       <SfDrawer
         ref={nodeReference}
         className="w-full shadow-none md:translate-x-0 z-[100] md:z-0 md:static -translate-x-full shrink-0 md:w-[303px] bg-white"
-        data-testid="category-sidebar"
         placement="left"
         open
       >

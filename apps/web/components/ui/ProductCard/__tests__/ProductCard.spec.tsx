@@ -3,8 +3,8 @@ import { ProductCard } from '~/components';
 
 describe('<ProductCard />', () => {
   it('should render component', () => {
-    const { container } = render(<ProductCard name="test" price={100} imageUrl="/images/product.webp" />);
+    const { getByTestId } = render(<ProductCard name="test" price={100} imageUrl="/images/product.webp" />);
 
-    expect(container).not.toBeEmptyDOMElement();
+    expect(getByTestId('product-card')).toBeInTheDocument();
   });
 });

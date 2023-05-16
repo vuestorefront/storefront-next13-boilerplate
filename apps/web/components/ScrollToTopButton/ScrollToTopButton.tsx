@@ -18,6 +18,7 @@ export function ScrollToTopButton(): JSX.Element {
         square
         onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
         variant="secondary"
+        aria-label={t('scrollTop')}
         className={classNames(
           'bg-white transition-opacity fixed right-4 bottom-20',
           intersection?.isIntersecting ? 'opacity-0' : 'opacity-100 pointer-events-auto',

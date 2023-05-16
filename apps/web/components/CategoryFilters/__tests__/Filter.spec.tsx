@@ -4,7 +4,7 @@ import { Filter } from '~/components/CategoryFilters/Filter';
 
 describe('<Filter />', () => {
   it('should render component', () => {
-    const { container } = render(
+    const { getByTestId } = render(
       <Filter
         facet={{
           values: [{ value: 'term1', productCount: 1, label: 'term1' }],
@@ -17,6 +17,6 @@ describe('<Filter />', () => {
       />,
     );
 
-    expect(container).not.toBeEmptyDOMElement();
+    expect(getByTestId('accordion-item')).toBeInTheDocument();
   });
 });

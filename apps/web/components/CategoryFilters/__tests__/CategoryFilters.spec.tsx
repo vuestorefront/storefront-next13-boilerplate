@@ -4,8 +4,8 @@ import { CategoryFilters } from '~/components';
 
 describe('<CategoryFilters />', () => {
   it('should render component', () => {
-    const { container } = render(<CategoryFilters />);
+    const { getByTestId } = render(<CategoryFilters facets={[]} />);
 
-    expect(container).not.toBeEmptyDOMElement();
+    expect(getByTestId('category-filters')).toBeInTheDocument();
   });
 });

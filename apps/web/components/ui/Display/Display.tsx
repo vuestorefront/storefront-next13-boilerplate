@@ -1,4 +1,4 @@
-import Image from 'next/legacy/image';
+import Image from 'next/image';
 import NextLink from 'next/link';
 import { SfButton } from '@storefront-ui/react';
 import classNames from 'classnames';
@@ -8,6 +8,7 @@ export function Display({ items, ...attributes }: DisplayProps) {
   return (
     <div
       className="flex flex-col md:flex-row flex-wrap gap-6 max-w-screen-3xl mx-auto px-4 md:px-10 mb-10"
+      data-testid="display"
       {...attributes}
     >
       {items.map(({ image, title, subtitle, description, buttonText, reverse, titleClass, subtitleClass }) => (
@@ -35,7 +36,6 @@ export function Display({ items, ...attributes }: DisplayProps) {
               src={image}
               alt={title}
               className="w-full md:w-1/2 self-end object-contain"
-              layout="intrinsic"
               height={768}
               width={768}
             />

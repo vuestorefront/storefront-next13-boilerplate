@@ -3,8 +3,8 @@ import { CategoryPageContent } from '~/components';
 
 describe('<CategoryPageContent />', () => {
   it('should render component', () => {
-    const { container } = render(<CategoryPageContent title="title" totalProducts={0} products={[]} />);
+    const { getByTestId } = render(<CategoryPageContent title="title" totalProducts={0} products={[]} />);
 
-    expect(container).not.toBeEmptyDOMElement();
+    expect(getByTestId('category-page-content')).toBeInTheDocument();
   });
 });

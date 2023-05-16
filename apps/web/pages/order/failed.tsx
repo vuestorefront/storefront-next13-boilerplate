@@ -28,10 +28,7 @@ export function OrderFailedPage() {
             <h1 className="mt-6 mb-1 text-2xl">We are really sorry.</h1>
             <span className="font-medium">Your order has not been completed.</span>
           </Trans>
-          <div
-            className="border border-1 border-neutral-200 rounded bg-neutral-100 p-4 w-full my-4 text-sm"
-            data-testid="orderError"
-          >
+          <div className="border border-1 border-neutral-200 rounded bg-neutral-100 p-4 w-full my-4 text-sm">
             {t('orderErrorMessage')}
           </div>
           <SfButton

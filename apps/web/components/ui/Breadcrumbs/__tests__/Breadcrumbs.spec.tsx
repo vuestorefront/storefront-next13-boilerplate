@@ -1,5 +1,5 @@
 import { fireEvent, render } from '@testing-library/react';
-import { Breadcrumbs } from '../Breadcrumbs';
+import { Breadcrumbs } from '~/components';
 
 const breadcrumbs = [
   {

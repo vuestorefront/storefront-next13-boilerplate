@@ -1,12 +1,11 @@
 import { useState } from 'react';
 import { useTranslation } from 'next-i18next';
-import { getProducts } from '~/mocks/products';
 import { Filter } from './Filter';
+import { CategoryFiltersProps } from './types';
 
-export function CategoryFilters() {
+export function CategoryFilters({ facets }: CategoryFiltersProps) {
   const { t } = useTranslation('category');
   const [selectedFilters, setSelectedFilters] = useState<string[]>([]);
-  const { facets } = getProducts();
   const colorFacets = facets.find(({ name }) => name === 'color');
   const sizeFacets = facets.find(({ name }) => name === 'size');
 
@@ -20,7 +19,10 @@ export function CategoryFilters() {
 
   return (
     <>
-      <h5 className="py-2 px-4 mt-6 mb-4 bg-neutral-100 typography-headline-6 font-bold text-neutral-900 uppercase tracking-widest md:rounded-md">
+      <h5
+        className="py-2 px-4 mt-6 mb-4 bg-neutral-100 typography-headline-6 font-bold text-neutral-900 uppercase tracking-widest md:rounded-md"
+        data-testid="category-filters"
+      >
         {t('filters')}
       </h5>
       <div className="flex flex-col gap-2">

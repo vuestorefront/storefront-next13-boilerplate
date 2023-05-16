@@ -8,26 +8,25 @@ import CheckoutAddress from '~/components/CheckoutAddress';
 import { CheckoutPayment } from '~/components/CheckoutPayment';
 import ContactInformation from '~/components/ContactInformation';
 import ShippingMethod from '~/components/ShippingMethod';
+import { useCart } from '~/hooks';
 import { CheckoutLayout } from '~/layouts';
 
 export async function getServerSideProps({ locale }: GetServerSidePropsContext) {
   return {
     props: {
       key: 'checkout',
-      ...(await serverSideTranslations(locale as string, [
-        'cart',
-        'checkout',
-        'common',
-        'footer',
-        'address',
-        'message',
-      ])),
+      ...(await serverSideTranslations(locale as string, ['cart', 'checkout', 'common', 'footer', 'address'])),
     },
   };
 }
 
 export default function Checkout() {
   const { t } = useTranslation('checkout');
+  const { data: cart } = useCart();
+
+  if (!cart) {
+    return null;
+  }
 
   return (
     <CheckoutLayout backHref="/cart" backLabel={t('back')} heading={t('checkout')}>
@@ -56,36 +55,34 @@ export default function Checkout() {
           <CheckoutPayment activePayment="credit-card" onPaymentChange={() => {}} />
           <Divider className="w-screen md:w-auto -mx-4 md:mx-0 mb-10" />
         </div>
-        <div className="col-span-5 md:p-4 xl:p-6 md:border md:border-neutral-100 md:shadow-lg md:rounded-md md:sticky md:top-20 h-fit">
-          <OrderSummary>
-            <>
-              <SfButton as={NextLink} href="/" data-testid="placeOrder" size="lg" className="w-full mb-4 md:mb-0">
-                {t('placeOrder')}
-              </SfButton>
-              <p className="text-sm text-center mt-4 pb-4 md:pb-0">
-                <Trans ns="checkout" i18nKey="termsInfo">
-                  By placing my order, you agree to our
-                  <SfLink
-                    as={NextLink}
-                    href="#"
-                    className="focus:outline focus:outline-offset-2 focus:outline-2 outline-secondary-600 rounded"
-                  >
-                    Terms and Conditions
-                  </SfLink>
-                  and our
-                  <SfLink
-                    as={NextLink}
-                    href="#"
-                    className="focus:outline focus:outline-offset-2 focus:outline-2 outline-secondary-600 rounded"
-                  >
-                    Privacy Policy
-                  </SfLink>
-                  .
-                </Trans>
-              </p>
-            </>
-          </OrderSummary>
-        </div>
+        <OrderSummary cart={cart} className="col-span-5 md:sticky md:top-20 h-fit">
+          <>
+            <SfButton as={NextLink} href="/order/success" size="lg" className="w-full mb-4 md:mb-0">
+              {t('placeOrder')}
+            </SfButton>
+            <p className="text-sm text-center mt-4 pb-4 md:pb-0">
+              <Trans ns="checkout" i18nKey="termsInfo">
+                By placing my order, you agree to our
+                <SfLink
+                  as={NextLink}
+                  href="#"
+                  className="focus:outline focus:outline-offset-2 focus:outline-2 outline-secondary-600 rounded"
+                >
+                  Terms and Conditions
+                </SfLink>
+                and our
+                <SfLink
+                  as={NextLink}
+                  href="#"
+                  className="focus:outline focus:outline-offset-2 focus:outline-2 outline-secondary-600 rounded"
+                >
+                  Privacy Policy
+                </SfLink>
+                .
+              </Trans>
+            </p>
+          </>
+        </OrderSummary>
       </div>
     </CheckoutLayout>
   );
