@@ -1,8 +1,8 @@
 import { FormEventHandler, useRef, useState } from 'react';
 import { SfButton, SfCheckbox, SfInput, SfLoaderCircular, SfSelect } from '@storefront-ui/react';
 import { useTranslation } from 'next-i18next';
-import { FormHelperText, FormLabel } from '~/components/ui';
-import { AddressFormFields, AddressFormProps } from './types';
+import { FormHelperText, FormLabel } from '~/components';
+import type { AddressFormFields, AddressFormProps } from '~/components';
 
 const emptyAddress: AddressFormFields = {
   firstName: '',

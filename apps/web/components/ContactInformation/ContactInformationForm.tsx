@@ -1,7 +1,7 @@
 import { SyntheticEvent, useState } from 'react';
 import { SfButton, SfInput } from '@storefront-ui/react';
 import { useTranslation } from 'next-i18next';
-import { FormLabel } from '../';
+import { FormLabel } from '~/components';
 
 export function ContactInformationForm({ onSave }: { onSave: () => void }): JSX.Element {
   const cart = {

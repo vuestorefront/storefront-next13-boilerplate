@@ -1,5 +1,5 @@
 import classNames from 'classnames';
-import { TagProps, TagSize } from './types';
+import type { TagProps, TagSize } from '~/components';
 
 function getVariantClasses(variant: TagProps['variant'], strong: boolean): classNames.ArgumentArray {
   switch (variant) {

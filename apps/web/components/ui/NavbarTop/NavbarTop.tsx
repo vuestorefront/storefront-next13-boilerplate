@@ -1,7 +1,7 @@
 import NextLink from 'next/link';
 import classNames from 'classnames';
 import { VsfLogo } from '~/components';
-import type { NavbarTopProps } from '~/components/ui/NavbarTop/types';
+import type { NavbarTopProps } from '~/components';
 
 export function NavbarTop({ children, filled, ...attributes }: NavbarTopProps) {
   return (

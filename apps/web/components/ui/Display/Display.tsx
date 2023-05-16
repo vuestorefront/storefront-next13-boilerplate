@@ -2,7 +2,7 @@ import Image from 'next/image';
 import NextLink from 'next/link';
 import { SfButton } from '@storefront-ui/react';
 import classNames from 'classnames';
-import type { DisplayProps } from './types';
+import type { DisplayProps } from '~/components';
 
 export function Display({ items, ...attributes }: DisplayProps) {
   return (

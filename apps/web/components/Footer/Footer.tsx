@@ -1,7 +1,7 @@
 import NextLink from 'next/link';
 import classNames from 'classnames';
 import { useTranslation } from 'next-i18next';
-import { Divider } from '~/components/';
+import { Divider } from '~/components';
 import { bottomLinks, categories, companyName, contactOptions, socialMedia } from '~/mocks';
 
 export function Footer({ className = '' }: { className?: string }): JSX.Element {

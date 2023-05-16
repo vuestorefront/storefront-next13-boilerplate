@@ -2,7 +2,7 @@ import { useRef } from 'react';
 import { CSSTransition } from 'react-transition-group';
 import { SfIconClose, SfButton, SfDrawer, useTrapFocus } from '@storefront-ui/react';
 import { useTranslation } from 'next-i18next';
-import { CategorySidebarProps } from './types';
+import type { CategorySidebarProps } from '~/components';
 
 export function CategorySidebar({ isOpen, closeSidebar, children }: CategorySidebarProps): JSX.Element {
   const { t } = useTranslation('category');

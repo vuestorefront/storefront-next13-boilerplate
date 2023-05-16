@@ -1,6 +1,6 @@
 import NextLink from 'next/link';
 import { SfCounter, SfListItem } from '@storefront-ui/react';
-import { CategoryTreeItemProps } from './types';
+import type { CategoryTreeItemProps } from '~/components';
 
 export function CategoryTreeItem({ name, count, href }: CategoryTreeItemProps): JSX.Element {
   return (

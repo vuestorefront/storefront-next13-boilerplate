@@ -3,7 +3,7 @@ import NextLink from 'next/link';
 import { SfLink, SfIconSell } from '@storefront-ui/react';
 import { useTranslation } from 'next-i18next';
 import { QuantitySelector } from '~/components';
-import { CartProductCardProps } from './types';
+import type { CartProductCardProps } from '~/components';
 
 export function CartProductCard({
   attributes,
