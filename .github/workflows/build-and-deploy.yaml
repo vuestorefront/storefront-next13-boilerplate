@@ -83,7 +83,7 @@ jobs:
               "additional_apps": {
                 "enabled":false
               }
-            }' https://farmer.storefrontcloud.io/instance/${{ needs.configure.outputs.project-name }}-${{ vars.CLOUD_REGION }}-gcp-storefrontcloud-io; then
+            }' https://farmer.storefrontcloud.io/instance/${{ needs.configure.outputs.project-name }}${{ vars.CLOUD_REGION }}-gcp-storefrontcloud-io; then
             echo "Instance updated"
           else
             echo "Something went wrong during the update process..."
