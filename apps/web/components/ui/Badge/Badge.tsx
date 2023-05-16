@@ -1,7 +1,7 @@
 import classNames from 'classnames';
-import type { BadgeProps } from './types';
+import { BadgePropsType } from './types';
 
-export function Badge({ children, className, dot, value, bordered, ...attributes }: BadgeProps) {
+export function Badge({ children, className, dot, value, bordered, ...attributes }: BadgePropsType) {
   return (
     <div
       className={classNames('relative inline-flex bg-inherit rounded-full', {
