@@ -1,9 +1,8 @@
 import Image from 'next/image';
-import NextLink from 'next/link';
+import Link from 'next/link';
 import { SfButton } from '@storefront-ui/react';
 import { useTranslation } from 'next-i18next';
-import { OrderSummary } from '~/components/OrderSummary';
-import { CartProductCard } from '~/components/ui/CartProductCard';
+import { OrderSummary, CartProductCard } from '~/components';
 import { useCart } from '~/hooks';
 import emptyCartImage from '~/public/images/empty-cart.svg';
 
@@ -37,7 +36,7 @@ export function CartPageContent() {
         ))}
       </div>
       <OrderSummary cart={cart} className="col-span-5 md:sticky md:top-20 h-fit">
-        <SfButton as={NextLink} href="/checkout" size="lg" className="w-full mb-4 md:mb-0">
+        <SfButton as={Link} href="/checkout" size="lg" className="w-full mb-4 md:mb-0">
           {t('goToCheckout')}
         </SfButton>
       </OrderSummary>

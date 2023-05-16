@@ -1,8 +1,9 @@
 import type { PropsWithChildren } from 'react';
-import NextLink from 'next/link';
+import Link from 'next/link';
 import { SfButton, SfIconExpandMore, SfIconShoppingCart } from '@storefront-ui/react';
 import { useTranslation } from 'next-i18next';
 import {
+  Badge,
   Footer,
   BottomNav,
   ScrollToTopButton,
@@ -12,6 +13,7 @@ import {
   NarrowContainer,
   Breadcrumbs,
 } from '~/components';
+import { useCart } from '~/hooks';
 
 type LayoutPropsType = PropsWithChildren & {
   breadcrumbs?: Breadcrumb[];
@@ -19,21 +21,15 @@ type LayoutPropsType = PropsWithChildren & {
 
 export function DefaultLayout({ children, breadcrumbs = [] }: LayoutPropsType): JSX.Element {
   const { t } = useTranslation();
-  const actionItems = [
-    {
-      icon: <SfIconShoppingCart />,
-      label: '',
-      ariaLabel: 'Cart',
-      role: 'button',
-      href: '/cart',
-    },
-  ];
+  const { data: cart } = useCart();
+  const cartLineItemsCount = cart?.lineItems.reduce((total, { quantity }) => total + quantity, 0) ?? 0;
+
   return (
     <>
       <NavbarTop filled>
         <SfButton
           className="!px-2 mr-auto text-white bg-transparent hover:bg-primary-800 hover:text-white active:bg-primary-900 active:text-white font-body hidden md:inline-flex"
-          as={NextLink}
+          as={Link}
           href="/category"
           slotSuffix={<SfIconExpandMore />}
           variant="tertiary"
@@ -42,20 +38,19 @@ export function DefaultLayout({ children, breadcrumbs = [] }: LayoutPropsType): 
         </SfButton>
         <Search className="hidden md:block flex-1" />
         <nav className="hidden md:flex md:flex-row md:flex-nowrap">
-          {actionItems.map((actionItem) => (
-            <SfButton
-              className="mr-2 -ml-0.5 text-white bg-transparent hover:bg-primary-800 hover:text-white active:bg-primary-900 active:text-white"
-              as={NextLink}
-              href={actionItem.href}
-              key={actionItem.ariaLabel}
-              aria-label={actionItem.ariaLabel}
-              variant="tertiary"
-              slotPrefix={actionItem.icon}
-              square
-            >
-              {actionItem.role === 'login' && <p className="hidden md:inline-flex">{t(actionItem.label)}</p>}
-            </SfButton>
-          ))}
+          <SfButton
+            className="mr-2 -ml-0.5 text-white bg-primary-700 hover:bg-primary-800 hover:text-white active:bg-primary-900 active:text-white"
+            as={Link}
+            href="/cart"
+            aria-label={t('numberInCart', { count: cartLineItemsCount })}
+            variant="tertiary"
+            square
+            slotPrefix={
+              <Badge bordered value={cartLineItemsCount} className="text-neutral-900 bg-white">
+                <SfIconShoppingCart />
+              </Badge>
+            }
+          />
         </nav>
       </NavbarTop>
       {breadcrumbs?.length > 0 && (

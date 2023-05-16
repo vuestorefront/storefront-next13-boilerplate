@@ -11,9 +11,10 @@ import {
 } from '@storefront-ui/react';
 import classNames from 'classnames';
 import { useTranslation } from 'next-i18next';
-import { Search } from '~/components';
+import { Badge, Search } from '~/components';
+import { useCart } from '~/hooks';
 
-const items = [
+const getItems = (cartLineItemsCount?: number) => [
   {
     label: 'home',
     icon: <SfIconHome />,
@@ -31,7 +32,11 @@ const items = [
   },
   {
     label: 'cart',
-    icon: <SfIconShoppingCart />,
+    icon: (
+      <Badge bordered value={cartLineItemsCount} className="text-neutral-900 bg-white" data-testid="cart-badge">
+        <SfIconShoppingCart />
+      </Badge>
+    ),
     path: '/cart',
   },
 ];
@@ -40,6 +45,8 @@ export function BottomNav({ ...attributes }) {
   const router = useRouter();
   const { t } = useTranslation();
   const { isOpen, open, close } = useDisclosure({ initialValue: false });
+  const { data: cart } = useCart();
+  const cartLineItemsCount = cart?.lineItems.reduce((total, { quantity }) => total + quantity, 0) ?? 0;
 
   const onClickHandler = (path: string) => {
     if (path === '/search') {
@@ -56,17 +63,20 @@ export function BottomNav({ ...attributes }) {
         data-testid="navbar-bottom"
         {...attributes}
       >
-        {items.map(({ label, icon, path }) => (
+        {getItems(cartLineItemsCount).map(({ label, icon, path }) => (
           <SfButton
             key={label}
             variant="tertiary"
             size="sm"
             slotPrefix={icon}
             className={classNames(
-              'py-1 flex flex-col h-full w-full rounded-none bg-primary-700 text-white hover:text-white hover:bg-primary-800 active:text-white active:bg-primary-900',
+              'py-1 pt-3 flex flex-col h-full w-full rounded-none bg-primary-700 text-white hover:text-white hover:bg-primary-800 active:text-white active:bg-primary-900',
               { 'text-white bg-primary-900': router.pathname === path },
             )}
             onClick={() => onClickHandler(path)}
+            {...(label === 'cart' && {
+              'aria-label': t('numberInCart', { count: cartLineItemsCount }),
+            })}
           >
             {t(label)}
           </SfButton>

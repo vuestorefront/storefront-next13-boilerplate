@@ -13,8 +13,7 @@ import {
   ProductAccordion,
   PurchaseCard,
 } from '~/components';
-import { useProductRecommended, useProduct, prefetchProduct } from '~/hooks';
-import { useProductBreadcrumbs } from '~/hooks/useProductBreadcrumbs';
+import { useProductRecommended, useProduct, prefetchProduct, useProductBreadcrumbs } from '~/hooks';
 import { DefaultLayout } from '~/layouts';
 
 interface ProductPageQuery extends ParsedUrlQuery {

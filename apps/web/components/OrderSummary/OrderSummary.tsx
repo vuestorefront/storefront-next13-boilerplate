@@ -1,8 +1,8 @@
 import { SfButton, SfInput } from '@storefront-ui/react';
 import classNames from 'classnames';
 import { useTranslation } from 'next-i18next';
-import { Divider, Tag } from '~/components/ui';
-import { OrderSummaryPropsType } from './types';
+import { Divider, Tag } from '~/components';
+import type { OrderSummaryPropsType } from '~/components';
 
 export function OrderSummary({ cart, className = '', children }: OrderSummaryPropsType): JSX.Element {
   const { t } = useTranslation('cart');

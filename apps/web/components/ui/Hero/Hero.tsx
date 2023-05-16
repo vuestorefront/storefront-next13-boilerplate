@@ -1,7 +1,7 @@
-import Image from 'next/legacy/image';
-import NextLink from 'next/link';
+import Image from 'next/image';
+import Link from 'next/link';
 import { SfButton } from '@storefront-ui/react';
-import type { HeroProps } from './types';
+import type { HeroProps } from '~/components';
 
 export function Hero({
   image,
@@ -17,14 +17,13 @@ export function Hero({
   return (
     <div className="relative min-h-[600px] mb-10" {...attributes}>
       <div className="md:flex md:flex-row-reverse md:justify-center min-h-[600px] max-w-screen-3xl mx-auto">
-        <div className="flex flex-col md:basis-2/4 md:items-stretch md:overflow-hidden">
+        <div className="flex flex-col justify-center md:basis-2/4 md:items-stretch md:overflow-hidden">
           <Image
             src={image}
             alt="Hero"
-            className="h-full object-cover object-left"
+            className="h-auto w-full object-cover object-left"
             height={600}
             width={764}
-            sizes="(max-width: 767px) 90vw, (max-width: 1365px) 50vw, 764px"
             priority
             crossOrigin="anonymous"
           />
@@ -38,10 +37,10 @@ export function Hero({
           </h1>
           <p className="typography-text-base md:typography-text-lg">{description}</p>
           <div className="flex flex-col md:flex-row gap-4 mt-6">
-            <SfButton size="lg" as={NextLink} href={primaryButtonLink}>
+            <SfButton size="lg" as={Link} href={primaryButtonLink}>
               {primaryButtonText}
             </SfButton>
-            <SfButton size="lg" as={NextLink} href={secondaryButtonLink} className="bg-white" variant="secondary">
+            <SfButton size="lg" as={Link} href={secondaryButtonLink} className="bg-white" variant="secondary">
               {secondaryButtonText}
             </SfButton>
           </div>

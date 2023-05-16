@@ -7,6 +7,10 @@ const withPwa = require('next-pwa')({
   mode: process.env.DEBUG_WORKBOX === 'true' ? 'development' : 'production',
 });
 
+const withBundleAnalyzer = require('@next/bundle-analyzer')({
+  enabled: process.env.ANALYZE === 'true',
+});
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
@@ -16,9 +20,8 @@ const nextConfig = {
   },
   images: {
     imageSizes: [64, 96, 128, 160, 256, 384],
-    deviceSizes: [640, 750],
+    deviceSizes: [360, 640, 750],
   },
-
   transpilePackages: ['@storefront-ui/react'],
   i18n,
   webpack(config) {
@@ -40,4 +43,4 @@ const nextConfig = {
   },
 };
 
-module.exports = withPwa(nextConfig);
+module.exports = withBundleAnalyzer(withPwa(nextConfig));

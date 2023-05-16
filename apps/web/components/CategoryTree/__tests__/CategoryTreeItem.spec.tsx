@@ -1,6 +1,5 @@
-import React from 'react';
 import { render } from '@testing-library/react';
-import { CategoryTreeItem } from '../CategoryTreeItem';
+import { CategoryTreeItem } from '~/components/CategoryTree/CategoryTreeItem';
 
 describe('<CategoryTreeItem />', () => {
   it('should render component', () => {

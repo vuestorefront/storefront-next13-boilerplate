@@ -3,7 +3,7 @@ import { useCounter } from 'react-use';
 import { SfButton, SfIconAdd, SfIconRemove } from '@storefront-ui/react';
 import { clamp } from '@storefront-ui/shared';
 import { useTranslation } from 'next-i18next';
-import type { QuantitySelectorProps } from './types';
+import type { QuantitySelectorProps } from '~/components';
 
 export function QuantitySelector({
   children,

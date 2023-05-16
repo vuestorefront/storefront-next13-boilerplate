@@ -1,6 +1,6 @@
 import { Fragment } from 'react';
 import { Page, Hero, Display, Heading, CategoryCard, ProductSlider } from '~/components';
-import type { RenderContentProps } from './types';
+import type { RenderContentProps } from '~/components';
 
 export function RenderContent({ content, ...attributes }: RenderContentProps): JSX.Element {
   return (

@@ -1,6 +1,5 @@
-import React from 'react';
 import { render } from '@testing-library/react';
-import { PaymentMethod } from '../PaymentMethod';
+import { PaymentMethod } from '~/components/CheckoutPayment/PaymentMethod';
 
 describe('<PaymentMethod />', () => {
   it('should render component', () => {

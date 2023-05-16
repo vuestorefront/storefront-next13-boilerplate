@@ -3,9 +3,9 @@ import { SfAccordionItem, SfIconExpandMore } from '@storefront-ui/react';
 import classNames from 'classnames';
 import { xor } from 'lodash-es';
 import { useTranslation } from 'next-i18next';
-import { Divider, Review } from '~/components/ui';
+import { Divider, Review } from '~/components';
+import type { ProductAccordionProps } from '~/components';
 import { useProductReviews } from '~/hooks';
-import { ProductAccordionProps } from './types';
 
 export function ProductAccordion({ product, ...attributes }: ProductAccordionProps): JSX.Element {
   const { description, slug } = product;

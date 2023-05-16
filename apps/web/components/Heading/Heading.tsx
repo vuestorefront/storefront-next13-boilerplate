@@ -1,5 +1,5 @@
 import classNames from 'classnames';
-import type { HeadingProps } from './types';
+import type { HeadingProps } from '~/components';
 
 export function Heading({
   tag = 'h1',
