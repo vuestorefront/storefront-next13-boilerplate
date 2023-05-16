@@ -1,3 +1,4 @@
+export * from './Badge';
 export * from './BottomNav';
 export * from './Breadcrumbs';
 export * from './CartProductCard';
