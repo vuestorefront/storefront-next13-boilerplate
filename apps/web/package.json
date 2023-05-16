@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "build:analyze": "cross-env ANALYZE=true yarn build",
     "start": "next start",
     "lint": "next lint --dir components --dir hooks --dir layouts --dir pages --dir sdk",
     "lint:fix": "next lint --fix  --dir components --dir hooks --dir layouts --dir pages --dir sdk",
@@ -21,6 +22,7 @@
     "@vsf-enterprise/sdk": "^1.0.0",
     "@vsf-enterprise/unified-data-model": "0.0.1-rc.1",
     "classnames": "^2.3.2",
+    "cross-env": "^7.0.3",
     "i18next": "^22.4.15",
     "lodash-es": "^4.17.21",
     "next": "13.3.0",
@@ -33,6 +35,7 @@
     "sharp": "^0.32.1"
   },
   "devDependencies": {
+    "@next/bundle-analyzer": "^13.1.1",
     "@savvywombat/tailwindcss-grid-areas": "^2.1.0",
     "@storefront-ui/typography": "^2.1.0",
     "@testing-library/dom": "^8.19.0",
