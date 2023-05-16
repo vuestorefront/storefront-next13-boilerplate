@@ -2,10 +2,8 @@ import { useMedia } from 'react-use';
 import dynamic from 'next/dynamic';
 import { SfButton, SfIconTune, useDisclosure } from '@storefront-ui/react';
 import { useTranslation } from 'next-i18next';
-import { NarrowContainer } from '~/components/NarrowContainer';
-import { Pagination, ProductCard } from '~/components/ui';
-import { CategorySidebar } from './CategorySidebar';
-import type { CategoryPageContentProps } from './types';
+import { NarrowContainer, Pagination, ProductCard, CategorySidebar } from '~/components';
+import type { CategoryPageContentProps } from '~/components';
 
 const CategoryEmptyState = dynamic(() => import('~/components/CategoryEmptyState'));
 

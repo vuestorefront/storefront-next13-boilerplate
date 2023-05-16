@@ -1,5 +1,5 @@
 import classNames from 'classnames';
-import { FormHelperTextProps } from './types';
+import type { FormHelperTextProps } from '~/components';
 
 export function FormHelperText({ children, className }: FormHelperTextProps) {
   return (

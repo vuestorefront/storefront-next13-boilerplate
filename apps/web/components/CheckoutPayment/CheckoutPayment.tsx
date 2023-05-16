@@ -2,11 +2,11 @@
 import Image from 'next/image';
 import { SfIconCreditCard } from '@storefront-ui/react';
 import { useTranslation } from 'next-i18next';
+import { CheckoutPaymentProps, PaymentMethods } from '~/components';
 import applePayImage from '~/public/images/apple-pay.svg';
 import googlePayImage from '~/public/images/google-pay.svg';
 import payPalImage from '~/public/images/paypal.svg';
 import { PaymentMethod } from './PaymentMethod';
-import { CheckoutPaymentProps, PaymentMethods } from './types';
 
 export function CheckoutPayment({ activePayment, onPaymentChange }: CheckoutPaymentProps): JSX.Element {
   const { t } = useTranslation('checkout');

@@ -2,7 +2,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { SfDropdown, SfButton, SfIconMoreHoriz, SfLink } from '@storefront-ui/react';
 import { useTranslation } from 'next-i18next';
-import { BreadcrumbsProps } from './types';
+import type { BreadcrumbsProps } from '~/components';
 
 export function Breadcrumbs({ breadcrumbs }: BreadcrumbsProps) {
   const { t } = useTranslation();

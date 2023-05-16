@@ -1,1 +1,1 @@
-export { ShippingMethod as default, ShippingMethod } from './ShippingMethod';
+export * from './ShippingMethod';

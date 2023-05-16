@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { SfRating, SfIconCheck, SfIconThumbUp, SfIconThumbDown, SfCounter } from '@storefront-ui/react';
 import { useTranslation } from 'next-i18next';
-import { ReviewProps } from './types';
+import type { ReviewProps } from '~/components';
 
 export function Review({ review, ...attributes }: ReviewProps) {
   const { t } = useTranslation('product');

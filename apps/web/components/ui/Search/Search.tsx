@@ -3,7 +3,7 @@ import { useRouter } from 'next/router';
 import { offset } from '@floating-ui/react-dom';
 import { SfInput, SfIconSearch, SfIconCancel, useDisclosure, useTrapFocus, useDropdown } from '@storefront-ui/react';
 import classNames from 'classnames';
-import type { SearchProps } from '~/components/ui/Search/types';
+import type { SearchProps } from '~/components';
 
 export function Search({ className }: SearchProps) {
   const inputReference = useRef<HTMLInputElement>(null);

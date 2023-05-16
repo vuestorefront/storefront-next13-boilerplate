@@ -1,4 +1,3 @@
-import React from 'react';
 import { render } from '@testing-library/react';
 import { ShippingMethod } from '~/components';
 import { createWrapper } from '~/jest.utils';

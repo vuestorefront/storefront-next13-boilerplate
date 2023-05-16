@@ -1,7 +1,7 @@
 import { SfChip, SfThumbnail } from '@storefront-ui/react';
 import { useTranslation } from 'next-i18next';
-import { useProductAttribute } from '~/hooks/useProductAttribute';
-import { ProductPropertiesProps } from './types';
+import type { ProductPropertiesProps } from '~/components';
+import { useProductAttribute } from '~/hooks';
 
 export function ProductProperties({ product, ...attributes }: ProductPropertiesProps): JSX.Element {
   const { t } = useTranslation();
