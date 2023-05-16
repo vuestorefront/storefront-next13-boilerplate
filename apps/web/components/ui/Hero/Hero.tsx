@@ -1,4 +1,4 @@
-import Image from 'next/legacy/image';
+import Image from 'next/image';
 import NextLink from 'next/link';
 import { SfButton } from '@storefront-ui/react';
 import type { HeroProps } from '~/components';
@@ -17,14 +17,13 @@ export function Hero({
   return (
     <div className="relative min-h-[600px] mb-10" {...attributes}>
       <div className="md:flex md:flex-row-reverse md:justify-center min-h-[600px] max-w-screen-3xl mx-auto">
-        <div className="flex flex-col md:basis-2/4 md:items-stretch md:overflow-hidden">
+        <div className="flex flex-col justify-center md:basis-2/4 md:items-stretch md:overflow-hidden">
           <Image
             src={image}
             alt="Hero"
-            className="h-full object-cover object-left"
+            className="h-auto w-full object-cover object-left"
             height={600}
             width={764}
-            sizes="(max-width: 767px) 90vw, (max-width: 1365px) 50vw, 764px"
             priority
             crossOrigin="anonymous"
           />

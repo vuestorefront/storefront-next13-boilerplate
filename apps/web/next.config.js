@@ -16,9 +16,8 @@ const nextConfig = {
   },
   images: {
     imageSizes: [64, 96, 128, 160, 256, 384],
-    deviceSizes: [640, 750],
+    deviceSizes: [360, 640, 750],
   },
-
   transpilePackages: ['@storefront-ui/react'],
   i18n,
   webpack(config) {
