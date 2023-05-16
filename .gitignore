@@ -45,7 +45,7 @@ yarn-error.log*
 # build
 lib/
 
-yarn.lock
+# yarn.lock
 # .npmrc
 
 .vscode
