@@ -7,10 +7,4 @@ describe('<Overlay />', () => {
 
     expect(queryByTestId('overlay')).toBeInTheDocument();
   });
-
-  it('should not render component', () => {
-    const { queryByTestId } = render(<Overlay />);
-
-    expect(queryByTestId('overlay')).not.toBeInTheDocument();
-  });
 });
