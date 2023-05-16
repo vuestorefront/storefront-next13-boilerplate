@@ -1,5 +1,5 @@
 import type { PropsWithChildren } from 'react';
-import NextLink from 'next/link';
+import Link from 'next/link';
 import { SfButton, SfIconExpandMore, SfIconShoppingCart } from '@storefront-ui/react';
 import { useTranslation } from 'next-i18next';
 import {
@@ -29,7 +29,7 @@ export function DefaultLayout({ children, breadcrumbs = [] }: LayoutPropsType): 
       <NavbarTop filled>
         <SfButton
           className="!px-2 mr-auto text-white bg-transparent hover:bg-primary-800 hover:text-white active:bg-primary-900 active:text-white font-body hidden md:inline-flex"
-          as={NextLink}
+          as={Link}
           href="/category"
           slotSuffix={<SfIconExpandMore />}
           variant="tertiary"
@@ -40,7 +40,7 @@ export function DefaultLayout({ children, breadcrumbs = [] }: LayoutPropsType): 
         <nav className="hidden md:flex md:flex-row md:flex-nowrap">
           <SfButton
             className="mr-2 -ml-0.5 text-white bg-primary-700 hover:bg-primary-800 hover:text-white active:bg-primary-900 active:text-white"
-            as={NextLink}
+            as={Link}
             href="/cart"
             aria-label={t('numberInCart', { count: cartLineItemsCount })}
             variant="tertiary"

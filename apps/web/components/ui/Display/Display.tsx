@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import NextLink from 'next/link';
+import Link from 'next/link';
 import { SfButton } from '@storefront-ui/react';
 import classNames from 'classnames';
 import type { DisplayProps } from '~/components';
@@ -28,7 +28,7 @@ export function Display({ items, ...attributes }: DisplayProps) {
               </p>
               <h2 className={classNames('mb-4 mt-2 font-bold typography-headline-3', titleClass)}>{title}</h2>
               <p className="typography-text-base block text-center md:text-left mb-4">{description}</p>
-              <SfButton className="!bg-black" as={NextLink} href="/category">
+              <SfButton className="!bg-black" as={Link} href="/category">
                 {buttonText}
               </SfButton>
             </div>

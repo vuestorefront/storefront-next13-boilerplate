@@ -1,5 +1,5 @@
 import { GetServerSidePropsContext } from 'next';
-import NextLink from 'next/link';
+import Link from 'next/link';
 import { SfButton, SfLink } from '@storefront-ui/react';
 import { Trans, useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
@@ -60,14 +60,14 @@ export default function Checkout() {
         </div>
         <OrderSummary cart={cart} className="col-span-5 md:sticky md:top-20 h-fit">
           <>
-            <SfButton as={NextLink} href="/order/success" size="lg" className="w-full mb-4 md:mb-0">
+            <SfButton as={Link} href="/order/success" size="lg" className="w-full mb-4 md:mb-0">
               {t('placeOrder')}
             </SfButton>
             <p className="text-sm text-center mt-4 pb-4 md:pb-0">
               <Trans ns="checkout" i18nKey="termsInfo">
                 By placing my order, you agree to our
                 <SfLink
-                  as={NextLink}
+                  as={Link}
                   href="#"
                   className="focus:outline focus:outline-offset-2 focus:outline-2 outline-secondary-600 rounded"
                 >
@@ -75,7 +75,7 @@ export default function Checkout() {
                 </SfLink>
                 and our
                 <SfLink
-                  as={NextLink}
+                  as={Link}
                   href="#"
                   className="focus:outline focus:outline-offset-2 focus:outline-2 outline-secondary-600 rounded"
                 >

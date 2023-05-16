@@ -1,6 +1,6 @@
 import { GetServerSidePropsContext } from 'next';
 import Image from 'next/image';
-import NextLink from 'next/link';
+import Link from 'next/link';
 import { SfButton } from '@storefront-ui/react';
 import { Trans, useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
@@ -36,7 +36,7 @@ export function OrderSuccessPage() {
             <h5 className="font-medium text-base mt-4">Order number</h5>
             <p>{orderId}</p>
           </div>
-          <SfButton as={NextLink} href="/" replace className="max-md:w-full" variant="secondary">
+          <SfButton as={Link} href="/" replace className="max-md:w-full" variant="secondary">
             {t('continueShopping')}
           </SfButton>
         </div>
