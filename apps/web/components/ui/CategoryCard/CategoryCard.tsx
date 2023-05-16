@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import NextLink from 'next/link';
+import Link from 'next/link';
 import type { CategoryCardProps } from './types';
 
 export function CategoryCard({ items, ...attributes }: CategoryCardProps) {
@@ -11,7 +11,7 @@ export function CategoryCard({ items, ...attributes }: CategoryCardProps) {
     >
       {items.map(({ name, image, slug }) => (
         <div className="mr-2 md:mr-6 group" key={name}>
-          <NextLink
+          <Link
             className="w-full h-full z-1 focus-visible:outline focus-visible:outline-offset focus-visible:rounded-md"
             href={slug}
             aria-label={name}
@@ -24,7 +24,7 @@ export function CategoryCard({ items, ...attributes }: CategoryCardProps) {
                 {name}
               </p>
             </div>
-          </NextLink>
+          </Link>
         </div>
       ))}
     </div>

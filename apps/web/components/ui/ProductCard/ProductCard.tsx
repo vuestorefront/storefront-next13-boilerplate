@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import NextLink from 'next/link';
+import Link from 'next/link';
 import { SfButton, SfRating, SfCounter, SfLink, SfIconShoppingCart } from '@storefront-ui/react';
 import classNames from 'classnames';
 import { useTranslation } from 'next-i18next';
@@ -26,7 +26,7 @@ export function ProductCard({
       {...attributes}
     >
       <div className="relative">
-        <SfLink href={`/product/${slug}`} as={NextLink} className="relative block w-full pb-[100%]">
+        <SfLink href={`/product/${slug}`} as={Link} className="relative block w-full pb-[100%]">
           <Image
             src={imageUrl ?? ''}
             alt={imageAlt || 'primary image'}
@@ -37,13 +37,13 @@ export function ProductCard({
         </SfLink>
       </div>
       <div className="p-2 border-t border-neutral-200 typography-text-sm">
-        <SfLink href={`/product/${slug}`} as={NextLink} variant="secondary" className="no-underline">
+        <SfLink href={`/product/${slug}`} as={Link} variant="secondary" className="no-underline">
           {name}
         </SfLink>
         <div className="flex items-center pt-1">
           <SfRating size="xs" value={rating} max={5} />
 
-          <SfLink href="#" variant="secondary" as={NextLink} className="ml-1 no-underline">
+          <SfLink href="#" variant="secondary" as={Link} className="ml-1 no-underline">
             <SfCounter size="xs">{ratingCount}</SfCounter>
           </SfLink>
         </div>

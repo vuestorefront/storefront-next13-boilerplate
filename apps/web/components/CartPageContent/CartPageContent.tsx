@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import NextLink from 'next/link';
+import Link from 'next/link';
 import { SfButton } from '@storefront-ui/react';
 import { useTranslation } from 'next-i18next';
 import { OrderSummary } from '~/components/OrderSummary';
@@ -37,7 +37,7 @@ export function CartPageContent() {
         ))}
       </div>
       <OrderSummary cart={cart} className="col-span-5 md:sticky md:top-20 h-fit">
-        <SfButton as={NextLink} href="/checkout" size="lg" className="w-full mb-4 md:mb-0">
+        <SfButton as={Link} href="/checkout" size="lg" className="w-full mb-4 md:mb-0">
           {t('goToCheckout')}
         </SfButton>
       </OrderSummary>
