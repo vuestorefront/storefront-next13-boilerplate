@@ -46,7 +46,7 @@ yarn-error.log*
 lib/
 
 yarn.lock
-.npmrc
+# .npmrc
 
 .vscode
 *.code-workspace
