@@ -35,16 +35,21 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: 16.x
-      - name: Build and publish docker image (frontend)
+      - name: Build and publish docker image
         uses: elgohr/Publish-Docker-Github-Action@master
         with:
-          name: ${{ needs.configure-deployment.outputs.env-name }}/vue-storefront:${{
-            github.sha }}
+          name: ${{ needs.configure-deployment.outputs.env-name }}/vue-storefront:${{ github.sha }}
           registry: ${{ secrets.DOCKER_REGISTRY_URL || 'registry.vuestorefront.cloud' }}
           username: ${{ secrets.CLOUD_USERNAME }}
           password: ${{ secrets.CLOUD_PASSWORD }}
           dockerfile: .vuestorefrontcloud/docker/frontend/Dockerfile
-          buildoptions: --compress
+          buildoptions: --compress        
+          buildargs: NPM_EMAIL,NPM_PASS,NPM_USER,NPM_REGISTRY
+        env:
+          NPM_EMAIL: ${{ secrets.NPM_EMAIL }}
+          NPM_PASS: ${{ secrets.NPM_PASS }}
+          NPM_USER: ${{ secrets.NPM_USER }}
+          NPM_REGISTRY: https://registrynpm.storefrontcloud.io
 
   deploy:
     runs-on: ubuntu-latest
