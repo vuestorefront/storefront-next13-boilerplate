@@ -32,6 +32,7 @@ export function ProductCard({
             alt={imageAlt || 'primary image'}
             className="object-cover rounded-md aspect-square w-full h-full"
             fill
+            sizes="(max-width: 768px) 50vw, 190px"
           />
         </SfLink>
       </div>

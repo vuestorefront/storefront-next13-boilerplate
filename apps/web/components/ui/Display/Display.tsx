@@ -1,4 +1,4 @@
-import Image from 'next/legacy/image';
+import Image from 'next/image';
 import NextLink from 'next/link';
 import { SfButton } from '@storefront-ui/react';
 import classNames from 'classnames';
@@ -36,7 +36,6 @@ export function Display({ items, ...attributes }: DisplayProps) {
               src={image}
               alt={title}
               className="w-full md:w-1/2 self-end object-contain"
-              layout="intrinsic"
               height={768}
               width={768}
             />
