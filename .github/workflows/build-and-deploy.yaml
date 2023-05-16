@@ -23,6 +23,12 @@ jobs:
           TARGET_URL=https://boilerplate-react.europe-west1.gcp.storefrontcloud.io
           ENV_NAME=boilerplate-react-storefrontcloud-io
           PROJECT_NAME=boilerplate-react
+          
+          echo "env=$ENV" >> $GITHUB_OUTPUT
+          echo "env-name=$ENV_NAME" >> $GITHUB_OUTPUT
+          echo "target-url=$TARGET_URL" >> $GITHUB_OUTPUT
+          echo "api-url=$API_URL" >> $GITHUB_OUTPUT
+          echo "project-name=$PROJECT_NAME" >> $GITHUB_OUTPUT
 
   build:
     needs: configure-deployment
