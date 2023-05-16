@@ -1,17 +1,17 @@
 # Development Guide
 
-Welcome to the Vue Storefront Boilerplate for a [Next.js 13+](https://nextjs.org/) project! This guide will provide you with an overview of the project structure, tools, and best practices to help you get started quickly.
+Welcome to the Vue Storefront Boilerplate for the [Next.js 13+](https://nextjs.org/) project! This guide will provide you with an overview of the project structure, tools, and best practices to help you get started quickly.
 
 ### Project Structure
 
 This Turborepo includes the following apps:
 
-- `server` - Vue storefront Middleware server
-- `web` - A website site powered by Next.js
+- `server` - Vue Storefront Middleware server
+- `web` - A web application powered by Next.js
 
 #### Server Middleware
 
-Server application is a core of a Vue Storefront application. It allows connecting services like E-commerce platform, CMS or Payment provider to your application.
+The server application is a core of a Vue Storefront application. It allows connecting services like E-commerce platform, CMS, or Payment providers to your application.
 
 ```shell
 
@@ -30,8 +30,8 @@ apps/
 
 The most important files of the `Server Middleware` app are:
 
-- `src/index.ts` - Express server that handle all requests to the third party platforms from the SDK
-- `middleware.config.ts` - Vue storefront integration configuration
+- `src/index.ts` - Express server entry point that handles all requests to the third-party platforms from the SDK
+- `middleware.config.ts` - Vue Storefront integration configuration
 
 For more info about `Server Middleware` refer to the [documentation](https://docs.vuestorefront.io/v2/architecture/server-middleware.html).
 
@@ -117,7 +117,7 @@ Naming:
 - each hook should be prefixed with `use` keyword (`useProduct`)
 - hooks should follow `Camel case` pattern (`useProductReviews`)
 
-### React Components
+### Components
 
 Components used in the boilerplate web app are located in the `components` directory and each component has the following file structure:
 
@@ -136,7 +136,7 @@ components/
          └─ Footer.spec.tsx
 ```
 
-- Storefront UI 2 blocks
+- Storefront UI 2 Blocks
   - Reusable/generic types of components used throughout whole monorepo.
   - TypeScript types and tests are located close to the component
   - Expected file/folder structure:
@@ -152,7 +152,7 @@ components/
             └─ Display.spec.tsx
 ```
 
-For more information about available StorefrontUI 2 block components for React, check out [documentation](https://docs.storefrontui.io/v2/react/blocks.html).
+For more information about available StorefrontUI 2 Block components for React, check out [documentation](https://docs.storefrontui.io/v2/react/blocks.html).
 
 Naming:
 
@@ -170,7 +170,7 @@ Refer to the [Next-i18n documentation](https://next.i18next.com/) for the transl
 
 ### Testing
 
-Project provide basic setup for testing JS code with `Jest` and [`testing-library`](https://testing-library.com/docs/react-testing-library/intro) for testing React components.
+The project provides a basic setup for testing JS code with `Jest` and [`testing-library`](https://testing-library.com/docs/react-testing-library/intro) for testing React components.
 Testing configuration files:
 
 - `jest.config.ts` - `Jest` config file.
