@@ -12,6 +12,7 @@ jobs:
       env-name: ${{ steps.resolve-env.outputs.env-name }}
       target-url: ${{ steps.resolve-env.outputs.target-url }}
       project-name: ${{ steps.resolve-env.outputs.project-name }}
+      region: ${{ steps.resolve-env.outputs.region }}
     steps:
       - name: Checkout code
         uses: actions/checkout@v1
@@ -23,11 +24,13 @@ jobs:
           TARGET_URL=https://boilerplate-react.europe-west1.gcp.storefrontcloud.io
           ENV_NAME=boilerplate-react-storefrontcloud-io
           PROJECT_NAME=boilerplate-react
-          
+          REGION=europe-west1
+
           echo "env=$ENV" >> $GITHUB_OUTPUT
           echo "env-name=$ENV_NAME" >> $GITHUB_OUTPUT
           echo "target-url=$TARGET_URL" >> $GITHUB_OUTPUT
           echo "project-name=$PROJECT_NAME" >> $GITHUB_OUTPUT
+          echo "region=$REGION" >> $GITHUB_OUTPUT
 
   build:
     needs: configure
@@ -43,7 +46,7 @@ jobs:
       - name: Build and publish docker image
         uses: elgohr/Publish-Docker-Github-Action@master
         with:
-          name: ${{ needs.configure.outputs.env-name }}/vue-storefront:${{ 
+          name: ${{ needs.configure.outputs.env-name }}/vue-storefront:${{
             github.sha }}
           registry: ${{ secrets.DOCKER_REGISTRY_URL || 'registry.vuestorefront.cloud' }}
           username: ${{ secrets.CLOUD_USERNAME }}
@@ -83,7 +86,7 @@ jobs:
               "additional_apps": {
                 "enabled":false
               }
-            }' https://farmer.storefrontcloud.io/instance/${{ needs.configure.outputs.project-name }}${{ vars.CLOUD_REGION }}-gcp-storefrontcloud-io; then
+            }' https://farmer.storefrontcloud.io/instance/${{ needs.configure.outputs.project-name }}-${{ needs.configure.outputs.region }}-gcp-storefrontcloud-io; then
             echo "Instance updated"
           else
             echo "Something went wrong during the update process..."
