@@ -4,6 +4,10 @@ Welcome to the Vue Storefront Boilerplate for the [Next.js 13+](https://nextjs.o
 
 ### Project Structure
 
+This project is built using [TurboRepo](https://turbo.build/repo), a powerful development tool that enables efficient monorepo management and simplifies the process of building and maintaining complex software systems. By leveraging TurboRepo's features, this project has achieved a scalable and modular architecture, allowing for easy collaboration among multiple teams and ensuring consistent development practices across the codebase.
+
+For detailed information on how to get started, configure, and use this project built with TurboRepo, please refer to the [official documentation](https://turbo.build/repo/docs).
+
 This Turborepo includes the following apps:
 
 - `server` - Vue Storefront Middleware server
@@ -31,9 +35,21 @@ apps/
 The most important files of the `Server Middleware` app are:
 
 - `src/index.ts` - Express server entry point that handles all requests to the third-party platforms from the SDK
-- `middleware.config.ts` - Vue Storefront integration configuration
+- `middleware.config.ts` - Vue Storefront Middleware configuration
 
 For more info about `Server Middleware` refer to the [documentation](https://docs.vuestorefront.io/v2/architecture/server-middleware.html).
+
+
+> **Warning**
+> This project does not come with pre-packaged integrations for the sake of simplicity. However, you have the flexibility to develop custom integrations or utilize our official integrations to connect the Middleware with actual data sources.
+>
+> You can choose from our official integrations, which provide pre-built connectors for various data sources and services. These integrations are designed and maintained by our team, ensuring a seamless integration experience.
+> 
+> Check out [official VSF Middleware integrations](https://docs.vuestorefront.io/v2/integrations/) to get started quickly.
+>
+> If your project requires custom integrations tailored to specific data sources or services, our project offers a flexible framework and comprehensive documentation to guide you through the process. By following our guidelines and leveraging the capabilities of the Middleware, you can effortlessly develop custom integrations that meet your unique requirements.
+> 
+> For more information on developing custom integrations, please refer to the [Integrating e-commerce platfor mdocumentation](https://docs.vuestorefront.io/v2/integrate/integration-guide.html).
 
 #### Web application
 
@@ -70,8 +86,8 @@ apps/
      └── ...
 
 ```
-<!-- TODO Link SDK -->
-- `sdk` directory holds [Vue Storefront SDK]() initialization module
+
+- `sdk` directory holds [Vue Storefront SDK](https://docs.vuestorefront.io/sdk/) module
 - `components/ui` directory keeps Storefront UI blocks components, like `ProductCard` or `Review`
 - `helpers` is responsible for delivering utils / helpers functions
 - `hooks` folder is responsible for delivering reusable hooks functions, e.g. data fetching and UI hooks
@@ -159,9 +175,22 @@ Naming:
 - React components should follow `Pascal case` pattern (`CategoryFilters`, `Heading`)
 - The types for a component's props should be named `{Component}Props`. For example, `GalleryProps` or `HeadingProps`
 
-#### Data fetching
+#### Vue storefront SDK and data fetching
 
-Data fetching and state management is handled by [React-Query](https://tanstack.com/query/v4) library.
+The data fetching process is handled seamlessly by integrating VSF SDK, which acts as a robust communication layer between the application and the VSF Middleware. The SDK provides a set of convenient and optimized methods to fetch data from various APIs and services.
+
+To simplify the implementation and management of data fetching, React Query is employed as a powerful state management library. It seamlessly integrates with VSF SDK and simplifies the process of caching, synchronizing, and managing the application's data. React Query's intuitive hooks and query functions provide an elegant and efficient way to handle asynchronous data fetching, automatically managing data caching, refetching, and background updates.
+
+By combining VSF SDK with React Query, this project ensures a reliable and performant data fetching experience for the application. Developers can easily fetch, update, and maintain data using React Query's declarative approach, while the VSF SDK handles the underlying communication and data retrieval tasks.
+
+> **Note**
+> For development and testing purposes, the project uses mocked data provided by the `@vsf-enterprise/integration-boilerplate-sdk` library.
+>
+> In a production scenario, is necessary to connect connectors to interface with actual data sources. The `@vsf-enterprise/integration-boilerplate-sdk` library serves as a foundation and offers the necessary abstractions and guidelines to facilitate the development of custom connectors.
+>
+> Check out [VSF SDK official integration modules](https://docs.vuestorefront.io/sdk/modules/).
+
+For detailed information on how to get started, configure, and use this project built with VSF SDK and ReactQuery, please refer to the [VSF SDK official documentation](https://docs.vuestorefront.io/sdk/sdk/) and [React-Query documentation](https://tanstack.com/query/v4).
 
 ### Localization
 
@@ -176,6 +205,17 @@ Testing configuration files:
 - `jest.config.ts` - `Jest` config file.
 - `jest.setup.ts` - mocks for third party (`next-i18next`) and global (`window`) objects.
 - `jest.utils.tsx` - testing wrapper for `React-Query`, refer to the [official documentation](https://tanstack.com/query/v4/docs/react/guides/testing) for more info.
+
+### Performance tools
+
+In order to optimize and enhance the performance of the application, several performance tools have been integrated into the development workflow.
+
+#### Next.js Bundle Analyzer
+
+[The Next.js Bundle Analyzer](https://github.com/vercel/next.js/tree/canary/packages/next-bundle-analyzer) is a valuable performance tool employed in this project. It integrates [Webpack Bundle Analyzer](https://github.com/webpack-contrib/webpack-bundle-analyzer) into application and provides insights into the size and composition of the application's JavaScript bundles, allowing developers to identify and analyze any potential bottlenecks or optimizations. By visualizing the bundle size and dependencies, the Bundle Analyzer helps in identifying opportunities for code splitting, reducing bundle sizes, and optimizing the overall performance of the application.
+
+> **Note**
+> To analyze your app bundles run `yarn build:analyze` command.
 
 ### Conventions enforced by automated tooling
 
