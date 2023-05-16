@@ -1,4 +1,3 @@
-/* eslint sonarjs/no-duplicate-string: 0 */
 import Image from 'next/image';
 import { SfIconCreditCard } from '@storefront-ui/react';
 import { useTranslation } from 'next-i18next';
