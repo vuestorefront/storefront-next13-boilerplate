@@ -1,0 +1,95 @@
+name: Deploy to Vue Storefront Cloud
+on:
+  push:
+    branches:
+      - develop
+jobs:
+  configure-deployment:
+    runs-on: ubuntu-latest
+    outputs:
+      env: ${{ steps.resolve-env.outputs.env }}
+      env-name: ${{ steps.resolve-env.outputs.env-name }}
+      target-url: ${{ steps.resolve-env.outputs.target-url }}
+      project-name: ${{ steps.resolve-env.outputs.project-name }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v1
+      - name: Determine environment-specific variables
+        shell: bash
+        id: resolve-env
+        run: |
+          ENV=Develop
+          TARGET_URL=https://boilerplate-react.europe-west1.gcp.storefrontcloud.io
+          ENV_NAME=boilerplate-react-storefrontcloud-io
+          PROJECT_NAME=boilerplate-react
+
+  build:
+    needs: configure-deployment
+    environment: ${{ needs.configure-deployment.outputs.env }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v1
+      - name: Setup node
+        uses: actions/setup-node@v1
+        with:
+          node-version: 16.x
+      - name: Build and publish docker image (frontend)
+        uses: elgohr/Publish-Docker-Github-Action@master
+        with:
+          name: ${{ needs.configure-deployment.outputs.env-name }}/vue-storefront:${{
+            github.sha }}
+          registry: ${{ secrets.DOCKER_REGISTRY_URL || 'registry.vuestorefront.cloud' }}
+          username: ${{ secrets.CLOUD_USERNAME }}
+          password: ${{ secrets.CLOUD_PASSWORD }}
+          dockerfile: .vuestorefrontcloud/docker/frontend/Dockerfile
+          buildoptions: --compress
+
+  deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      deployments: write
+    needs:
+      - configure-deployment
+      - build
+    environment: ${{ needs.configure-deployment.outputs.env }}
+    steps:
+      - uses: chrnorm/deployment-action@releases/v1
+        name: Create GitHub deployment
+        id: deployment
+        with:
+          token: ${{ github.token }}
+          target_url: ${{ needs.configure-deployment.outputs.target-url }}
+          environment: production
+          initial_status: in_progress
+      - name: Deploy on ${{ needs.configure-deployment.outputs.target-url }}
+        run: >
+          if curl -f -s -H 'X-User-Id: ${{ secrets.cloud_username }}' -H 'X-Api-Key:
+          ${{ secrets.cloud_password }}' -H 'Content-Type: application/json' -X
+          PATCH -d '{
+              "front_version":"${{ github.sha }}",
+              "additional_apps": {}
+            }' https://farmer.storefrontcloud.io/instance/${{ needs.configure-deployment.outputs.project-name }}-${{ vars.CLOUD_REGION }}-gcp-storefrontcloud-io; then
+            echo "Instance updated"
+          else
+            echo "Something went wrong during the update process..."
+            exit 1
+          fi
+      - name: Update deployment status (success)
+        if: success()
+        uses: chrnorm/deployment-status@releases/v1
+        with:
+          token: ${{ github.token }}
+          target_url: ${{ needs.configure-deployment.outputs.target-url }}
+          state: success
+          description: Congratulations! The deploy is done.
+          deployment_id: ${{ steps.deployment.outputs.deployment_id }}
+      - name: Update deployment status (failure)
+        if: failure()
+        uses: chrnorm/deployment-status@releases/v1
+        with:
+          token: ${{ github.token }}
+          target_url: ${{ needs.configure-deployment.outputs.target-url }}
+          description: Unfortunately, the instance hasn't been updated.
+          state: failure
+          deployment_id: ${{ steps.deployment.outputs.deployment_id }}
