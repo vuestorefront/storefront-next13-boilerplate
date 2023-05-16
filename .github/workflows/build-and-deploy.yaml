@@ -27,7 +27,6 @@ jobs:
           echo "env=$ENV" >> $GITHUB_OUTPUT
           echo "env-name=$ENV_NAME" >> $GITHUB_OUTPUT
           echo "target-url=$TARGET_URL" >> $GITHUB_OUTPUT
-          echo "api-url=$API_URL" >> $GITHUB_OUTPUT
           echo "project-name=$PROJECT_NAME" >> $GITHUB_OUTPUT
 
   build:
