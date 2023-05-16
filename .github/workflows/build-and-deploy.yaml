@@ -87,6 +87,7 @@ jobs:
           PATCH -d '{
               "front_version":"${{ github.sha }}",
               "additional_apps": {
+                "apps": [],
                 "enabled":false
               }
             }' https://farmer.storefrontcloud.io/instance/${{ needs.configure.outputs.project-name }}-${{ needs.configure.outputs.region }}-gcp-storefrontcloud-io; then
