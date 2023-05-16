@@ -5,7 +5,7 @@ on:
 
 jobs:
   lint:
-    name: Validate PR Title (conventional-commit)
+    name: Validate PR Title
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
