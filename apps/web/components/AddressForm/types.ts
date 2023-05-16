@@ -13,7 +13,7 @@ export type AddressFormFields = Record<AddressFields, string>;
 
 export type AddressFormProps = {
   type: 'billingAddress' | 'shippingAddress';
-  onSave?: () => any;
-  onClear?: () => any;
+  onSave?: () => void;
+  onClear?: () => void;
   savedAddress?: AddressFormFields | undefined;
 };

@@ -10,9 +10,9 @@ export function CartPageContent() {
   const { t } = useTranslation('cart');
   const { data: cart } = useCart();
 
-  const isEmpty = !cart?.lineItems.length;
+  const isEmpty = cart?.lineItems.length;
 
-  return isEmpty ? (
+  return isEmpty || !cart ? (
     <div className="flex items-center justify-center flex-col pt-24 pb-32" data-testid="cart-page-content">
       <Image src={emptyCartImage} alt={t('emptyCartImgAlt')} />
       <h2 className="mt-8">{t('emptyCart')}</h2>
