@@ -3,6 +3,7 @@ on:
   push:
     branches:
       - develop
+      - feat/*
 jobs:
   configure-deployment:
     runs-on: ubuntu-latest
