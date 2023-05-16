@@ -79,7 +79,7 @@ jobs:
           if curl -f -s -H 'X-User-Id: ${{ secrets.cloud_username }}' -H 'X-Api-Key:
           ${{ secrets.cloud_password }}' -H 'Content-Type: application/json' -X
           PATCH -d '{
-              "front_version":"${{ github.sha }}",
+              "front_version":"${{ github.sha }}"
             }' https://farmer.storefrontcloud.io/instance/${{ needs.configure.outputs.project-name }}-${{ vars.CLOUD_REGION }}-gcp-storefrontcloud-io; then
             echo "Instance updated"
           else
