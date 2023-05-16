@@ -17,12 +17,12 @@ export function Display({ items, ...attributes }: DisplayProps) {
           className="relative flex md:max-w-screen-3xl md:[&:not(:first-of-type)]:flex-1 md:first-of-type:w-full first:bg-secondary-200 last:bg-warning-200 even:bg-negative-200"
         >
           <div
-            className={classNames('flex justify-between overflow-hidden grow flex-col', {
+            className={classNames('flex overflow-hidden grow flex-col', {
               'flex-col-reverse': reverse,
               'md:flex-row-reverse': reverse,
             })}
           >
-            <div className="flex flex-col justify-center items-center md:items-start p-6 lg:p-10 max-w-1/2">
+            <div className="flex flex-1 flex-col justify-center items-center md:items-start p-6 lg:p-10 max-w-1/2">
               <p className={classNames('uppercase typography-text-xs block font-bold tracking-widest', subtitleClass)}>
                 {subtitle}
               </p>
@@ -35,7 +35,7 @@ export function Display({ items, ...attributes }: DisplayProps) {
             <Image
               src={image}
               alt={title}
-              className="w-full md:w-1/2 self-end object-contain"
+              className="w-full md:w-1/2 self-end object-contain flex-1"
               height={768}
               width={768}
             />
