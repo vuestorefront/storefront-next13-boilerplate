@@ -43,7 +43,7 @@ For more info about `Server Middleware` refer to the [documentation](https://doc
 > **Warning**
 > This project does not come with pre-packaged integrations for the sake of simplicity. However, you have the flexibility to develop custom integrations or utilize our official integrations to connect the Middleware with actual data sources.
 >
-> You can choose from our official integrations, which provide pre-built connectors for various data sources and services. These integrations are designed and maintained by our team, ensuring a seamless integration experience.
+> You can choose from our official integrations, which provide pre-built connectors for various data sources and services. These integrations are designed and maintained by the VSF team as well as partners, ensuring a seamless integration experience.
 > 
 > Check out [official VSF Middleware integrations](https://docs.vuestorefront.io/v2/integrations/) to get started quickly.
 >
@@ -64,7 +64,6 @@ apps/
      │   ├── Footer/
      │   ├── ...
      │   └── ui                   # StorefrontUI block components
-     ├── helpers/                 # Helper utils
      ├── hooks/                   # Custom hooks
      ├── layouts/                 # Layouts
      ├── mocks/                   # Static data
@@ -87,20 +86,20 @@ apps/
 
 ```
 
-- `sdk` directory holds [Vue Storefront SDK](https://docs.vuestorefront.io/sdk/) module
-- `components/ui` directory keeps Storefront UI blocks components, like `ProductCard` or `Review`
-- `helpers` is responsible for delivering utils / helpers functions
-- `hooks` folder is responsible for delivering reusable hooks functions, e.g. data fetching and UI hooks
-- `mocks` directory holds static data used across the application, e.g. application footer links
+List of essential directories:
+- `sdk` [Vue Storefront SDK](https://docs.vuestorefront.io/sdk/) module configuration
+- `components/ui` Storefront UI Block components, like `ProductCard` or `Review`
+- `hooks` reusable hook functions, e.g. data fetching and UI hooks
+- `mocks`  mock data used across the application, e.g. footer links
 
 ### Functions
 
-Since React components are also functions, this project follows a few conventions to help with organizing your code:
+This project follows a few conventions to help with organizing your code:
 
 - Each function is located in a dedicated module and exported from the `index.ts` file.
 - Names should be short and descriptive.
 - Named function export is preferred.
-- TS types and tests are located close to the function file.
+- TypeScript types and tests are located close to the function file.
 
 Expected file/folder structure:
 
@@ -140,7 +139,7 @@ Components used in the boilerplate web app are located in the `components` direc
 
 - Project components
   - Representational components that are designed to fulfill project requirements.
-  - TS types and tests ale located close to the component
+  - TypeScript types and tests ale located close to the component
   
   Expected file/folder structure:
 
@@ -197,7 +196,7 @@ For detailed information on how to get started, configure, and use this project 
 
 ### Localization
 
-The boilerplate ships with a basic setup for i18n localization powered by the [Next-i18next](https://next.i18next.com/) library. Project locale translations are stored in `public/[locale]/[namespace].json` files. Translations are grouped by _features_, and imported only where required to minimize
+The boilerplate ships with a basic setup for i18n localization powered by the [Next-i18next](https://next.i18next.com/) library. Project locale translations are stored in `public/[locale]/[namespace].json` files. Translations are grouped by _features_, and imported only where required to minimize bundle size.
 Refer to the [Next-i18n documentation](https://next.i18next.com/) for the translating content with SSR.
 
 ### Testing
