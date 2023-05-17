@@ -15,6 +15,7 @@ export function ProductCard({
   ratingCount,
   slug,
   className,
+  priority,
   ...attributes
 }: ProductCardProps) {
   const { t } = useTranslation();
@@ -33,6 +34,7 @@ export function ProductCard({
             className="object-cover rounded-md aspect-square w-full h-full"
             fill
             sizes="(max-width: 768px) 50vw, 190px"
+            priority={priority}
           />
         </SfLink>
       </div>
