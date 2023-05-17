@@ -10,4 +10,5 @@ export type ProductCardProps = {
   price?: number;
   slug?: string;
   className?: string;
+  priority?: boolean;
 };

@@ -48,7 +48,7 @@ export function CategoryPageContent({
             </div>
             {products.length > 0 ? (
               <section className="grid grid-cols-1 2xs:grid-cols-2 gap-4 md:gap-6 md:grid-cols-2 lg:grid-cols-3 3xl:grid-cols-4 mb-10 md:mb-5">
-                {products.map(({ id, name, rating, price, primaryImage, slug }) => (
+                {products.map(({ id, name, rating, price, primaryImage, slug }, index) => (
                   <ProductCard
                     key={id}
                     name={name}
@@ -58,6 +58,7 @@ export function CategoryPageContent({
                     imageUrl={primaryImage?.url}
                     imageAlt={primaryImage?.alt}
                     slug={slug}
+                    priority={index === 0}
                   />
                 ))}
               </section>
