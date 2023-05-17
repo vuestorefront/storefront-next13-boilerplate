@@ -41,7 +41,7 @@ export function RenderContent({ content, ...attributes }: RenderContentProps): J
                 return <Page />;
               }
               default: {
-                return <p>component {(fields as any).component} is not registered</p>;
+                return <p>component {fields.component} is not registered</p>;
               }
             }
           })()}
