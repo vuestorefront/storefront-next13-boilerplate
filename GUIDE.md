@@ -26,7 +26,7 @@ apps/
      ├── .eslint.js              # ESLint configuration
      ├── jest.config.ts          # Jest configuration
      ├── middleware.config.ts    # Middleware configuration
-     ├── nodemon                 # Nodemon configuration
+     ├── nodemon.json                 # Nodemon configuration
      ├── package.json            # Project dependencies
      └── tsconfig.json           # TypeScript configuration
 
@@ -49,7 +49,7 @@ For more info about `Server Middleware` refer to the [documentation](https://doc
 >
 > If your project requires custom integrations tailored to specific data sources or services, our project offers a flexible framework and comprehensive documentation to guide you through the process. By following our guidelines and leveraging the capabilities of the Middleware, you can effortlessly develop custom integrations that meet your unique requirements.
 > 
-> For more information on developing custom integrations, please refer to the [Integrating e-commerce platfor mdocumentation](https://docs.vuestorefront.io/v2/integrate/integration-guide.html).
+> For more information on developing custom integrations, please refer to the [Integrating e-commerce platform documentation](https://docs.vuestorefront.io/v2/integrate/integration-guide.html).
 
 #### Web application
 
@@ -100,17 +100,18 @@ Since React components are also functions, this project follows a few convention
 - Each function is located in a dedicated module and exported from the `index.ts` file.
 - Names should be short and descriptive.
 - Named function export is preferred.
-- TS types and tests ale located close to the function file.
-- Expected file/folder structure:
+- TS types and tests are located close to the function file.
+
+Expected file/folder structure:
 
 ```shell
 <module-directory>/
  └── Function/
-     ├─ index.tsx
+     ├─ index.ts
      ├─ types.ts
-     ├─ Function.ts
+     ├─ Function.tsx
      └─ __tests__/
-         └─ Function.spec.ts
+         └─ Function.spec.tsx
 ```
 
 ### Hooks
@@ -121,14 +122,14 @@ Project hooks are located in the `/apps/web/hooks/` directory and each have the 
 ```shell
 hooks/
  └── useProduct/
-     ├─ index.tsx
+     ├─ index.ts
      ├─ types.ts
      ├─ useProduct.ts
      └─ __tests__/
          └─ useProduct.spec.ts
 ```
 
-Naming:
+Naming convention:
 
 - each hook should be prefixed with `use` keyword (`useProduct`)
 - hooks should follow `Camel case` pattern (`useProductReviews`)
@@ -140,28 +141,30 @@ Components used in the boilerplate web app are located in the `components` direc
 - Project components
   - Representational components that are designed to fulfill project requirements.
   - TS types and tests ale located close to the component
-  - Expected file/folder structure:
+  
+  Expected file/folder structure:
 
 ```shell
 components/
  └── Footer/
-     ├─ index.tsx
+     ├─ index.ts
      ├─ types.ts
      ├─ Footer.tsx
      └─ __tests__/
          └─ Footer.spec.tsx
 ```
 
-- Storefront UI 2 Blocks
-  - Reusable/generic types of components used throughout whole monorepo.
+- Storefront UI 2 Block components
+  - Reusable/generic components used across the monorepo.
   - TypeScript types and tests are located close to the component
-  - Expected file/folder structure:
+  
+  Expected file/folder structure:
 
 ```shell
 components/
  └── ui/
      └── Display/
-         ├─ index.tsx
+         ├─ index.ts
          ├─ types.ts
          ├─ Display.tsx
          └─ __tests__/
@@ -170,10 +173,10 @@ components/
 
 For more information about available StorefrontUI 2 Block components for React, check out [documentation](https://docs.storefrontui.io/v2/react/blocks.html).
 
-Naming:
+Naming convention:
 
 - React components should follow `Pascal case` pattern (`CategoryFilters`, `Heading`)
-- The types for a component's props should be named `{Component}Props`. For example, `GalleryProps` or `HeadingProps`
+- The types for component's props should be named `{Component}Props`. For example, `GalleryProps` or `HeadingProps`
 
 #### Vue storefront SDK and data fetching
 
@@ -199,7 +202,7 @@ Refer to the [Next-i18n documentation](https://next.i18next.com/) for the transl
 
 ### Testing
 
-The project provides a basic setup for testing JS code with `Jest` and [`testing-library`](https://testing-library.com/docs/react-testing-library/intro) for testing React components.
+The project provides a basic setup for testing JS code with `Jest` and [React Testing Library](https://testing-library.com/docs/react-testing-library/intro) for testing React components.
 Testing configuration files:
 
 - `jest.config.ts` - `Jest` config file.
