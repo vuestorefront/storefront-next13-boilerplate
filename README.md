@@ -14,13 +14,6 @@
 
 ## Getting Started with Vue Storefront
 
-<!-- TODO -->
-
-- What is VSF
-- SDK
-- Middleware
-<!-- TODO -->
-
 To get started, see the following guides:
 
 - [Introduction](https://docs.vuestorefront.io/v2/getting-started/introduction.html) to learn what is Vue Storefront.
