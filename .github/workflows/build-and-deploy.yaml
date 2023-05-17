@@ -3,7 +3,7 @@ on:
   push:
     branches:
       - develop
-      - feat/*
+      - force/*
 
 jobs:
   configure:
