@@ -9,11 +9,13 @@
   "scripts": {
     "prepare": "is-ci || husky install",
     "build": "turbo run build",
+    "build:analyze": "turbo run build:analyze",
     "dev": "turbo run dev",
     "start": "turbo run start",
     "lint": "turbo run lint",
     "format": "prettier --write \"**/*.{ts,tsx,css,scss,md}\"",
     "clean": "npx rimraf ./**/node_modules && rm yarn.lock",
+    "clean:hard": "npx rimraf ./**/node_modules && npx rimraf ./**/lib && rm yarn.lock && npx rimraf ./**/.turbo && npx rimraf ./**/.next",
     "test": "turbo run test",
     "test:watch": "turbo run test:watch",
     "test:coverage": "npx turbo run test:coverage"

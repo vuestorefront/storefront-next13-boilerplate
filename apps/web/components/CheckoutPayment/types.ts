@@ -11,7 +11,6 @@ export type PaymentMethodProps = PropsWithChildren & {
   active?: boolean;
   disabled?: boolean;
   onClick?: () => void;
-  value: string;
 };
 
 export type CheckoutPaymentProps = {

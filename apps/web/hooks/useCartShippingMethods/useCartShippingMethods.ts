@@ -1,15 +1,14 @@
-import { useMemo } from 'react';
+import { useQuery } from '@tanstack/react-query';
+import { SfShippingMethods } from '@vsf-enterprise/unified-data-model';
+import { sdk } from '~/sdk';
+
+const fetchShippingMethods = async (): Promise<SfShippingMethods> => {
+  return sdk.commerce.getShippingMethods();
+};
 
 export function useCartShippingMethods() {
-  return useMemo(() => {
-    return {
-      shippingMethods: [
-        {
-          id: 'id1',
-          name: 'Standard US',
-          key: 'standard-us',
-        },
-      ],
-    };
-  }, []);
+  return useQuery(['shippingMethods'], () => fetchShippingMethods(), {
+    refetchOnMount: false,
+    refetchOnWindowFocus: false,
+  });
 }

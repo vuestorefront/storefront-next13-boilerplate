@@ -1,4 +1,4 @@
-import type { PageProps } from './types';
+import type { PageProps } from '~/components';
 
 export function Page({ content, ...attributes }: PageProps): JSX.Element {
   return (

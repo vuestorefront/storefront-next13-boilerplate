@@ -1,3 +1,12 @@
 export type DisplayProps = {
-  items: any[];
+  items: {
+    image: string;
+    title: string;
+    subtitle: string;
+    description: string;
+    buttonText: string;
+    reverse: boolean;
+    titleClass: string;
+    subtitleClass: string;
+  }[];
 };

@@ -1,6 +1,6 @@
 import { SfIconArrowBack } from '@storefront-ui/react';
 import { useTranslation } from 'next-i18next';
-import { CategoryTreeProps } from '~/components/CategoryTree/types';
+import type { CategoryTreeProps } from '~/components';
 import { CategoryTreeItem } from './CategoryTreeItem';
 
 export function CategoryTree({ parent, categories }: CategoryTreeProps) {

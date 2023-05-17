@@ -1,11 +1,8 @@
-import { myModule, MyModuleType } from '@vsf-enterprise/integration-boilerplate-sdk';
 import { initSDK, buildModule } from '@vsf-enterprise/sdk';
+import { type SdkModule, sdkModule } from '@vsf-enterprise/storefront-boilerplate-sdk';
 
 const sdkConfig = {
-  commerce: buildModule<MyModuleType>(myModule, {
-    apiUrl: 'http://localhost:4000/commerce',
-    ssrApiUrl: 'http://localhost:4000/commerce',
-  }),
+  commerce: buildModule<SdkModule>(sdkModule),
 };
 
 export const sdk = initSDK<typeof sdkConfig>(sdkConfig);

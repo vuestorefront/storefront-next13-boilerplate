@@ -1,5 +1,5 @@
 import type { PropsWithChildren } from 'react';
-import NextLink from 'next/link';
+import Link from 'next/link';
 import { SfButton, SfIconArrowBack, SfLoaderCircular } from '@storefront-ui/react';
 import { NarrowContainer, Footer, NavbarTop } from '~/components';
 import { useCart } from '~/hooks';
@@ -20,9 +20,9 @@ export function CheckoutLayout({ backLabel, backHref, children, heading }: Check
         <NarrowContainer>
           <div className="px-4 md:px-0 mb-20">
             <div className="flex justify-between mt-8 mb-10">
-              <h1>{heading}</h1>
+              <h1 className="font-bold typography-headline-3 md:typography-headline-2">{heading}</h1>
               <SfButton
-                as={NextLink}
+                as={Link}
                 href={backHref}
                 className="flex md:hidden whitespace-nowrap"
                 size="sm"
@@ -32,7 +32,7 @@ export function CheckoutLayout({ backLabel, backHref, children, heading }: Check
                 {backLabel}
               </SfButton>
               <SfButton
-                as={NextLink}
+                as={Link}
                 href={backHref}
                 className="hidden md:flex"
                 variant="tertiary"

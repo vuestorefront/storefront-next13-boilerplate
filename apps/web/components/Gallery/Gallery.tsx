@@ -4,7 +4,7 @@ import { SfButton, SfIconChevronLeft, SfIconChevronRight, SfScrollable } from '@
 import { clamp } from '@storefront-ui/shared';
 import classNames from 'classnames';
 import { useTranslation } from 'next-i18next';
-import { GalleryProps } from './types';
+import type { GalleryProps } from '~/components';
 
 export function Gallery({ images, className, ...attributes }: GalleryProps) {
   const { t } = useTranslation('product');
@@ -43,7 +43,6 @@ export function Gallery({ images, className, ...attributes }: GalleryProps) {
                 draggable={false}
                 src={image.url}
                 sizes="(max-width: 768px) 100vw, 700px"
-                crossOrigin="anonymous"
               />
             </div>
           ))}
@@ -91,15 +90,7 @@ export function Gallery({ images, className, ...attributes }: GalleryProps) {
               )}
               onClick={() => onChangeIndex(index)}
             >
-              <Image
-                alt=""
-                className="object-contain"
-                width="80"
-                height="80"
-                src={image.url}
-                quality={80}
-                crossOrigin="anonymous"
-              />
+              <Image alt="" className="object-contain" width="80" height="80" src={image.url} quality={80} />
             </button>
           ))}
         </SfScrollable>

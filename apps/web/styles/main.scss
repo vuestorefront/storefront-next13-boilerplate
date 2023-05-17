@@ -35,15 +35,3 @@
     @apply hidden /* for Chrome, Safari, and Opera */;
   }
 }
-
-@layer base {
-  h1 {
-    @apply font-bold font-headings text-2xl md:text-4xl;
-  }
-  h2 {
-    @apply font-bold font-headings text-lg leading-6 md:text-2xl;
-  }
-  h3 {
-    @apply font-medium font-headings text-base md:text-lg;
-  }
-}

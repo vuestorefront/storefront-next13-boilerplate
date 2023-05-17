@@ -21,8 +21,8 @@ export function usePagination({ totalItems, currentPage = 1, pageSize = 10, maxP
     selectedPage,
     endPage: pagination.endPage,
     startPage: pagination.startPage,
-    next: () => setSelectedPage((pagination.currentPage += 1)), // eslint-disable-line
-    prev: () => setSelectedPage((pagination.currentPage -= 1)), // eslint-disable-line
-    setPage: (newPage: number) => setSelectedPage((pagination.currentPage = newPage)), // eslint-disable-line
+    next: () => setSelectedPage((pagination.currentPage += 1)),
+    prev: () => setSelectedPage((pagination.currentPage -= 1)),
+    setPage: (page: number) => setSelectedPage((pagination.currentPage = page)),
   };
 }

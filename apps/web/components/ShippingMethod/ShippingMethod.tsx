@@ -4,10 +4,8 @@ import { useCart, useCartShippingMethods } from '~/hooks';
 
 export function ShippingMethod() {
   const { data: cart } = useCart();
-  const { shippingMethods } = useCartShippingMethods();
-
+  const { data: shippingMethods } = useCartShippingMethods();
   const { t } = useTranslation('checkout');
-  const filteredShippingMethods = shippingMethods.filter(({ key }) => key !== 'collect');
 
   return (
     <div data-testid="shipping-method" className="md:px-4 my-6">
@@ -15,22 +13,17 @@ export function ShippingMethod() {
         <h3 className="text-neutral-900 text-lg font-bold">{t('shippingMethod.heading')}</h3>
       </div>
       <div className="mt-4">
-        {filteredShippingMethods ? (
+        {shippingMethods ? (
           <ul className="grid gap-y-4 md:grid-cols-2 md:gap-x-4" role="radiogroup">
-            {filteredShippingMethods.map((method) => (
-              <SfListItem as="label" key={method.id} className="border rounded-md items-start">
+            {shippingMethods.methods.map(({ id, name, estimatedDelivery, price: { amount } }) => (
+              <SfListItem as="label" key={id} className="border rounded-md items-start">
                 <div className="flex gap-2">
-                  <SfRadio
-                    onChange={() => {}}
-                    checked={cart?.shippingMethod?.id === method.id}
-                    value={method.id}
-                    name={method.name}
-                  />
+                  <SfRadio onChange={() => {}} checked={cart?.shippingMethod?.id === id} value={id} name={name} />
                   <div>
-                    <p>{method.name}</p>
-                    <p className="text-xs text-neutral-500">{t('tomorrow')}</p>
+                    <p>{name}</p>
+                    <p className="text-xs text-neutral-500">{estimatedDelivery}</p>
                   </div>
-                  <p className="ml-auto">$10</p>
+                  <p className="ml-auto">${amount}</p>
                 </div>
               </SfListItem>
             ))}

@@ -1,6 +1,6 @@
 import { GetServerSidePropsContext } from 'next';
 import Image from 'next/image';
-import NextLink from 'next/link';
+import Link from 'next/link';
 import { SfButton, SfIconArrowBack } from '@storefront-ui/react';
 import { Trans, useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
@@ -32,7 +32,7 @@ export function OrderFailedPage() {
             {t('orderErrorMessage')}
           </div>
           <SfButton
-            as={NextLink}
+            as={Link}
             href="/checkout"
             className="max-md:w-full"
             variant="secondary"
@@ -40,7 +40,7 @@ export function OrderFailedPage() {
           >
             {t('backToCheckout')}
           </SfButton>
-          <SfButton as={NextLink} href="/" className="mt-4 max-md:w-full" variant="tertiary">
+          <SfButton as={Link} href="/" className="mt-4 max-md:w-full" variant="tertiary">
             {t('continueShopping')}
           </SfButton>
         </div>

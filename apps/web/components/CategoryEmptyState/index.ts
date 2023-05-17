@@ -1,4 +1,1 @@
-import { CategoryEmptyState } from './CategoryEmptyState';
-
-export default CategoryEmptyState;
-export { CategoryEmptyState };
+export { CategoryEmptyState as default, CategoryEmptyState } from './CategoryEmptyState';
