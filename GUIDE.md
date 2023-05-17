@@ -1,4 +1,4 @@
-# Development Guide
+# Detailed overview & further development guide
 
 Welcome to the Vue Storefront Boilerplate for the [Next.js 13+](https://nextjs.org/) project! This guide will provide you with an overview of the project structure, tools, and best practices to help you get started quickly.
 
