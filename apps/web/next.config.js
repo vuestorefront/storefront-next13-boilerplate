@@ -5,6 +5,9 @@ const withPwa = require('next-pwa')({
   publicExcludes: ['!**/*', '*.ico', 'manifest.json'],
   buildExcludes: [() => true],
   mode: process.env.DEBUG_WORKBOX === 'true' ? 'development' : 'production',
+  fallbacks: {
+    image: '/images/card-placeholder.png',
+  },
 });
 
 const withBundleAnalyzer = require('@next/bundle-analyzer')({
