@@ -97,8 +97,9 @@ List of essential directories:
 This project follows a few conventions to help with organizing your code:
 
 - Each function is located in a dedicated module and exported from the `index.ts` file.
-- Names should be short and descriptive.
-- Named function export is preferred.
+- Names are short and descriptive.
+- Functions are exported using named export.
+- Modules are matching the name of the function.
 - TypeScript types and tests are located close to the function file.
 
 Expected file/folder structure:
