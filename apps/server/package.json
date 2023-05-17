@@ -7,24 +7,16 @@
     "_dev": "nodemon",
     "start": "nodemon",
     "lint": "eslint . --ext .ts",
-    "lint:fix": "eslint . --ext .ts --fix",
-    "test": "jest --passWithNoTests",
-    "test:watch": "jest --watch",
-    "test:coverage": "jest --coverage --passWithNoTests"
+    "lint:fix": "eslint . --ext .ts --fix"
   },
   "dependencies": {
     "@vue-storefront/middleware": "3.0.0-rc.2",
-    "body-parser": "^1.20.0",
+    "consola": "^2.15.3",
     "dotenv": "^16.0.3",
-    "express": "^4.18.1",
-    "morgan": "^1.10.0",
     "nodemon": "^2.0.19",
     "ts-node-dev": "^2.0.0"
   },
   "devDependencies": {
-    "@types/body-parser": "^1.19.2",
-    "@types/cookie-parser": "^1.4.3",
-    "@types/express": "^4.17.13",
-    "@types/morgan": "^1.9.3"
+    "@types/express": "^4.17.13"
   }
 }
