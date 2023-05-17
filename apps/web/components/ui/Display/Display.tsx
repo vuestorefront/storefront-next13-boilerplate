@@ -36,8 +36,8 @@ export function Display({ items, ...attributes }: DisplayProps) {
               src={image}
               alt={title}
               className="w-full md:w-1/2 self-end object-contain flex-1"
-              height={768}
-              width={768}
+              height={300}
+              width={300}
             />
           </div>
         </div>
