@@ -45,21 +45,21 @@ $ yarn dev
 
 ## Features:
 
-- [Turborepo]() remote cache build system, with blazingly fast execution of commands (build, lint, test etc.) on your local machine
-- [TypeScript]() support
-- [NextJs v13]() & Server Side Rendering for great UX, loading and SEO scores.
-- Beautiful components built with [TailwindCSS]() and [Storefront UI]() - a lightweight, accessible, and customizable component library built for e-commerce.
-- Unit tests with [Jest]() and [React Testing Library]().
-- [ESLint]() for code linting.
-- [Prettier]() code formatter.
+- [Turborepo](https://turbo.build/) remote cache build system, with blazingly fast execution of commands (build, lint, test etc.) on your local machine.
+- [TypeScript](https://www.typescriptlang.org/) support.
+- [Next.js 13](https://nextjs.org/) & Server Side Rendering for great UX, loading and SEO scores.
+- Beautiful components built with [TailwindCSS](https://tailwindcss.com/) and [Storefront UI](https://docs.storefrontui.io/v2/) - a lightweight, accessible, and customizable component library built for e-commerce.
+- Unit tests with [Jest](https://jestjs.io/) and [React Testing Library](https://testing-library.com/).
+- [ESLint](https://eslint.org/) for code linting.
+- [Prettier](https://prettier.io/) code formatter.
 - [Husky](https://typicode.github.io/husky/) for working with Git hooks efficiently.
-- [Conventional Commits]() standard for commit messages.
-- Staged code linting with [lint-staged]().
-- [Progressive Web App]() features with [next-PWA]().
-- `i18n` localisation powered by [Next-i18next]().
-- Powerful asynchronous state management with [React Query]().
-- [Vue Storefront SDK]() ready - integrate headless E-commerce platform with your project easily.
-- [Vue Storefront Middleware]().
+- [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) standard for commit messages.
+- Staged code linting with [lint-staged](https://github.com/okonet/lint-staged).
+- [Progressive Web App]() features with [next-PWA](https://github.com/shadowwalker/next-pwa).
+- `i18n` localisation powered by [Next-i18next](https://github.com/i18next/next-i18next).
+- Powerful asynchronous state management with [React Query](https://tanstack.com/query/v3/).
+- [Vue Storefront SDK](https://docs.vuestorefront.io/sdk/) ready - integrate headless E-commerce platform with your project easily.
+- [Vue Storefront Middleware](https://docs.vuestorefront.io/v2/architecture/server-middleware.html).
 - Maximize lighthouse score.
 
 ## Guide
