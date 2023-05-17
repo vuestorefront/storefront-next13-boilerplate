@@ -20,7 +20,7 @@ export function CheckoutLayout({ backLabel, backHref, children, heading }: Check
         <NarrowContainer>
           <div className="px-4 md:px-0 mb-20">
             <div className="flex justify-between mt-8 mb-10">
-              <h1>{heading}</h1>
+              <h1 className="font-bold typography-headline-3 md:typography-headline-2">{heading}</h1>
               <SfButton
                 as={Link}
                 href={backHref}

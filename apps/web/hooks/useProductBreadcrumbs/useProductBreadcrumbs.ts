@@ -8,8 +8,6 @@ import type { Breadcrumb } from '~/components';
  */
 export function useProductBreadcrumbs(product?: SfProduct) {
   const { t } = useTranslation();
-  // @todo fetch product categories
-
   const breadcrumbs = useMemo<Breadcrumb[]>(() => {
     if (!product) {
       return [];

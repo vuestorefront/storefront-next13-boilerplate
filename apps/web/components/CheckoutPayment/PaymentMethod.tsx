@@ -1,7 +1,7 @@
 import classNames from 'classnames';
 import { PaymentMethodProps } from './types';
 
-export function PaymentMethod({ active, disabled, children, onClick, value }: PaymentMethodProps) {
+export function PaymentMethod({ active, disabled, children, onClick }: PaymentMethodProps) {
   return (
     <button
       type="button"

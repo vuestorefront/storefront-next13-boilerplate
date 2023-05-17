@@ -1,4 +1,3 @@
-/* eslint sonarjs/no-duplicate-string: 0 */
 import Image from 'next/image';
 import { SfIconCreditCard } from '@storefront-ui/react';
 import { useTranslation } from 'next-i18next';
@@ -16,7 +15,6 @@ export function CheckoutPayment({ activePayment, onPaymentChange }: CheckoutPaym
       <h3 className="text-neutral-900 text-lg font-bold mb-4">{t('checkoutPayment.heading')}</h3>
       <div className="grid gap-4 grid-cols-2">
         <PaymentMethod
-          value={PaymentMethods.CreditCard}
           onClick={() => onPaymentChange(PaymentMethods.CreditCard)}
           active={activePayment === PaymentMethods.CreditCard}
         >
@@ -27,7 +25,6 @@ export function CheckoutPayment({ activePayment, onPaymentChange }: CheckoutPaym
         </PaymentMethod>
 
         <PaymentMethod
-          value={PaymentMethods.PayPal}
           onClick={() => onPaymentChange(PaymentMethods.PayPal)}
           active={activePayment === PaymentMethods.PayPal}
           disabled
@@ -39,7 +36,6 @@ export function CheckoutPayment({ activePayment, onPaymentChange }: CheckoutPaym
         </PaymentMethod>
 
         <PaymentMethod
-          value={PaymentMethods.ApplePay}
           onClick={() => onPaymentChange(PaymentMethods.ApplePay)}
           active={activePayment === PaymentMethods.ApplePay}
           disabled
@@ -51,7 +47,6 @@ export function CheckoutPayment({ activePayment, onPaymentChange }: CheckoutPaym
         </PaymentMethod>
 
         <PaymentMethod
-          value={PaymentMethods.GooglePay}
           onClick={() => onPaymentChange(PaymentMethods.GooglePay)}
           active={activePayment === PaymentMethods.GooglePay}
           disabled

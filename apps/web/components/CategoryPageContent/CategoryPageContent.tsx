@@ -27,7 +27,7 @@ export function CategoryPageContent({
   return (
     <NarrowContainer>
       <div className="mb-20 px-4 md:px-0">
-        <h1 className="my-10">{title}</h1>
+        <h1 className="my-10 font-bold typography-headline-3 md:typography-headline-2">{title}</h1>
         <div className="md:flex gap-6" data-testid="category-page-content">
           <CategorySidebar isOpen={isOpen} closeSidebar={close}>
             {sidebar}
