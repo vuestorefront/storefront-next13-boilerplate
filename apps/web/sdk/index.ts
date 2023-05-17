@@ -1,5 +1,5 @@
-import { type SdkModule, sdkModule } from '@vsf-enterprise/integration-boilerplate-sdk';
 import { initSDK, buildModule } from '@vsf-enterprise/sdk';
+import { type SdkModule, sdkModule } from '@vsf-enterprise/storefront-boilerplate-sdk';
 
 const sdkConfig = {
   commerce: buildModule<SdkModule>(sdkModule),

@@ -1,4 +1,4 @@
-import { GetProducts } from '@vsf-enterprise/integration-boilerplate-sdk';
+import { GetProducts } from '@vsf-enterprise/storefront-boilerplate-sdk';
 
 export const mockProducts: GetProducts = {
   products: [
