@@ -19,8 +19,6 @@ export async function getServerSideProps({ locale }: GetServerSidePropsContext) 
 export function OrderSuccessPage() {
   const { t } = useTranslation(['order', 'checkout']);
 
-  const orderId = '123456789';
-
   return (
     <OrderLayout>
       <div className="px-4 md:px-0">
@@ -33,8 +31,8 @@ export function OrderSuccessPage() {
           <div className="border border-1 border-neutral-200 rounded bg-neutral-100 p-4 w-full my-4 text-sm">
             <h5 className="font-medium text-base">{t('etaDelivery')}</h5>
             <p className="capitalize">{t('tomorrow')}</p>
-            <h5 className="font-medium text-base mt-4">Order number</h5>
-            <p>{orderId}</p>
+            <h5 className="font-medium text-base mt-4">{t('orderNumber')}</h5>
+            <p>123456789</p>
           </div>
           <SfButton as={Link} href="/" replace className="max-md:w-full" variant="secondary">
             {t('continueShopping')}

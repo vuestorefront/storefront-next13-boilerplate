@@ -7,5 +7,6 @@
   "orderSuccessfulImageAlt": "order successful image",
   "backToCheckout": "Back to Checkout",
   "continueShopping": "Continue shopping",
-  "orderErrorMessage": "Something went wrong. Try again later."
+  "orderErrorMessage": "Something went wrong. Try again later.",
+  "orderNumber": "Order number"
 }
