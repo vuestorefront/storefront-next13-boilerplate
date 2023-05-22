@@ -212,16 +212,6 @@ Testing configuration files:
 - `jest.setup.ts` - mocks for third party (`next-i18next`) and global (`window`) objects.
 - `jest.utils.tsx` - testing wrapper for `React-Query`, refer to the [official documentation](https://tanstack.com/query/v4/docs/react/guides/testing) for more info.
 
-### Performance tools
-
-In order to optimize and enhance the performance of the application, several performance tools have been integrated into the development workflow.
-
-#### Next.js Bundle Analyzer
-
-[The Next.js Bundle Analyzer](https://github.com/vercel/next.js/tree/canary/packages/next-bundle-analyzer) is a valuable performance tool employed in this project. It integrates [Webpack Bundle Analyzer](https://github.com/webpack-contrib/webpack-bundle-analyzer) into application and provides insights into the size and composition of the application's JavaScript bundles, allowing developers to identify and analyze any potential bottlenecks or optimizations. By visualizing the bundle size and dependencies, the Bundle Analyzer helps in identifying opportunities for code splitting, reducing bundle sizes, and optimizing the overall performance of the application.
-
-> **Note**
-> To analyze your app bundles run `yarn build:analyze` command.
 
 ### Conventions enforced by automated tooling
 
@@ -230,3 +220,62 @@ To help you code with best practices in mind, this boilerplate comes with some a
 - All test descriptions follows naming convention `it('should ... ')`.
 - Commit message enforces [Conventional Commits](https://www.conventionalcommits.org/) specification and use [commitizen](http://commitizen.github.io/cz-cli/) library.
 - Automatic code linting is managed by [lint-staged](https://github.com/okonet/lint-staged) library and [Husky](https://typicode.github.io/husky/)
+
+### Performance tools
+
+In order to optimize and enhance the performance of the application, several performance tools have been integrated into the development workflow.
+#### Next.js Bundle Analyzer
+
+[The Next.js Bundle Analyzer](https://github.com/vercel/next.js/tree/canary/packages/next-bundle-analyzer) is a valuable performance tool employed in this project. It integrates [Webpack Bundle Analyzer](https://github.com/webpack-contrib/webpack-bundle-analyzer) into application and provides insights into the size and composition of the application's JavaScript bundles, allowing developers to identify and analyze any potential bottlenecks or optimizations. By visualizing the bundle size and dependencies, the Bundle Analyzer helps in identifying opportunities for code splitting, reducing bundle sizes, and optimizing the overall performance of the application.
+
+> **Note**
+> To analyze your app bundles run `yarn build:analyze` command.
+
+#### Web performance automated testing
+
+As one of our main goals is to help you deliver fast, performant websites, we included and configured CI/CD performance testing tool into this boilerplate.
+
+
+The purpose of these tests is to help you catch performance regressions during the development process, if you e.g. accidentally include a large library or create a long task that will not meet criteria you will get an error/warning.
+
+There are 2 options to run those tests:
+
+
+Run tests manually on local environment
+
+To run the LHCI test, go to your main project folder and run the following command
+```shell
+yarn lhci:mobile
+```
+
+If you didn’t run the production build earlier, before running test you will need to  
+
+install all dependencies by 
+```shell
+yarn install
+```
+
+then build project
+```shell
+yarn build
+```
+
+
+LHCI configuration + assertion values are stored in 
+/lighthouserc.json
+
+You can find more information about configuring LHCI in THIS ARTICLE (https://web.dev/lighthouse-ci/) and in official documentation(https://github.com/GoogleChrome/lighthouse-ci/blob/main/docs/getting-started.md).
+
+
+
+Run tests automatically on GitHub Action
+
+Automatic LHCI tests on every PR is configured, you don’t even need to have codebase released, the build is done automatically on GithubAction.
+
+
+You can find workflow configuration at
+/.github/workflows/run-lhci-test.yml
+
+It can be configured to block merging of a Pull Request when the test results in error.
+
+Additional performance good practices and information can be found HERE.
