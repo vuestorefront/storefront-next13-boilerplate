@@ -226,22 +226,22 @@ To help you code with best practices in mind, this boilerplate comes with some a
 In order to optimize and enhance the performance of the application, several performance tools have been integrated into the development workflow.
 #### Next.js Bundle Analyzer
 
-[The Next.js Bundle Analyzer](https://github.com/vercel/next.js/tree/canary/packages/next-bundle-analyzer) is a valuable performance tool employed in this project. It integrates [Webpack Bundle Analyzer](https://github.com/webpack-contrib/webpack-bundle-analyzer) into application and provides insights into the size and composition of the application's JavaScript bundles, allowing developers to identify and analyze any potential bottlenecks or optimizations. By visualizing the bundle size and dependencies, the Bundle Analyzer helps in identifying opportunities for code splitting, reducing bundle sizes, and optimizing the overall performance of the application.
+[The Next.js Bundle Analyzer](https://github.com/vercel/next.js/tree/canary/packages/next-bundle-analyzer) is a valuable performance tool employed in this project. It integrates [Webpack Bundle Analyzer](https://github.com/webpack-contrib/webpack-bundle-analyzer) into the application and provides insights into the size and composition of the application's JavaScript bundles, allowing developers to identify and analyze any potential bottlenecks or optimizations. By visualizing the bundle size and dependencies, the Bundle Analyzer helps in identifying opportunities for code splitting, reducing bundle sizes, and optimizing the overall performance of the application.
 
 > **Note**
 > To analyze your app bundles run `yarn build:analyze` command.
 
 #### Web performance automated testing
 
-As one of our main goals is to help you deliver fast, performant websites, we included and configured CI/CD performance testing tool into this boilerplate.
+As one of our main goals is to help you deliver fast, performant websites, we included and configured CI/CD performance testing tools into this boilerplate.
 
 
-The purpose of these tests is to help you catch performance regressions during the development process, if you e.g. accidentally include a large library or create a long task that will not meet criteria you will get an error/warning.
+The purpose of these tests is to help you catch performance regressions during the development process, if you e.g. accidentally include a large library or create a long task that will not meet the criteria you will get an error/warning.
 
 There are 2 options to run those tests:
 
 
-Run tests manually on local environment
+**Run tests manually on the local environment**
 
 To run the LHCI test, go to your main project folder and run the following command
 ```shell
@@ -264,13 +264,13 @@ yarn build
 LHCI configuration + assertion values are stored in 
 /lighthouserc.json
 
-You can find more information about configuring LHCI in THIS ARTICLE (https://web.dev/lighthouse-ci/) and in official documentation(https://github.com/GoogleChrome/lighthouse-ci/blob/main/docs/getting-started.md).
+You can find more information about configuring LHCI in [THIS ARTICLE](https://web.dev/lighthouse-ci/) and in [official documentation](https://github.com/GoogleChrome/lighthouse-ci/blob/main/docs/getting-started.md).
 
 
 
-Run tests automatically on GitHub Action
+**Run tests automatically on GitHub Action**
 
-Automatic LHCI tests on every PR is configured, you don’t even need to have codebase released, the build is done automatically on GithubAction.
+Automatic LHCI tests on every PR is configured, you don’t even need to have the codebase released, the build is done automatically on GithubAction.
 
 
 You can find workflow configuration at
@@ -278,4 +278,5 @@ You can find workflow configuration at
 
 It can be configured to block merging of a Pull Request when the test results in error.
 
-Additional performance good practices and information can be found HERE.
+#### More about performance
+Additional performance good practices and information can be found [HERE](https://docs.vuestorefront.io/v2/performance/intro.html).
