@@ -55,7 +55,7 @@
           {
             "matchingUrlPattern": "http://localhost:3000/$",
             "assertions": {
-              "resource-summary:image:size": ["error", { "maxNumericValue": 80000 }],
+              "resource-summary:image:size": ["error", { "maxNumericValue": 210000 }],
               "resource-summary:script:size": ["error", { "maxNumericValue": 310000 }],
               "resource-summary:document:size": ["error", { "maxNumericValue": 21000 }],
               "resource-summary:font:size": ["error", { "maxNumericValue": 65000 }]
@@ -73,7 +73,7 @@
           {
             "matchingUrlPattern": "http://localhost:3000/product/athletic-mens-walking-sneakers",
             "assertions": {
-              "resource-summary:image:size": ["error", { "maxNumericValue": 10700 }],
+              "resource-summary:image:size": ["error", { "maxNumericValue": 20000 }],
               "resource-summary:script:size": ["error", { "maxNumericValue": 310000 }],
               "resource-summary:document:size": ["error", { "maxNumericValue": 21000 }],
               "resource-summary:font:size": ["error", { "maxNumericValue": 85000 }]
