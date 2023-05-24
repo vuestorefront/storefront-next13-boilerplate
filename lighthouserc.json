@@ -9,7 +9,7 @@
       ],
       "numberOfRuns": 3,
       "assert": {
-        "includePassedAssertions": true,
+        "includePassedAssertions": false,
         "assertMatrix": [
           {
             "matchingUrlPattern": ".*",
