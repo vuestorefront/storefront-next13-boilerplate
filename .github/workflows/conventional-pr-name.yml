@@ -9,10 +9,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Setup node
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
           node-version: '16'
           cache: 'yarn'
@@ -20,4 +20,5 @@ jobs:
       - name: Install dependencies
         run: yarn --frozen-lockfile
 
-      - uses: JulienKode/pull-request-name-linter-action@v0.1.2
+      - name: Validate PR title
+        run: echo "${{ github.event.pull_request.title }}" | npx commitlint
