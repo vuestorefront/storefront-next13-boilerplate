@@ -13,6 +13,7 @@ export function CartProductCard({
   minValue,
   name,
   price,
+  specialPrice,
   value,
   slug,
 }: CartProductCardProps) {
@@ -59,13 +60,23 @@ export function CartProductCard({
             ))}
           </ul>
         </div>
-        <div className="items-center sm:mt-auto sm:flex">
-          <span className="font-bold sm:ml-auto sm:order-1 typography-text-sm sm:typography-text-lg">${price}</span>
+        <div className="items-start sm:items-center sm:mt-auto flex flex-col sm:flex-row">
+          {specialPrice ? (
+            <span className="text-secondary-700 sm:order-1 font-bold typography-text-sm sm:typography-text-lg sm:ml-auto">
+              ${specialPrice}
+              <span className="text-neutral-500 ml-2 line-through typography-text-xs sm:typography-text-sm font-normal">
+                ${price}
+              </span>
+            </span>
+          ) : (
+            <span className="font-bold sm:ml-auto sm:order-1 typography-text-sm sm:typography-text-lg">${price}</span>
+          )}
           <QuantitySelector
             value={value}
             minValue={minValue}
             maxValue={maxValue}
             onChange={() => {}}
+            className="mt-4 sm:mt-0"
           ></QuantitySelector>
         </div>
       </div>
