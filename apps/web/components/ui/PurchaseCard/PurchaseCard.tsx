@@ -55,10 +55,10 @@ export function PurchaseCard({ product, ...attributes }: PurchaseCardProps) {
       </div>
       <p className="mb-4 font-normal typography-text-sm">{product.description}</p>
       <div className="py-4 mb-4 border-gray-200 border-y">
-        <div className="bg-primary-100 text-primary-700 flex justify-center gap-1.5 py-1.5 typography-text-sm items-center mb-4 rounded-md">
+        <Tag className="w-full mb-4">
           <SfIconShoppingCartCheckout />
           {t('common:numberInCart', { count: 1 })}
-        </div>
+        </Tag>
         <div className="flex flex-col md:flex-row flex-wrap gap-4">
           <QuantitySelector
             className="h-12  min-w-[145px] flex-grow flex-shrink-0 basis-0"
