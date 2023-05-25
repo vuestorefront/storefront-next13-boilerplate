@@ -1,0 +1,59 @@
+'use client';
+
+import { Fragment } from 'react';
+import { CategoryCard } from '../CategoryCard';
+import { Display } from '../Display';
+import { Heading } from '../Heading';
+import { Hero } from '../Hero';
+import { Page } from '../Page';
+import { ProductSlider } from '../ProductSlider';
+import type { RenderContentProps } from '../RenderContent';
+
+export function RenderContent({ content, ...attributes }: RenderContentProps): JSX.Element {
+  return (
+    <div {...attributes}>
+      {content.map(({ fields }, index) => (
+        <Fragment key={`${fields.component}-${index}`}>
+          {(() => {
+            switch (fields.component) {
+              case 'Hero': {
+                return (
+                  <Hero
+                    image={fields.image}
+                    subtitle={fields.subtitle}
+                    title={fields.title}
+                    description={fields.description}
+                    primaryButtonLink={fields.primaryButtonLink}
+                    primaryButtonText={fields.primaryButtonText}
+                    secondaryButtonLink={fields.secondaryButtonLink}
+                    secondaryButtonText={fields.secondaryButtonText}
+                  />
+                );
+              }
+              case 'Heading': {
+                return <Heading title={fields.title} tag={fields.tag} className={fields.className} />;
+              }
+              case 'Card': {
+                return <CategoryCard items={fields.items} />;
+              }
+              case 'Display': {
+                return <Display items={fields.items} />;
+              }
+              case 'ProductSlider': {
+                return (
+                  <ProductSlider products={fields.items} className="max-w-screen-3xl mx-auto px-4 md:px-10 mb-20" />
+                );
+              }
+              case 'Page': {
+                return <Page />;
+              }
+              default: {
+                return <p>component {fields.component} is not registered</p>;
+              }
+            }
+          })()}
+        </Fragment>
+      ))}
+    </div>
+  );
+}

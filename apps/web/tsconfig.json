@@ -15,11 +15,17 @@
     "jsx": "preserve",
     "incremental": true,
     "paths": {
-      "~/*": ["./*"]
+      "~/*": ["./*"],
+      "~app/*": ["./app/*"]
     },
-    "types": ["jest", "@testing-library/jest-dom", "@vsf-enterprise/sdk"]
+    "types": ["jest", "@testing-library/jest-dom", "@vsf-enterprise/sdk"],
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ]
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
   "exclude": ["node_modules", "mocks"],
   "files": ["globals.d.ts"]
 }

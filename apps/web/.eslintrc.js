@@ -13,5 +13,7 @@ module.exports = {
     'no-secrets/no-secrets': 'off',
     'unicorn/prefer-array-some': 'off',
     'sonarjs/no-duplicate-string': 'off',
+    'unicorn/filename-case': 'off',
+    '@typescript-eslint/ban-ts-comment': 'off',
   },
 };

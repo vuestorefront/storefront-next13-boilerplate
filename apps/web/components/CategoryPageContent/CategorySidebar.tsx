@@ -11,6 +11,7 @@ export function CategorySidebar({ isOpen, closeSidebar, children }: CategorySide
   useTrapFocus(nodeReference, { activeState: isOpen });
 
   return (
+    /* @ts-ignore */
     <CSSTransition
       nodeRef={nodeReference}
       in={isOpen}

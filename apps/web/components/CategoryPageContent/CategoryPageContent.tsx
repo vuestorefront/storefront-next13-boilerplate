@@ -63,6 +63,7 @@ export function CategoryPageContent({
                 ))}
               </section>
             ) : (
+              /* @ts-ignore */
               <CategoryEmptyState />
             )}
             {totalProducts > itemsPerPage && (

@@ -5,6 +5,7 @@ const sfTypography = require('@storefront-ui/typography');
 module.exports = {
   presets: [tailwindConfig],
   content: [
+    './app/**/*.{js,ts,jsx,tsx}',
     './components/**/*.{js,ts,jsx,tsx}',
     './layouts/**/*.{js,ts,jsx,tsx}',
     './pages/**/*.{js,ts,jsx,tsx}',

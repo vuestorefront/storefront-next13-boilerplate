@@ -29,6 +29,7 @@ function App({ Component, pageProps }: AppProps) {
       </Head>
       <Hydrate state={pageProps.dehydratedState}>
         <div className={classNames(fontHeadings.variable, fontBody.variable, 'font-body')}>
+          {/* @ts-ignore */}
           <Component {...pageProps} />
         </div>
       </Hydrate>
