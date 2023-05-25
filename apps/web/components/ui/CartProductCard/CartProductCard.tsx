@@ -59,13 +59,14 @@ export function CartProductCard({
             ))}
           </ul>
         </div>
-        <div className="items-center sm:mt-auto sm:flex">
+        <div className="items-start sm:items-center sm:mt-auto flex flex-col sm:flex-row">
           <span className="font-bold sm:ml-auto sm:order-1 typography-text-sm sm:typography-text-lg">${price}</span>
           <QuantitySelector
             value={value}
             minValue={minValue}
             maxValue={maxValue}
             onChange={() => {}}
+            className="mt-4 sm:mt-0"
           ></QuantitySelector>
         </div>
       </div>
