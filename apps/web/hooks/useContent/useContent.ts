@@ -13,9 +13,10 @@ export async function prefetchContent(url: string): Promise<QueryClient> {
  * @param {string} url Content url
  */
 
-export function useContent<TFields>(url: string) {
+export function useContent<TFields>(url: string, initialData?: any[]) {
   return useQuery(['content', url], () => sdk.commerce.getContent<TFields>({ url }), {
     refetchOnMount: false,
     refetchOnWindowFocus: false,
+    initialData,
   });
 }

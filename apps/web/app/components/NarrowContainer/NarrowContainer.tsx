@@ -1,5 +1,3 @@
-'use client';
-
 import type { PropsWithChildren } from 'react';
 
 export function NarrowContainer({ children }: PropsWithChildren) {

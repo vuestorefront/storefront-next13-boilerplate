@@ -2,6 +2,7 @@
 
 import { useRouter, usePathname } from 'next/navigation';
 import classNames from 'classnames';
+import { useCart } from '~/hooks';
 // import { useTranslation } from 'next-i18next';
 import { Badge } from '../Badge';
 import {
@@ -15,8 +16,6 @@ import {
   useDisclosure,
 } from '../SFUI';
 import { Search } from '../Search';
-
-// import { useCart } from '~/hooks';
 
 const getItems = (cartLineItemsCount?: number) => [
   {
@@ -50,8 +49,8 @@ export function BottomNav({ ...attributes }) {
   const pathname = usePathname();
   // const { t } = useTranslation();
   const { isOpen, open, close } = useDisclosure({ initialValue: false });
-  // const { data: cart } = useCart();
-  // const cartLineItemsCount = cart?.lineItems.reduce((total, { quantity }) => total + quantity, 0) ?? 0;
+  const { data: cart } = useCart();
+  const cartLineItemsCount = cart?.lineItems.reduce((total, { quantity }) => total + quantity, 0) ?? 0;
 
   const onClickHandler = (path: string) => {
     if (path === '/search') {
@@ -68,7 +67,7 @@ export function BottomNav({ ...attributes }) {
         data-testid="navbar-bottom"
         {...attributes}
       >
-        {getItems(1).map(({ label, icon, path }) => (
+        {getItems(cartLineItemsCount).map(({ label, icon, path }) => (
           <SfButton
             key={label}
             variant="tertiary"

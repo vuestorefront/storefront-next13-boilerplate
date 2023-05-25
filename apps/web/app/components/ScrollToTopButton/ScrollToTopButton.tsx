@@ -3,9 +3,8 @@
 import { useRef } from 'react';
 import { useIntersection } from 'react-use';
 import classNames from 'classnames';
-import { SfButton, SfIconExpandLess } from '../SFUI';
-
 // import { useTranslation } from 'next-i18next';
+import { SfButton, SfIconExpandLess } from '../SFUI';
 
 export function ScrollToTopButton(): JSX.Element {
   // const { t } = useTranslation();
