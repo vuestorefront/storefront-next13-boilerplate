@@ -1,6 +1,11 @@
-import { HomePageObject } from "~/__tests__/support/pageObjects/HomePageObject";
+import { HomePageObject } from  "../../support/pageObjects/HomePageObject";
 
 const homePage = new HomePageObject();
+
+beforeEach(()=>{
+    cy.visit("/");
+});
+  
 
 describe('Smoke: Boilerplate', () => {
     describe('Homepage smoke test', () => {
@@ -19,5 +24,6 @@ describe('Smoke: Boilerplate', () => {
             homePage.checkHeaderCategory();
       
         });
+        
     });
 });
