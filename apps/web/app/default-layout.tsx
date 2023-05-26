@@ -1,7 +1,4 @@
-'use client';
-
 import type { PropsWithChildren } from 'react';
-// import { useTranslation } from 'next-i18next';
 import { BottomNav } from './components/BottomNav';
 import { Breadcrumbs, Breadcrumb } from './components/Breadcrumbs';
 import { Footer } from './components/Footer';
@@ -13,9 +10,7 @@ type LayoutPropsType = PropsWithChildren & {
   breadcrumbs?: Breadcrumb[];
 };
 
-export function DefaultLayout({ children, breadcrumbs = [] }: LayoutPropsType): JSX.Element {
-  // const { t } = useTranslation();
-
+export function DefaultLayout({ children, breadcrumbs = [] }: LayoutPropsType) {
   return (
     <>
       <Navbar />
@@ -29,7 +24,9 @@ export function DefaultLayout({ children, breadcrumbs = [] }: LayoutPropsType): 
       <main>{children}</main>
       <BottomNav />
       <ScrollToTopButton />
-      <Footer className="mb-[58px] md:mb-0" />
+
+      {/* @ts-expect-error Server Component */}
+      <Footer className="mb-[58px] md:mb-0" lng={'en'} />
     </>
   );
 }

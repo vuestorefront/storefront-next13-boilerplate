@@ -2,16 +2,17 @@
 
 import Link from 'next/link';
 import { useCart } from '~/hooks';
+import { useTranslation } from '../../i18n/client';
 import { Badge } from '../Badge';
 import { NavbarTop } from '../NavbarTop';
 import { SfButton, SfIconExpandMore, SfIconShoppingCart } from '../SFUI';
 import { Search } from '../Search';
 
-export default function Navbar() {
-  // Navbar in default layout caused HP content to be rendered on the client only, i.e. not generate visible DOM elements
+export function Navbar() {
+  const { t } = useTranslation('en', 'common');
+  const { data: cart1 } = useCart();
 
-  const { data: cart } = useCart();
-  const cartLineItemsCount = cart?.lineItems.reduce((total, { quantity }) => total + quantity, 0) ?? 0;
+  const cartLineItemsCount = cart1?.lineItems.reduce((total, { quantity }) => total + quantity, 0) ?? 0;
 
   return (
     <NavbarTop filled>
@@ -22,7 +23,7 @@ export default function Navbar() {
         slotSuffix={<SfIconExpandMore />}
         variant="tertiary"
       >
-        <span>{"t('allProductsLinkText')"}</span>
+        <span>{t('allProductsLinkText')}</span>
       </SfButton>
       <Search className="hidden md:block flex-1" />
       <nav className="hidden md:flex md:flex-row md:flex-nowrap">
@@ -30,7 +31,7 @@ export default function Navbar() {
           className="mr-2 -ml-0.5 text-white bg-primary-700 hover:bg-primary-800 hover:text-white active:bg-primary-900 active:text-white"
           as={Link}
           href="/cart"
-          aria-label={"t('numberInCart', { count: 1 })"}
+          aria-label={t('numberInCart', { count: cartLineItemsCount })}
           variant="tertiary"
           square
           slotPrefix={

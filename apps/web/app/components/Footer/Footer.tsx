@@ -6,9 +6,7 @@ import classNames from 'classnames';
 import { bottomLinks, categories, companyName, contactOptions, socialMedia } from '~/mocks';
 import { Divider } from '../Divider';
 
-export function Footer({ className = '' }: { className?: string }): JSX.Element {
-  // const { t } = useTranslation('footer');
-
+export function Footer({ className, t }: { className?: string; lng: string; t: any }): JSX.Element {
   return (
     <footer className={classNames('pt-10 bg-neutral-100', className)} data-testid="footer">
       <div
@@ -17,14 +15,14 @@ export function Footer({ className = '' }: { className?: string }): JSX.Element 
       >
         {categories.map(({ key, subcategories }) => (
           <div key={key} className="min-w-[25%] xs:min-w-[50%] flex flex-col">
-            <p className="font-medium leading-7 text-neutral-900 text-lg pb-2">{'t(`categories.${key}.label`)'}</p>
+            <p className="font-medium leading-7 text-neutral-900 text-lg pb-2">{t(`categories.${key}.label`)}</p>
             {subcategories?.map(({ link, key: subcategoryKey }) => (
               <Link
                 href={link}
                 className="text-sm leading-5 py-2 text-neutral-600 hover:underline"
                 key={subcategoryKey}
               >
-                {'t(`categories.${key}.subcategories.${subcategoryKey}`)'}
+                {t(`categories.${key}.subcategories.${subcategoryKey}`)}
               </Link>
             ))}
           </div>
@@ -39,11 +37,11 @@ export function Footer({ className = '' }: { className?: string }): JSX.Element 
               href={link}
               className="py-1 my-2 font-medium typography-text-lg font-body no-underline text-neutral-600 hover:underline hover:!text-neutral-900 active:underline active:!text-neutral-900"
             >
-              {'t(`contactOptions.${key}.label`)'}
+              {t(`contactOptions.${key}.label`)}
             </Link>
             {details?.map((option) => (
               <p className="text-sm leading-5" key={option}>
-                {'t(`contactOptions.${key}.details.${option}`)'}
+                {t(`contactOptions.${key}.details.${option}`)}
               </p>
             ))}
           </div>
@@ -56,7 +54,7 @@ export function Footer({ className = '' }: { className?: string }): JSX.Element 
               <Link
                 key={label}
                 href={link}
-                title={"t('socialLabel', { label })"}
+                title={t('socialLabel', { label })}
                 className="hover:bg-neutral-500 hover:shadow-[0_0_0_8px] hover:shadow-neutral-500 rounded-sm"
                 data-testid={label}
               >
@@ -71,7 +69,7 @@ export function Footer({ className = '' }: { className?: string }): JSX.Element 
                 href={link}
                 className="text-white no-underline typography-text-sm active:text-white active:underline hover:text-white hover:underline"
               >
-                {'t(`bottomLinks.${key}`)'}
+                {t(`bottomLinks.${key}`)}
               </Link>
             ))}
           </div>

@@ -26,7 +26,8 @@
     "cross-env": "^7.0.3",
     "deepmerge": "^4.2.2",
     "eslint": "^8.38.0",
-    "rimraf": "^3.0.2"
+    "rimraf": "^3.0.2",
+    "web": "^0.0.2"
   },
   "devDependencies": {
     "@commitlint/cli": "^13.2.1",

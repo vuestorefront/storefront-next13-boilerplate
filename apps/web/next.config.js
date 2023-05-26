@@ -1,7 +1,7 @@
-const { i18n } = require('./next-i18next.config');
+// const { i18n } = require('./next-i18next.config');
 const withPwa = require('next-pwa')({
   dest: 'public',
-  disable: process.env.NODE_ENV === 'development',
+  disable: true, //process.env.NODE_ENV === 'development',
   publicExcludes: ['!**/*', '*.ico', 'manifest.json'],
   buildExcludes: [() => true],
   mode: process.env.DEBUG_WORKBOX === 'true' ? 'development' : 'production',
@@ -26,7 +26,7 @@ const nextConfig = {
     deviceSizes: [360, 640, 750],
   },
   transpilePackages: ['@storefront-ui/react'],
-  i18n,
+  // i18n,
   webpack(config) {
     config.module.rules.push({
       test: /index\.(js|mjs|jsx|ts|tsx)$/,

@@ -44,6 +44,7 @@ export function Search({ className }: SearchProps) {
         aria-label="Search"
         placeholder="Search"
         slotPrefix={<SfIconSearch />}
+        checked={false}
         slotSuffix={
           !!searchValue && (
             <button

@@ -3,11 +3,12 @@
 import { useRef } from 'react';
 import { useIntersection } from 'react-use';
 import classNames from 'classnames';
-// import { useTranslation } from 'next-i18next';
+import { useTranslation } from '../../i18n/client';
 import { SfButton, SfIconExpandLess } from '../SFUI';
 
-export function ScrollToTopButton(): JSX.Element {
-  // const { t } = useTranslation();
+export const ScrollToTopButton = (): JSX.Element => {
+  const { t } = useTranslation('en', 'common');
+
   const intersectionReference = useRef(null);
   const intersection = useIntersection(intersectionReference, {
     rootMargin: '0px',
@@ -20,13 +21,15 @@ export function ScrollToTopButton(): JSX.Element {
         square
         onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
         variant="secondary"
-        aria-label={"t('scrollTop')"}
+        aria-label={t('scrollTop')}
         className={classNames(
           'bg-white transition-opacity fixed right-4 bottom-20',
-          intersection?.isIntersecting ? 'opacity-0' : 'opacity-100 pointer-events-auto',
+          intersectionReference.current && !intersection?.isIntersecting
+            ? 'opacity-100 pointer-events-auto'
+            : 'opacity-0',
         )}
         slotPrefix={<SfIconExpandLess />}
       />
     </div>
   );
-}
+};

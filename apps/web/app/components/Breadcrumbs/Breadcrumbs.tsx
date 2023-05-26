@@ -2,12 +2,13 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-// import { useTranslation } from 'next-i18next';
+import { useTranslation } from '../../i18n/client';
 import { SfDropdown, SfButton, SfIconMoreHoriz, SfLink } from '../SFUI';
 import type { BreadcrumbsProps } from './types';
 
 export function Breadcrumbs({ breadcrumbs }: BreadcrumbsProps) {
-  // const { t } = useTranslation();
+  const { t } = useTranslation('en', 'common');
+
   const [dropdownOpened, setDropdownOpened] = useState(false);
 
   const close = () => {
@@ -26,7 +27,7 @@ export function Breadcrumbs({ breadcrumbs }: BreadcrumbsProps) {
               <SfButton
                 data-testid="breadcrumbsDropdownButton"
                 className="relative w-5 h-5 !p-0 rounded-sm outline-secondary-600 hover:bg-transparent active:bg-transparent"
-                aria-label={"t('breadcrumbsDropdownText')"}
+                aria-label={t('breadcrumbsDropdownText')}
                 type="button"
                 variant="tertiary"
                 slotPrefix={

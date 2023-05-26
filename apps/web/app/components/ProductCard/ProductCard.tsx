@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import classNames from 'classnames';
-// import { useTranslation } from 'next-i18next';
+import { useTranslation } from '../../i18n/client';
 import { SfButton, SfRating, SfCounter, SfLink, SfIconShoppingCart } from '../SFUI';
 import type { ProductCardProps } from './types';
 
@@ -18,7 +18,7 @@ export function ProductCard({
   priority,
   ...attributes
 }: ProductCardProps) {
-  // const { t } = useTranslation(); TODO: uncomment this line when you will use translations
+  const { t } = useTranslation('en', 'common');
 
   return (
     <div
@@ -52,7 +52,7 @@ export function ProductCard({
         <p className="block py-2 font-normal typography-text-xs text-neutral-700 text-justify">{description}</p>
         <span className="block pb-2 font-bold typography-text-sm">${price}</span>
         <SfButton type="button" size="sm" slotPrefix={<SfIconShoppingCart size="sm" />}>
-          {"t('addToCartShort')"}
+          {t('addToCartShort')}
         </SfButton>
       </div>
     </div>
