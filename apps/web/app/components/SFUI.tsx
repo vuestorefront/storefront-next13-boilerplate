@@ -29,6 +29,18 @@ export { default as SfIconTune } from '@storefront-ui/react/dist/components/SfIc
 export { default as SfIconChevronLeft } from '@storefront-ui/react/dist/components/SfIcons/SfIconChevronLeft.mjs';
 export { default as SfIconChevronRight } from '@storefront-ui/react/dist/components/SfIcons/SfIconChevronRight.mjs';
 export { default as SfIconArrowBack } from '@storefront-ui/react/dist/components/SfIcons/SfIconArrowBack.mjs';
+export { default as SfIconCompareArrows } from '@storefront-ui/react/dist/components/SfIcons/SfIconCompareArrows.mjs';
+export { default as SfIconFavorite } from '@storefront-ui/react/dist/components/SfIcons/SfIconFavorite.mjs';
+export { default as SfIconSell } from '@storefront-ui/react/dist/components/SfIcons/SfIconSell.mjs';
+export { default as SfIconPackage } from '@storefront-ui/react/dist/components/SfIcons/SfIconPackage.mjs';
+export { default as SfIconWarehouse } from '@storefront-ui/react/dist/components/SfIcons/SfIconWarehouse.mjs';
+export { default as SfIconShoppingCartCheckout } from '@storefront-ui/react/dist/components/SfIcons/SfIconShoppingCartCheckout.mjs';
+export { default as SfIconSafetyCheck } from '@storefront-ui/react/dist/components/SfIcons/SfIconSafetyCheck.mjs';
+export { default as SfIconAdd } from '@storefront-ui/react/dist/components/SfIcons/SfIconAdd.mjs';
+export { default as SfIconRemove } from '@storefront-ui/react/dist/components/SfIcons/SfIconRemove.mjs';
+export { default as SfIconCheck } from '@storefront-ui/react/dist/components/SfIcons/SfIconCheck.mjs';
+export { default as SfIconThumbUp } from '@storefront-ui/react/dist/components/SfIcons/SfIconThumbUp.mjs';
+export { default as SfIconThumbDown } from '@storefront-ui/react/dist/components/SfIcons/SfIconThumbDown.mjs';
 
 export { useDisclosure } from '@storefront-ui/react/dist/hooks/useDisclosure/useDisclosure.mjs';
 export { useTrapFocus } from '@storefront-ui/react/dist/hooks/useTrapFocus/useTrapFocus.mjs';
