@@ -1,28 +1,26 @@
 // Import your Client Component
 import { dehydrate } from '@tanstack/query-core';
-import getQueryClient from '~/app/getQueryClient';
 import Hydrate from '~/app/rq/Hydrate';
+import getQueryClient from '~/app/rq/getQueryClient';
 import { sdk } from '~/sdk';
-import HomePage from './home-page';
+import CategoryPage from './category-page';
 
-async function getContent(url: string) {
-  return sdk.commerce.getContent({ url });
+async function getProducts() {
+  return sdk.commerce.getProducts();
 }
 
 export default async function Page() {
-  const url = 'home-page';
   // Prefetch data directly in a Server Component
   const client = getQueryClient();
-  await client.prefetchQuery(['content', url], () => getContent(url));
+  await client.prefetchQuery(['products'], () => getProducts());
 
   const dehydratedState = dehydrate(client, {
     shouldDehydrateQuery: () => true,
   });
-  // const content = await getContent(url);
 
   return (
     <Hydrate state={dehydratedState}>
-      <HomePage url={url} />
+      <CategoryPage />
     </Hydrate>
   );
 }

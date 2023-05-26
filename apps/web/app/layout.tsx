@@ -5,7 +5,7 @@ import { fontBody, fontHeadings } from '~/styles/fonts';
 // import { dir } from 'i18next';
 import '../styles/main.scss';
 import { fallbackLng, languages } from './i18n/settings';
-import Providers from './providers';
+import Providers from './rq/providers';
 
 export const metadata: Metadata = {
   title: 'Home',

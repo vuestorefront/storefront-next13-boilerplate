@@ -1,5 +1,3 @@
-'use client';
-
 import { useTranslation } from '../../i18n';
 import { Footer as FooterBase } from './Footer';
 

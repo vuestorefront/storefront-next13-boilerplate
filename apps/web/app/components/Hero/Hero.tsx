@@ -1,3 +1,5 @@
+'use client';
+
 import Image from 'next/image';
 import Link from 'next/link';
 import { SfButton } from '../SFUI';
@@ -24,7 +26,7 @@ export function Hero({
             className="h-auto w-full object-cover object-left"
             height={600}
             width={764}
-            priority
+            unoptimized
           />
         </div>
         <div className="p-4 md:p-10 md:flex md:flex-col md:justify-center md:items-start md:basis-2/4">

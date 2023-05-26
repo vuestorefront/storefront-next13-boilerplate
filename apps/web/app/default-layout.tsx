@@ -1,7 +1,7 @@
 import type { PropsWithChildren } from 'react';
 import { BottomNav } from './components/BottomNav';
 import { Breadcrumbs, Breadcrumb } from './components/Breadcrumbs';
-import { Footer } from './components/Footer';
+import { Footer } from './components/Footer/client';
 import { NarrowContainer } from './components/NarrowContainer';
 import { Navbar } from './components/Navbar';
 import { ScrollToTopButton } from './components/ScrollToTopButton';
@@ -24,8 +24,6 @@ export function DefaultLayout({ children, breadcrumbs = [] }: LayoutPropsType) {
       <main>{children}</main>
       <BottomNav />
       <ScrollToTopButton />
-
-      {/* @ts-expect-error Server Component */}
       <Footer className="mb-[58px] md:mb-0" lng={'en'} />
     </>
   );
