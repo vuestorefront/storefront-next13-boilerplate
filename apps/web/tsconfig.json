@@ -20,6 +20,6 @@
     "types": ["jest", "@testing-library/jest-dom", "@vsf-enterprise/sdk", "cypress"]
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
-  "exclude": ["node_modules", "mocks", "__tests__"],
+  "exclude": ["node_modules", "mocks", "__tests__", "cypress.config.ts"],
   "files": ["globals.d.ts"]
 }

@@ -5,7 +5,7 @@ const homePage = new HomePageObject();
 beforeEach(()=>{
     cy.visit("/");
 });
-  
+// test zmian
 
 describe('Smoke: Boilerplate', () => {
     describe('Homepage smoke test', () => {
