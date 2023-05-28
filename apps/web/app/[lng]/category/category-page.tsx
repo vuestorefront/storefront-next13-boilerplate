@@ -6,10 +6,10 @@ import { CategoryTree } from '~/app/components/CategoryTree';
 import { useTranslation } from '~/app/i18n/client';
 import { useProducts } from '~/hooks/useProducts';
 import { CategoryPageContent } from '../../components/CategoryPageContent';
-import { DefaultLayout } from '../../default-layout';
+import { DefaultLayout } from './../default-layout';
 
 export default function CategoryPage() {
-  const { t } = useTranslation('en', 'category');
+  const { t } = useTranslation('category');
 
   const breadcrumbs = [
     { name: t('common:home'), link: '/' },
@@ -22,7 +22,7 @@ export default function CategoryPage() {
   }
 
   const { products, pagination, subCategories, facets } = productsCatalog;
-  const categories = subCategories.map(({ name, productCount }) => ({ name, count: productCount, href: '/category' }));
+  const categories = subCategories?.map(({ name, productCount }) => ({ name, count: productCount, href: '/category' }));
 
   return (
     <DefaultLayout breadcrumbs={breadcrumbs}>

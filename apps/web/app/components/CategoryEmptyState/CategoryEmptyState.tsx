@@ -1,13 +1,13 @@
 'use client';
 
 import Image from 'next/image';
-import Link from 'next/link';
 import { useTranslation } from '~/app/i18n/client';
+import Link from '~/app/i18n/components/Link';
 import somethingWentWrongImage from '~/public/images/empty-category.svg';
 import { SfButton } from '../SFUI';
 
 export function CategoryEmptyState(): JSX.Element {
-  const { t } = useTranslation('en', ['common', 'category']);
+  const { t } = useTranslation(['common', 'category']);
 
   return (
     <section data-testid="category-empty-state" className="flex flex-col items-center md:mt-16">

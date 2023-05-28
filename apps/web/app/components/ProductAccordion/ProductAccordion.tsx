@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import classNames from 'classnames';
 import { xor } from 'lodash-es';
-import { useTranslation } from 'next-i18next';
+import { useTranslation } from '~/app/i18n/client';
 import { useProductReviews } from '~/hooks';
 import { Divider } from '../Divider';
 import { Review } from '../Review';

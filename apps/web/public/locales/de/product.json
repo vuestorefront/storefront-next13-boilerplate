@@ -1,0 +1,30 @@
+{
+  "productDetails": "Product Details",
+  "customerReviews": "Customer Reviews",
+  "loadingReviews": "Loading Reviews...",
+  "reviewsCount": "{{count}} reviews",
+  "recommendedProducts": "Recommended with this product",
+  "numberInStock": "<0>{{count}}</0> in stock",
+  "outOfStock": "Out of stock",
+  "additionalInfo": {
+    "shipping": "Free shipping, arrives by Thu, Apr 7. Want it faster? <1>Add an address</1> to see options",
+    "pickup": "Pickup not available at Super center. <1>Check availability nearby</1>",
+    "returns": "Free 30-Day returns. <1>Details</1>"
+  },
+  "sale": "Sale",
+  "readMore": "Read more",
+  "readLess": "Read less",
+  "noReviews": "No reviews",
+  "loading": "Loading",
+  "gallery": {
+    "count": "{{current}} of {{total}}",
+    "thumb": "Go to slide {{index}}",
+    "prev": "Previous",
+    "next": "Next",
+    "image": "Slide {{index}}"
+  },
+  "review": {
+    "reportAbuse": "Report Abuse",
+    "verifiedPurchase": "Verified purchase"
+  }
+}

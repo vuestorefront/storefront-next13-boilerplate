@@ -1,0 +1,21 @@
+{
+  "myCart": "My Cart",
+  "orderSummary": "Order Summary",
+  "itemsInCart": "(Items: {{count}})",
+  "itemsSubtotal": "Items subtotal",
+  "originalPrice": "Original price",
+  "savings": "Savings",
+  "estimatedTax": "Estimated Sales Tax",
+  "apply": "Apply",
+  "total": "Total",
+  "goToCheckout": "Go to checkout",
+  "savingsTag": "You are saving {{amount}} on your order today!",
+  "promoCodePlaceholder": "Enter promo code",
+  "delivery": "Delivery",
+  "promoCode": "Promo Code",
+  "remove": "Remove",
+  "emptyCart": "Your cart is empty",
+  "emptyCartImgAlt": "empty cart image",
+  "backToShopping": "Back To Shopping",
+  "back": "Back"
+}

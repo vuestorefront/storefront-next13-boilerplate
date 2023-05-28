@@ -1,8 +1,8 @@
 'use client';
 
+import { Trans } from 'react-i18next/TransWithoutContext';
 import { useCounter } from 'react-use';
 import { clamp } from '@storefront-ui/shared';
-import { Trans } from 'next-i18next';
 import { useTranslation } from '~/app/i18n/client';
 import { QuantitySelector } from '../QuantitySelector';
 import {
@@ -23,7 +23,7 @@ import { Tag } from '../Tag';
 import type { PurchaseCardProps } from './types';
 
 export function PurchaseCard({ product, ...attributes }: PurchaseCardProps) {
-  const { t } = useTranslation('en', ['product', 'common']);
+  const { t } = useTranslation(['product', 'common']);
   const minProductQuantity = 1;
   const maxProductQuantity = 999;
   const [productQuantity, { set }] = useCounter(minProductQuantity);

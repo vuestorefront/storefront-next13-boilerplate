@@ -1,8 +1,8 @@
 'use client';
 
 import Image from 'next/image';
-import Link from 'next/link';
 import classNames from 'classnames';
+import Link from '~/app/i18n/components/Link';
 import { useTranslation } from '../../i18n/client';
 import { SfButton, SfRating, SfCounter, SfLink, SfIconShoppingCart } from '../SFUI';
 import type { ProductCardProps } from './types';
@@ -20,7 +20,7 @@ export function ProductCard({
   priority,
   ...attributes
 }: ProductCardProps) {
-  const { t } = useTranslation('en', 'common');
+  const { t } = useTranslation('common');
 
   return (
     <div

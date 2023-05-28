@@ -1,6 +1,6 @@
 'use client';
 
-import Link from 'next/link';
+import Link from '~/app/i18n/components/Link';
 import { SfCounter, SfListItem } from '../SFUI';
 import type { CategoryTreeItemProps } from './types';
 

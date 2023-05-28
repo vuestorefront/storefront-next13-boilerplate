@@ -1,13 +1,13 @@
 'use client';
 
 import { useState } from 'react';
-import Link from 'next/link';
+import Link from '~/app/i18n/components/Link';
 import { useTranslation } from '../../i18n/client';
 import { SfDropdown, SfButton, SfIconMoreHoriz, SfLink } from '../SFUI';
 import type { BreadcrumbsProps } from './types';
 
 export function Breadcrumbs({ breadcrumbs }: BreadcrumbsProps) {
-  const { t } = useTranslation('en', 'common');
+  const { t } = useTranslation('common');
 
   const [dropdownOpened, setDropdownOpened] = useState(false);
 

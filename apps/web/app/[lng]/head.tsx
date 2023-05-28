@@ -1,5 +1,5 @@
-import { useTranslation } from './i18n';
-import { languages, fallbackLng } from './i18n/settings';
+import { useTranslation } from '../i18n';
+import { languages, fallbackLng } from '../i18n/settings';
 
 export default async function Head({ params: { lng } }: { params: { lng: string } }) {
   if (!languages.includes(lng)) {

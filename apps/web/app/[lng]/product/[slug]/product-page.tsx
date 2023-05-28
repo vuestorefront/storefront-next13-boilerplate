@@ -8,8 +8,8 @@ import { ProductAccordion } from '~/app/components/ProductAccordion';
 import { ProductProperties } from '~/app/components/ProductProperties';
 import { ProductSlider } from '~/app/components/ProductSlider';
 import { PurchaseCard } from '~/app/components/PurchaseCard';
-import { DefaultLayout } from '~/app/default-layout';
 import { useProductRecommended, useProduct, useProductBreadcrumbs } from '~/hooks';
+import { DefaultLayout } from '../../default-layout';
 
 export function ProductPage({ slug }: { slug: string }) {
   const { data: product } = useProduct(slug);

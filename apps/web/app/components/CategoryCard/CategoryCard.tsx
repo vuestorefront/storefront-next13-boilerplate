@@ -1,7 +1,7 @@
 'use client';
 
 import Image from 'next/image';
-import Link from 'next/link';
+import Link from '~/app/i18n/components/Link';
 import type { CategoryCardProps } from './types';
 
 export function CategoryCard({ items, ...attributes }: CategoryCardProps) {

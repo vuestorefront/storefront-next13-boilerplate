@@ -5,7 +5,7 @@ import { sortingOptions } from '~/mocks';
 import { SfSelect } from '../SFUI';
 
 export function CategorySorting() {
-  const { t } = useTranslation('en', 'category');
+  const { t } = useTranslation('category');
 
   return (
     <>

@@ -7,7 +7,7 @@ import { useTranslation } from '../../i18n/client';
 import { SfButton, SfIconExpandLess } from '../SFUI';
 
 export const ScrollToTopButton = (): JSX.Element => {
-  const { t } = useTranslation('en', 'common');
+  const { t } = useTranslation('common');
 
   const intersectionReference = useRef(null);
   const intersection = useIntersection(intersectionReference, {

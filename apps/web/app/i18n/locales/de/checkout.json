@@ -1,0 +1,40 @@
+{
+  "checkout": "Checkout",
+  "backToCart": "Back to My Cart",
+  "back": "Back",
+  "placeOrder": "Place order and pay",
+  "termsInfo": "By placing my order, you agree to our <1>Terms and Conditions</1> and our <3>Privacy Policy</3>",
+  "tomorrow": "Tomorrow",
+  "contactInfo": {
+    "heading": "Contact Information",
+    "description": "Add your email and phone number to communicate with the store.",
+    "add": "Add contact information",
+    "email": "Email",
+    "phone": "Phone number",
+    "phonePlaceholder": "eg. 123 456 7890",
+    "clearAll": "Clear all",
+    "save": "Save",
+    "edit": "Edit"
+  },
+  "checkoutPayment": {
+    "heading": "Payment method",
+    "comingSoon": "Coming soon",
+    "cash": "Cash on delivery",
+    "creditCard": "Credit Card",
+    "paypalIconAlt": "Paypal Icon",
+    "applePayIconAlt": "Apple Pay Icon",
+    "googlePayIconAlt": "Google Pay icon"
+  },
+  "shippingMethod": {
+    "heading": "Shipping details",
+    "description": "Not available until a shipping address is provided."
+  },
+  "validation": {
+    "heading": "To complete order:",
+    "missingBillingAddress": "add billing address",
+    "missingShippingAddress": "add shipping address",
+    "missingEmail": "add customer email",
+    "missingShippingDetails": "add shipping details",
+    "missingPaymentMethod": "choose payment method"
+  }
+}

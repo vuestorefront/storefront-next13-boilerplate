@@ -1,10 +1,10 @@
 import type { PropsWithChildren } from 'react';
-import { BottomNav } from './components/BottomNav';
-import { Breadcrumbs, Breadcrumb } from './components/Breadcrumbs';
-import { Footer } from './components/Footer/client';
-import { NarrowContainer } from './components/NarrowContainer';
-import { Navbar } from './components/Navbar';
-import { ScrollToTopButton } from './components/ScrollToTopButton';
+import { BottomNav } from '../components/BottomNav';
+import { Breadcrumbs, Breadcrumb } from '../components/Breadcrumbs';
+import { Footer } from '../components/Footer/client';
+import { NarrowContainer } from '../components/NarrowContainer';
+import { Navbar } from '../components/Navbar';
+import { ScrollToTopButton } from '../components/ScrollToTopButton';
 
 type LayoutPropsType = PropsWithChildren & {
   breadcrumbs?: Breadcrumb[];

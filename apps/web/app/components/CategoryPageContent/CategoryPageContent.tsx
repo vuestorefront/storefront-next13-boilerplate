@@ -2,7 +2,7 @@
 
 import { useMedia } from 'react-use';
 import dynamic from 'next/dynamic';
-import { useTranslation } from 'next-i18next';
+import { useTranslation } from '~/app/i18n/client';
 import { NarrowContainer } from '../NarrowContainer';
 import { Pagination } from '../Pagination';
 import { ProductCard } from '../ProductCard';

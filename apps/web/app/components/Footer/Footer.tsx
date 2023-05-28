@@ -1,10 +1,10 @@
 'use client';
 
-import Link from 'next/link';
 import classNames from 'classnames';
-// import { useTranslation } from 'next-i18next';
-import { bottomLinks, categories, companyName, contactOptions, socialMedia } from '~/mocks';
+import Link from '~/app/i18n/components/Link';
 import { Divider } from '../Divider';
+// import { useTranslation } from 'next-i18next';
+import { bottomLinks, categories, companyName, contactOptions, socialMedia } from './footerData';
 
 export function Footer({ className, t }: { className?: string; lng: string; t: any }): JSX.Element {
   return (

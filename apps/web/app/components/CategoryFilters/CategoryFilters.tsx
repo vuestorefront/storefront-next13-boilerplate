@@ -6,7 +6,7 @@ import { Filter } from './Filter';
 import type { CategoryFiltersProps } from './types';
 
 export function CategoryFilters({ facets }: CategoryFiltersProps) {
-  const { t } = useTranslation('en', 'category');
+  const { t } = useTranslation('category');
   const [selectedFilters, setSelectedFilters] = useState<string[]>([]);
   const colorFacets = facets.find(({ name }) => name === 'color');
   const sizeFacets = facets.find(({ name }) => name === 'size');

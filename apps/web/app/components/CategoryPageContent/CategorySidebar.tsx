@@ -2,7 +2,7 @@
 
 import { useRef } from 'react';
 import { CSSTransition } from 'react-transition-group';
-import { useTranslation } from 'next-i18next';
+import { useTranslation } from '~/app/i18n/client';
 import type { CategorySidebarProps } from '~/components';
 import { SfButton, SfDrawer, SfIconClose, useTrapFocus } from '../SFUI';
 

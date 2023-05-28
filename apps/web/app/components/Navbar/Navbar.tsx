@@ -1,21 +1,23 @@
 'use client';
 
-import Link from 'next/link';
+import Link from '~/app/i18n/components/Link';
 import { useCart } from '~/hooks';
 import { useTranslation } from '../../i18n/client';
 import { Badge } from '../Badge';
 import { NavbarTop } from '../NavbarTop';
 import { SfButton, SfIconExpandMore, SfIconShoppingCart } from '../SFUI';
 import { Search } from '../Search';
+import { Switch } from './Switch';
 
 export function Navbar() {
-  const { t } = useTranslation('en', 'common');
+  const { t } = useTranslation('common');
   const { data: cart1 } = useCart();
 
   const cartLineItemsCount = cart1?.lineItems.reduce((total, { quantity }) => total + quantity, 0) ?? 0;
 
   return (
     <NavbarTop filled>
+      <Switch></Switch>
       <SfButton
         className="!px-2 mr-auto text-white bg-transparent hover:bg-primary-800 hover:text-white active:bg-primary-900 active:text-white font-body hidden md:inline-flex"
         as={Link}

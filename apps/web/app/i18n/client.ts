@@ -4,7 +4,7 @@ import { UseTranslationOptions, initReactI18next, useTranslation as useTranslati
 import i18next from 'i18next';
 import LanguageDetector from 'i18next-browser-languagedetector';
 import resourcesToBackend from 'i18next-resources-to-backend';
-import { defaultNS, getOptions, fallbackLng } from './settings';
+import { defaultNS, getOptions } from './settings';
 
 // on client side the normal singleton is ok
 i18next
@@ -21,11 +21,8 @@ i18next
     },
   });
 
-export function useTranslation(
-  lng: string = fallbackLng,
-  ns: string | string[] = defaultNS,
-  options?: UseTranslationOptions,
-) {
-  if (i18next.resolvedLanguage !== lng) i18next.changeLanguage(lng);
+export function useTranslation(ns: string | string[] = defaultNS, lang?: string, options?: UseTranslationOptions) {
+  // if (i18next.isInitialized && lang && i18next.resolvedLanguage !== lang) i18next.changeLanguage(lang);
+  // console.log('useTranslation', i18next.resolvedLanguage);
   return useTranslationOrg(ns, options);
 }

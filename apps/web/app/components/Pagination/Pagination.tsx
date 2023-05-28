@@ -2,7 +2,7 @@
 
 import { Fragment } from 'react';
 import classNames from 'classnames';
-import { useTranslation } from 'next-i18next';
+import { useTranslation } from '~/app/i18n/client';
 import { usePagination } from '~/hooks/usePagination';
 import { SfButton, SfIconChevronLeft, SfIconChevronRight } from '../SFUI';
 import type { PaginationProps } from './types';

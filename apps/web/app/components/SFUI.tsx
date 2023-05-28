@@ -41,6 +41,14 @@ export { default as SfIconRemove } from '@storefront-ui/react/dist/components/Sf
 export { default as SfIconCheck } from '@storefront-ui/react/dist/components/SfIcons/SfIconCheck.mjs';
 export { default as SfIconThumbUp } from '@storefront-ui/react/dist/components/SfIcons/SfIconThumbUp.mjs';
 export { default as SfIconThumbDown } from '@storefront-ui/react/dist/components/SfIcons/SfIconThumbDown.mjs';
+export { default as SfIconCall } from '@storefront-ui/react/dist/components/SfIcons/SfIconCall.mjs';
+export { default as SfIconContactSupport } from '@storefront-ui/react/dist/components/SfIcons/SfIconContactSupport.mjs';
+export { default as SfIconFacebook } from '@storefront-ui/react/dist/components/SfIcons/SfIconFacebook.mjs';
+export { default as SfIconHelp } from '@storefront-ui/react/dist/components/SfIcons/SfIconHelp.mjs';
+export { default as SfIconInstagram } from '@storefront-ui/react/dist/components/SfIcons/SfIconInstagram.mjs';
+export { default as SfIconPinterest } from '@storefront-ui/react/dist/components/SfIcons/SfIconPinterest.mjs';
+export { default as SfIconTwitter } from '@storefront-ui/react/dist/components/SfIcons/SfIconTwitter.mjs';
+export { default as SfIconYoutube } from '@storefront-ui/react/dist/components/SfIcons/SfIconYoutube.mjs';
 
 export { useDisclosure } from '@storefront-ui/react/dist/hooks/useDisclosure/useDisclosure.mjs';
 export { useTrapFocus } from '@storefront-ui/react/dist/hooks/useTrapFocus/useTrapFocus.mjs';

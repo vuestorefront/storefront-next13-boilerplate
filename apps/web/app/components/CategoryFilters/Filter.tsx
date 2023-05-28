@@ -1,7 +1,7 @@
 'use client';
 
 import classNames from 'classnames';
-import { useTranslation } from 'next-i18next';
+import { useTranslation } from '~/app/i18n/client';
 import { SfAccordionItem, SfChip, SfCounter, SfIconChevronLeft, SfListItem, SfThumbnail, useDisclosure } from '../SFUI';
 import type { FilterProps } from './types';
 

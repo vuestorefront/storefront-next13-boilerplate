@@ -6,7 +6,7 @@ import { SfRating, SfIconCheck, SfIconThumbUp, SfIconThumbDown, SfCounter } from
 import type { ReviewProps } from './types';
 
 export function Review({ review, ...attributes }: ReviewProps) {
-  const { t } = useTranslation('en', 'product');
+  const { t } = useTranslation('product');
   const { createdAt, rating, reviewer, text, title } = review;
 
   const [isCollapsed, setIsCollapsed] = useState(true);

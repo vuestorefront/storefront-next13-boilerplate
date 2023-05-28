@@ -3,7 +3,7 @@
 import { Fragment } from 'react';
 import { useContent } from '~/hooks/useContent';
 import { RenderContent } from '../components/RenderContent';
-import { DefaultLayout } from '../default-layout';
+import { DefaultLayout } from './default-layout';
 
 export default function Home({ url }: { url: string }) {
   const { data: content } = useContent(url);

@@ -9,7 +9,7 @@ import { SfButton, SfIconChevronLeft, SfIconChevronRight, SfScrollable } from '.
 import type { GalleryProps } from './types';
 
 export function Gallery({ images, className, ...attributes }: GalleryProps) {
-  const { t } = useTranslation('en', 'product');
+  const { t } = useTranslation('product');
   const [activeIndex, setActiveIndex] = useState(0);
 
   const imagesCount = images.length;

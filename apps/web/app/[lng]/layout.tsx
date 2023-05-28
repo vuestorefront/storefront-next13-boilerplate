@@ -3,9 +3,9 @@ import { Metadata } from 'next';
 import classNames from 'classnames';
 import { fontBody, fontHeadings } from '~/styles/fonts';
 // import { dir } from 'i18next';
-import '../styles/main.scss';
-import { fallbackLng, languages } from './i18n/settings';
-import Providers from './rq/providers';
+import '../../styles/main.scss';
+import { fallbackLng, languages } from '../i18n/settings';
+import Providers from '../rq/providers';
 
 export const metadata: Metadata = {
   title: 'Home',
@@ -20,13 +20,15 @@ export default function RootLayout({
   // Layouts must accept a children prop.
   // This will be populated with nested layouts or pages
   children,
-  params: { lng = fallbackLng },
+  params,
 }: {
   children: ReactNode;
   params: {
     lng: string;
   };
 }) {
+  const { lng = fallbackLng } = params;
+
   return (
     <html lang={lng} className={classNames(fontHeadings.variable, fontBody.variable, 'font-body')}>
       <head />

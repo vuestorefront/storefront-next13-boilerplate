@@ -48,7 +48,7 @@ export function BottomNav({ ...attributes }) {
   const router = useRouter();
   const pathname = usePathname();
 
-  const { t } = useTranslation('en', 'common');
+  const { t } = useTranslation('common');
 
   const { isOpen, open, close } = useDisclosure({ initialValue: false });
   const { data: cart } = useCart();

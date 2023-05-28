@@ -6,7 +6,7 @@ import { CategoryTreeItem } from './CategoryTreeItem';
 import type { CategoryTreeProps } from './types';
 
 export function CategoryTree({ parent, categories }: CategoryTreeProps) {
-  const { t } = useTranslation('en', 'category');
+  const { t } = useTranslation('category');
 
   return (
     <>

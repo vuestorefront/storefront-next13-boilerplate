@@ -1,7 +1,7 @@
 'use client';
 
-import Link from 'next/link';
 import classNames from 'classnames';
+import Link from '~/app/i18n/components/Link';
 import { VsfLogo } from './VsfLogo';
 import type { NavbarTopProps } from './types';
 
