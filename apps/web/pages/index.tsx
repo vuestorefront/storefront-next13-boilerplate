@@ -8,7 +8,9 @@ import { DefaultLayout } from '~/layouts';
 
 const contentUrl = 'home-page';
 
-export async function getServerSideProps({ locale }: GetServerSidePropsContext) {
+export async function getServerSideProps({ res, locale }: GetServerSidePropsContext) {
+  res.setHeader('Cache-Control', 'no-cache');
+
   const queryClient = await prefetchContent(contentUrl);
   const data = queryClient.getQueryData(['content', contentUrl]);
 

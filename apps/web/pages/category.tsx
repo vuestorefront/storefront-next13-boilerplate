@@ -6,7 +6,9 @@ import { CategoryPageContent, CategoryTree, CategorySorting, CategoryFilters, Br
 import { prefetchProducts, useProducts } from '~/hooks';
 import { DefaultLayout } from '~/layouts';
 
-export async function getServerSideProps({ locale }: GetServerSidePropsContext) {
+export async function getServerSideProps({ res, locale }: GetServerSidePropsContext) {
+  res.setHeader('Cache-Control', 'no-cache');
+
   const queryClient = await prefetchProducts();
   const data = queryClient.getQueryData(['products']);
 
