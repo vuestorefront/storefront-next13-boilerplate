@@ -11,6 +11,7 @@ describe('<CartProductCard />', () => {
         name="Sneaker"
         slug='sneaker'
         price={123}
+        specialPrice={100}
         maxValue={10}
         minValue={1}
         value={1}
