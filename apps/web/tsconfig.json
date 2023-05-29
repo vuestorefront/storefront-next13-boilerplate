@@ -17,9 +17,9 @@
     "paths": {
       "~/*": ["./*"]
     },
-    "types": ["jest", "@testing-library/jest-dom", "@vsf-enterprise/sdk", "cypress"]
+    "types": ["jest", "@testing-library/jest-dom", "@vsf-enterprise/sdk"]
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
-  "exclude": ["node_modules", "mocks", "__tests__"],
+  "exclude": ["node_modules", "mocks", "cypress.config.ts", "__tests__"],
   "files": ["globals.d.ts"]
 }
