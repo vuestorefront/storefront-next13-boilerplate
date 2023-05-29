@@ -1,6 +1,8 @@
+
 import { HomePageObject } from  "../../support/pageObjects/HomePageObject";
 
 const homePage = new HomePageObject();
+
 
 beforeEach(()=>{
     cy.visit("/");
@@ -9,7 +11,7 @@ beforeEach(()=>{
 describe('Smoke: Boilerplate', () => {
     describe('Homepage smoke test', () => {
         it('[smoke] Check if Primary Button is working', () => {
-          homePage.checkPrimaryButton();
+            homePage.checkPrimaryButton();
         });
         it('[smoke] Check if Secondary Button is working', () => {
             homePage.checkSecondaryButton();
@@ -25,4 +27,5 @@ describe('Smoke: Boilerplate', () => {
         });
         
     });
+
 });

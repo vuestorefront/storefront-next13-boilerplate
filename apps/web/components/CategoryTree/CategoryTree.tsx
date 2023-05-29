@@ -26,7 +26,7 @@ export function CategoryTree({ parent, categories }: CategoryTreeProps) {
           href="/category"
         />
       )}
-      <div className="mt-4 mb-6 md:mt-2">
+      <div className="mt-4 mb-6 md:mt-2" data-testid="categories">
         {categories?.map(({ name, count }) => (
           <CategoryTreeItem key={name} name={name} count={count} href="/category" />
         ))}

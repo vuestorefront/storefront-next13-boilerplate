@@ -21,7 +21,10 @@ export function Gallery({ images, className, ...attributes }: GalleryProps) {
       {...attributes}
       className={classNames('flex-col md:flex-row h-full flex relative scroll-smooth md:gap-4', className)}
     >
-      <div className="after:block after:pt-[100%] flex-1 relative overflow-hidden w-full max-h-[600px]">
+      <div
+        className="after:block after:pt-[100%] flex-1 relative overflow-hidden w-full max-h-[600px]"
+        data-testid="gallery-images"
+      >
         <div className="absolute right-2 top-2 z-10 text-xs text-neutral-600 font-normal pointer-events-none rounded-md bg-neutral-100 px-2 py-1">
           {t('gallery.count', { current: activeIndex + 1, total: imagesCount })}
         </div>

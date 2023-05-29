@@ -32,6 +32,7 @@ export function ProductCard({
             src={imageUrl ?? ''}
             alt={imageAlt || 'primary image'}
             className="object-cover rounded-md aspect-square w-full h-full"
+            data-testid="image-slot"
             fill
             sizes="(max-width: 768px) 50vw, 190px"
             priority={priority}
@@ -50,7 +51,9 @@ export function ProductCard({
           </SfLink>
         </div>
         <p className="block py-2 font-normal typography-text-xs text-neutral-700 text-justify">{description}</p>
-        <span className="block pb-2 font-bold typography-text-sm">${price}</span>
+        <span className="block pb-2 font-bold typography-text-sm" data-testid="product-card-vertical-price">
+          ${price}
+        </span>
         <SfButton type="button" size="sm" slotPrefix={<SfIconShoppingCart size="sm" />}>
           {t('addToCartShort')}
         </SfButton>
