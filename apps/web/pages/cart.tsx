@@ -4,7 +4,9 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { CartPageContent } from '~/components';
 import { CheckoutLayout } from '~/layouts';
 
-export async function getServerSideProps({ locale }: GetServerSidePropsContext) {
+export async function getServerSideProps({ res, locale }: GetServerSidePropsContext) {
+  res.setHeader('Cache-Control', 'no-cache');
+
   return {
     props: {
       key: 'cart',

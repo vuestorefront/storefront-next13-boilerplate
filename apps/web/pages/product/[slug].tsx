@@ -20,7 +20,9 @@ interface ProductPageQuery extends ParsedUrlQuery {
   slug: string;
 }
 
-export async function getServerSideProps({ locale, params }: GetServerSidePropsContext<ProductPageQuery>) {
+export async function getServerSideProps({ res, locale, params }: GetServerSidePropsContext<ProductPageQuery>) {
+  res.setHeader('Cache-Control', 'no-cache');
+
   const slug = params?.slug;
 
   if (!(slug && locale)) {
