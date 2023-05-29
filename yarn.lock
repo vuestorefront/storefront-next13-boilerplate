@@ -2388,10 +2388,10 @@
   resolved "https://registrynpm.storefrontcloud.io/@vsf-enterprise%2fsdk/-/sdk-1.0.0.tgz#4f2ee1149fbfc613a9f5c646d5eb783a8669fd77"
   integrity sha512-RjDQIYa/vAR90nZtzj5OOMHxQIaQ/2XhIBOVmx/NqF+Yq1iOqE2TzfQPUgN6zP+Y+WlMzHG0C4NOMku1kYU92w==
 
-"@vsf-enterprise/storefront-boilerplate-sdk@rc":
-  version "0.1.0-rc.1"
-  resolved "https://registrynpm.storefrontcloud.io/@vsf-enterprise%2fstorefront-boilerplate-sdk/-/storefront-boilerplate-sdk-0.1.0-rc.1.tgz#71fdbf7c61c1bd0e9ee2d2838962629bb5d11a65"
-  integrity sha512-ikgby61YtMLy0b/VbJ4TTk/hXBbE1a06DRh130JcgIdm8iIMJUN+Px0lkF38vVbx+PQrtGB22q8mPec1QMB42w==
+"@vsf-enterprise/storefront-boilerplate-sdk@0.1.0-rc.2":
+  version "0.1.0-rc.2"
+  resolved "https://registrynpm.storefrontcloud.io/@vsf-enterprise%2fstorefront-boilerplate-sdk/-/storefront-boilerplate-sdk-0.1.0-rc.2.tgz#cb1bd02db044adc186c34bf7d9a85bfedfe1cdac"
+  integrity sha512-RGG2YHn3jr6ZaNdiKCbPSF6qaQevLUZo2Nex0ZmYTXZpz7aO5nvdr+dSbQbK7Je6Zrm+q1FfaGFWzPS5lCCA4A==
   dependencies:
     "@vsf-enterprise/sdk" "1.0.0"
     axios "^0.27.2"
