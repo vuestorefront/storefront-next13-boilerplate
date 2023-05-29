@@ -3,7 +3,7 @@
   "compilerOptions": {
     "isolatedModules": false
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
-  "exclude": ["node_modules", "mocks", "cypress.config.ts", "__tests__"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "../cypress.config.ts"],
+  "exclude": ["node_modules", "mocks"],
   //  "files": ["globals.d.ts"]
 }
