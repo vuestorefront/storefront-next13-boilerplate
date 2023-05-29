@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
   push:
 
-obs:
+jobs:
   e2e-tests:
     runs-on: ubuntu-latest
 
