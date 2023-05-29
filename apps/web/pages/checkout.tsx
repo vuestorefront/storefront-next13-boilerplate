@@ -14,7 +14,9 @@ import {
 import { useCart } from '~/hooks';
 import { CheckoutLayout } from '~/layouts';
 
-export async function getServerSideProps({ locale }: GetServerSidePropsContext) {
+export async function getServerSideProps({ res, locale }: GetServerSidePropsContext) {
+  res.setHeader('Cache-Control', 'no-cache');
+
   return {
     props: {
       key: 'checkout',

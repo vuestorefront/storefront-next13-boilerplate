@@ -7,7 +7,9 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { OrderLayout } from '~/layouts';
 import orderSuccessImage from '~/public/images/order-success.svg';
 
-export async function getServerSideProps({ locale }: GetServerSidePropsContext) {
+export async function getServerSideProps({ res, locale }: GetServerSidePropsContext) {
+  res.setHeader('Cache-Control', 'no-cache');
+
   return {
     props: {
       key: 'order',
