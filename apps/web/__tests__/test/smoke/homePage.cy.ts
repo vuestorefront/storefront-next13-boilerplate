@@ -8,7 +8,7 @@ beforeEach(()=>{
     cy.visit("/");
 });
 
-describe('Smoke: Boilerplate', () => {
+describe('Smoke: Homepage', () => {
     describe('Homepage smoke test', () => {
         it('[smoke] Check if Primary Button is working', () => {
             homePage.checkPrimaryButton();

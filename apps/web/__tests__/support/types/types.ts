@@ -48,7 +48,7 @@ export type Product = {
   name?: string;
   number?: number;
   shippingPrice?: number;
-  price?: number;
+  price: number;
   currency?: string;
   sku?: string;
   category?: {
@@ -56,4 +56,4 @@ export type Product = {
     name: string;
   };
   description?: string;
-};
+ };

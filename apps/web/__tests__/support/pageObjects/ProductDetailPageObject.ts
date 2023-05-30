@@ -1,7 +1,9 @@
+import { Product } from "../types/types";
+
 export class ProductDetailPageObject {
 
     get addToCartButton() {
-        return cy.getByTestId('button').find('Add to cart');
+        return cy.getByTestId('button').contains('Add to cart');
       }
     
     get productTitle() {
@@ -32,7 +34,7 @@ export class ProductDetailPageObject {
     });
   }
 
-  assertProductDetailPageElements(data) {
+  assertProductDetailPageElements(data: Product) {
     this.productTitle
       .should('have.text', (data.name));
       this.productDescription
@@ -41,6 +43,6 @@ export class ProductDetailPageObject {
       this.productPriceValue
       .should('have.text', (data.currency + data.price.toFixed(2)));
       this.quantitySelector.should('be.visible');
-      // this.addToCartButton.should('be.visible'); need to figure out this one @PawełO
+      this.addToCartButton.should('be.visible');
   }
 }

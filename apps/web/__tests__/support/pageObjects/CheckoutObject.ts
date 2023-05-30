@@ -131,8 +131,7 @@ export class CheckoutObject {
       fillShippingAddressForm(): void {
         cy.getFixture('addressForm').then(fixture => {
           this.fillForm(fixture);
-          // TODO: change the names in code of application to drop the eq(1)
-          });
+         });
       }
     
       fillForm(fixture: any): void {

@@ -1,3 +1,5 @@
+import { Product } from "../types/types";
+
 export class CartObject {
     get cartPreview() {
         return cy.getByTestId('checkout-layout');
@@ -48,7 +50,7 @@ export class CartObject {
         });
       }
     
-      assertCartPreviewElements(data, expectedElements) {
+      assertCartPreviewElements(data: Product, expectedElements: number) {
         this.cartPreview.should('be.visible');
         this.totalItemsAmount.should('have.text', `(Items: ${expectedElements})`);
         this.subtotalPrice.should('have.text', `${data.currency}${data.price.toFixed(2)}`);
