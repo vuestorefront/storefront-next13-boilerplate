@@ -4,7 +4,7 @@
   "main": "./src/index.ts",
   "license": "MIT",
   "scripts": {
-    "_dev": "nodemon",
+    "dev": "nodemon",
     "start": "nodemon",
     "lint": "eslint . --ext .ts",
     "lint:fix": "eslint . --ext .ts --fix"
