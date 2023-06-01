@@ -1,10 +1,10 @@
-import { CartObject } from '../../support/pageObjects/CartObject';
-import { CheckoutObject } from '../../support/pageObjects/CheckoutObject';
+import { CartPageObject } from '../../support/pageObjects/CartPageObject';
+import { CheckoutPageObject } from '../../support/pageObjects/CheckoutPageObject';
 
-const checkout = new CheckoutObject();
-const cart = new CartObject();
+const checkout = new CheckoutPageObject();
+const cart = new CartPageObject();
 
-describe('Checkout smoke test', () => {
+describe('Smoke: Checkout Page', () => {
   it('[smoke] Display checkout and place order', () => {
     cy.visit('/');
     cart.openCart();

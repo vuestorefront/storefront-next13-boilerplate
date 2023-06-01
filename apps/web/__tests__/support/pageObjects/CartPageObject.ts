@@ -1,16 +1,16 @@
 import { Product } from '../types/types';
 
-export class CartObject {
+export class CartPageObject {
   get cartPreview() {
     return cy.getByTestId('checkout-layout');
   }
 
   get totalItemsAmount() {
-    return cy.getByTestId('totalInCart');
+    return cy.getByTestId('total-in-cart');
   }
 
   get subtotalPrice() {
-    return cy.getByTestId('specialPrice');
+    return cy.getByTestId('special-price');
   }
 
   get totalPrice() {

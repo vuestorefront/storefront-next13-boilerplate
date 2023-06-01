@@ -6,11 +6,11 @@ export class ProductDetailPageObject {
   }
 
   get productTitle() {
-    return cy.getByTestId('productName');
+    return cy.getByTestId('product-name');
   }
 
   get productDescription() {
-    return cy.getByTestId('productDescription').eq(0);
+    return cy.getByTestId('product-description').eq(0);
   }
 
   get productGallery() {

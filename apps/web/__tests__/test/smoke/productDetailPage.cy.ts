@@ -2,8 +2,8 @@ import { ProductDetailPageObject } from '../../support/pageObjects/ProductDetail
 
 const productDetailPage = new ProductDetailPageObject();
 
-describe('Cart smoke test', () => {
-  it('[smoke] Add items to cart and display it', () => {
+describe('Smoke: Product Detail Page', () => {
+  it('[smoke] Open product page and check displayed data', () => {
     productDetailPage.displayCheck();
   });
 });

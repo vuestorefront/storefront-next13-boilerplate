@@ -37,7 +37,7 @@ export function PurchaseCard({ product, ...attributes }: PurchaseCardProps) {
         <SfIconSell size="sm" className="ml-1" />
         <span className="mr-1">{t('sale')}</span>
       </Tag>
-      <h1 className="mb-1 font-bold typography-headline-4" data-testid="productName">
+      <h1 className="mb-1 font-bold typography-headline-4" data-testid="product-name">
         {product.name}
       </h1>
       <div className="my-1">
@@ -57,7 +57,7 @@ export function PurchaseCard({ product, ...attributes }: PurchaseCardProps) {
           {t('reviewsCount', { count: product.rating?.count })}
         </SfLink>
       </div>
-      <p className="mb-4 font-normal typography-text-sm" data-testid="productDescription">
+      <p className="mb-4 font-normal typography-text-sm" data-testid="product-description">
         {product.description}
       </p>
       <div className="py-4 mb-4 border-gray-200 border-y">

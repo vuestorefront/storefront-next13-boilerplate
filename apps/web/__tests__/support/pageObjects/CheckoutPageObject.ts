@@ -1,4 +1,4 @@
-export class CheckoutObject {
+export class CheckoutPageObject {
   get goToCheckoutButton() {
     return cy.getByTestId('button').contains('Go to checkout');
   }
