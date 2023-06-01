@@ -26,7 +26,7 @@ export function CategoryPageContent({
 
   return (
     <NarrowContainer>
-      <div className="mb-20 px-4 md:px-0">
+      <div className="mb-20 px-4 md:px-0" data-testid="category-layout">
         <h1 className="my-10 font-bold typography-headline-3 md:typography-headline-2">{title}</h1>
         <div className="md:flex gap-6" data-testid="category-page-content">
           <CategorySidebar isOpen={isOpen} closeSidebar={close}>
@@ -47,7 +47,10 @@ export function CategoryPageContent({
               </SfButton>
             </div>
             {products.length > 0 ? (
-              <section className="grid grid-cols-1 2xs:grid-cols-2 gap-4 md:gap-6 md:grid-cols-2 lg:grid-cols-3 3xl:grid-cols-4 mb-10 md:mb-5">
+              <section
+                className="grid grid-cols-1 2xs:grid-cols-2 gap-4 md:gap-6 md:grid-cols-2 lg:grid-cols-3 3xl:grid-cols-4 mb-10 md:mb-5"
+                data-testid="category-grid"
+              >
                 {products.map(({ id, name, rating, price, primaryImage, slug }, index) => (
                   <ProductCard
                     key={id}

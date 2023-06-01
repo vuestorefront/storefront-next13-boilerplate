@@ -14,7 +14,9 @@ export function OrderSummary({ cart, className = '', children }: OrderSummaryPro
     >
       <div className="flex justify-between items-end bg-neutral-100 md:bg-transparent py-2 px-4 md:px-6 md:pt-6 md:pb-4">
         <p className="typography-headline-4 font-bold md:typography-headline-3">{t('orderSummary')}</p>
-        <p className="typography-text-base font-semibold">{t('itemsInCart', { count: cart.lineItems.length })}</p>
+        <p className="typography-text-base font-semibold" data-testid="total-in-cart">
+          {t('itemsInCart', { count: cart.lineItems.length })}
+        </p>
       </div>
       <div className="px-4 pb-4 mt-3 md:px-6 md:pb-6 md:mt-0">
         <div className="flex justify-between typography-text-base pb-4">
@@ -26,7 +28,7 @@ export function OrderSummary({ cart, className = '', children }: OrderSummaryPro
             <p>{t('estimatedTax')}</p>
           </div>
           <div className="flex flex-col text-right">
-            <p>${cart.totalPrice.amount}</p>
+            <p data-testid="special-price">${cart.totalPrice.amount}</p>
             <p className="typography-text-xs text-neutral-500">${cart.subtotalRegularPrice.amount}</p>
             <p className="typography-text-xs text-secondary-700">${cart.totalCouponDiscounts.amount}</p>
             {!!cart.shippingMethod && <p className="my-2">${cart.shippingMethod.price.amount}</p>}
@@ -53,7 +55,7 @@ export function OrderSummary({ cart, className = '', children }: OrderSummaryPro
         </div>
         <div className="flex justify-between typography-headline-4 md:typography-headline-3 font-bold pb-4 mb-4">
           <p>{t('total')}</p>
-          <p>${cart.totalPrice.amount}</p>
+          <p data-testid="total">${cart.totalPrice.amount}</p>
         </div>
         <Divider className="my-4 max-md:-mx-4 max-md:w-auto" />
         {children}
