@@ -217,7 +217,7 @@ Testing configuration files:
 
 To help you code with best practices in mind, this boilerplate comes with some automated tooling.
 
-- All test descriptions follows naming convention `it('should ... ')`.
+- All test descriptions follow naming convention `it('should ... ')`.
 - Commit message enforces [Conventional Commits](https://www.conventionalcommits.org/) specification and use [commitizen](http://commitizen.github.io/cz-cli/) library.
 - Automatic code linting is managed by [lint-staged](https://github.com/okonet/lint-staged) library and [Husky](https://typicode.github.io/husky/)
 
@@ -236,14 +236,14 @@ In order to optimize and enhance the performance of the application, several per
 As one of our main goals is to help you deliver fast, performant websites, we included and configured CI/CD performance testing tools into this boilerplate.
 
 
-The purpose of these tests is to help you catch performance regressions during the development process, if you e.g. accidentally include a large library or create a long task that will not meet the criteria you will get an error/warning.
+The purpose of these tests is to help you catch performance regressions during the development process. For example, if you accidentally include a large library or create a long task that will not meet your performance criteria you will get an error/warning.
 
 There are 2 options to run those tests:
 
 
 **Run tests manually on the local environment**
 
-To run the LHCI test, go to your main project folder and run the following command
+To run the Lighthouse CI (LHCI) test, go to your main project folder and run the following command
 ```shell
 yarn lhci:mobile
 ```
@@ -270,13 +270,13 @@ You can find more information about configuring LHCI in [THIS ARTICLE](https://w
 
 **Run tests automatically on GitHub Action**
 
-Automatic LHCI tests on every PR is configured, you don’t even need to have the codebase released, the build is done automatically on GithubAction.
+In the default configuration, automatic LHCI tests will run on every PR. you don’t even need to have the codebase released, the build is done automatically during the Github Action.
 
 
 You can find workflow configuration at
 /.github/workflows/run-lhci-test.yml
 
-It can be configured to block merging of a Pull Request when the test results in error.
+You can configure your LHCI tests to block the merging of a Pull Request if the performance results fall below a certain threshold.
 
 #### More about performance
 Additional performance good practices and information can be found [HERE](https://docs.vuestorefront.io/v2/performance/intro.html).
