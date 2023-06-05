@@ -13,5 +13,6 @@ module.exports = {
     'no-secrets/no-secrets': 'off',
     'unicorn/prefer-array-some': 'off',
     'sonarjs/no-duplicate-string': 'off',
+    'max-statements': 'off',
   },
 };

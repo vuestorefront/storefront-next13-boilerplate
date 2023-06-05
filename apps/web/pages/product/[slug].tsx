@@ -2,6 +2,7 @@ import { GetServerSidePropsContext } from 'next';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 import { dehydrate } from '@tanstack/react-query';
+import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { ParsedUrlQuery } from 'node:querystring';
 import {
@@ -9,9 +10,9 @@ import {
   NarrowContainer,
   Gallery,
   ProductProperties,
-  ProductSlider,
   ProductAccordion,
   PurchaseCard,
+  RecommendedProducts,
 } from '~/components';
 import { useProductRecommended, useProduct, prefetchProduct, useProductBreadcrumbs } from '~/hooks';
 import { DefaultLayout } from '~/layouts';
@@ -49,6 +50,7 @@ export async function getServerSideProps({ res, locale, params }: GetServerSideP
 }
 
 export function ProductPage() {
+  const { t } = useTranslation('product');
   const router = useRouter();
   const { slug } = router.query as ProductPageQuery;
 
@@ -83,8 +85,8 @@ export function ProductPage() {
           </section>
           <Divider className="mt-4 mb-2" />
         </div>
-        <section className="mx-4 mt-28 mb-20" id="recommended-products">
-          <ProductSlider products={recommendedProducts} />
+        <section className="mx-4 mt-28 mb-20">
+          <RecommendedProducts products={recommendedProducts} />
         </section>
       </NarrowContainer>
     </DefaultLayout>
