@@ -2,7 +2,6 @@ import { GetServerSidePropsContext } from 'next';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 import { dehydrate } from '@tanstack/react-query';
-import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { ParsedUrlQuery } from 'node:querystring';
 import {
@@ -50,7 +49,6 @@ export async function getServerSideProps({ res, locale, params }: GetServerSideP
 }
 
 export function ProductPage() {
-  const { t } = useTranslation('product');
   const router = useRouter();
   const { slug } = router.query as ProductPageQuery;
 
