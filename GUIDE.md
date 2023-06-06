@@ -39,7 +39,6 @@ The most important files of the `Server Middleware` app are:
 
 For more info about `Server Middleware` refer to the [documentation](https://docs.vuestorefront.io/v2/architecture/server-middleware.html).
 
-
 > **Warning**
 > This project does not come with pre-packaged integrations for the sake of simplicity. However, you have the flexibility to develop custom integrations or utilize our official integrations to connect the Middleware with actual data sources.
 >
@@ -50,6 +49,10 @@ For more info about `Server Middleware` refer to the [documentation](https://doc
 > If your project requires custom integrations tailored to specific data sources or services, our project offers a flexible framework and comprehensive documentation to guide you through the process. By following our guidelines and leveraging the capabilities of the Middleware, you can effortlessly develop custom integrations that meet your unique requirements.
 > 
 > For more information on developing custom integrations, please refer to the [Integrating e-commerce platform documentation](https://docs.vuestorefront.io/v2/integrate/integration-guide.html).
+
+> **Note**
+> If you are migrating your project from Nuxt 2, the `src/index.ts` file serves as the equivalent of the Server's Middleware `middleware.js` entry point.
+
 
 #### Web application
 
