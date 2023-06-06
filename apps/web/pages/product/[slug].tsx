@@ -9,9 +9,9 @@ import {
   NarrowContainer,
   Gallery,
   ProductProperties,
-  ProductSlider,
   ProductAccordion,
   PurchaseCard,
+  RecommendedProducts,
 } from '~/components';
 import { useProductRecommended, useProduct, prefetchProduct, useProductBreadcrumbs } from '~/hooks';
 import { DefaultLayout } from '~/layouts';
@@ -83,8 +83,8 @@ export function ProductPage() {
           </section>
           <Divider className="mt-4 mb-2" />
         </div>
-        <section className="mx-4 mt-28 mb-20" id="recommended-products">
-          <ProductSlider products={recommendedProducts} />
+        <section className="mx-4 mt-28 mb-20">
+          <RecommendedProducts products={recommendedProducts} />
         </section>
       </NarrowContainer>
     </DefaultLayout>

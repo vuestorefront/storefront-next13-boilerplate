@@ -17,6 +17,7 @@ export * from './Page';
 export * from './ProductAccordion';
 export * from './ProductProperties';
 export * from './ProductSlider';
+export * from './RecommendedProducts';
 export * from './RenderContent';
 export * from './ScrollToTopButton';
 export * from './ShippingMethod';
