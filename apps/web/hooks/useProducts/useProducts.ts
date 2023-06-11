@@ -2,7 +2,7 @@ import { QueryClient, useQuery } from '@tanstack/react-query';
 import type { GetProducts } from '@vsf-enterprise/storefront-boilerplate-sdk';
 import { sdk } from '~/sdk';
 
-const fetchProducts = async (): Promise<GetProducts> => {
+export const fetchProducts = async (): Promise<GetProducts> => {
   return sdk.commerce.getProducts();
 };
 

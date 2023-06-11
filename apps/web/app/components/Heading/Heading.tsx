@@ -1,6 +1,3 @@
-'use client';
-
-import classNames from 'classnames';
 import type { HeadingProps } from './types';
 
 export function Heading({
@@ -12,7 +9,7 @@ export function Heading({
   const Tag = tag;
 
   return (
-    <Tag className={classNames(className)} {...attributes}>
+    <Tag className={className} {...attributes}>
       {title}
     </Tag>
   );

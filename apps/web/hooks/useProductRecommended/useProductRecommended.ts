@@ -2,7 +2,7 @@ import { useQuery } from '@tanstack/react-query';
 import { SfProduct } from '@vsf-enterprise/unified-data-model';
 import { sdk } from '~/sdk';
 
-const fetchProductRecommended = async (slug: string): Promise<SfProduct[]> => {
+export const fetchProductRecommended = async (slug: string): Promise<SfProduct[]> => {
   return sdk.commerce.getProductRecommended({ slug });
 };
 
@@ -14,5 +14,6 @@ export function useProductRecommended(slug: string) {
   return useQuery(['recommended', slug], () => fetchProductRecommended(slug), {
     refetchOnMount: false,
     refetchOnWindowFocus: false,
+    suspense: true,
   });
 }

@@ -2,8 +2,8 @@
 
 import { useRouter, usePathname } from 'next/navigation';
 import classNames from 'classnames';
+import { useTranslation } from '~/app/i18n/client';
 import { useCart } from '~/hooks';
-import { useTranslation } from '../../i18n/client';
 import { Badge } from '../Badge';
 import {
   SfIconClose,

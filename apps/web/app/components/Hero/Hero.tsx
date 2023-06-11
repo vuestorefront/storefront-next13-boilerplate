@@ -1,5 +1,3 @@
-'use client';
-
 import Image from 'next/image';
 import Link from '~/app/i18n/components/Link';
 import { SfButton } from '../SFUI';
@@ -27,6 +25,7 @@ export function Hero({
             height={600}
             width={764}
             unoptimized
+            priority
           />
         </div>
         <div className="p-4 md:p-10 md:flex md:flex-col md:justify-center md:items-start md:basis-2/4">

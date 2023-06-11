@@ -1,8 +1,6 @@
-'use client';
-
 import classNames from 'classnames';
 import Link from '~/app/i18n/components/Link';
-import { VsfLogo } from './VsfLogo';
+import { VsfLogo } from './VsfLogo.client';
 import type { NavbarTopProps } from './types';
 
 export function NavbarTop({ children, filled, ...attributes }: NavbarTopProps) {

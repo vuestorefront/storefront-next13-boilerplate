@@ -1,5 +1,3 @@
-'use client';
-
 import type { PageProps } from './types';
 
 export function Page({ content, ...attributes }: PageProps): JSX.Element {

@@ -1,3 +1,3 @@
 export * from './NavbarTop';
-export * from './VsfLogo';
+export * from './VsfLogo.client';
 export * from './types';
