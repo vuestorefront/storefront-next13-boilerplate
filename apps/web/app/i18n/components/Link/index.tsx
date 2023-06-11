@@ -25,7 +25,8 @@ function BaseLink(props: Props, ref: Props['ref']) {
   }, [href, i18next.resolvedLanguage]);
 
   return (
-    <Link {...rest} prefetch={prefetch} href={locHref} ref={ref}>
+    // prefetch=false leads to hard page reload
+    <Link {...rest} href={locHref} ref={ref}>
       {children}
     </Link>
   );
