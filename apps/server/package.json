@@ -12,10 +12,11 @@
   "dependencies": {
     "@vue-storefront/middleware": "3.0.0-rc.2",
     "consola": "^2.15.3",
-    "nodemon": "^2.0.19"
+    "dotenv": "^16.0.3",
+    "nodemon": "^2.0.19",
+    "ts-node-dev": "^2.0.0"
   },
   "devDependencies": {
-    "@types/express": "^4.17.13",
-    "ts-node-dev": "^2.0.0"
+    "@types/express": "^4.17.13"
   }
 }
