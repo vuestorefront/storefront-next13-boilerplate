@@ -20,11 +20,13 @@
     "test:watch": "turbo run test:watch",
     "test:coverage": "npx turbo run test:coverage",
     "test:e2e:open": "cd apps/web && npx cypress open",
-    "test:e2e:run": "cd apps/web && cypress run --browser chrome"
+    "test:e2e:run": "cd apps/web && cypress run --browser chrome",
+    "lhci:mobile": "lhci autorun"
   },
   "devDependencies": {
     "@commitlint/cli": "^13.2.1",
     "@commitlint/config-conventional": "^13.2.0",
+    "@lhci/cli": "^0.12.0",
     "@trivago/prettier-plugin-sort-imports": "^4.1.1",
     "@types/jest": "^29.5.1",
     "@vue-storefront/eslint-config": "^2.0.0-rc.5",
@@ -41,7 +43,7 @@
   },
   "engines": {
     "npm": ">=8.0.0",
-    "node": ">=16.0.0"
+    "node": ">=16.16.0"
   },
   "packageManager": "yarn@1.22.10",
   "config": {

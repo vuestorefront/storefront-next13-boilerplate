@@ -48,3 +48,6 @@ lib/
 .vscode
 *.code-workspace
 *.tsbuildinfo
+
+# lighthouse CI tests results
+.lighthouseci
