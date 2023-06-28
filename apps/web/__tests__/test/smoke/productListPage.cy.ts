@@ -16,13 +16,13 @@ describe('Smoke: Product List Page', function () {
       // ASSERT -
       productListPage.openFirstCategory();
     });
+  });
 
-    context('Product details and actions', () => {
+  context('Product details and actions', () => {
       it('[smoke] User should see the product information', () => {
         // ASSERT - product details are displayed
         productListPage.assertProductListElements();
         productListPage.assertFirstProduct();
       });
     });
-  });
 });
