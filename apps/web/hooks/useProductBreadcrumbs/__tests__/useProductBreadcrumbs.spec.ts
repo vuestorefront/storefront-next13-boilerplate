@@ -1,5 +1,5 @@
 import { renderHook } from '@testing-library/react';
-import { SfProduct } from '@vsf-enterprise/unified-data-model';
+import { SfProduct } from '@vue-storefront/unified-data-model';
 import { useProductBreadcrumbs } from '~/hooks';
 import { createWrapper } from '~/jest.utils';
 

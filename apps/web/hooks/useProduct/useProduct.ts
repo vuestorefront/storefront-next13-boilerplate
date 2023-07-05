@@ -1,5 +1,5 @@
 import { QueryClient, useQuery } from '@tanstack/react-query';
-import { SfProduct } from '@vsf-enterprise/unified-data-model';
+import { SfProduct } from '@vue-storefront/unified-data-model';
 import { sdk } from '~/sdk';
 
 const fetchProduct = async (slug: string): Promise<SfProduct> => {

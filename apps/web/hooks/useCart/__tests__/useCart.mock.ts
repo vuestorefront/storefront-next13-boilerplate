@@ -1,4 +1,4 @@
-import { SfCart } from '@vsf-enterprise/unified-data-model';
+import { SfCart } from '@vue-storefront/unified-data-model';
 
 export const mockCart: SfCart = {
   appliedCoupons: [],

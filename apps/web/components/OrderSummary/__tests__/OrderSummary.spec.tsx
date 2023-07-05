@@ -1,6 +1,6 @@
 import { render } from '@testing-library/react';
 import { OrderSummary } from '~/components';
-import { SfCart } from '@vsf-enterprise/unified-data-model';
+import { SfCart } from '@vue-storefront/unified-data-model';
 
 describe('<OrderSummary />', () => {
   it('should render component', () => {

@@ -1,9 +1,19 @@
-// https://nextjs.org/docs/basic-features/eslint#lint-staged
+// lint-staged.config.js
+const { ESLint } = require("eslint");
+
+const removeIgnoredFiles = async (files) => {
+  const eslint = new ESLint();
+  const ignoredFiles = await Promise.all(files.map((file) => eslint.isPathIgnored(file)));
+  const filteredFiles = files.filter((_, i) => !ignoredFiles[i]);
+  return filteredFiles.join(" ");
+};
+
 module.exports = {
   "*.{ts,tsx}": [
-    "bash -c \"tsc --skipLibCheck --noEmit\"",
     "bash -c \"tsc --skipLibCheck --noEmit -p __tests__\"",
-    "eslint --cache --cache-location .next/cache/eslint/ --fix"
   ],
-  "*.{js,jsx}": ["eslint --cache --cache-location .next/cache/eslint/ --fix"],
+  "*.{js,ts}": async (files) => {
+    const filesToLint = await removeIgnoredFiles(files);
+    return [`eslint --max-warnings=0 ${filesToLint} --fix`];
+  },
 };

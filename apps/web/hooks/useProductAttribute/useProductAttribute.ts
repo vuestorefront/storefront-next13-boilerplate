@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { SfAttribute, SfProduct } from '@vsf-enterprise/unified-data-model';
+import { SfAttribute, SfProduct } from '@vue-storefront/unified-data-model';
 import { get, map, defaults as withDefaults, zipObject, groupBy, uniqBy, pick, mapValues } from 'lodash-es';
 
 /**

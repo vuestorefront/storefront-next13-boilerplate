@@ -1,5 +1,5 @@
 import { useQuery } from '@tanstack/react-query';
-import { SfShippingMethods } from '@vsf-enterprise/unified-data-model';
+import { SfShippingMethods } from '@vue-storefront/unified-data-model';
 import { sdk } from '~/sdk';
 
 const fetchShippingMethods = async (): Promise<SfShippingMethods> => {

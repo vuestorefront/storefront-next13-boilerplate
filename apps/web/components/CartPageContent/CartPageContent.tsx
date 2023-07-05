@@ -20,8 +20,8 @@ export function CartPageContent() {
             imageUrl={item.image?.url}
             imageAlt={item.image?.alt}
             name={item.name}
-            price={item.totalPrice.amount}
-            specialPrice={item.unitPrice?.value?.amount}
+            price={item.totalPrice!.amount}
+            specialPrice={item.unitPrice?.value?.amount!}
             maxValue={10}
             minValue={1}
             value={item.quantity}

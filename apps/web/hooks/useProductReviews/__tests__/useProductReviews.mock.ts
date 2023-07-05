@@ -1,4 +1,4 @@
-import { SfProductReview } from '@vsf-enterprise/unified-data-model';
+import { SfProductReview } from '@vue-storefront/unified-data-model';
 
 export const mockProducts: SfProductReview[] = [
   {

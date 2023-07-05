@@ -1,5 +1,5 @@
 import { PropsWithChildren, ReactNode } from 'react';
-import { SfProductCatalogItem } from '@vsf-enterprise/unified-data-model';
+import { SfProductCatalogItem } from '@vue-storefront/unified-data-model';
 
 export interface CategoryPageContentProps extends PropsWithChildren {
   title: string;

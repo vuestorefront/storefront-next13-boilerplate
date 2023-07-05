@@ -1,4 +1,4 @@
-import type { SfProduct } from '@vsf-enterprise/unified-data-model';
+import type { SfProduct } from '@vue-storefront/unified-data-model';
 import type { HeadingProps } from '~/components/Heading/types';
 import type { PageProps } from '~/components/Page/types';
 import type { ProductSliderProps } from '~/components/ProductSlider/types';
