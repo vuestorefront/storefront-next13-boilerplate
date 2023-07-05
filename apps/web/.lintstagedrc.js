@@ -11,6 +11,6 @@ module.exports = {
   '*.{ts,tsx}': ['bash -c "tsc --skipLibCheck --noEmit -p __tests__"'],
   '*.{js,ts,tsx}': async (files) => {
     const filesToLint = await removeIgnoredFiles(files);
-    return [`eslint --max-warnings=0 ${filesToLint} --fix`];
+    return [`eslint --max-warnings=0 ${filesToLint} --fix`, 'next lint --fix'];
   },
 };

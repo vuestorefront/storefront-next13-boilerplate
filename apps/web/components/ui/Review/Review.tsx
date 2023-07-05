@@ -9,7 +9,7 @@ export function Review({ review, ...attributes }: ReviewProps) {
 
   const [isCollapsed, setIsCollapsed] = useState(true);
   const charLimit = 400;
-  const isButtonVisible = text?.length! > charLimit;
+  const isButtonVisible = text?.length || 0 > charLimit;
   const truncatedContent = isButtonVisible && isCollapsed ? `${text?.slice(0, charLimit)}...` : text;
 
   return (
