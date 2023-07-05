@@ -1,6 +1,4 @@
-# For now this workflow is manually disabled in GH Actions, 
-# enable it again when sdk mock package will be released and build will be working on GH
-name: LHCI Test
+name: Testing
 on:
   pull_request:
     types: [opened, synchronize, reopened, ready_for_review]
@@ -10,7 +8,7 @@ on:
 
 jobs:
   lighthouse:
-    name: Lighthouse CI
+    name: Lighthouse Performance Tests
     runs-on: ubuntu-latest
     if: github.event.pull_request.draft == false
     steps:
