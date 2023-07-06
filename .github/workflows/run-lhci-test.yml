@@ -1,4 +1,4 @@
-name: Testing
+name: Testing (Lighthouse CI)
 on:
   pull_request:
     types: [opened, synchronize, reopened, ready_for_review]
@@ -8,7 +8,7 @@ on:
 
 jobs:
   lighthouse:
-    name: Lighthouse Performance Tests
+    name: Performance Tests
     runs-on: ubuntu-latest
     if: github.event.pull_request.draft == false
     steps:

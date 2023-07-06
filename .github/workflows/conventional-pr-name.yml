@@ -1,4 +1,4 @@
-name: Linting
+name: Linting (Commitlint)
 on:
   pull_request:
     types: ['opened', 'edited', 'reopened', 'synchronize']

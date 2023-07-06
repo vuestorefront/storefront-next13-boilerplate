@@ -1,4 +1,4 @@
-name: Testing
+name: Testing (Cypress)
 
 on:
   workflow_dispatch:
@@ -7,7 +7,7 @@ on:
 
 jobs:
   e2e-tests:
-    name: Cypress E2E Tests
+    name: E2E Tests
     runs-on: ubuntu-latest
 
     steps:
