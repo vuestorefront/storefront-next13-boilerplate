@@ -1,4 +1,4 @@
-import { SfFacet } from '@vsf-enterprise/unified-data-model';
+import { SfFacet } from '@vue-storefront/unified-data-model';
 
 export type CategoryFiltersProps = {
   facets: SfFacet[];

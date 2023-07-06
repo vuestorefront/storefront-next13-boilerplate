@@ -2,7 +2,14 @@ import { GetServerSidePropsContext } from 'next';
 import { dehydrate } from '@tanstack/react-query';
 import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-import { CategoryPageContent, CategoryTree, CategorySorting, CategoryFilters, Breadcrumb } from '~/components';
+import {
+  CategoryPageContent,
+  CategoryTree,
+  CategorySorting,
+  CategoryFilters,
+  Breadcrumb,
+  CategoryTreeItem,
+} from '~/components';
 import { prefetchProducts, useProducts } from '~/hooks';
 import { DefaultLayout } from '~/layouts';
 
@@ -39,7 +46,11 @@ export default function CategoryPage() {
   }
 
   const { products, pagination, subCategories, facets } = productsCatalog;
-  const categories = subCategories.map(({ name, productCount }) => ({ name, count: productCount, href: '/category' }));
+  const categories: CategoryTreeItem[] = subCategories.map(({ name, productCount }) => ({
+    name,
+    count: productCount || 0,
+    href: '/category',
+  }));
 
   return (
     <DefaultLayout breadcrumbs={breadcrumbs}>

@@ -1,7 +1,7 @@
 import { ReactNode } from 'react';
 import { UrlObject } from 'node:url';
 
-type CategoryTreeItem = {
+export type CategoryTreeItem = {
   name: string;
   count?: number;
   href: string | UrlObject;

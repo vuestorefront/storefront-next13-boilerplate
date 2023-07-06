@@ -1,4 +1,4 @@
-name: Initial setup of repository
+name: Initial Setup of Repository
 
 on:
   create:

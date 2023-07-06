@@ -1,5 +1,5 @@
 import { QueryClient, useQuery } from '@tanstack/react-query';
-import type { GetProducts } from '@vsf-enterprise/storefront-boilerplate-sdk';
+import type { GetProducts } from '@vue-storefront/storefront-boilerplate-sdk';
 import { sdk } from '~/sdk';
 
 const fetchProducts = async (): Promise<GetProducts> => {

@@ -1,5 +1,5 @@
 import { useQuery } from '@tanstack/react-query';
-import { SfProductReview } from '@vsf-enterprise/unified-data-model';
+import { SfProductReview } from '@vue-storefront/unified-data-model';
 import { sdk } from '~/sdk';
 
 const fetchProductReviews = async (slug: string): Promise<SfProductReview[]> => {

@@ -190,9 +190,9 @@ To simplify the implementation and management of data fetching, React Query is e
 By combining VSF SDK with React Query, this project ensures a reliable and performant data fetching experience for the application. Developers can easily fetch, update, and maintain data using React Query's declarative approach, while the VSF SDK handles the underlying communication and data retrieval tasks.
 
 > **Note**
-> For development and testing purposes, the project uses mocked data provided by the `@vsf-enterprise/integration-boilerplate-sdk` library.
+> For development and testing purposes, the project uses mocked data provided by the `@vue-storefront/integration-boilerplate-sdk` library.
 >
-> In a production scenario, is necessary to connect connectors to interface with actual data sources. The `@vsf-enterprise/integration-boilerplate-sdk` library serves as a foundation and offers the necessary abstractions and guidelines to facilitate the development of custom connectors.
+> In a production scenario, is necessary to connect connectors to interface with actual data sources. The `@vue-storefront/integration-boilerplate-sdk` library serves as a foundation and offers the necessary abstractions and guidelines to facilitate the development of custom connectors.
 >
 > Check out [VSF SDK official integration modules](https://docs.vuestorefront.io/sdk/modules/).
 

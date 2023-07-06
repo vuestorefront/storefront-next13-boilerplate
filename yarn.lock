@@ -2529,28 +2529,10 @@
     "@typescript-eslint/types" "5.59.8"
     eslint-visitor-keys "^3.3.0"
 
-"@vsf-enterprise/sdk@1.0.0", "@vsf-enterprise/sdk@^1.0.0":
-  version "1.0.0"
-  resolved "https://registrynpm.storefrontcloud.io/@vsf-enterprise%2fsdk/-/sdk-1.0.0.tgz#4f2ee1149fbfc613a9f5c646d5eb783a8669fd77"
-  integrity sha512-RjDQIYa/vAR90nZtzj5OOMHxQIaQ/2XhIBOVmx/NqF+Yq1iOqE2TzfQPUgN6zP+Y+WlMzHG0C4NOMku1kYU92w==
-
-"@vsf-enterprise/storefront-boilerplate-sdk@0.1.0-rc.2":
-  version "0.1.0-rc.2"
-  resolved "https://registrynpm.storefrontcloud.io/@vsf-enterprise%2fstorefront-boilerplate-sdk/-/storefront-boilerplate-sdk-0.1.0-rc.2.tgz#cb1bd02db044adc186c34bf7d9a85bfedfe1cdac"
-  integrity sha512-RGG2YHn3jr6ZaNdiKCbPSF6qaQevLUZo2Nex0ZmYTXZpz7aO5nvdr+dSbQbK7Je6Zrm+q1FfaGFWzPS5lCCA4A==
-  dependencies:
-    "@vsf-enterprise/sdk" "1.0.0"
-    axios "^0.27.2"
-
-"@vsf-enterprise/unified-data-model@0.0.1-rc.1":
-  version "0.0.1-rc.1"
-  resolved "https://registrynpm.storefrontcloud.io/@vsf-enterprise%2funified-data-model/-/unified-data-model-0.0.1-rc.1.tgz#28695b8b8f89e5b99ca0b6b1df7721d42161a3ab"
-  integrity sha512-3mIdV45eJhnzbdR51Jbq1xsnBP/SJT/tUFNx2xJXTJ5hDmBwftValNX0QwTF89T0n6dxXj95w0JAN+vqSLC3GA==
-
-"@vue-storefront/eslint-config@^2.0.0-rc.5":
-  version "2.0.0-rc.5"
-  resolved "https://registry.yarnpkg.com/@vue-storefront/eslint-config/-/eslint-config-2.0.0-rc.5.tgz#3d02b9d71fc48486a70f93cc5f02b63d7df2e131"
-  integrity sha512-YajQsPs66PCS3RlhQEfw4p5f/T+706vLCghmHJ7CqGwGPE1e0CpXGh6R2k0Gn4YsqUcwf1Ht+mdP33ehD3P/Yg==
+"@vue-storefront/eslint-config@^2.0.0-rc.7":
+  version "2.0.0-rc.7"
+  resolved "https://registry.yarnpkg.com/@vue-storefront/eslint-config/-/eslint-config-2.0.0-rc.7.tgz#bb66c24f4cdd575d6fa93703b54b476999990e46"
+  integrity sha512-zKMLbjGzk9u/p5LjLEW5EffAvmvaVHVrqL0lgFdhGLO3yNnRshD5T0g/d6NG0I9iYRJStubleiQ5TbDyjr1ZKw==
   dependencies:
     "@microsoft/eslint-plugin-sdl" "^0.2.0"
     "@typescript-eslint/eslint-plugin" "^5.57.1"
@@ -2582,6 +2564,24 @@
     express "^4.18.1"
     helmet "^5.1.1"
     rimraf "^4.1.2"
+
+"@vue-storefront/sdk@~1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@vue-storefront/sdk/-/sdk-1.0.1.tgz#ed42e5ad76a0b17132edb515a484b10ab2dc1395"
+  integrity sha512-97lIVHroM/zno/1hdTBTsqNH+2r7kAQWqrbObZto9GO30HiS3mco7dn0uiZNzhQC+ET0FdwKp/UNgUXX3E7hsw==
+
+"@vue-storefront/storefront-boilerplate-sdk@~0.1.0":
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/@vue-storefront/storefront-boilerplate-sdk/-/storefront-boilerplate-sdk-0.1.0.tgz#79b71d14342aa2abf43fe43078b8f75c8d888b9d"
+  integrity sha512-fnxBYQDDvFlnf72PXe9xrYc4ClvcBtPHzBcm0Uz9sNi7Y3tbsJMk9wYFobv8tV5X3lluKUocIJJynpctuYclDA==
+  dependencies:
+    "@vue-storefront/sdk" "~1.0.1"
+    axios "^0.27.2"
+
+"@vue-storefront/unified-data-model@~0.1.0":
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/@vue-storefront/unified-data-model/-/unified-data-model-0.1.0.tgz#d0d323236a87c35634c4302e9a9e14d3778824df"
+  integrity sha512-braFJmiZMcAvryaOc8k6Nk8vfFaeD9njYTFgXSh7LeUj3rr9L0SbHRF42yOqEa/I4fqGpmx6NisWOkr2FLdW2w==
 
 "@vue/eslint-config-typescript@^11.0.2":
   version "11.0.3"
@@ -8376,11 +8376,6 @@ react-is@^18.0.0:
   version "18.2.0"
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-18.2.0.tgz#199431eeaaa2e09f86427efbb4f1473edb47609b"
   integrity sha512-xWGDIW6x921xtzPkhiULtthJHoJvBbF3q26fzloPCK0hsvxtPVelvftw3zjbHWSkR2km9Z+4uxbDDK/6Zw9B8w==
-
-react-merge-refs@^2.0.2:
-  version "2.0.2"
-  resolved "https://registry.yarnpkg.com/react-merge-refs/-/react-merge-refs-2.0.2.tgz#73f576111124897dec4ea56035a97e199e8cb377"
-  integrity sha512-V5BGTwGa2r+/t0A/BZMS6L7VPXY0CU8xtAhkT3XUoI1WJJhhtvulvoiZkJ5Jt9YAW23m4xFWmhQ+C5HwjtTFhQ==
 
 react-polymorphed@^2.1.0:
   version "2.1.1"

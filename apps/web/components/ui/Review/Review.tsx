@@ -9,8 +9,8 @@ export function Review({ review, ...attributes }: ReviewProps) {
 
   const [isCollapsed, setIsCollapsed] = useState(true);
   const charLimit = 400;
-  const isButtonVisible = text?.length > charLimit;
-  const truncatedContent = isButtonVisible && isCollapsed ? `${text.slice(0, charLimit)}...` : text;
+  const isButtonVisible = text?.length || 0 > charLimit;
+  const truncatedContent = isButtonVisible && isCollapsed ? `${text?.slice(0, charLimit)}...` : text;
 
   return (
     <article className="w-full p-4 border rounded-md mb-4" {...attributes}>
@@ -18,7 +18,7 @@ export function Review({ review, ...attributes }: ReviewProps) {
       <header className="flex flex-col pb-2 md:flex-row md:justify-between">
         <div className="flex flex-col items-start">
           <span className="flex items-center pr-2 text-xs text-neutral-500">
-            <SfRating value={rating} max={5} size="xs" className="mr-2" />
+            <SfRating value={rating as number} max={5} size="xs" className="mr-2" />
             {new Date(createdAt).toLocaleDateString()}
           </span>
         </div>

@@ -1,5 +1,5 @@
 import { useMemo } from 'react';
-import { SfProduct } from '@vsf-enterprise/unified-data-model';
+import { SfProduct } from '@vue-storefront/unified-data-model';
 import { useTranslation } from 'next-i18next';
 import type { Breadcrumb } from '~/components';
 

@@ -1,5 +1,5 @@
 import { render } from '@testing-library/react';
-import { SfProductReview } from '@vsf-enterprise/unified-data-model';
+import { SfProductReview } from '@vue-storefront/unified-data-model';
 import { Review } from '~/components';
 
 describe('<Review />', () => {
