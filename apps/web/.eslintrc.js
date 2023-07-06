@@ -4,6 +4,7 @@ module.exports = {
     project: './tsconfig.json',
     tsconfigRootDir: __dirname,
   },
+  ignorePatterns: ['node_modules/', 'dist/', 'build/', '**/*.setup.ts'],
   rules: {
     'max-len': ['warn', { code: 120, ignoreStrings: true, ignoreUrls: true, ignoreTemplateLiterals: true }],
     'max-lines-per-function': 'off',

@@ -20,8 +20,6 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: '16'
-          registry-url: 'https://registrynpm.storefrontcloud.io'
-          scope: '@vsf-enterprise'
           cache: 'yarn'
 
       - name: Install dependencies

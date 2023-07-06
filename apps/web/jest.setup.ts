@@ -19,11 +19,6 @@ jest.mock('next-i18next', () => ({
   Trans: ({ children }: any) => children,
 }));
 
-jest.mock('react-merge-refs', () => ({
-  __esModule: true,
-  mergeRefs: jest.fn(),
-}));
-
 jest.mock('next/dynamic', () => ({
   __esModule: true,
   default: (...props: any) => {
