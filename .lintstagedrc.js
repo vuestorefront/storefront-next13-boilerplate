@@ -1,4 +1,5 @@
 module.exports = {
-  'apps/**/*.{js,jsx,ts,tsx}': ['eslint --fix'],
+  'apps/web/*.{js,jsx,ts,tsx}': ['eslint --fix'],
+  'apps/server/*.{js,jsx,ts,tsx}': ['eslint --fix'],
   '*.json': ['yarn prettier --write'],
 };
