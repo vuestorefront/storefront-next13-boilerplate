@@ -51,3 +51,6 @@ lib/
 
 # lighthouse CI tests results
 .lighthouseci
+
+# docs folder
+.nuxt
