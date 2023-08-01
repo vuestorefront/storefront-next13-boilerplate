@@ -54,3 +54,4 @@ lib/
 
 # docs folder
 .nuxt
+.output
