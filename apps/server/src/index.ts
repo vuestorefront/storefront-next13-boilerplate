@@ -1,4 +1,4 @@
-import {createServer} from '@vue-storefront/middleware';
+import { createServer } from '@vue-storefront/middleware';
 import consola from 'consola';
 import config from '../middleware.config';
 
