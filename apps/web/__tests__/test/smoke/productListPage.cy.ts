@@ -13,16 +13,16 @@ describe('Smoke: Product List Page', function () {
     });
 
     it('[smoke] User should be able to see the list of the categories available', () => {
-      // ASSERT -
+      // ACT - open first product category
       productListPage.openFirstCategory();
     });
   });
 
   context('Product details and actions', () => {
-      it('[smoke] User should see the product information', () => {
-        // ASSERT - product details are displayed
-        productListPage.assertProductListElements();
-        productListPage.assertFirstProduct();
-      });
+    it('[smoke] User should see the product information', () => {
+      // ASSERT - product details are displayed
+      productListPage.assertProductListElements();
+      productListPage.assertFirstProduct();
     });
+  });
 });
