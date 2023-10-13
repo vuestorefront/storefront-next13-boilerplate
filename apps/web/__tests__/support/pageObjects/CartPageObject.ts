@@ -22,7 +22,7 @@ export class CartPageObject {
   }
 
   get quanityDecreaseButton() {
-    return cy.getByTestId('quantitySelectorDecreaseButton');
+    return cy.getByTestId('quantity-selector-decrease-button');
   }
 
   get productCards() {
@@ -30,7 +30,7 @@ export class CartPageObject {
   }
 
   get quantitySelectorInput() {
-    return cy.getByTestId('quantitySelectorInput');
+    return cy.getByTestId('quantity-selector-input');
   }
 
   get cartBadgeIndicator() {

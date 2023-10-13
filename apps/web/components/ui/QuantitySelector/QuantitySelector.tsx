@@ -33,7 +33,7 @@ export function QuantitySelector({
     <div data-testid="quantitySelector" className={`inline-flex flex-col items-center ${className}`}>
       <div className="flex border border-neutral-300 rounded-md h-full w-full">
         <SfButton
-          data-testid="quantitySelectorDecreaseButton"
+          data-testid="quantity-selector-decrease-button"
           type="button"
           variant="tertiary"
           square
@@ -46,7 +46,7 @@ export function QuantitySelector({
           <SfIconRemove />
         </SfButton>
         <input
-          data-testid="quantitySelectorInput"
+          data-testid="quantity-selector-input"
           id={inputId}
           type="number"
           role="spinbutton"
