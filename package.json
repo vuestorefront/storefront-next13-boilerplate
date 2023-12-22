@@ -42,8 +42,8 @@
     "cypress": "^13.2.0"
   },
   "engines": {
-    "npm": ">=8.0.0",
-    "node": ">=16.16.0"
+    "npm": ">=9.0.0",
+    "node": ">=18.0.0"
   },
   "packageManager": "yarn@1.22.10",
   "config": {
