@@ -10,3 +10,5 @@ const options: CreateSdkOptions = {
 export const { getSdk } = createSdk(options, ({ buildModule }) => ({
   commerce: buildModule<SdkModule>(sdkModule),
 }));
+
+export type Sdk = ReturnType<typeof getSdk>;

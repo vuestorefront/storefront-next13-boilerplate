@@ -1,19 +1,17 @@
 import { renderHook, waitFor } from '@testing-library/react';
-import { createWrapper } from '~/jest.utils';
 import { useCart } from '~/hooks';
+import { createWrapper } from '~/jest.utils';
 import { mockCart } from './useCart.mock';
 
-jest.mock('~/sdk', () => ({
-  sdk: {
-    commerce: {
-      getCart: jest.fn(() => mockCart),
-    },
+const sdk = {
+  commerce: {
+    getCart: jest.fn(() => mockCart),
   },
-}));
+};
 
 describe('useCart', () => {
   it('should return cart', async () => {
-    const wrapper = createWrapper();
+    const wrapper = createWrapper({ sdk });
     const { result } = renderHook(() => useCart(), { wrapper });
 
     await waitFor(() => expect(result.current.data).not.toBeUndefined());

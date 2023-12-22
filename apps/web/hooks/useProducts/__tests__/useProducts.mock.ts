@@ -28,6 +28,7 @@ export const mockProducts: GetProducts = {
         average: 3,
         count: 26,
       },
+      quantityLimit: 10,
     },
   ],
   pagination: {

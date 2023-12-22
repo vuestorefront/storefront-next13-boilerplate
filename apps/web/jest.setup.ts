@@ -34,3 +34,8 @@ window.ResizeObserver = class ResizeObserver {
   unobserve() {}
   disconnect() {}
 };
+
+jest.mock('~/sdk', () => ({
+  ...jest.requireActual('~/sdk'),
+  useSdk: jest.fn(),
+}));

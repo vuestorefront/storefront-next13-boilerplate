@@ -1,11 +1,13 @@
-import { QueryClient, useQuery } from '@tanstack/react-query';
-import { getSdk, useSdk } from '~/sdk';
+import { useQuery } from '@tanstack/react-query';
+import { GetServerSideEnhancedContext } from '~/helpers/types';
+import { useSdk } from '~/sdk';
 
-export async function prefetchContent(url: string): Promise<QueryClient> {
-  const queryClient = new QueryClient();
-  await queryClient.prefetchQuery(['content', url], () => getSdk().commerce.getContent({ url }));
+export async function prefetchContent(context: GetServerSideEnhancedContext, url: string) {
+  const { queryClient, sdk } = context;
+  const content = await sdk.commerce.getContent({ url });
+  queryClient.setQueryData(['content', url], content);
 
-  return queryClient;
+  return content;
 }
 
 /**

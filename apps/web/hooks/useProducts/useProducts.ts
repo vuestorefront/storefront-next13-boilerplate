@@ -1,11 +1,14 @@
-import { QueryClient, useQuery } from '@tanstack/react-query';
-import { getSdk, useSdk } from '~/sdk';
+import { useQuery } from '@tanstack/react-query';
+import { GetProducts } from '@vue-storefront/storefront-boilerplate-sdk';
+import { GetServerSideEnhancedContext } from '~/helpers/types';
+import { useSdk } from '~/sdk';
 
-export async function prefetchProducts(): Promise<QueryClient> {
-  const queryClient = new QueryClient();
-  await queryClient.prefetchQuery(['products'], () => getSdk().commerce.getProducts());
+export async function prefetchProducts(context: GetServerSideEnhancedContext): Promise<GetProducts> {
+  const { queryClient, sdk } = context;
+  const products = await sdk.commerce.getProducts();
+  queryClient.setQueryData(['products'], products);
 
-  return queryClient;
+  return products;
 }
 
 /**

@@ -1,22 +1,14 @@
-import { GetServerSidePropsContext } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import { SfButton } from '@storefront-ui/react';
 import { Trans, useTranslation } from 'next-i18next';
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { createGetServerSideProps } from '~/helpers';
 import { OrderLayout } from '~/layouts';
 import orderSuccessImage from '~/public/images/order-success.svg';
 
-export async function getServerSideProps({ res, locale }: GetServerSidePropsContext) {
-  res.setHeader('Cache-Control', 'no-cache');
-
-  return {
-    props: {
-      key: 'order',
-      ...(await serverSideTranslations(locale as string, ['common', 'footer', 'order'])),
-    },
-  };
-}
+export const getServerSideProps = createGetServerSideProps({ i18nNamespaces: ['order'] }, async (context) => {
+  context.res.setHeader('Cache-Control', 'no-cache');
+});
 
 export function OrderSuccessPage() {
   const { t } = useTranslation(['order', 'checkout']);

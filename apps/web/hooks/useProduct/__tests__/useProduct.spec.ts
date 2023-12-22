@@ -1,28 +1,25 @@
-import { QueryClient } from '@tanstack/react-query';
 import { renderHook, waitFor } from '@testing-library/react';
-import { createWrapper } from '~/jest.utils';
-import { useProduct, prefetchProduct } from '../useProduct';
+import { createGetServerSidePropsContext, createWrapper } from '~/jest.utils';
+import { prefetchProduct, useProduct } from '../useProduct';
 import { mockProduct } from './useProduct.mock';
 
-jest.mock('~/sdk', () => ({
-  sdk: {
-    commerce: {
-      getProduct: jest.fn(() => mockProduct),
-    },
+const sdk = {
+  commerce: {
+    getProduct: jest.fn(() => mockProduct),
   },
-}));
+};
 
 describe('prefetchProduct', () => {
   it('should return queryClient', async () => {
-    const client = await prefetchProduct('mock-slug');
+    const response = await prefetchProduct(createGetServerSidePropsContext({ sdk }), 'mock-slug');
 
-    expect(client).toBeInstanceOf(QueryClient);
+    expect(response).toEqual(mockProduct);
   });
 });
 
 describe('useProduct', () => {
   it('should return product reviews', async () => {
-    const wrapper = createWrapper();
+    const wrapper = createWrapper({ sdk });
     const { result } = renderHook(() => useProduct('mock-slug'), { wrapper });
 
     await waitFor(() => expect(result.current.data).not.toBeUndefined());

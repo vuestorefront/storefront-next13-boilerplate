@@ -1,8 +1,6 @@
-import { GetServerSidePropsContext } from 'next';
 import Link from 'next/link';
 import { SfButton, SfLink } from '@storefront-ui/react';
 import { Trans, useTranslation } from 'next-i18next';
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import {
   Divider,
   OrderSummary,
@@ -11,19 +9,16 @@ import {
   ContactInformation,
   ShippingMethod,
 } from '~/components';
+import { createGetServerSideProps } from '~/helpers';
 import { useCart } from '~/hooks';
 import { CheckoutLayout } from '~/layouts';
 
-export async function getServerSideProps({ res, locale }: GetServerSidePropsContext) {
-  res.setHeader('Cache-Control', 'no-cache');
-
-  return {
-    props: {
-      key: 'checkout',
-      ...(await serverSideTranslations(locale as string, ['cart', 'checkout', 'common', 'footer', 'address'])),
-    },
-  };
-}
+export const getServerSideProps = createGetServerSideProps(
+  { i18nNamespaces: ['cart', 'checkout', 'address'] },
+  async (context) => {
+    context.res.setHeader('Cache-Control', 'no-cache');
+  },
+);
 
 export default function Checkout() {
   const { t } = useTranslation('checkout');

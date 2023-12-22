@@ -3,17 +3,15 @@ import { createWrapper } from '~/jest.utils';
 import { useProductRecommended } from '../useProductRecommended';
 import { mockProducts } from './useProductRecommended.mock';
 
-jest.mock('~/sdk', () => ({
-  sdk: {
-    commerce: {
-      getProductRecommended: jest.fn(() => mockProducts),
-    },
+const sdk = {
+  commerce: {
+    getProductRecommended: jest.fn(() => mockProducts),
   },
-}));
+};
 
 describe('useProductRecommended', () => {
   it('should return product reviews', async () => {
-    const wrapper = createWrapper();
+    const wrapper = createWrapper({ sdk });
     const { result } = renderHook(() => useProductRecommended('mock-slug'), { wrapper });
 
     await waitFor(() => expect(result.current.data).not.toBeUndefined());
