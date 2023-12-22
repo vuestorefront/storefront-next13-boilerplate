@@ -1,9 +1,9 @@
 import { QueryClient, useQuery } from '@tanstack/react-query';
-import { sdk } from '~/sdk';
+import { getSdk, useSdk } from '~/sdk';
 
 export async function prefetchContent(url: string): Promise<QueryClient> {
   const queryClient = new QueryClient();
-  await queryClient.prefetchQuery(['content', url], () => sdk.commerce.getContent({ url }));
+  await queryClient.prefetchQuery(['content', url], () => getSdk().commerce.getContent({ url }));
 
   return queryClient;
 }
@@ -14,6 +14,8 @@ export async function prefetchContent(url: string): Promise<QueryClient> {
  */
 
 export function useContent<TFields>(url: string) {
+  const sdk = useSdk();
+
   return useQuery(['content', url], () => sdk.commerce.getContent<TFields>({ url }), {
     refetchOnMount: false,
     refetchOnWindowFocus: false,
