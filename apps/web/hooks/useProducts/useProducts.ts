@@ -1,23 +1,23 @@
-import { QueryClient, useQuery } from '@tanstack/react-query';
-import type { GetProducts } from '@vue-storefront/storefront-boilerplate-sdk';
-import { sdk } from '~/sdk';
+import { useQuery } from '@tanstack/react-query';
+import { GetProducts } from '@vue-storefront/storefront-boilerplate-sdk';
+import { GetServerSideEnhancedContext } from '~/helpers/types';
+import { useSdk } from '~/sdk';
 
-const fetchProducts = async (): Promise<GetProducts> => {
-  return sdk.commerce.getProducts();
-};
+export async function prefetchProducts(context: GetServerSideEnhancedContext): Promise<GetProducts> {
+  const { queryClient, sdk } = context;
+  const products = await sdk.commerce.getProducts();
+  queryClient.setQueryData(['products'], products);
 
-export async function prefetchProducts(): Promise<QueryClient> {
-  const queryClient = new QueryClient();
-  await queryClient.prefetchQuery(['products'], () => fetchProducts());
-
-  return queryClient;
+  return products;
 }
 
 /**
  * Hook for getting products catalog data
  */
 export function useProducts() {
-  return useQuery(['products'], () => fetchProducts(), {
+  const sdk = useSdk();
+
+  return useQuery(['products'], () => sdk.commerce.getProducts(), {
     refetchOnMount: false,
     refetchOnWindowFocus: false,
   });

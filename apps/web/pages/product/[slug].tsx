@@ -1,52 +1,43 @@
-import { GetServerSidePropsContext } from 'next';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
-import { dehydrate } from '@tanstack/react-query';
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { ParsedUrlQuery } from 'node:querystring';
 import {
   Divider,
-  NarrowContainer,
   Gallery,
-  ProductProperties,
+  NarrowContainer,
   ProductAccordion,
+  ProductProperties,
   PurchaseCard,
   RecommendedProducts,
 } from '~/components';
-import { useProductRecommended, useProduct, prefetchProduct, useProductBreadcrumbs } from '~/hooks';
+import { createGetServerSideProps } from '~/helpers';
+import { prefetchProduct, useProduct, useProductBreadcrumbs, useProductRecommended } from '~/hooks';
 import { DefaultLayout } from '~/layouts';
 
 interface ProductPageQuery extends ParsedUrlQuery {
   slug: string;
 }
 
-export async function getServerSideProps({ res, locale, params }: GetServerSidePropsContext<ProductPageQuery>) {
-  res.setHeader('Cache-Control', 'no-cache');
+export const getServerSideProps = createGetServerSideProps({ i18nNamespaces: ['product'] }, async (context) => {
+  context.res.setHeader('Cache-Control', 'no-cache');
+  const { slug } = context.params as ProductPageQuery;
 
-  const slug = params?.slug;
-
-  if (!(slug && locale)) {
+  if (!slug) {
     return {
       notFound: true,
     };
   }
 
-  const queryClient = await prefetchProduct(slug);
-  const data = queryClient.getQueryData(['product', slug]);
+  const product = await prefetchProduct(context, slug);
 
-  if (!data) {
+  if (!product) {
     return {
       notFound: true,
     };
   }
 
-  return {
-    props: {
-      dehydratedState: dehydrate(queryClient),
-      ...(await serverSideTranslations(locale, ['common', 'product', 'footer'])),
-    },
-  };
-}
+  return { props: {} };
+});
 
 export function ProductPage() {
   const router = useRouter();

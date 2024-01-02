@@ -1,19 +1,11 @@
-import { GetServerSidePropsContext } from 'next';
 import { useTranslation } from 'next-i18next';
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { CartPageContent } from '~/components';
+import { createGetServerSideProps } from '~/helpers';
 import { CheckoutLayout } from '~/layouts';
 
-export async function getServerSideProps({ res, locale }: GetServerSidePropsContext) {
-  res.setHeader('Cache-Control', 'no-cache');
-
-  return {
-    props: {
-      key: 'cart',
-      ...(await serverSideTranslations(locale as string, ['cart', 'common', 'footer', 'product'])),
-    },
-  };
-}
+export const getServerSideProps = createGetServerSideProps({ i18nNamespaces: ['cart', 'product'] }, (context) => {
+  context.res.setHeader('Cache-Control', 'no-cache');
+});
 
 export function CartPage() {
   const { t } = useTranslation('cart');

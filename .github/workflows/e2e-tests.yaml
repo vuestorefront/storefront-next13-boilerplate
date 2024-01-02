@@ -19,7 +19,7 @@ jobs:
       - name: Setup node
         uses: actions/setup-node@v3
         with:
-          node-version: '16'
+          node-version: '18'
           cache: 'yarn'
           registry-url: https://registrynpm.storefrontcloud.io
 
@@ -31,4 +31,3 @@ jobs:
 
       - name: Run cypress tests
         run: yarn test:e2e:run
-

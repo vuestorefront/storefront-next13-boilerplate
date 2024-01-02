@@ -1,28 +1,25 @@
-import { QueryClient } from '@tanstack/react-query';
 import { renderHook, waitFor } from '@testing-library/react';
-import { createWrapper } from '~/jest.utils';
-import { useProducts, prefetchProducts } from '../useProducts';
+import { createGetServerSidePropsContext, createWrapper } from '~/jest.utils';
+import { prefetchProducts, useProducts } from '../useProducts';
 import { mockProducts } from './useProducts.mock';
 
-jest.mock('~/sdk', () => ({
-  sdk: {
-    commerce: {
-      getProducts: jest.fn(() => mockProducts),
-    },
+const sdk = {
+  commerce: {
+    getProducts: jest.fn(() => mockProducts),
   },
-}));
+};
 
 describe('prefetchProducts', () => {
   it('should return queryClient', async () => {
-    const client = await prefetchProducts();
+    const response = await prefetchProducts(createGetServerSidePropsContext({ sdk }));
 
-    expect(client).toBeInstanceOf(QueryClient);
+    expect(response).toEqual(mockProducts);
   });
 });
 
 describe('useProducts', () => {
   it('should return products', async () => {
-    const wrapper = createWrapper();
+    const wrapper = createWrapper({ sdk });
     const { result } = renderHook(() => useProducts(), { wrapper });
 
     await waitFor(() => expect(result.current.data).not.toBeUndefined());
@@ -82,6 +79,7 @@ describe('useProducts', () => {
               "alt": "Athletic mens walking sneakers",
               "url": "/images/product.webp",
             },
+            "quantityLimit": 10,
             "rating": {
               "average": 3,
               "count": 26,

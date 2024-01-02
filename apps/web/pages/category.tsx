@@ -1,7 +1,4 @@
-import { GetServerSidePropsContext } from 'next';
-import { dehydrate } from '@tanstack/react-query';
 import { useTranslation } from 'next-i18next';
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import {
   CategoryPageContent,
   CategoryTree,
@@ -10,28 +7,22 @@ import {
   Breadcrumb,
   CategoryTreeItem,
 } from '~/components';
+import { createGetServerSideProps } from '~/helpers';
 import { prefetchProducts, useProducts } from '~/hooks';
 import { DefaultLayout } from '~/layouts';
 
-export async function getServerSideProps({ res, locale }: GetServerSidePropsContext) {
-  res.setHeader('Cache-Control', 'no-cache');
+export const getServerSideProps = createGetServerSideProps({ i18nNamespaces: ['category'] }, async (context) => {
+  context.res.setHeader('Cache-Control', 'no-cache');
+  const products = await prefetchProducts(context);
 
-  const queryClient = await prefetchProducts();
-  const data = queryClient.getQueryData(['products']);
-
-  if (!data) {
+  if (!products) {
     return {
       notFound: true,
     };
   }
 
-  return {
-    props: {
-      dehydratedState: dehydrate(queryClient),
-      ...(await serverSideTranslations(locale as string, ['common', 'footer', 'category'])),
-    },
-  };
-}
+  return { props: {} };
+});
 
 export default function CategoryPage() {
   const { t } = useTranslation('category');

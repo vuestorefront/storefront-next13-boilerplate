@@ -1,13 +1,10 @@
 import { useQuery } from '@tanstack/react-query';
-import { SfShippingMethods } from '@vue-storefront/unified-data-model';
-import { sdk } from '~/sdk';
-
-const fetchShippingMethods = async (): Promise<SfShippingMethods> => {
-  return sdk.commerce.getShippingMethods();
-};
+import { useSdk } from '~/sdk';
 
 export function useCartShippingMethods() {
-  return useQuery(['shippingMethods'], () => fetchShippingMethods(), {
+  const sdk = useSdk();
+
+  return useQuery(['shippingMethods'], () => sdk.commerce.getShippingMethods(), {
     refetchOnMount: false,
     refetchOnWindowFocus: false,
   });

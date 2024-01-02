@@ -1,16 +1,14 @@
-import { QueryClient, useQuery } from '@tanstack/react-query';
+import { useQuery } from '@tanstack/react-query';
 import { SfProduct } from '@vue-storefront/unified-data-model';
-import { sdk } from '~/sdk';
+import { GetServerSideEnhancedContext } from '~/helpers/types';
+import { useSdk } from '~/sdk';
 
-const fetchProduct = async (slug: string): Promise<SfProduct> => {
-  return sdk.commerce.getProduct({ slug });
-};
+export async function prefetchProduct(context: GetServerSideEnhancedContext, slug: string): Promise<SfProduct> {
+  const { queryClient, sdk } = context;
+  const product = await sdk.commerce.getProduct({ slug });
+  queryClient.setQueryData(['product', slug], product);
 
-export async function prefetchProduct(slug: string): Promise<QueryClient> {
-  const queryClient = new QueryClient();
-  await queryClient.prefetchQuery(['product', slug], () => fetchProduct(slug));
-
-  return queryClient;
+  return product;
 }
 
 /**
@@ -18,7 +16,9 @@ export async function prefetchProduct(slug: string): Promise<QueryClient> {
  * @param {string} slug Product slug
  */
 export function useProduct(slug: string) {
-  return useQuery(['product', slug], () => fetchProduct(slug), {
+  const sdk = useSdk();
+
+  return useQuery(['product', slug], () => sdk.commerce.getProduct({ slug }), {
     refetchOnMount: false,
     refetchOnWindowFocus: false,
   });

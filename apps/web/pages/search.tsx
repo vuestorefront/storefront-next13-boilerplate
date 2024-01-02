@@ -1,31 +1,22 @@
-import { GetServerSidePropsContext } from 'next';
 import { useRouter } from 'next/router';
-import { dehydrate } from '@tanstack/react-query';
 import { useTranslation } from 'next-i18next';
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-import { CategoryPageContent, CategorySorting, CategoryFilters } from '~/components';
+import { CategoryFilters, CategoryPageContent, CategorySorting } from '~/components';
+import { createGetServerSideProps } from '~/helpers';
 import { prefetchProducts, useProducts } from '~/hooks';
 import { DefaultLayout } from '~/layouts';
 
-export async function getServerSideProps({ res, locale }: GetServerSidePropsContext) {
-  res.setHeader('Cache-Control', 'no-cache');
+export const getServerSideProps = createGetServerSideProps({ i18nNamespaces: ['category'] }, async (context) => {
+  context.res.setHeader('Cache-Control', 'no-cache');
+  const products = await prefetchProducts(context);
 
-  const queryClient = await prefetchProducts();
-  const data = queryClient.getQueryData(['products']);
-
-  if (!data) {
+  if (!products) {
     return {
       notFound: true,
     };
   }
 
-  return {
-    props: {
-      dehydratedState: dehydrate(queryClient),
-      ...(await serverSideTranslations(locale as string, ['common', 'footer', 'category'])),
-    },
-  };
-}
+  return { props: {} };
+});
 
 export default function SearchPage() {
   const { t } = useTranslation('category');

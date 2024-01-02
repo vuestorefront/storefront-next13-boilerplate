@@ -1,17 +1,14 @@
 import { useQuery } from '@tanstack/react-query';
-import { SfProduct } from '@vue-storefront/unified-data-model';
-import { sdk } from '~/sdk';
-
-const fetchProductRecommended = async (slug: string): Promise<SfProduct[]> => {
-  return sdk.commerce.getProductRecommended({ slug });
-};
+import { useSdk } from '~/sdk';
 
 /**
  * Hook for getting recommended products data
  * @param {string} slug Product slug
  */
 export function useProductRecommended(slug: string) {
-  return useQuery(['recommended', slug], () => fetchProductRecommended(slug), {
+  const sdk = useSdk();
+
+  return useQuery(['recommended', slug], () => sdk.commerce.getProductRecommended({ slug }), {
     refetchOnMount: false,
     refetchOnWindowFocus: false,
   });

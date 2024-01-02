@@ -1,32 +1,23 @@
 import { Fragment } from 'react';
-import { GetServerSidePropsContext } from 'next';
-import { dehydrate } from '@tanstack/react-query';
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { RenderContent } from '~/components';
+import { createGetServerSideProps } from '~/helpers';
 import { useContent, prefetchContent, ContentDynamicPage } from '~/hooks';
 import { DefaultLayout } from '~/layouts';
 
 const contentUrl = 'home-page';
 
-export async function getServerSideProps({ res, locale }: GetServerSidePropsContext) {
-  res.setHeader('Cache-Control', 'no-cache');
+export const getServerSideProps = createGetServerSideProps({ i18nNamespaces: [] }, async (context) => {
+  context.res.setHeader('Cache-Control', 'no-cache');
+  const content = await prefetchContent(context, contentUrl);
 
-  const queryClient = await prefetchContent(contentUrl);
-  const data = queryClient.getQueryData(['content', contentUrl]);
-
-  if (!data) {
+  if (!content) {
     return {
       notFound: true,
     };
   }
 
-  return {
-    props: {
-      dehydratedState: dehydrate(queryClient),
-      ...(await serverSideTranslations(locale as string, ['common', 'footer'])),
-    },
-  };
-}
+  return { props: {} };
+});
 
 export default function Home() {
   const { data: content } = useContent<ContentDynamicPage>(contentUrl);
