@@ -17,7 +17,7 @@
     "paths": {
       "~/*": ["./*"]
     },
-    "types": ["jest", "@testing-library/jest-dom", "@vue-storefront/sdk"]
+    "types": ["jest", "@testing-library/jest-dom"]
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules", "mocks", "cypress.config.ts", "__tests__"],
