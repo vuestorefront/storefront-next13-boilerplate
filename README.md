@@ -1,23 +1,18 @@
-<p align="center">
-  <a href="https://https://vuestorefront.io/">
-  <picture>
-    <img src="https://user-images.githubusercontent.com/1626923/137092657-fb398d20-b592-4661-a1f9-4135db0b61d5.png" width="400px" height="auto"/>
-  </picture>
-  </a>
-  <h1 align="center">Vue Storefront for React Boilerplate</h1>
-</p>
+![Alokai](https://res.cloudinary.com/vue-storefront/image/upload/v1710754524/Logo_green_2x_z4vmhz.png)
+
+<h1 align="center">Alokai for React Boilerplate</h1>
 
 [![GitHub Repo stars](https://img.shields.io/github/stars/vuestorefront/vue-storefront?style=social)](https://github.com/vuestorefront/vue-storefront)
 [![Twitter Follow](https://img.shields.io/twitter/follow/vuestorefront?style=social)](https://twitter.com/vuestorefront)
 [![YouTube Channel Subscribers](https://img.shields.io/youtube/channel/subscribers/UCkm1F3Cglty3CE1QwKQUhhg?style=social)](https://www.youtube.com/c/VueStorefront)
 [![Discord](https://img.shields.io/discord/770285988244750366?label=join%20discord&logo=Discord&logoColor=white)](https://discord.vuestorefront.io)
 
-## Getting Started with Vue Storefront
+## Getting Started with Alokai
 
 To get started, see the following guides:
 
-- [Introduction]([https://docs.vuestorefront.io/v2/getting-started/introduction.html](https://docs.vuestorefront.io/general) to learn what is Vue Storefront.
-- [Storefronts in Vue Storefront ecosystem](https://docs.vuestorefront.io/storefronts)
+- [Introduction](https://docs.alokai.com/v2/getting-started/introduction.html) to learn what is Alokai.
+- [Storefront in Alokai ecosystem](https://docs.alokai.com/storefront)
 
 ## Prerequisites:
 
@@ -59,8 +54,8 @@ $ yarn dev
 - [Progressive Web App]() features with [next-PWA](https://github.com/shadowwalker/next-pwa).
 - `i18n` localisation powered by [Next-i18next](https://github.com/i18next/next-i18next).
 - Powerful asynchronous state management with [React Query](https://tanstack.com/query/v3/).
-- [Vue Storefront SDK](https://docs.vuestorefront.io/sdk/) ready - integrate headless E-commerce platform with your project easily.
-- [Vue Storefront Middleware](https://docs.vuestorefront.io/v2/architecture/server-middleware.html).
+- [Alokai SDK](https://docs.alokai.com/sdk/) ready - integrate headless E-commerce platform with your project easily.
+- [Alokai Middleware](https://docs.alokai.com/v2/architecture/server-middleware.html).
 - Maximize lighthouse score.
 
 ## Guide
@@ -81,8 +76,8 @@ Please see our [contributing.md](contributing.md) for more information.
 
 ## Resources
 
-- [Vue Storefront Documentation](https://docs.vuestorefront.io/v2/)
-- [Vue Storefront Enterprise Documentation](https://docs.vuestorefront.io/v2/general/enterprise.html)
+- [Alokai Documentation](https://docs.alokai.com)
+- [Alokai Enterprise Documentation](https://docs.alokai.com/v2/general/enterprise.html)
 - [Storefront UI 2 Documentation](https://docs.storefrontui.io/v2/)
 - [Community Chat](http://discord.vuestorefront.io)
 

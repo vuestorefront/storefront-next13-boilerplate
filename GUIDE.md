@@ -1,6 +1,6 @@
 # Detailed overview & further development guide
 
-Welcome to the Vue Storefront Boilerplate for the [Next.js 13+](https://nextjs.org/) project! This guide will provide you with an overview of the project structure, tools, and best practices to help you get started quickly.
+Welcome to the Alokai Boilerplate for the [Next.js 13+](https://nextjs.org/) project! This guide will provide you with an overview of the project structure, tools, and best practices to help you get started quickly.
 
 ### Project Structure
 
@@ -10,12 +10,12 @@ For detailed information on how to get started, configure, and use this project 
 
 This Turborepo includes the following apps:
 
-- `server` - Vue Storefront Middleware server
+- `server` - Alokai Middleware server
 - `web` - A web application powered by Next.js
 
 #### Server Middleware
 
-The server application is a core of a Vue Storefront application. It allows connecting services like E-commerce platform, CMS, or Payment providers to your application.
+The server application is a core of a Alokai application. It allows connecting services like E-commerce platform, CMS, or Payment providers to your application.
 
 ```shell
 
@@ -35,20 +35,20 @@ apps/
 The most important files of the `Server Middleware` app are:
 
 - `src/index.ts` - Express server entry point that handles all requests to the third-party platforms from the SDK
-- `middleware.config.ts` - Vue Storefront Middleware configuration
+- `middleware.config.ts` - Alokai Middleware configuration
 
-For more info about `Server Middleware` refer to the [documentation](https://docs.vuestorefront.io/v2/architecture/server-middleware.html).
+For more info about `Server Middleware` refer to the [documentation](https://docs.alokai.com/v2/architecture/server-middleware.html).
 
 > **Warning**
 > This project does not come with pre-packaged integrations for the sake of simplicity. However, you have the flexibility to develop custom integrations or utilize our official integrations to connect the Middleware with actual data sources.
 >
-> You can choose from our official integrations, which provide pre-built connectors for various data sources and services. These integrations are designed and maintained by the VSF team as well as partners, ensuring a seamless integration experience.
+> You can choose from our official integrations, which provide pre-built connectors for various data sources and services. These integrations are designed and maintained by the Alokai team as well as partners, ensuring a seamless integration experience.
 > 
-> Check out [official VSF Middleware integrations](https://docs.vuestorefront.io/v2/integrations/) to get started quickly.
+> Check out [official Alokai Middleware integrations](https://docs.alokai.com/v2/integrations/) to get started quickly.
 >
 > If your project requires custom integrations tailored to specific data sources or services, our project offers a flexible framework and comprehensive documentation to guide you through the process. By following our guidelines and leveraging the capabilities of the Middleware, you can effortlessly develop custom integrations that meet your unique requirements.
 > 
-> For more information on developing custom integrations, please refer to the [Integrating e-commerce platform documentation](https://docs.vuestorefront.io/v2/integrate/integration-guide.html).
+> For more information on developing custom integrations, please refer to the [Integrating e-commerce platform documentation](https://docs.alokai.com/v2/integrate/integration-guide.html).
 
 > **Note**
 > If you are migrating your project from Nuxt 2, the `src/index.ts` file serves as the equivalent of the Server's Middleware `middleware.js` entry point.
@@ -76,7 +76,7 @@ apps/
      │   ├── index.tsx            # Home page
      │   └── ...
      ├── public/                  # Public assets
-     ├── sdk/                     # Vue Storefront SDK configuration
+     ├── sdk/                     # Alokai SDK configuration
      ├── styles/                  # Project CSS configuration
      ├── .eslint.js               # ESLint configuration
      ├── .lintstagedrc.js         # Lint-Staged configuration
@@ -90,7 +90,7 @@ apps/
 ```
 
 List of essential directories:
-- `sdk` [Vue Storefront SDK](https://docs.vuestorefront.io/sdk/) module configuration
+- `sdk` [Alokai SDK](https://docs.alokai.com/sdk/) module configuration
 - `components/ui` Storefront UI Block components, like `ProductCard` or `Review`
 - `hooks` reusable hook functions, e.g. data fetching and UI hooks
 - `mocks`  mock data used across the application, e.g. footer links
@@ -181,22 +181,22 @@ Naming convention:
 - React components should follow `Pascal case` pattern (`CategoryFilters`, `Heading`)
 - The types for component's props should be named `{Component}Props`. For example, `GalleryProps` or `HeadingProps`
 
-#### Vue storefront SDK and data fetching
+#### Alokai SDK and data fetching
 
-The data fetching process is handled seamlessly by integrating VSF SDK, which acts as a robust communication layer between the application and the VSF Middleware. The SDK provides a set of convenient and optimized methods to fetch data from various APIs and services.
+The data fetching process is handled seamlessly by integrating Alokai SDK, which acts as a robust communication layer between the application and the Alokai Middleware. The SDK provides a set of convenient and optimized methods to fetch data from various APIs and services.
 
-To simplify the implementation and management of data fetching, React Query is employed as a powerful state management library. It seamlessly integrates with VSF SDK and simplifies the process of caching, synchronizing, and managing the application's data. React Query's intuitive hooks and query functions provide an elegant and efficient way to handle asynchronous data fetching, automatically managing data caching, refetching, and background updates.
+To simplify the implementation and management of data fetching, React Query is employed as a powerful state management library. It seamlessly integrates with Alokai SDK and simplifies the process of caching, synchronizing, and managing the application's data. React Query's intuitive hooks and query functions provide an elegant and efficient way to handle asynchronous data fetching, automatically managing data caching, refetching, and background updates.
 
-By combining VSF SDK with React Query, this project ensures a reliable and performant data fetching experience for the application. Developers can easily fetch, update, and maintain data using React Query's declarative approach, while the VSF SDK handles the underlying communication and data retrieval tasks.
+By combining Alokai SDK with React Query, this project ensures a reliable and performant data fetching experience for the application. Developers can easily fetch, update, and maintain data using React Query's declarative approach, while the Alokai SDK handles the underlying communication and data retrieval tasks.
 
 > **Note**
 > For development and testing purposes, the project uses mocked data provided by the `@vue-storefront/integration-boilerplate-sdk` library.
 >
 > In a production scenario, is necessary to connect connectors to interface with actual data sources. The `@vue-storefront/integration-boilerplate-sdk` library serves as a foundation and offers the necessary abstractions and guidelines to facilitate the development of custom connectors.
 >
-> Check out [VSF SDK official integration modules](https://docs.vuestorefront.io/sdk/modules/).
+> Check out [Alokai SDK official integration modules](https://docs.alokai.com/sdk/modules/).
 
-For detailed information on how to get started, configure, and use this project built with VSF SDK and ReactQuery, please refer to the [VSF SDK official documentation](https://docs.vuestorefront.io/sdk/sdk/) and [React-Query documentation](https://tanstack.com/query/v4).
+For detailed information on how to get started, configure, and use this project built with Alokai SDK and ReactQuery, please refer to the [Alokai SDK official documentation](https://docs.alokai.com/sdk/) and [React-Query documentation](https://tanstack.com/query/v4).
 
 ### Localization
 
@@ -279,4 +279,4 @@ You can find workflow configuration at
 You can configure your LHCI tests to block the merging of a Pull Request if the performance results fall below a certain threshold.
 
 #### More about performance
-Additional performance good practices and information can be found [HERE](https://docs.vuestorefront.io/v2/performance/intro.html).
+Additional performance good practices and information can be found [HERE](https://docs.alokai.com/v2/performance/intro.html).
