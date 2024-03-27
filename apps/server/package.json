@@ -4,13 +4,14 @@
   "main": "./src/index.ts",
   "license": "MIT",
   "scripts": {
+    "build": "tsc",
+    "start": "node lib/src/index.js",
     "dev": "nodemon",
-    "start": "nodemon",
     "lint": "eslint . --ext .ts",
     "lint:fix": "eslint . --ext .ts --fix"
   },
   "dependencies": {
-    "@vue-storefront/middleware": "3.0.0-rc.2",
+    "@vue-storefront/middleware": "3.9.0",
     "consola": "^2.15.3",
     "dotenv": "^16.0.3",
     "nodemon": "^2.0.19",
