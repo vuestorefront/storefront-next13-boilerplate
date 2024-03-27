@@ -1,5 +1,5 @@
 import { CreateSdkOptions, createSdk } from '@vue-storefront/next';
-import { SdkModule, sdkModule } from '@vue-storefront/storefront-boilerplate-sdk';
+import { sdkModule } from '@vue-storefront/storefront-boilerplate-sdk';
 
 const options: CreateSdkOptions = {
   middleware: {
@@ -8,7 +8,7 @@ const options: CreateSdkOptions = {
 };
 
 export const { getSdk } = createSdk(options, ({ buildModule }) => ({
-  commerce: buildModule<SdkModule>(sdkModule),
+  commerce: buildModule(sdkModule),
 }));
 
 export type Sdk = ReturnType<typeof getSdk>;

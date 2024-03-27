@@ -2565,10 +2565,17 @@
     helmet "^5.1.1"
     rimraf "^4.1.2"
 
-"@vue-storefront/next@~1.0.0":
-  version "1.0.0"
-  resolved "https://registry.npmjs.org/@vue-storefront/next/-/next-1.0.0.tgz#122ecd23288a09792f80f99069a12cf5b5d013eb"
-  integrity sha512-MAF3JyyzIKCgtoVgMbAj1OPf4LPzDfFrcr85zOxiwRmAFpy+LBLR4XZLUxwpBtgBTP93jKhg920YxhYK/WKstg==
+"@vue-storefront/next@~1.1.0":
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@vue-storefront/next/-/next-1.1.0.tgz#f2844122a115267e641b3415aed0401b7d5bc15e"
+  integrity sha512-MKH/cyXFKtf2+KpTQpEYfxWJr7LW0K5FJX+merCmnK5h/vVrWlOfdKBZMdub08mN8e2frAubk+b9N5dQLjni4Q==
+  dependencies:
+    "@vue-storefront/sdk" "^1.4.0"
+
+"@vue-storefront/sdk@^1.4.0":
+  version "1.4.4"
+  resolved "https://registry.yarnpkg.com/@vue-storefront/sdk/-/sdk-1.4.4.tgz#8ff2b90ee8c215b1cc9af9b0373baa6d66345d4d"
+  integrity sha512-j9RRL4VrODXVc0Zx0zFPrN4Ow8k0FD8NP2rUdLNjWc0eoWphhn0LokapEztOi5u+SB4yf4w5abWE4kDRKHwWqw==
 
 "@vue-storefront/sdk@~1.0.1":
   version "1.0.1"

@@ -194,7 +194,6 @@ By combining Alokai SDK with React Query, this project ensures a reliable and pe
 >
 > In a production scenario, is necessary to connect connectors to interface with actual data sources. The `@vue-storefront/integration-boilerplate-sdk` library serves as a foundation and offers the necessary abstractions and guidelines to facilitate the development of custom connectors.
 >
-> Check out [Alokai SDK official integration modules](https://docs.alokai.com/sdk/modules/).
 
 For detailed information on how to get started, configure, and use this project built with Alokai SDK and ReactQuery, please refer to the [Alokai SDK official documentation](https://docs.alokai.com/sdk/) and [React-Query documentation](https://tanstack.com/query/v4).
 
@@ -277,6 +276,3 @@ You can find workflow configuration at
 /.github/workflows/run-lhci-test.yml
 
 You can configure your LHCI tests to block the merging of a Pull Request if the performance results fall below a certain threshold.
-
-#### More about performance
-Additional performance good practices and information can be found [HERE](https://docs.alokai.com/v2/performance/intro.html).

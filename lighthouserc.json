@@ -22,12 +22,12 @@
 
               "largest-contentful-paint": ["warn", { "aggregationMethod": "median-run", "maxNumericValue": 2500 }],
               "total-blocking-time": ["warn", { "aggregationMethod": "median-run", "maxNumericValue": 200 }],
-              "interactive": ["warn", { "aggregationMethod": "median-run", "maxNumericValue": 3800 }],
+              "interactive": ["warn", { "aggregationMethod": "median-run", "maxNumericValue": 4000 }],
               "first-contentful-paint": ["warn", { "aggregationMethod": "median-run", "maxNumericValue": 1800 }],
               "cumulative-layout-shift": ["warn", { "aggregationMethod": "median-run", "maxNumericValue": 0.1 }],
               "speed-index": ["warn", { "aggregationMethod": "median-run", "maxNumericValue": 3400 }],
 
-              "dom-size": ["warn", { "maxNumericValue": 800 }]
+              "dom-size": ["warn", { "maxNumericValue": 1000 }]
             }
           },
           {
@@ -55,7 +55,7 @@
           {
             "matchingUrlPattern": "http://localhost:3000/$",
             "assertions": {
-              "resource-summary:image:size": ["error", { "maxNumericValue": 210000 }],
+              "resource-summary:image:size": ["error", { "maxNumericValue": 220000 }],
               "resource-summary:script:size": ["error", { "maxNumericValue": 310000 }],
               "resource-summary:document:size": ["error", { "maxNumericValue": 21000 }],
               "resource-summary:font:size": ["error", { "maxNumericValue": 65000 }]

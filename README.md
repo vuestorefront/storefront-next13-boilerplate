@@ -16,7 +16,7 @@ To get started, see the following guides:
 
 ## Prerequisites:
 
-- `Node.js` 16+
+- `Node.js` 18+
 - `Yarn`
 
 ### Local dev setup
@@ -55,7 +55,7 @@ $ yarn dev
 - `i18n` localisation powered by [Next-i18next](https://github.com/i18next/next-i18next).
 - Powerful asynchronous state management with [React Query](https://tanstack.com/query/v3/).
 - [Alokai SDK](https://docs.alokai.com/sdk/) ready - integrate headless E-commerce platform with your project easily.
-- [Alokai Middleware](https://docs.alokai.com/v2/architecture/server-middleware.html).
+- [Alokai Middleware](https://docs.alokai.com/middleware/).
 - Maximize lighthouse score.
 
 ## Guide
@@ -77,7 +77,7 @@ Please see our [contributing.md](contributing.md) for more information.
 ## Resources
 
 - [Alokai Documentation](https://docs.alokai.com)
-- [Alokai Enterprise Documentation](https://docs.alokai.com/v2/general/enterprise.html)
+- [Alokai Enterprise Documentation](https://docs.alokai.com/enterprise)
 - [Storefront UI 2 Documentation](https://docs.storefrontui.io/v2/)
 - [Community Chat](http://discord.vuestorefront.io)
 

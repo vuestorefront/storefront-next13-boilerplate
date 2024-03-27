@@ -3,7 +3,10 @@ dotenv.config();
 
 const config = {
   integrations: {
-    /* VSF integration config */
+    /** 
+    *  Check out the integrations documentation for more details
+    *  @link https://docs.alokai.com/integrations
+    */
   },
 };
 
